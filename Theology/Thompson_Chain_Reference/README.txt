@@ -1,0 +1,13 @@
+Data extracted from: 
+
+Frank Thompson's 1934 "The New Chain-Reference Bible". 
+
+Copyright May 24 1934, US. registration number A72501; not renewed; became public domain material in 1962. 
+
+Spellings Anglicisied. Errors in cross-references corrected. Material keyed and proofed by Paul Houghton. This material contains information that is a proper subset of the material distributed by B.B. Kirkbride under the trademark of "Thompson Chain-References". 
+
+The errors in the cross-references that Kirkbide have been published in all their editions of the Thompson's Bibles have been corrected.
+
+Distribution License: Public Domain
+
+Source: https://crosswire.org/sword/modules/ModInfo.jsp?modName=TCR

@@ -1,0 +1,60 @@
+TEMPLATE nave
+# version: "1.0"
+# author: "Nave's Topical Bible"
+
+# ============================================
+# CAMPOS DE SOURCE
+# ============================================
+
+SOURCE FIELDS
+    OPTIONAL reference
+END SOURCE FIELDS
+
+FIELD reference TYPE TEXT
+    SCOPE SOURCE
+    DESCRIPTION Descrição da fonte
+END FIELD
+
+# ============================================
+# CAMPOS DE ITEM
+# ============================================
+
+ITEM FIELDS
+    REQUIRED entry
+    OPTIONAL passage
+    OPTIONAL note
+    OPTIONAL xref
+END ITEM FIELDS
+
+FIELD entry TYPE CODE
+    SCOPE ITEM
+    DESCRIPTION Verbete principal do Nave's Topical Bible
+END FIELD
+
+FIELD passage TYPE TEXT
+    SCOPE ITEM
+    DESCRIPTION Referência bíblica em formato USX (ex: Exo 6:16-20)
+END FIELD
+
+FIELD note TYPE MEMO
+    SCOPE ITEM
+    DESCRIPTION Subtópico descritivo do verbete
+END FIELD
+
+FIELD xref TYPE TEXT
+    SCOPE ITEM
+    DESCRIPTION Referência cruzada para outro verbete (See / Also called)
+END FIELD
+
+# ============================================
+# CAMPOS DE ONTOLOGY
+# ============================================
+
+ONTOLOGY FIELDS
+    OPTIONAL note
+END ONTOLOGY FIELDS
+
+FIELD description TYPE TEXT
+    SCOPE ONTOLOGY
+    DESCRIPTION Definição primária do verbete
+END FIELD

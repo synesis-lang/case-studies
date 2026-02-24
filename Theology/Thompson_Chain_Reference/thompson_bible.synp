@@ -1,0 +1,8 @@
+PROJECT Thompson
+
+TEMPLATE "thompson_bible.synt"
+INCLUDE BIBLIOGRAPHY "thompson.bib"
+INCLUDE ANNOTATIONS "thompson_bible.syn"
+INCLUDE ONTOLOGY "thompson.syno"
+
+END PROJECT

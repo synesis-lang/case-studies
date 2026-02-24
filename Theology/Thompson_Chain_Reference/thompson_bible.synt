@@ -1,0 +1,41 @@
+TEMPLATE thompson_bible
+# version: "1.0"
+# author: "Thompson Chain Reference Bible"
+
+# ============================================
+# SOURCE FIELDS
+# ============================================
+
+SOURCE FIELDS
+    OPTIONAL reference
+END SOURCE FIELDS
+
+FIELD reference TYPE TEXT
+    SCOPE SOURCE
+    DESCRIPTION Translation or edition of the Bible
+END FIELD
+
+# ============================================
+# ITEM FIELDS
+# ============================================
+
+ITEM FIELDS
+    REQUIRED passage
+    OPTIONAL text
+    OPTIONAL topic
+END ITEM FIELDS
+
+FIELD passage TYPE TEXT
+    SCOPE ITEM
+    DESCRIPTION Biblical reference in USX format (e.g. Pro 12:23)
+END FIELD
+
+FIELD text TYPE QUOTATION
+    SCOPE ITEM
+    DESCRIPTION Verse text from the translation
+END FIELD
+
+FIELD topic TYPE CODE
+    SCOPE ITEM
+    DESCRIPTION Thompson chain topic(s) associated with the verse
+END FIELD

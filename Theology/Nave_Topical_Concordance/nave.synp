@@ -1,0 +1,8 @@
+PROJECT nave
+
+TEMPLATE "nave.synt"
+INCLUDE BIBLIOGRAPHY "nave.bib"
+INCLUDE ANNOTATIONS "nave.syn"
+INCLUDE ONTOLOGY "nave.syno"
+
+END PROJECT
