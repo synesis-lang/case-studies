@@ -1,0 +1,65 @@
+SOURCE @ind_001
+    ind: 001
+    sex: Masculino
+    esc: Particular
+    pes: Nao_conhece
+    conh: Bom
+    ati: Desfavoravel
+END SOURCE
+
+ITEM @ind_001
+    resposta: "A aids é um vírus que tem que tomar muito cuidado. É importante conhecer seu parceiro na hora de realizar atos sexuais. O vírus pode ser transmitido por causa de um ato irresponsável, transar sem o uso de um preservativo, ou através de um estupro."
+END ITEM
+
+SOURCE @ind_002
+    ind: 002
+    sex: Feminino
+    esc: Particular
+    pes: Conhece
+    conh: Pouco
+    ati: Favoravel
+END SOURCE
+
+ITEM @ind_002
+    resposta: "Aids: quando citado, me vem na cabeça a quantidade de pessoas que possuem o vírus e que sofrem preconceito diante disto, por terem a doença, muitas vezes por descuido, muitas vezes por falta de instrução. Estas pessoas, em vez de sofrerem com isso, pelas pessoas que diziam ser suas amigas, deveriam na verdade ganhar o apoio e a ajuda de amigos e família para combater o vírus e o preconceito que há no assunto."
+    chain: preconceito_social -> INIBE -> apoio_familiar
+END ITEM
+
+SOURCE @ind_003
+    ind: 003
+    sex: Feminino
+    esc: Particular
+    pes: Nao_conhece
+    conh: Pouco
+    ati: Desfavoravel
+END SOURCE
+
+ITEM @ind_003
+    resposta: "Eu penso que é uma questão complicada, porque a pessoa fica mal e tem que viver de remédios e tem medo de passar pra outra."
+END ITEM
+
+SOURCE @ind_004
+    ind: 004
+    sex: Feminino
+    esc: Particular
+    pes: Nao_conhece
+    conh: Pouco
+    ati: Favoravel
+END SOURCE
+
+ITEM @ind_004
+    resposta: "Uma dst, devido a falta de prevenção do casal. Hoje já existe tratamento, porém pessoas que sofrem desta doença sofrem também de um grande preconceito da sociedade."
+END ITEM
+
+SOURCE @ind_005
+    ind: 005
+    sex: Feminino
+    esc: Particular
+    pes: Nao_conhece
+    conh: Pouco
+    ati: Favoravel
+END SOURCE
+
+ITEM @ind_005
+    resposta: "É uma doença séria, que sofre muito preconceito. Mas que tem que passar a ser respeitada mais, pois sendo cuidado e tendo proteção, não faz mal algum."
+END ITEM

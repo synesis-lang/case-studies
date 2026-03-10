@@ -1,0 +1,107 @@
+TEMPLATE aids_corpus version: "1.0" author: "Tutorial Synesis para IRaMuTeQ"
+
+# Pesquisa: Representações Sociais da Aids
+# Escopo: Respostas à questão: "O que você pensa a respeito da Aids?"
+# Corpus: Respostas de 300 estudantes do ensino médio (Antunes, 2012).
+
+# ============================================
+# CAMPOS DE SOURCE
+# ============================================
+
+SOURCE FIELDS
+    REQUIRED ind, sex, esc, pes, conh, ati
+END SOURCE FIELDS
+
+FIELD ind TYPE TEXT
+    SCOPE SOURCE
+    DESCRIPTION Identificador único do participante
+END FIELD
+
+FIELD sex TYPE ENUMERATED
+    SCOPE SOURCE
+    DESCRIPTION Sexo do participante
+    VALUES
+        Masculino: Sexo masculino
+        Feminino: Sexo feminino
+    END VALUES
+END FIELD
+
+FIELD esc TYPE ENUMERATED
+    SCOPE SOURCE
+    DESCRIPTION Tipo de escola frequentada
+    VALUES
+        Publica: Escola da rede pública
+        Particular: Escola da rede particular
+    END VALUES
+END FIELD
+
+FIELD pes TYPE ENUMERATED
+    SCOPE SOURCE
+    DESCRIPTION Conhece pessoa soropositiva
+    VALUES
+        Conhece: Conhece pelo menos uma pessoa soropositiva
+        Nao_conhece: Não conhece nenhuma pessoa soropositiva
+    END VALUES
+END FIELD
+
+FIELD conh TYPE ENUMERATED
+    SCOPE SOURCE
+    DESCRIPTION Conhecimento sobre transmissão do HIV
+    VALUES
+        Bom: Bom conhecimento sobre formas de transmissão
+        Pouco: Pouco conhecimento sobre formas de transmissão
+    END VALUES
+END FIELD
+
+FIELD ati TYPE ENUMERATED
+    SCOPE SOURCE
+    DESCRIPTION Atitude frente ao soropositivo
+    VALUES
+        Favoravel: Atitude favorável ao soropositivo
+        Neutra: Atitude neutra
+        Desfavoravel: Atitude desfavorável ao soropositivo
+    END VALUES
+END FIELD
+
+# ============================================
+# CAMPOS DE ITEM
+# ============================================
+
+ITEM FIELDS
+    REQUIRED resposta
+    OPTIONAL chain
+END ITEM FIELDS
+
+FIELD resposta TYPE QUOTATION
+    SCOPE ITEM
+    DESCRIPTION Resposta à questão aberta sobre a Aids
+END FIELD
+
+FIELD chain TYPE CHAIN
+    SCOPE ITEM
+    DESCRIPTION Cadeia causal identificada na resposta do participante
+    RELATIONS
+        INIBE: Um conceito reduz ou bloqueia outro
+        PROMOVE: Um conceito favorece ou amplia outro
+        ASSOCIA: Associação significativa entre conceitos
+    END RELATIONS
+END FIELD
+
+# ============================================
+# CAMPOS DE ONTOLOGY
+# ============================================
+
+ONTOLOGY FIELDS
+    REQUIRED descricao
+    OPTIONAL grupo
+END ONTOLOGY FIELDS
+
+FIELD descricao TYPE TEXT
+    SCOPE ONTOLOGY
+    DESCRIPTION Definição do conceito no contexto das representações sociais da Aids
+END FIELD
+
+FIELD grupo TYPE TOPIC
+    SCOPE ONTOLOGY
+    DESCRIPTION Agrupamento temático do conceito (dimensao_social, dimensao_saude, dimensao_educacao)
+END FIELD

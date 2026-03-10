@@ -1,0 +1,20 @@
+PROJECT aids_corpus
+
+TEMPLATE "aids_corpus.synt"
+INCLUDE BIBLIOGRAPHY "aids_corpus.bib"
+INCLUDE ANNOTATIONS "aids_corpus.syn"
+INCLUDE ONTOLOGY "aids_corpus.syno"
+
+METADATA
+    version: 1.0
+    author: Antunes, Débora Christina Moura
+    dataset: Representações Sociais da Aids
+END METADATA
+
+DESCRIPTION
+Corpus de respostas à questão "O que você pensa a respeito da Aids?",
+coletadas de 312 estudantes do ensino médio. Análise via Classificação
+Hierárquica Descendente (CHD) no IRaMuTeQ. Referência: antunes2012.
+END DESCRIPTION
+
+END PROJECT
