@@ -7,23 +7,3 @@ ONTOLOGY apoio_familiar
     grupo: dimensao_social
     descricao: Suporte emocional e prático oferecido por familiares e amigos próximos a pessoas que convivem com HIV/Aids
 END ONTOLOGY
-
-ONTOLOGY prevencao
-    grupo: dimensao_saude
-    descricao: Conjunto de práticas e conhecimentos voltados a evitar a transmissão do HIV, como uso de preservativo e informação sobre formas de contágio
-END ONTOLOGY
-
-ONTOLOGY transmissao
-    grupo: dimensao_saude
-    descricao: Mecanismos biológicos e comportamentais pelos quais o HIV é transmitido de uma pessoa a outra
-END ONTOLOGY
-
-ONTOLOGY tratamento
-    grupo: dimensao_saude
-    descricao: Recursos médicos e terapêuticos disponíveis para pessoas soropositivas, incluindo antirretrovirais
-END ONTOLOGY
-
-ONTOLOGY informacao
-    grupo: dimensao_educacao
-    descricao: Acesso a conhecimento correto sobre HIV/Aids, incluindo formas de transmissão, prevenção e convivência
-END ONTOLOGY
