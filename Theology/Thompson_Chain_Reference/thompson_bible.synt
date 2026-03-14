@@ -39,3 +39,16 @@ FIELD topic TYPE CODE
     SCOPE ITEM
     DESCRIPTION Thompson chain topic(s) associated with the verse
 END FIELD
+
+# ============================================
+# ONTOLOGY FIELDS
+# ============================================
+
+ONTOLOGY FIELDS
+    OPTIONAL description
+END ONTOLOGY FIELDS
+
+FIELD description TYPE TEXT
+    SCOPE ONTOLOGY
+    DESCRIPTION Entry description when available
+END FIELD
