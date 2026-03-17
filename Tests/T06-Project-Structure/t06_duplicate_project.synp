@@ -3,7 +3,7 @@
 # =============================================================================
 # ERRO 66 (ERRO):
 #   Este arquivo contém dois blocos PROJECT.
-#   Esperado: ERRO "Este arquivo de projeto contém dois blocos PROJECT".
+#   Esperado: ERRO "Este arquivo de projeto contém dois blocos PROJECT"..
 
 PROJECT T06_Projeto_Um
 
