@@ -1,4 +1,7 @@
-TEMPLATE bibliometrics version: "2.0" author: "Synesis Compiler Team"
+TEMPLATE social_acceptance
+
+# version: 2.0 
+# author: USP-Offshore Technology Innovation Centre-DGT7 Team
 
 # ============================================
 # CAMPOS DE SOURCE
@@ -10,7 +13,7 @@ END SOURCE FIELDS
 
 FIELD description TYPE TEXT
     SCOPE SOURCE
-    DESCRIPTION Descrição do estudo e contexto da pesquisa
+    DESCRIPTION Study description and research context
     GUIDELINES
         Summarize the abstract's core focus in one sentence.
         Identify the primary research question or objective.
@@ -21,7 +24,7 @@ END FIELD
 
 FIELD epistemic_model TYPE TEXT
     SCOPE SOURCE
-    DESCRIPTION Modelo epistemológico ou framework teórico utilizado
+    DESCRIPTION Epistemological model or theoretical framework used
     GUIDELINES
         Identify the knowledge area or theoretical framework employed in the study.
         Examples: Social Psychology, Technology Acceptance Model, Political Economy,
@@ -33,7 +36,7 @@ END FIELD
 
 FIELD method TYPE TEXT
     SCOPE SOURCE
-    DESCRIPTION Método de pesquisa utilizado (survey, entrevistas, etc.)
+    DESCRIPTION Research method used (survey, interviews, etc.)
     GUIDELINES
         Identify the data collection method if mentioned in the abstract.
         Common methods: survey, interview, case study, meta-analysis, literature review,
@@ -54,7 +57,7 @@ END ITEM FIELDS
 
 FIELD text TYPE QUOTATION
     SCOPE ITEM
-    DESCRIPTION Excerto textual extraído da fonte bibliográfica
+    DESCRIPTION Textual excerpt taken from the bibliographic source.
     GUIDELINES
         Extract COMPLETE, SELF-CONTAINED semantic units (1-3 sentences).
         Each excerpt must include: subject + verb + object + qualifiers.
@@ -81,7 +84,7 @@ END FIELD
 
 FIELD note TYPE MEMO
     SCOPE ITEM
-    DESCRIPTION Memo analítico explicando a interpretação e mecanismo causal identificado
+    DESCRIPTION Analytical memo explaining the interpretation and causal mechanism identified.
     GUIDELINES
         Write an analytical description of the mechanism, significance, or rationale
         revealed by the excerpt. Do NOT merely restate the excerpt.
@@ -107,13 +110,13 @@ END FIELD
 FIELD chain TYPE CHAIN
     SCOPE ITEM
     ARITY >= 2
-    DESCRIPTION Cadeia causal/relacional entre conceitos da ontologia
+    DESCRIPTION Causal/relational chain between concepts of ontology.
     RELATIONS
-        ENABLES: Condição necessária ou facilitadora (A permite que B ocorra)
-        INFLUENCES: Efeito causal direto (A afeta ou muda B)
-        CONSTRAINS: Limita ou restringe (A reduz opções ou viabilidade de B)
-        CONTESTED-BY: Oposição ativa (A é contestado ou desafiado por B)
-        RELATES-TO: Associação significativa genérica (A está relacionado a B)
+        ENABLES: Necessary or enabling condition (A allows B to occur)
+        INFLUENCES: Direct causal effect (A affects or changes B)
+        CONSTRAINS: Limits or restricts (A reduces B's options or viability)
+        CONTESTED-BY: Active opposition (A is contested or challenged by B)
+        RELATES-TO: Generic significant association (A is related to B)
     END RELATIONS
     GUIDELINES
         RELATION SELECTION PRIORITY: ENABLES > INFLUENCES > CONSTRAINS > CONTESTED-BY > RELATES-TO
@@ -240,7 +243,7 @@ END ONTOLOGY FIELDS
 
 FIELD ontology_description TYPE TEXT
     SCOPE ONTOLOGY
-    DESCRIPTION Definição semântica do conceito no domínio de aceitação social de tecnologias energéticas
+    DESCRIPTION Semantic definition of the concept in the domain of social acceptance of energy technologies.
     GUIDELINES
         Provide a semantic definition of the concept (40-80 words).
         Base the definition primarily on usage contexts where the concept appears
@@ -259,7 +262,7 @@ END FIELD
 
 FIELD topic TYPE TOPIC
     SCOPE ONTOLOGY
-    DESCRIPTION Tópico ou domínio temático do conceito (categoria hierárquica superior dinâmica)
+    DESCRIPTION Topic or thematic domain of the concept (dynamic higher-level hierarchical category)
     GUIDELINES
         Assign a broad, parent-level thematic category.
         Target: 12-18 conceptually distinct parent categories across the full corpus.
@@ -285,24 +288,24 @@ END FIELD
 
 FIELD aspect TYPE ORDERED
     SCOPE ONTOLOGY
-    DESCRIPTION Aspectos modais de Dooyeweerd (ordem é significativa)
+    DESCRIPTION Herman Dooyeweerd's Dutch reformational philosopher modal aspects (order is significant)
     VALUES
         [0] Undefined: Not available
-        [1] Quantitative: Medições, estatísticas, quantidades discretas
-        [2] Spatial: Localização, geografia, relações espaciais
-        [3] Kinematic: Movimento, fluxo, dinâmica temporal
-        [4] Physical: Propriedades materiais, forças, sistemas energéticos
-        [5] Biotic: Ecológico, ambiental, impactos na saúde e vida
-        [6] Sensitive: Percepção, consciência, respostas emocionais
-        [7] Analytical: Pesquisa, análise, elementos metodológicos
-        [8] Formative: Planejamento, design, inovação, contexto cultural
-        [9] Lingual: Comunicação, documentação, informação, linguagem
-        [10] Social: Relações comunitárias, redes, dinâmicas coletivas
-        [11] Economic: Custos, mercados, finanças, incentivos econômicos
-        [12] Aesthetic: Qualidades visuais, estética, harmonia, beleza
-        [13] Juridical: Legal, regulatório, frameworks de governança
-        [14] Ethical: Responsabilidade moral, equidade, dever, justiça
-        [15] Fiducial: Confiança, crença, valores, cosmovisão, fé
+        [1] Quantitative: Measurements, statistics, discrete quantities
+        [2] Spatial: Location, geography, spatial relationships
+        [3] Kinematic: Movement, flow, temporal dynamics
+        [4] Physical: Material properties, forces, energy systems
+        [5] Biotic: Ecological, environmental, impacts on health and life
+        [6] Sensitive: Perception, consciousness, emotional responses
+        [7] Analytical: Research, analysis, methodological elements
+        [8] Formative: Planning, design, innovation, cultural context
+        [9] Lingual: Communication, documentation, information, language
+        [10] Social: Community relations, networks, collective dynamics
+        [11] Economic: Costs, markets, finance, economic incentives
+        [12] Aesthetic: Visual qualities, aesthetics, harmony, beauty
+        [13] Juridical: Legal, regulatory, governance frameworks
+        [14] Ethical: Moral responsibility, equity, duty, justice
+        [15] Fiducial: Trust, belief, values, worldview, faith
     END VALUES
     GUIDELINES
         Classify the factor's primary modal nature using the Dooyeweerd framework.
@@ -344,13 +347,13 @@ END FIELD
 
 FIELD dimension TYPE ORDERED
     SCOPE ONTOLOGY
-    DESCRIPTION Dimensões da aceitação social de tecnologias energéticas (Wüstenhagen et al.)
+    DESCRIPTION Dimensions of the social acceptance of energy technologies (Developed by Rolf Wüstenhagen - Maarten Wolsink - Mary Jean Bürer)
     VALUES
-        [0] Undefined: Não classificado ou não aplicável
-        [1] Community_Acceptance: Residentes, atores locais e stakeholders comunitários
-        [2] Market_Acceptance: Consumidores, investidores, competitividade de mercado
-        [3] Socio-Political_Acceptance: Instituições, sociedade, frameworks de governança
-        [4] Technical-Scientific: Avaliação científica, analítica e técnica
+        [0] Undefined: Not classified or not applicable
+        [1] Community_Acceptance: Residents, local actors and community stakeholders
+        [2] Market_Acceptance: Consumers, investors, market competitiveness
+        [3] Socio-Political_Acceptance: Institutions, society, governance frameworks
+        [4] Technical-Scientific: Scientific, analytical and technical evaluation        
     END VALUES
     GUIDELINES
         Assign the Wuestenhagen social acceptance dimension based on stakeholder relevance.
@@ -367,11 +370,11 @@ END FIELD
 
 FIELD confidence TYPE ENUMERATED
     SCOPE ONTOLOGY
-    DESCRIPTION Nível de confiança na classificação do conceito baseado em frequência e fontes
+    DESCRIPTION Confidence level in concept classification based on frequency and sources.
     VALUES
-        LOW: Baixa frequência ou fontes limitadas (conceito emergente ou especializado)
-        MEDIUM: Frequência moderada com suporte razoável em múltiplas fontes
-        HIGH: Alta frequência e amplo suporte empírico em diversas fontes
+        LOW: Low frequency or limited sources (emerging or specialized concept)
+        MEDIUM: Moderate frequency with reasonable support from multiple sources
+        HIGH: High frequency and broad empirical support from various sources        
     END VALUES
     GUIDELINES
         Assign confidence based on statistical evidence:
@@ -387,7 +390,7 @@ END FIELD
 
 FIELD reasoning TYPE TEXT
     SCOPE ONTOLOGY
-    DESCRIPTION Justificativa analítica para classificação do conceito (aspect, dimension, confidence)
+    DESCRIPTION Analytical justification for the classification of the concept (aspect, dimension, confidence)
     GUIDELINES
         Justify classification decisions in 40-60 words with these 5 components:
 
@@ -405,7 +408,7 @@ END FIELD
 
 FIELD rgt_element_a TYPE TEXT
     SCOPE ONTOLOGY
-    DESCRIPTION Polo A do construto bipolar (Repertory Grid Theory) - polo positivo/funcional
+    DESCRIPTION Pole A of the bipolar construct (Repertory Grid Theory) - positive/functional pole
     GUIDELINES
         Create the POSITIVE/FUNCTIONAL pole of a Repertory Grid Theory bipolar construct.
         Transform the unidimensional factor into a contrastive pair that allows
@@ -434,7 +437,7 @@ END FIELD
 
 FIELD rgt_element_b TYPE TEXT
     SCOPE ONTOLOGY
-    DESCRIPTION Polo B do construto bipolar (Repertory Grid Theory) - polo negativo/reduzido
+    DESCRIPTION Pole B of the bipolar construct (Repertory Grid Theory) - negative/reduced pole
     GUIDELINES
         Create the NEGATIVE/REDUCED pole of a Repertory Grid Theory bipolar construct.
         This pole expresses the absent, reduced, compromised, or opposite form
@@ -462,7 +465,7 @@ END FIELD
 FIELD theoretical_significance TYPE SCALE
     SCOPE ONTOLOGY
     FORMAT [0..5]
-    DESCRIPTION Significância teórica do conceito (0=baixa, 5=alta)
+    DESCRIPTION Theoretical significance of the concept (0=low, 5=high)
     GUIDELINES
         Rate the theoretical significance of the concept on a 0-5 scale.
         Base the rating on frequency, source diversity, and centrality in causal chains.

@@ -7,18 +7,13 @@ INCLUDE ONTOLOGY "social_acceptance.syno"
 
 METADATA
     version: 1.0
-    author: Bibliometric Research Team
+    author: OTIC-DGT7 Research Team
     created: 2024-12-15
-    modified: 2025-12-30
+    modified: 2026-04-02
     dataset: Social acceptance of energy transition technologies
 END METADATA
 
 DESCRIPTION
-Análise bibliométrica sistemática de fatores de aceitação social de tecnologias
-de transição energética, utilizando teoria fundamentada (Grounded Theory),
-teoria modal de Dooyeweerd e framework tridimensional de Wüstenhagen. O corpus analisa relações causais entre fatores sociais, econômicos, políticos,
-técnicos e éticos que influenciam a aceitação comunitária, de mercado e
-sociopolítica de tecnologias como energia eólica offshore, solar fotovoltaica,
-captura e armazenamento de carbono (CCS), hidrogênio, e dessalinização renovável.
+Análise bibliométrica sistemática de fatores de aceitação social de tecnologias de transição energética, utilizando teoria fundamentada (Grounded Theory), teoria modal de Dooyeweerd e framework tridimensional de Wüstenhagen. O corpus analisa relações causais entre fatores sociais, econômicos, políticos, técnicos e éticos que influenciam a aceitação comunitária, de mercado e sociopolítica de tecnologias como energia eólica offshore, solar fotovoltaica, captura e armazenamento de carbono (CCS), hidrogênio, e dessalinização renovável.
 END DESCRIPTION
 END PROJECT

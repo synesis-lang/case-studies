@@ -3119,7 +3119,7 @@ ONTOLOGY Sustainability
 END ONTOLOGY
 
 ONTOLOGY Recognition_Justice
-    topic: Justice & Ethics
+    topic: Justice_and_Ethics
     aspect: 14
     dimension: 3
     confidence: LOW
@@ -6134,7 +6134,7 @@ ONTOLOGY Land_Use_Management
 END ONTOLOGY
 
 ONTOLOGY Place
-    topic: Spatial Context
+    topic: Spatial_Context
     aspect: 2
     dimension: 1
     confidence: LOW
@@ -7574,7 +7574,7 @@ ONTOLOGY National_Context
 END ONTOLOGY
 
 ONTOLOGY Energy_Security
-    topic: Energy Security
+    topic: Energy_Security
     aspect: 14
     dimension: 3
     confidence: MEDIUM
@@ -7814,7 +7814,7 @@ ONTOLOGY Offshore_Wind_Deployment
 END ONTOLOGY
 
 ONTOLOGY Diversification
-    topic: Energy Systems
+    topic: Energy_Systems
     aspect: 8
     dimension: 3
     confidence: LOW
@@ -10109,7 +10109,7 @@ ONTOLOGY Grid
 END ONTOLOGY
 
 ONTOLOGY Fossil_Fuel
-    topic: Energy Systems
+    topic: Energy_Systems
     aspect: 4
     dimension: 3
     confidence: LOW
@@ -11444,7 +11444,7 @@ ONTOLOGY Research_Gap
 END ONTOLOGY
 
 ONTOLOGY Time
-    topic: Temporal Dynamics
+    topic: Temporal_Dynamics
     aspect: 3
     dimension: 1
     confidence: LOW
@@ -16694,7 +16694,7 @@ ONTOLOGY Food_Production
 END ONTOLOGY
 
 ONTOLOGY Gas_Generation
-    topic: Energy Systems
+    topic: Energy_Systems
     aspect: 4
     dimension: 4
     confidence: LOW
@@ -19604,7 +19604,7 @@ ONTOLOGY Democratic_Governance
 END ONTOLOGY
 
 ONTOLOGY Fossil_Fuel_Dependency
-    topic: Energy Systems
+    topic: Energy_Systems
     aspect: 4
     dimension: 3
     confidence: LOW
@@ -19709,7 +19709,7 @@ ONTOLOGY System_Obduracy
 END ONTOLOGY
 
 ONTOLOGY Offshore_Natural_Gas
-    topic: Energy Resources
+    topic: Energy_Resources
     aspect: 4
     dimension: 2
     confidence: LOW
