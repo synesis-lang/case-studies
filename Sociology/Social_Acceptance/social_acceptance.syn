@@ -25,6 +25,7 @@ ITEM @ashworth2019
     chain: Risk_Perception -> CONSTRAINS -> CCS_Support
 END ITEM
 
+
 ITEM @ashworth2019
     text: The results found that for Australians who believed in human-induced climate change they were likely to be unsupportive of CCS. This opposition appears to be linked to no tolerance for extending fossil fuels as in our factor analysis CCS was aligned to fossil fuels in Australia.
 
@@ -46,6 +47,25 @@ SOURCE @alrashoud2019
     epistemic_model: Diffusion of Innovations Theory
     method: Cross-sectional web-based survey (n=1498)
 END SOURCE
+
+
+ITEM @ashworth2019
+  text: "A ausência de regras claras vinha travando o avanço dos projetos, criando insegurança jurídica e afastando potenciais investidores."
+  note: Regulatory vacuum generates legal uncertainty that directly repels capital; absence of framework operates as a primary barrier through an uncertainty-aversion mechanism among investors.
+  chain: Uncertainty -> CONSTRAINS -> Investment -> CONSTRAINS -> Offshore_Wind_Deployment
+END ITEM
+
+ITEM @ashworth2019
+  text: "Com a estruturação de um modelo de outorga, planejamento espacial e governança, o governo sinaliza um ambiente mais previsível e convidativo, essencial para um setor que demanda capital intensivo e prazos longos de desenvolvimento."
+  note: *complex* Three-factor convergence (concession model, spatial planning, governance) jointly enables investment attraction; predictability functions as the mediating outcome linking regulatory design to capital mobilization.
+  chain: Regulatory_Framework -> ENABLES -> Investment -> ENABLES -> Offshore_Wind_Deployment
+END ITEM
+
+ITEM @ashworth2019
+  text: "As diretrizes do CNPE eram o elo que faltava para transformar a teoria em prática; a aprovação da Lei nº 15.097/25 havia estabelecido um marco legal para a eólica offshore, mas sem as diretrizes, os projetos permaneciam travados."
+  note: Reveals a two-stage enabling pathway: legal framework is necessary but insufficient; operational policy guidelines constitute the critical second condition for translating legislation into deployment.
+  chain: Policy -> ENABLES -> Regulatory_Framework -> ENABLES -> Offshore_Wind_Deployment
+END ITEM
 
 ITEM @alrashoud2019
     text: Results revealed a good cognition level in relation to solar energy, where the majority (64-83%) of respondents are aware of the benefits. An overwhelming proportion of the respondents (97%) associate RSPSs with a significantly positive image, with no significant variation in the acceptance or rejection rates among the five areas covered by the survey (p = 0.1).

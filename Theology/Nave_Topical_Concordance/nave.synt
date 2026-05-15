@@ -51,7 +51,7 @@ END FIELD
 # ============================================
 
 ONTOLOGY FIELDS
-    OPTIONAL note
+    OPTIONAL description
 END ONTOLOGY FIELDS
 
 FIELD description TYPE TEXT

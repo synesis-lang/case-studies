@@ -1,0 +1,63 @@
+# $phase: critique
+# $model: deepseek-v4-flash:cloud
+# $timestamp: 2026-04-27T13:11:54Z
+# $threshold: 0.2
+# $metrics.items_total: 4
+# $metrics.items_flagged: 0
+# $metrics.suspicion_rate: 0.000
+# $metrics.suspicion_rate.formula: items_flagged / items_total
+# $metrics.suspicion_rate.description: proporcao de ITEMs com score >= threshold; < 0.30 indica anotacoes de boa qualidade
+
+SOURCE @ahmadi2021
+    description: Evaluates social equity impacts of interconnected energy-water transition scenarios in Iran's southern coast using distributive justice indicators.
+    epistemic_model: Social equity theory, distributive justice, energy-water nexus planning
+    method: Quantitative scenario evaluation using proxy indicators (subsidies, taxation, job creation, emissions, environmental concerns)
+END SOURCE
+
+ITEM @ahmadi2021
+    text: This study aims to assess the impacts of these transition plans on social equity in a case study of the southern coast of Iran, where the community faces severe water scarcity and there is ready access to seawater for desalination.
+
+    note: Water scarcity creates necessary condition for desalination adoption, enabling transition pathway evaluation
+
+    chain: Water_Scarcity -> ENABLES -> Desalination
+END ITEM
+
+ITEM @ahmadi2021
+    text: The main contribution of this research is to consider social equity as a key factor in the nexus evaluation of energy-water transition plans.
+
+    note: Positions equity as essential evaluation criterion, constraining acceptable transition configurations
+
+    chain: Equity -> CONSTRAINS -> Transition_Planning
+END ITEM
+
+ITEM @ahmadi2021
+    text: In order to achieve more realistic and sustainable water-energy supply planning, the study focuses on a quantitative distributive justice evaluation of the proposed scenarios, with consideration of related social equity theories and Iran's particularities, using the following proxy indicators: subsidies, taxation, job creation, NOx emissions, as well as environmental concerns.
+
+    note: *complex* Five-indicator convergence (subsidies, taxation, employment, emissions, environment) operationalizes justice evaluation across economic, social, environmental domains
+
+    chain: Subsidy -> INFLUENCES -> Justice
+
+    note: Taxation mechanism redistributes transition costs, directly affecting justice outcomes
+
+    chain: Taxation -> INFLUENCES -> Justice
+
+    note: Employment generation distributes economic benefits, shaping justice perceptions
+
+    chain: Employment -> INFLUENCES -> Justice
+
+    note: Emissions distribution creates environmental burden disparities affecting justice outcomes
+
+    chain: Emission -> INFLUENCES -> Justice
+
+    note: Environmental impacts create burden distribution affecting justice evaluation
+
+    chain: Environment -> INFLUENCES -> Justice
+END ITEM
+
+ITEM @ahmadi2021
+    text: In the proposed scenarios with decentralized desalination, shifting a portion of job creation and subsidies for desalination and their renewable energy supply from urban areas and reallocating them to rural areas led to a balance in the distribution of benefits and burdens between rural and urban households, while addressing the issue of excluding rural households from the benefits and opportunities provided by renewable-powered desalination projects.
+
+    note: Reveals spatial redistribution mechanism: decentralization enables geographic reallocation of benefits, which enables equity balance
+
+    chain: Decentralization -> ENABLES -> Benefit_Distribution -> ENABLES -> Equity
+END ITEM

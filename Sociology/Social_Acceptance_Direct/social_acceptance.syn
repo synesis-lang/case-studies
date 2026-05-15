@@ -1,0 +1,121 @@
+SOURCE @addassi1998
+  description: Policy development for in-situ burning as an oil spill response method in California's marine environment, addressing multi-agency coordination, stakeholder consensus, and public perception challenges.
+  epistemic_model: Policy Studies
+  method: Working group formation, consensus approach to policy development
+END SOURCE
+
+ITEM @addassi1998
+  text: The use of burning as an available oil spill response method can play an important role in reducing the possible widespread impact of oil spills to marine resources
+  note: Explicit mechanism: In-situ burning reduces environmental damage through direct response capability that limits spill spread to sensitive marine resources.
+  chain: In-situ_Burning -> Impact_Reduction
+END ITEM
+
+ITEM @addassi1998
+  text: The use of this technology, however, often requires the approval of many different oversight agencies
+  note: *borderline* Direction only: The excerpt supports Regulatory_Approval as prerequisite for Technology_Use.
+  chain: Regulatory_Approval -> Technology_Use
+END ITEM
+
+SOURCE @agaton2020
+  description: Analyzes the economic, environmental, and social impacts of adopting electric vehicles for public transportation in the Philippines, examining obstacles and benefits of the transition from conventional to electric transport systems.
+  epistemic_model: Implicit: Sustainability Assessment (triple-bottom-line framework)
+  method: case study
+END SOURCE
+
+ITEM @agaton2020
+  text: the adoption of electric vehicles faces several obstacles ranging from financing issues, government policies, and public acceptance
+  note: *complex* Three-factor convergence (Financing, Policy, Public_Acceptance) indicates adoption requires integrated multi-domain intervention. Direction only: Financing constraints limit adoption.
+  chain: Financing -> EV_Adoption
+END ITEM
+
+ITEM @agaton2020
+  text: the adoption of electric vehicles faces several obstacles ranging from financing issues, government policies, and public acceptance
+  note: Direction only: Inadequate government policies limit adoption.
+  chain: Policy -> EV_Adoption
+END ITEM
+
+ITEM @agaton2020
+  text: the adoption of electric vehicles faces several obstacles ranging from financing issues, government policies, and public acceptance
+  note: Direction only: Low public acceptance limits adoption.
+  chain: Public_Acceptance -> EV_Adoption
+END ITEM
+
+ITEM @agaton2020
+  text: significant decrease in air pollution, reduction of greenhouse gas emissions and encourage lowering the reliance on imported fossil fuels by shifting the public transport from conventional to electric transport system
+  note: Direction only: Shifting to electric transport reduces air pollution.
+  chain: EV_Adoption -> Air_Pollution
+END ITEM
+
+ITEM @agaton2020
+  text: significant decrease in air pollution, reduction of greenhouse gas emissions and encourage lowering the reliance on imported fossil fuels by shifting the public transport from conventional to electric transport system
+  note: Direction only: Shifting to electric transport reduces greenhouse gas emissions.
+  chain: EV_Adoption -> GHG_Emissions
+END ITEM
+
+ITEM @agaton2020
+  text: significant decrease in air pollution, reduction of greenhouse gas emissions and encourage lowering the reliance on imported fossil fuels by shifting the public transport from conventional to electric transport system
+  note: Direction only: Shifting to electric transport reduces reliance on imported fossil fuels.
+  chain: EV_Adoption -> Fossil_Fuel_Dependence
+END ITEM
+
+ITEM @agaton2020
+  text: To make electric vehicle more environment-friendly, the government must accelerate the energy transition by increasing the electricity share from renewable sources
+  note: Prerequisite mechanism: Renewable energy share in electricity mix determines environmental performance of electric vehicles.
+  chain: Renewable_Energy -> Environmental_Performance
+END ITEM
+
+SOURCE @abdin2024
+  description: Examines hydrogen co-firing with natural gas as a transition technology, evaluating technical benefits, challenges, economic implications, societal acceptance, and policy considerations for sustainable energy systems.
+  
+  epistemic_model: Implicit: Innovation Studies, Energy Systems Analysis
+  
+  method: Literature review, case study analysis
+END SOURCE
+
+ITEM @abdin2024
+  text: economic implications and societal acceptance, which are crucial for the adoption of hydrogen technologies
+  
+  note: Explicit prerequisite: Economic implications identified as necessary condition for technology adoption. (Parallel factor: Societal_Acceptance also crucial.)
+  
+  chain: Economic_Implications -> Adoption
+END ITEM
+
+ITEM @abdin2024
+  text: economic implications and societal acceptance, which are crucial for the adoption of hydrogen technologies
+  
+  note: Explicit prerequisite: Societal acceptance identified as necessary condition for technology adoption. (Parallel factor: Economic_Implications also crucial.)
+  
+  chain: Societal_Acceptance -> Adoption
+END ITEM
+
+ITEM @abdin2024
+  text: comprehensive strategy that synergizes technological progress, economic viability, regulatory support, and public engagement to promote a resilient and sustainable energy future
+  
+  note: *complex* Four-factor convergence (technological progress, economic viability, regulatory support, public engagement) indicates sustainable energy future requires integrated multi-domain strategy.
+  
+  chain: Technological_Progress -> Sustainable_Energy_Future
+END ITEM
+
+ITEM @abdin2024
+  text: comprehensive strategy that synergizes technological progress, economic viability, regulatory support, and public engagement to promote a resilient and sustainable energy future
+  
+  note: Explicit enabler: Economic viability component of comprehensive strategy enabling sustainable energy transition.
+  
+  chain: Economic_Viability -> Sustainable_Energy_Future
+END ITEM
+
+ITEM @abdin2024
+  text: comprehensive strategy that synergizes technological progress, economic viability, regulatory support, and public engagement to promote a resilient and sustainable energy future
+  
+  note: Explicit enabler: Regulatory support component of comprehensive strategy enabling sustainable energy transition.
+  
+  chain: Regulatory_Support -> Sustainable_Energy_Future
+END ITEM
+
+ITEM @abdin2024
+  text: comprehensive strategy that synergizes technological progress, economic viability, regulatory support, and public engagement to promote a resilient and sustainable energy future
+  
+  note: Explicit enabler: Public engagement component of comprehensive strategy enabling sustainable energy transition.
+  
+  chain: Public_Engagement -> Sustainable_Energy_Future
+END ITEM
