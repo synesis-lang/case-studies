@@ -1,0 +1,2051 @@
+{
+  "version": "3.0",
+  "export_metadata": {
+    "timestamp": "2026-06-02T03:04:31.293373+00:00",
+    "compiler_version": "1.1",
+    "export_mode": "universal",
+    "chain_count": 32,
+    "item_count": 16,
+    "source_count": 8,
+    "concept_count": 39
+  },
+  "project": {
+    "name": "causation_coding_oratoria",
+    "template_path": "template.synt",
+    "includes": [
+      {
+        "include_type": "BIBLIOGRAPHY",
+        "path": "references.bib",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\project.synp",
+          "line": 3,
+          "column": 5
+        }
+      },
+      {
+        "include_type": "ANNOTATIONS",
+        "path": "annotations.syn",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\project.synp",
+          "line": 4,
+          "column": 5
+        }
+      },
+      {
+        "include_type": "ONTOLOGY",
+        "path": "ontology.syno",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\project.synp",
+          "line": 5,
+          "column": 5
+        }
+      }
+    ],
+    "metadata": {},
+    "description": null,
+    "location": {
+      "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\project.synp",
+      "line": 1,
+      "column": 1
+    }
+  },
+  "template": {
+    "name": "",
+    "metadata": {},
+    "field_specs": {
+      "perfil": {
+        "name": "perfil",
+        "type": "TEXT",
+        "scope": "SOURCE",
+        "format": null,
+        "description": "Perfil resumido da pessoa participante",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+          "line": 9,
+          "column": 1
+        }
+      },
+      "contexto": {
+        "name": "contexto",
+        "type": "TEXT",
+        "scope": "SOURCE",
+        "format": null,
+        "description": "Contexto da participação em aulas, clubes ou torneios de oratória",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+          "line": 14,
+          "column": 1
+        }
+      },
+      "citação": {
+        "name": "citação",
+        "type": "QUOTATION",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Trecho da resposta que sustenta a atribuição causal",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+          "line": 24,
+          "column": 1
+        }
+      },
+      "resumo": {
+        "name": "resumo",
+        "type": "MEMO",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Memo analítico que explica a atribuição causal identificada",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+          "line": 29,
+          "column": 1
+        }
+      },
+      "chain": {
+        "name": "chain",
+        "type": "CHAIN",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Sequência causal percebida pela pessoa participante",
+        "values": null,
+        "relations": {
+          "CAUSA": "Um fator produz diretamente outro fator",
+          "HABILITA": "Um fator cria condições para que outro fator se desenvolva",
+          "INFLUENCIA": "Um fator modifica ou reforça outro fator",
+          "RESTRINGE": "Um fator limita ou dificulta outro fator"
+        },
+        "arity": ">= 2",
+        "guidelines": null,
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+          "line": 34,
+          "column": 1
+        }
+      },
+      "categoria_resultado": {
+        "name": "categoria_resultado",
+        "type": "ENUMERATED",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Categoria analítica do resultado principal da cadeia",
+        "values": [
+          {
+            "index": -1,
+            "label": "preparação_profissional",
+            "description": "Habilidades úteis para estudo, trabalho e carreira",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 50,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "habilidades_apresentação",
+            "description": "Comunicação oral, argumentação e apresentação",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 51,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "habilidades_liderança",
+            "description": "Coordenação, negociação e condução de grupos",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 52,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "confiança",
+            "description": "Confiança, compostura e superação de inibições",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 53,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "ganhos_competição",
+            "description": "Vitórias, reconhecimento e memórias de competição",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 54,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "pertencimento_social",
+            "description": "Amizades, aceitação e relações interpessoais",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 55,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "efeitos_pessoais",
+            "description": "Autoestima, disciplina e ética de trabalho",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 56,
+              "column": 9
+            }
+          }
+        ],
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+          "line": 46,
+          "column": 1
+        }
+      },
+      "descrição": {
+        "name": "descrição",
+        "type": "TEXT",
+        "scope": "ONTOLOGY",
+        "format": null,
+        "description": "Definição do fator no contexto do estudo",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+          "line": 65,
+          "column": 1
+        }
+      },
+      "papel": {
+        "name": "papel",
+        "type": "ENUMERATED",
+        "scope": "ONTOLOGY",
+        "format": null,
+        "description": "Papel predominante do fator nas cadeias causais",
+        "values": [
+          {
+            "index": -1,
+            "label": "antecedente",
+            "description": "Condição ou experiência inicial",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 74,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "mediador",
+            "description": "Processo intermediário que transmite ou transforma efeitos",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 75,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "resultado",
+            "description": "Efeito percebido pela pessoa participante",
+            "location": {
+              "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+              "line": 76,
+              "column": 9
+            }
+          }
+        ],
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+          "line": 70,
+          "column": 1
+        }
+      },
+      "grupo": {
+        "name": "grupo",
+        "type": "TOPIC",
+        "scope": "ONTOLOGY",
+        "format": null,
+        "description": "Agrupamento temático aberto para análise agregada",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+          "line": 80,
+          "column": 1
+        }
+      }
+    },
+    "required_fields": {
+      "SOURCE": [
+        "perfil"
+      ],
+      "ITEM": [
+        "citação",
+        "categoria_resultado"
+      ],
+      "ONTOLOGY": [
+        "descrição",
+        "papel"
+      ]
+    },
+    "optional_fields": {
+      "SOURCE": [
+        "contexto"
+      ],
+      "ITEM": [],
+      "ONTOLOGY": [
+        "grupo"
+      ]
+    },
+    "forbidden_fields": {
+      "SOURCE": [],
+      "ITEM": [],
+      "ONTOLOGY": []
+    },
+    "bundled_fields": {
+      "SOURCE": [],
+      "ITEM": [
+        [
+          "resumo",
+          "chain"
+        ]
+      ],
+      "ONTOLOGY": []
+    },
+    "location": {
+      "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\template.synt",
+      "line": 1,
+      "column": 1
+    }
+  },
+  "bibliography": {
+    "saldana2013": {
+      "note": "Referência metodológica para Causation Coding",
+      "year": "2013",
+      "edition": "2",
+      "publisher": "SAGE",
+      "title": "The Coding Manual for Qualitative Researchers",
+      "author": "Saldaña, Johnny",
+      "ENTRYTYPE": "book",
+      "ID": "saldana2013"
+    },
+    "participante01": {
+      "note": "Dado fictício para replicação didática",
+      "year": "2026",
+      "title": "Resposta fictícia ao questionário sobre formação em oratória",
+      "author": "{Participante 01}",
+      "ENTRYTYPE": "misc",
+      "ID": "participante01",
+      "perfil": "Profissional de comunicação, participante de aulas de oratória no ensino médio.",
+      "contexto": "Relata timidez inicial e efeitos posteriores na formação profissional."
+    },
+    "participante02": {
+      "note": "Dado fictício para replicação didática",
+      "year": "2026",
+      "title": "Resposta fictícia ao questionário sobre formação em oratória",
+      "author": "{Participante 02}",
+      "ENTRYTYPE": "misc",
+      "ID": "participante02",
+      "perfil": "Gestora comercial, participante de clube e torneios de oratória.",
+      "contexto": "Destaca competição, amizades e reconhecimento entre colegas."
+    },
+    "participante03": {
+      "note": "Dado fictício para replicação didática",
+      "year": "2026",
+      "title": "Resposta fictícia ao questionário sobre formação em oratória",
+      "author": "{Participante 03}",
+      "ENTRYTYPE": "misc",
+      "ID": "participante03",
+      "perfil": "Professor universitário, participante de aulas regulares de oratória.",
+      "contexto": "Relaciona treinamento escolar, confiança e preparação acadêmica."
+    },
+    "participante04": {
+      "note": "Dado fictício para replicação didática",
+      "year": "2026",
+      "title": "Resposta fictícia ao questionário sobre formação em oratória",
+      "author": "{Participante 04}",
+      "ENTRYTYPE": "misc",
+      "ID": "participante04",
+      "perfil": "Advogada, participante de oratória e teatro escolar.",
+      "contexto": "Destaca observação de docentes e capacidade de apresentar argumentos."
+    },
+    "participante05": {
+      "note": "Dado fictício para replicação didática",
+      "year": "2026",
+      "title": "Resposta fictícia ao questionário sobre formação em oratória",
+      "author": "{Participante 05}",
+      "ENTRYTYPE": "misc",
+      "ID": "participante05",
+      "perfil": "Analista de projetos, participante de torneios de oratória.",
+      "contexto": "Relaciona ensaios frequentes com concentração e disciplina profissional."
+    },
+    "participante06": {
+      "note": "Dado fictício para replicação didática",
+      "year": "2026",
+      "title": "Resposta fictícia ao questionário sobre formação em oratória",
+      "author": "{Participante 06}",
+      "ENTRYTYPE": "misc",
+      "ID": "participante06",
+      "perfil": "Empreendedora, participante de clube de oratória.",
+      "contexto": "Destaca feedback, pertencimento e desenvolvimento da autoestima."
+    },
+    "participante07": {
+      "note": "Dado fictício para replicação didática",
+      "year": "2026",
+      "title": "Resposta fictícia ao questionário sobre formação em oratória",
+      "author": "{Participante 07}",
+      "ENTRYTYPE": "misc",
+      "ID": "participante07",
+      "perfil": "Coordenador de equipe, participante de aulas e debates escolares.",
+      "contexto": "Relaciona comunicação oral com negociação e liderança."
+    },
+    "participante08": {
+      "note": "Dado fictício para replicação didática",
+      "year": "2026",
+      "title": "Resposta fictícia ao questionário sobre formação em oratória",
+      "author": "{Participante 08}",
+      "ENTRYTYPE": "misc",
+      "ID": "participante08",
+      "perfil": "Designer, participante de competições de oratória.",
+      "contexto": "Destaca memórias afetivas, vitórias e confiança para falar em público."
+    }
+  },
+  "indices": {
+    "hierarchy": {},
+    "triples": [
+      {
+        "from": "Timidez",
+        "relation": "CAUSA",
+        "to": "Medo_De_Falar",
+        "source_item": "participante01_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 46,
+          "column": 5
+        }
+      },
+      {
+        "from": "Medo_De_Falar",
+        "relation": "RESTRINGE",
+        "to": "Fala_Em_Publico",
+        "source_item": "participante01_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 46,
+          "column": 5
+        }
+      },
+      {
+        "from": "Treinamento_Oratoria",
+        "relation": "HABILITA",
+        "to": "Pensamento_Rapido",
+        "source_item": "participante01_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 53,
+          "column": 5
+        }
+      },
+      {
+        "from": "Pensamento_Rapido",
+        "relation": "HABILITA",
+        "to": "Habilidades_Entrevista",
+        "source_item": "participante01_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 53,
+          "column": 5
+        }
+      },
+      {
+        "from": "Torneios_Oratoria",
+        "relation": "HABILITA",
+        "to": "Aceitacao_Pelos_Pares",
+        "source_item": "participante02_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 60,
+          "column": 5
+        }
+      },
+      {
+        "from": "Aceitacao_Pelos_Pares",
+        "relation": "HABILITA",
+        "to": "Amizades",
+        "source_item": "participante02_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 60,
+          "column": 5
+        }
+      },
+      {
+        "from": "Vitorias",
+        "relation": "INFLUENCIA",
+        "to": "Popularidade",
+        "source_item": "participante02_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 67,
+          "column": 5
+        }
+      },
+      {
+        "from": "Popularidade",
+        "relation": "INFLUENCIA",
+        "to": "Confianca",
+        "source_item": "participante02_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 67,
+          "column": 5
+        }
+      },
+      {
+        "from": "Pratica_Repetida",
+        "relation": "HABILITA",
+        "to": "Confianca",
+        "source_item": "participante03_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 74,
+          "column": 5
+        }
+      },
+      {
+        "from": "Confianca",
+        "relation": "HABILITA",
+        "to": "Preparacao_Academica",
+        "source_item": "participante03_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 74,
+          "column": 5
+        }
+      },
+      {
+        "from": "Estruturacao_Da_Fala",
+        "relation": "HABILITA",
+        "to": "Clareza_De_Expressao",
+        "source_item": "participante03_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 81,
+          "column": 5
+        }
+      },
+      {
+        "from": "Clareza_De_Expressao",
+        "relation": "HABILITA",
+        "to": "Habilidades_Profissionais",
+        "source_item": "participante03_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 81,
+          "column": 5
+        }
+      },
+      {
+        "from": "Modelagem_Docente",
+        "relation": "HABILITA",
+        "to": "Argumentacao",
+        "source_item": "participante04_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 88,
+          "column": 5
+        }
+      },
+      {
+        "from": "Argumentacao",
+        "relation": "HABILITA",
+        "to": "Habilidades_Apresentacao",
+        "source_item": "participante04_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 88,
+          "column": 5
+        }
+      },
+      {
+        "from": "Experiencias_De_Apresentacao",
+        "relation": "HABILITA",
+        "to": "Compostura",
+        "source_item": "participante04_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 95,
+          "column": 5
+        }
+      },
+      {
+        "from": "Compostura",
+        "relation": "HABILITA",
+        "to": "Resposta_A_Imprevistos",
+        "source_item": "participante04_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 95,
+          "column": 5
+        }
+      },
+      {
+        "from": "Carga_De_Ensaios",
+        "relation": "HABILITA",
+        "to": "Concentracao",
+        "source_item": "participante05_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 102,
+          "column": 5
+        }
+      },
+      {
+        "from": "Concentracao",
+        "relation": "HABILITA",
+        "to": "Etica_De_Trabalho",
+        "source_item": "participante05_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 102,
+          "column": 5
+        }
+      },
+      {
+        "from": "Competicoes",
+        "relation": "HABILITA",
+        "to": "Multitarefa",
+        "source_item": "participante05_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 109,
+          "column": 5
+        }
+      },
+      {
+        "from": "Multitarefa",
+        "relation": "HABILITA",
+        "to": "Habilidades_Profissionais",
+        "source_item": "participante05_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 109,
+          "column": 5
+        }
+      },
+      {
+        "from": "Feedback_Positivo",
+        "relation": "HABILITA",
+        "to": "Confianca",
+        "source_item": "participante06_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 116,
+          "column": 5
+        }
+      },
+      {
+        "from": "Confianca",
+        "relation": "HABILITA",
+        "to": "Autoestima",
+        "source_item": "participante06_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 116,
+          "column": 5
+        }
+      },
+      {
+        "from": "Participacao_Em_Grupo",
+        "relation": "HABILITA",
+        "to": "Pertencimento",
+        "source_item": "participante06_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 123,
+          "column": 5
+        }
+      },
+      {
+        "from": "Pertencimento",
+        "relation": "HABILITA",
+        "to": "Relacionamentos_Interpessoais",
+        "source_item": "participante06_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 123,
+          "column": 5
+        }
+      },
+      {
+        "from": "Debates_Escolares",
+        "relation": "HABILITA",
+        "to": "Negociacao",
+        "source_item": "participante07_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 130,
+          "column": 5
+        }
+      },
+      {
+        "from": "Negociacao",
+        "relation": "HABILITA",
+        "to": "Habilidades_Lideranca",
+        "source_item": "participante07_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 130,
+          "column": 5
+        }
+      },
+      {
+        "from": "Habilidades_Apresentacao",
+        "relation": "HABILITA",
+        "to": "Conducao_De_Reunioes",
+        "source_item": "participante07_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 137,
+          "column": 5
+        }
+      },
+      {
+        "from": "Conducao_De_Reunioes",
+        "relation": "HABILITA",
+        "to": "Habilidades_Lideranca",
+        "source_item": "participante07_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 137,
+          "column": 5
+        }
+      },
+      {
+        "from": "Competicoes",
+        "relation": "HABILITA",
+        "to": "Vitorias",
+        "source_item": "participante08_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 144,
+          "column": 5
+        }
+      },
+      {
+        "from": "Vitorias",
+        "relation": "HABILITA",
+        "to": "Memorias_Afetivas",
+        "source_item": "participante08_item0001",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 144,
+          "column": 5
+        }
+      },
+      {
+        "from": "Exposicao_Repetida",
+        "relation": "RESTRINGE",
+        "to": "Medo_De_Falar",
+        "source_item": "participante08_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 151,
+          "column": 5
+        }
+      },
+      {
+        "from": "Medo_De_Falar",
+        "relation": "RESTRINGE",
+        "to": "Fala_Em_Publico",
+        "source_item": "participante08_item0002",
+        "location": {
+          "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+          "line": 151,
+          "column": 5
+        }
+      }
+    ],
+    "topics": {
+      "Barreiras_Iniciais": [
+        "Timidez",
+        "Medo_De_Falar"
+      ],
+      "Comunicacao": [
+        "Fala_Em_Publico",
+        "Estruturacao_Da_Fala",
+        "Clareza_De_Expressao",
+        "Argumentacao",
+        "Habilidades_Apresentacao",
+        "Resposta_A_Imprevistos"
+      ],
+      "Experiencias_Escolares": [
+        "Treinamento_Oratoria",
+        "Torneios_Oratoria",
+        "Pratica_Repetida",
+        "Modelagem_Docente",
+        "Experiencias_De_Apresentacao",
+        "Carga_De_Ensaios",
+        "Competicoes",
+        "Debates_Escolares",
+        "Exposicao_Repetida"
+      ],
+      "Competencias_Cognitivas": [
+        "Pensamento_Rapido"
+      ],
+      "Preparacao_Profissional": [
+        "Habilidades_Entrevista",
+        "Preparacao_Academica",
+        "Habilidades_Profissionais",
+        "Multitarefa"
+      ],
+      "Pertencimento_Social": [
+        "Aceitacao_Pelos_Pares",
+        "Amizades",
+        "Participacao_Em_Grupo",
+        "Pertencimento",
+        "Relacionamentos_Interpessoais"
+      ],
+      "Ganhos_De_Competicao": [
+        "Vitorias",
+        "Popularidade",
+        "Memorias_Afetivas"
+      ],
+      "Desenvolvimento_Pessoal": [
+        "Confianca",
+        "Compostura",
+        "Concentracao",
+        "Etica_De_Trabalho",
+        "Feedback_Positivo",
+        "Autoestima"
+      ],
+      "Lideranca": [
+        "Negociacao",
+        "Habilidades_Lideranca",
+        "Conducao_De_Reunioes"
+      ]
+    },
+    "code_frequency": {
+      "timidez": 1,
+      "medo_de_falar": 4,
+      "fala_em_publico": 2,
+      "treinamento_oratoria": 1,
+      "pensamento_rapido": 2,
+      "habilidades_entrevista": 1,
+      "torneios_oratoria": 1,
+      "aceitacao_pelos_pares": 2,
+      "amizades": 1,
+      "vitorias": 3,
+      "popularidade": 2,
+      "confianca": 5,
+      "pratica_repetida": 1,
+      "preparacao_academica": 1,
+      "estruturacao_da_fala": 1,
+      "clareza_de_expressao": 2,
+      "habilidades_profissionais": 2,
+      "modelagem_docente": 1,
+      "argumentacao": 2,
+      "habilidades_apresentacao": 2,
+      "experiencias_de_apresentacao": 1,
+      "compostura": 2,
+      "resposta_a_imprevistos": 1,
+      "carga_de_ensaios": 1,
+      "concentracao": 2,
+      "etica_de_trabalho": 1,
+      "competicoes": 2,
+      "multitarefa": 2,
+      "feedback_positivo": 1,
+      "autoestima": 1,
+      "participacao_em_grupo": 1,
+      "pertencimento": 2,
+      "relacionamentos_interpessoais": 1,
+      "debates_escolares": 1,
+      "negociacao": 2,
+      "habilidades_lideranca": 2,
+      "conducao_de_reunioes": 2,
+      "memorias_afetivas": 1,
+      "exposicao_repetida": 1
+    }
+  },
+  "ontology": {
+    "Aceitacao_Pelos_Pares": {
+      "concept": "Aceitacao_Pelos_Pares",
+      "descrição": "Reconhecimento social percebido entre colegas após participação em atividades coletivas.",
+      "papel": "mediador",
+      "grupo": "Pertencimento_Social",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 43,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Amizades": {
+      "concept": "Amizades",
+      "descrição": "Relações sociais duradouras formadas ou fortalecidas pela experiência escolar.",
+      "papel": "resultado",
+      "grupo": "Pertencimento_Social",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 49,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Argumentacao": {
+      "concept": "Argumentacao",
+      "descrição": "Capacidade de sustentar posições e responder a questionamentos.",
+      "papel": "mediador",
+      "grupo": "Comunicacao",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 109,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Autoestima": {
+      "concept": "Autoestima",
+      "descrição": "Avaliação positiva do próprio valor e das próprias capacidades.",
+      "papel": "resultado",
+      "grupo": "Desenvolvimento_Pessoal",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 175,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Carga_De_Ensaios": {
+      "concept": "Carga_De_Ensaios",
+      "descrição": "Volume de prática exigido pela preparação de discursos e competições.",
+      "papel": "antecedente",
+      "grupo": "Experiencias_Escolares",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 139,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Clareza_De_Expressao": {
+      "concept": "Clareza_De_Expressao",
+      "descrição": "Capacidade de apresentar ideias com organização e inteligibilidade.",
+      "papel": "mediador",
+      "grupo": "Comunicacao",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 91,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Competicoes": {
+      "concept": "Competicoes",
+      "descrição": "Participação em atividades competitivas relacionadas à comunicação oral.",
+      "papel": "antecedente",
+      "grupo": "Experiencias_Escolares",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 157,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 2
+    },
+    "Compostura": {
+      "concept": "Compostura",
+      "descrição": "Capacidade de manter calma e controle durante situações de exposição.",
+      "papel": "mediador",
+      "grupo": "Desenvolvimento_Pessoal",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 127,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Concentracao": {
+      "concept": "Concentracao",
+      "descrição": "Capacidade de manter atenção focada durante tarefas exigentes.",
+      "papel": "mediador",
+      "grupo": "Desenvolvimento_Pessoal",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 145,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Conducao_De_Reunioes": {
+      "concept": "Conducao_De_Reunioes",
+      "descrição": "Capacidade de organizar discussões e orientar grupos em encontros de trabalho.",
+      "papel": "mediador",
+      "grupo": "Lideranca",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 217,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Confianca": {
+      "concept": "Confianca",
+      "descrição": "Segurança percebida para agir, falar ou enfrentar situações desafiadoras.",
+      "papel": "mediador",
+      "grupo": "Desenvolvimento_Pessoal",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 67,
+        "column": 1
+      },
+      "frequency": 5,
+      "source_count": 3
+    },
+    "Debates_Escolares": {
+      "concept": "Debates_Escolares",
+      "descrição": "Atividades estruturadas de discussão e defesa oral de posições.",
+      "papel": "antecedente",
+      "grupo": "Experiencias_Escolares",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 199,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Estruturacao_Da_Fala": {
+      "concept": "Estruturacao_Da_Fala",
+      "descrição": "Organização deliberada de uma exposição oral em sequência compreensível.",
+      "papel": "antecedente",
+      "grupo": "Comunicacao",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 85,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Etica_De_Trabalho": {
+      "concept": "Etica_De_Trabalho",
+      "descrição": "Disposição disciplinada para cumprir tarefas e responsabilidades.",
+      "papel": "resultado",
+      "grupo": "Desenvolvimento_Pessoal",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 151,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Experiencias_De_Apresentacao": {
+      "concept": "Experiencias_De_Apresentacao",
+      "descrição": "Vivências escolares de exposição oral em oratória, teatro ou atividades semelhantes.",
+      "papel": "antecedente",
+      "grupo": "Experiencias_Escolares",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 121,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Exposicao_Repetida": {
+      "concept": "Exposicao_Repetida",
+      "descrição": "Experiência acumulada de falar diante de plateias em diferentes ocasiões.",
+      "papel": "antecedente",
+      "grupo": "Experiencias_Escolares",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 229,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Fala_Em_Publico": {
+      "concept": "Fala_Em_Publico",
+      "descrição": "Capacidade de comunicar ideias oralmente diante de grupos ou plateias.",
+      "papel": "resultado",
+      "grupo": "Comunicacao",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 13,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 2
+    },
+    "Feedback_Positivo": {
+      "concept": "Feedback_Positivo",
+      "descrição": "Retorno favorável recebido após apresentações ou atividades coletivas.",
+      "papel": "antecedente",
+      "grupo": "Desenvolvimento_Pessoal",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 169,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Habilidades_Apresentacao": {
+      "concept": "Habilidades_Apresentacao",
+      "descrição": "Competências para planejar e realizar apresentações diante de uma plateia.",
+      "papel": "resultado",
+      "grupo": "Comunicacao",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 115,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 2
+    },
+    "Habilidades_Entrevista": {
+      "concept": "Habilidades_Entrevista",
+      "descrição": "Recursos comunicacionais aplicados a entrevistas acadêmicas ou profissionais.",
+      "papel": "resultado",
+      "grupo": "Preparacao_Profissional",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 31,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Habilidades_Lideranca": {
+      "concept": "Habilidades_Lideranca",
+      "descrição": "Competências para coordenar pessoas, reuniões e responsabilidades coletivas.",
+      "papel": "resultado",
+      "grupo": "Lideranca",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 211,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Habilidades_Profissionais": {
+      "concept": "Habilidades_Profissionais",
+      "descrição": "Competências transferidas para situações de estudo, trabalho e carreira.",
+      "papel": "resultado",
+      "grupo": "Preparacao_Profissional",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 97,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 2
+    },
+    "Medo_De_Falar": {
+      "concept": "Medo_De_Falar",
+      "descrição": "Receio de errar ou ser avaliado negativamente durante situações de fala pública.",
+      "papel": "mediador",
+      "grupo": "Barreiras_Iniciais",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 7,
+        "column": 1
+      },
+      "frequency": 4,
+      "source_count": 2
+    },
+    "Memorias_Afetivas": {
+      "concept": "Memorias_Afetivas",
+      "descrição": "Recordações positivas duradouras associadas às experiências escolares.",
+      "papel": "resultado",
+      "grupo": "Ganhos_De_Competicao",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 223,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Modelagem_Docente": {
+      "concept": "Modelagem_Docente",
+      "descrição": "Aprendizagem por observação da forma como docentes conduzem apresentações.",
+      "papel": "antecedente",
+      "grupo": "Experiencias_Escolares",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 103,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Multitarefa": {
+      "concept": "Multitarefa",
+      "descrição": "Capacidade de administrar simultaneamente diferentes demandas.",
+      "papel": "mediador",
+      "grupo": "Preparacao_Profissional",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 163,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Negociacao": {
+      "concept": "Negociacao",
+      "descrição": "Capacidade de ouvir, argumentar e construir acordos com outras pessoas.",
+      "papel": "mediador",
+      "grupo": "Lideranca",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 205,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Participacao_Em_Grupo": {
+      "concept": "Participacao_Em_Grupo",
+      "descrição": "Envolvimento continuado em coletivos escolares de oratória ou debate.",
+      "papel": "antecedente",
+      "grupo": "Pertencimento_Social",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 181,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Pensamento_Rapido": {
+      "concept": "Pensamento_Rapido",
+      "descrição": "Capacidade de formular respostas e organizar ideias em tempo reduzido.",
+      "papel": "mediador",
+      "grupo": "Competencias_Cognitivas",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 25,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Pertencimento": {
+      "concept": "Pertencimento",
+      "descrição": "Sensação de integração e vínculo com um grupo social.",
+      "papel": "mediador",
+      "grupo": "Pertencimento_Social",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 187,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Popularidade": {
+      "concept": "Popularidade",
+      "descrição": "Aumento de reconhecimento e visibilidade social entre colegas.",
+      "papel": "mediador",
+      "grupo": "Ganhos_De_Competicao",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 61,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "Pratica_Repetida": {
+      "concept": "Pratica_Repetida",
+      "descrição": "Realização recorrente de ensaios, exercícios e apresentações.",
+      "papel": "antecedente",
+      "grupo": "Experiencias_Escolares",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 73,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Preparacao_Academica": {
+      "concept": "Preparacao_Academica",
+      "descrição": "Capacidade de enfrentar tarefas e transições relacionadas ao ensino superior.",
+      "papel": "resultado",
+      "grupo": "Preparacao_Profissional",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 79,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Relacionamentos_Interpessoais": {
+      "concept": "Relacionamentos_Interpessoais",
+      "descrição": "Capacidade de estabelecer e manter relações sociais em diferentes contextos.",
+      "papel": "resultado",
+      "grupo": "Pertencimento_Social",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 193,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Resposta_A_Imprevistos": {
+      "concept": "Resposta_A_Imprevistos",
+      "descrição": "Capacidade de responder adequadamente a perguntas ou acontecimentos inesperados.",
+      "papel": "resultado",
+      "grupo": "Comunicacao",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 133,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Timidez": {
+      "concept": "Timidez",
+      "descrição": "Inibição pessoal que antecede dificuldades para se expor oralmente diante de outras pessoas.",
+      "papel": "antecedente",
+      "grupo": "Barreiras_Iniciais",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 1,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Torneios_Oratoria": {
+      "concept": "Torneios_Oratoria",
+      "descrição": "Competições escolares formais de comunicação oral entre estudantes ou equipes.",
+      "papel": "antecedente",
+      "grupo": "Experiencias_Escolares",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 37,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Treinamento_Oratoria": {
+      "concept": "Treinamento_Oratoria",
+      "descrição": "Exercícios escolares voltados à prática sistemática de comunicação oral.",
+      "papel": "antecedente",
+      "grupo": "Experiencias_Escolares",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 19,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Vitorias": {
+      "concept": "Vitorias",
+      "descrição": "Resultados positivos obtidos em competições escolares de oratória.",
+      "papel": "mediador",
+      "grupo": "Ganhos_De_Competicao",
+      "location": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\ontology.syno",
+        "line": 55,
+        "column": 1
+      },
+      "frequency": 3,
+      "source_count": 2
+    }
+  },
+  "corpus": [
+    {
+      "id": "participante01_item0001",
+      "source_ref": "@participante01",
+      "data": {
+        "citação": "\"Eu era muito tímido e evitava falar diante da turma porque tinha medo de errar na frente dos outros.\"",
+        "resumo": "A timidez alimentava medo de exposição e restringia a fala em público.",
+        "chain": [
+          {
+            "from": "Timidez",
+            "relation": "CAUSA",
+            "to": "Medo_De_Falar"
+          },
+          {
+            "from": "Medo_De_Falar",
+            "relation": "RESTRINGE",
+            "to": "Fala_Em_Publico"
+          }
+        ],
+        "categoria_resultado": "confiança",
+        "descrição": [
+          "Inibição pessoal que antecede dificuldades para se expor oralmente diante de outras pessoas.",
+          "Receio de errar ou ser avaliado negativamente durante situações de fala pública.",
+          "Capacidade de comunicar ideias oralmente diante de grupos ou plateias."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Barreiras_Iniciais",
+          "Barreiras_Iniciais",
+          "Comunicacao"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 43
+      }
+    },
+    {
+      "id": "participante01_item0002",
+      "source_ref": "@participante01",
+      "data": {
+        "citação": "\"Os exercícios de improviso me ensinaram a pensar rápido, e isso depois ajudou muito nas entrevistas de emprego.\"",
+        "resumo": "O treinamento de oratória desenvolveu rapidez de raciocínio com aplicação profissional posterior.",
+        "chain": [
+          {
+            "from": "Treinamento_Oratoria",
+            "relation": "HABILITA",
+            "to": "Pensamento_Rapido"
+          },
+          {
+            "from": "Pensamento_Rapido",
+            "relation": "HABILITA",
+            "to": "Habilidades_Entrevista"
+          }
+        ],
+        "categoria_resultado": "preparação_profissional",
+        "descrição": [
+          "Exercícios escolares voltados à prática sistemática de comunicação oral.",
+          "Capacidade de formular respostas e organizar ideias em tempo reduzido.",
+          "Recursos comunicacionais aplicados a entrevistas acadêmicas ou profissionais."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Competencias_Cognitivas",
+          "Preparacao_Profissional"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 50
+      }
+    },
+    {
+      "id": "participante02_item0001",
+      "source_ref": "@participante02",
+      "data": {
+        "citação": "\"Nos torneios eu conheci pessoas de outras escolas, fui aceito pelo grupo e fiz amizades que duraram muitos anos.\"",
+        "resumo": "A participação em torneios criou oportunidades de integração social e amizades duradouras.",
+        "chain": [
+          {
+            "from": "Torneios_Oratoria",
+            "relation": "HABILITA",
+            "to": "Aceitacao_Pelos_Pares"
+          },
+          {
+            "from": "Aceitacao_Pelos_Pares",
+            "relation": "HABILITA",
+            "to": "Amizades"
+          }
+        ],
+        "categoria_resultado": "pertencimento_social",
+        "descrição": [
+          "Competições escolares formais de comunicação oral entre estudantes ou equipes.",
+          "Reconhecimento social percebido entre colegas após participação em atividades coletivas.",
+          "Relações sociais duradouras formadas ou fortalecidas pela experiência escolar."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Pertencimento_Social",
+          "Pertencimento_Social"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 57
+      }
+    },
+    {
+      "id": "participante02_item0002",
+      "source_ref": "@participante02",
+      "data": {
+        "citação": "\"Quando nossa equipe começou a vencer, passei a ser mais conhecido na escola e isso aumentou minha confiança.\"",
+        "resumo": "As vitórias produziram reconhecimento social e reforçaram a confiança pessoal.",
+        "chain": [
+          {
+            "from": "Vitorias",
+            "relation": "INFLUENCIA",
+            "to": "Popularidade"
+          },
+          {
+            "from": "Popularidade",
+            "relation": "INFLUENCIA",
+            "to": "Confianca"
+          }
+        ],
+        "categoria_resultado": "ganhos_competição",
+        "descrição": [
+          "Resultados positivos obtidos em competições escolares de oratória.",
+          "Aumento de reconhecimento e visibilidade social entre colegas.",
+          "Segurança percebida para agir, falar ou enfrentar situações desafiadoras."
+        ],
+        "papel": [
+          "mediador",
+          "mediador",
+          "mediador"
+        ],
+        "grupo": [
+          "Ganhos_De_Competicao",
+          "Ganhos_De_Competicao",
+          "Desenvolvimento_Pessoal"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 64
+      }
+    },
+    {
+      "id": "participante03_item0001",
+      "source_ref": "@participante03",
+      "data": {
+        "citação": "\"A prática semanal me deu confiança para apresentar trabalhos e me deixou mais preparado para entrar na faculdade.\"",
+        "resumo": "A prática regular fortaleceu a confiança e facilitou a transição para atividades acadêmicas.",
+        "chain": [
+          {
+            "from": "Pratica_Repetida",
+            "relation": "HABILITA",
+            "to": "Confianca"
+          },
+          {
+            "from": "Confianca",
+            "relation": "HABILITA",
+            "to": "Preparacao_Academica"
+          }
+        ],
+        "categoria_resultado": "preparação_profissional",
+        "descrição": [
+          "Realização recorrente de ensaios, exercícios e apresentações.",
+          "Segurança percebida para agir, falar ou enfrentar situações desafiadoras.",
+          "Capacidade de enfrentar tarefas e transições relacionadas ao ensino superior."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Desenvolvimento_Pessoal",
+          "Preparacao_Profissional"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 71
+      }
+    },
+    {
+      "id": "participante03_item0002",
+      "source_ref": "@participante03",
+      "data": {
+        "citação": "\"Aprender a organizar uma fala também melhorou minha capacidade de explicar ideias com clareza no trabalho.\"",
+        "resumo": "A estruturação da fala escolar foi transferida para habilidades de comunicação profissional.",
+        "chain": [
+          {
+            "from": "Estruturacao_Da_Fala",
+            "relation": "HABILITA",
+            "to": "Clareza_De_Expressao"
+          },
+          {
+            "from": "Clareza_De_Expressao",
+            "relation": "HABILITA",
+            "to": "Habilidades_Profissionais"
+          }
+        ],
+        "categoria_resultado": "habilidades_apresentação",
+        "descrição": [
+          "Organização deliberada de uma exposição oral em sequência compreensível.",
+          "Capacidade de apresentar ideias com organização e inteligibilidade.",
+          "Competências transferidas para situações de estudo, trabalho e carreira."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Comunicacao",
+          "Comunicacao",
+          "Preparacao_Profissional"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 78
+      }
+    },
+    {
+      "id": "participante04_item0001",
+      "source_ref": "@participante04",
+      "data": {
+        "citação": "\"Eu observava como a professora conduzia as apresentações e aprendi a sustentar meus argumentos diante de uma plateia.\"",
+        "resumo": "A modelagem docente apoiou o desenvolvimento de argumentação em apresentações públicas.",
+        "chain": [
+          {
+            "from": "Modelagem_Docente",
+            "relation": "HABILITA",
+            "to": "Argumentacao"
+          },
+          {
+            "from": "Argumentacao",
+            "relation": "HABILITA",
+            "to": "Habilidades_Apresentacao"
+          }
+        ],
+        "categoria_resultado": "habilidades_apresentação",
+        "descrição": [
+          "Aprendizagem por observação da forma como docentes conduzem apresentações.",
+          "Capacidade de sustentar posições e responder a questionamentos.",
+          "Competências para planejar e realizar apresentações diante de uma plateia."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Comunicacao",
+          "Comunicacao"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 85
+      }
+    },
+    {
+      "id": "participante04_item0002",
+      "source_ref": "@participante04",
+      "data": {
+        "citação": "\"O teatro e a oratória me ensinaram a manter a calma mesmo quando preciso responder perguntas inesperadas.\"",
+        "resumo": "Experiências de apresentação favoreceram compostura diante de situações imprevistas.",
+        "chain": [
+          {
+            "from": "Experiencias_De_Apresentacao",
+            "relation": "HABILITA",
+            "to": "Compostura"
+          },
+          {
+            "from": "Compostura",
+            "relation": "HABILITA",
+            "to": "Resposta_A_Imprevistos"
+          }
+        ],
+        "categoria_resultado": "confiança",
+        "descrição": [
+          "Vivências escolares de exposição oral em oratória, teatro ou atividades semelhantes.",
+          "Capacidade de manter calma e controle durante situações de exposição.",
+          "Capacidade de responder adequadamente a perguntas ou acontecimentos inesperados."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Desenvolvimento_Pessoal",
+          "Comunicacao"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 92
+      }
+    },
+    {
+      "id": "participante05_item0001",
+      "source_ref": "@participante05",
+      "data": {
+        "citação": "\"Ensaiar repetidamente enquanto cuidava das outras matérias me obrigou a desenvolver concentração e disciplina.\"",
+        "resumo": "A carga de ensaios exigiu concentração e gerou hábitos disciplinados de trabalho.",
+        "chain": [
+          {
+            "from": "Carga_De_Ensaios",
+            "relation": "HABILITA",
+            "to": "Concentracao"
+          },
+          {
+            "from": "Concentracao",
+            "relation": "HABILITA",
+            "to": "Etica_De_Trabalho"
+          }
+        ],
+        "categoria_resultado": "efeitos_pessoais",
+        "descrição": [
+          "Volume de prática exigido pela preparação de discursos e competições.",
+          "Capacidade de manter atenção focada durante tarefas exigentes.",
+          "Disposição disciplinada para cumprir tarefas e responsabilidades."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Desenvolvimento_Pessoal",
+          "Desenvolvimento_Pessoal"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 99
+      }
+    },
+    {
+      "id": "participante05_item0002",
+      "source_ref": "@participante05",
+      "data": {
+        "citação": "\"Preparar discursos, estudar e competir ao mesmo tempo fez com que eu aprendesse a administrar várias tarefas.\"",
+        "resumo": "A combinação de exigências escolares e competitivas desenvolveu capacidade de multitarefa.",
+        "chain": [
+          {
+            "from": "Competicoes",
+            "relation": "HABILITA",
+            "to": "Multitarefa"
+          },
+          {
+            "from": "Multitarefa",
+            "relation": "HABILITA",
+            "to": "Habilidades_Profissionais"
+          }
+        ],
+        "categoria_resultado": "preparação_profissional",
+        "descrição": [
+          "Participação em atividades competitivas relacionadas à comunicação oral.",
+          "Capacidade de administrar simultaneamente diferentes demandas.",
+          "Competências transferidas para situações de estudo, trabalho e carreira."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Preparacao_Profissional",
+          "Preparacao_Profissional"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 106
+      }
+    },
+    {
+      "id": "participante06_item0001",
+      "source_ref": "@participante06",
+      "data": {
+        "citação": "\"Os retornos positivos depois das apresentações fizeram com que eu percebesse meu valor e melhorasse minha autoestima.\"",
+        "resumo": "Feedback positivo reforçou confiança percebida e contribuiu para autoestima.",
+        "chain": [
+          {
+            "from": "Feedback_Positivo",
+            "relation": "HABILITA",
+            "to": "Confianca"
+          },
+          {
+            "from": "Confianca",
+            "relation": "HABILITA",
+            "to": "Autoestima"
+          }
+        ],
+        "categoria_resultado": "efeitos_pessoais",
+        "descrição": [
+          "Retorno favorável recebido após apresentações ou atividades coletivas.",
+          "Segurança percebida para agir, falar ou enfrentar situações desafiadoras.",
+          "Avaliação positiva do próprio valor e das próprias capacidades."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Desenvolvimento_Pessoal",
+          "Desenvolvimento_Pessoal",
+          "Desenvolvimento_Pessoal"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 113
+      }
+    },
+    {
+      "id": "participante06_item0002",
+      "source_ref": "@participante06",
+      "data": {
+        "citação": "\"Fazer parte daquele grupo me deu sensação de pertencimento e facilitou meus relacionamentos depois da escola.\"",
+        "resumo": "A participação em grupo promoveu pertencimento com efeitos posteriores nas relações interpessoais.",
+        "chain": [
+          {
+            "from": "Participacao_Em_Grupo",
+            "relation": "HABILITA",
+            "to": "Pertencimento"
+          },
+          {
+            "from": "Pertencimento",
+            "relation": "HABILITA",
+            "to": "Relacionamentos_Interpessoais"
+          }
+        ],
+        "categoria_resultado": "pertencimento_social",
+        "descrição": [
+          "Envolvimento continuado em coletivos escolares de oratória ou debate.",
+          "Sensação de integração e vínculo com um grupo social.",
+          "Capacidade de estabelecer e manter relações sociais em diferentes contextos."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Pertencimento_Social",
+          "Pertencimento_Social",
+          "Pertencimento_Social"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 120
+      }
+    },
+    {
+      "id": "participante07_item0001",
+      "source_ref": "@participante07",
+      "data": {
+        "citação": "\"Nos debates eu precisava ouvir, responder rápido e negociar posições, habilidades que hoje uso para coordenar minha equipe.\"",
+        "resumo": "Debates escolares desenvolveram negociação e apoiaram práticas adultas de liderança.",
+        "chain": [
+          {
+            "from": "Debates_Escolares",
+            "relation": "HABILITA",
+            "to": "Negociacao"
+          },
+          {
+            "from": "Negociacao",
+            "relation": "HABILITA",
+            "to": "Habilidades_Lideranca"
+          }
+        ],
+        "categoria_resultado": "habilidades_liderança",
+        "descrição": [
+          "Atividades estruturadas de discussão e defesa oral de posições.",
+          "Capacidade de ouvir, argumentar e construir acordos com outras pessoas.",
+          "Competências para coordenar pessoas, reuniões e responsabilidades coletivas."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Lideranca",
+          "Lideranca"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 127
+      }
+    },
+    {
+      "id": "participante07_item0002",
+      "source_ref": "@participante07",
+      "data": {
+        "citação": "\"Conduzir apresentações diante da turma me ajudou a organizar reuniões e assumir responsabilidades no trabalho.\"",
+        "resumo": "A experiência de apresentação foi transferida para condução de reuniões e liderança profissional.",
+        "chain": [
+          {
+            "from": "Habilidades_Apresentacao",
+            "relation": "HABILITA",
+            "to": "Conducao_De_Reunioes"
+          },
+          {
+            "from": "Conducao_De_Reunioes",
+            "relation": "HABILITA",
+            "to": "Habilidades_Lideranca"
+          }
+        ],
+        "categoria_resultado": "habilidades_liderança",
+        "descrição": [
+          "Competências para planejar e realizar apresentações diante de uma plateia.",
+          "Capacidade de organizar discussões e orientar grupos em encontros de trabalho.",
+          "Competências para coordenar pessoas, reuniões e responsabilidades coletivas."
+        ],
+        "papel": [
+          "resultado",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Comunicacao",
+          "Lideranca",
+          "Lideranca"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 134
+      }
+    },
+    {
+      "id": "participante08_item0001",
+      "source_ref": "@participante08",
+      "data": {
+        "citação": "\"As viagens e vitórias nos torneios viraram memórias muito boas e fizeram parte de quem eu me tornei.\"",
+        "resumo": "Competições e vitórias contribuíram para memórias afetivas duradouras.",
+        "chain": [
+          {
+            "from": "Competicoes",
+            "relation": "HABILITA",
+            "to": "Vitorias"
+          },
+          {
+            "from": "Vitorias",
+            "relation": "HABILITA",
+            "to": "Memorias_Afetivas"
+          }
+        ],
+        "categoria_resultado": "ganhos_competição",
+        "descrição": [
+          "Participação em atividades competitivas relacionadas à comunicação oral.",
+          "Resultados positivos obtidos em competições escolares de oratória.",
+          "Recordações positivas duradouras associadas às experiências escolares."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Ganhos_De_Competicao",
+          "Ganhos_De_Competicao"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 141
+      }
+    },
+    {
+      "id": "participante08_item0002",
+      "source_ref": "@participante08",
+      "data": {
+        "citação": "\"Depois de tantas apresentações, perdi o medo e hoje consigo falar com segurança para grupos grandes.\"",
+        "resumo": "A exposição repetida reduziu o medo de falar e favoreceu segurança em apresentações públicas.",
+        "chain": [
+          {
+            "from": "Exposicao_Repetida",
+            "relation": "RESTRINGE",
+            "to": "Medo_De_Falar"
+          },
+          {
+            "from": "Medo_De_Falar",
+            "relation": "RESTRINGE",
+            "to": "Fala_Em_Publico"
+          }
+        ],
+        "categoria_resultado": "confiança",
+        "descrição": [
+          "Experiência acumulada de falar diante de plateias em diferentes ocasiões.",
+          "Receio de errar ou ser avaliado negativamente durante situações de fala pública.",
+          "Capacidade de comunicar ideias oralmente diante de grupos ou plateias."
+        ],
+        "papel": [
+          "antecedente",
+          "mediador",
+          "resultado"
+        ],
+        "grupo": [
+          "Experiencias_Escolares",
+          "Barreiras_Iniciais",
+          "Comunicacao"
+        ]
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Education\\Causation_Coding_Oratoria\\annotations.syn",
+        "line": 148
+      }
+    }
+  ]
+}

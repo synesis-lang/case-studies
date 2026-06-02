@@ -13,6 +13,12 @@ END SOURCE FIELDS
 FIELD reference TYPE TEXT
     SCOPE SOURCE
     DESCRIPTION Translation or edition of the Bible
+    GUIDELINES
+        Identify the translation or edition from which the verses are drawn.
+        Use a short, stable label that names the work (e.g. Thompson Chain Reference Bible).
+        Keep the same spelling across every reference to the same source.
+        Do not include page numbers, volumes, or other location details here.
+    END GUIDELINES
 END FIELD
 
 # ============================================
@@ -28,16 +34,38 @@ END ITEM FIELDS
 FIELD passage TYPE TEXT
     SCOPE ITEM
     DESCRIPTION Biblical reference in USX format (e.g. Pro 12:23)
+    GUIDELINES
+        Record the verse reference in USX format: book abbreviation, chapter, and verse.
+        Use the three-letter USX book code (e.g. Gen, Pro, Mat, Rev).
+        Mark verse ranges with a hyphen (e.g. Gen 1:1-25) and single verses without one.
+        Keep one space between the book code and the chapter number.
+        Do not include the translation name or the verse text in this field.
+    END GUIDELINES
 END FIELD
 
 FIELD text TYPE QUOTATION
     SCOPE ITEM
     DESCRIPTION Verse text from the translation
+    GUIDELINES
+        Quote the verse text literally and completely as it appears in the chosen translation.
+        Preserve the original wording, punctuation, and spelling of the source.
+        Include only the text of the verse named in the passage field, with no added commentary.
+        Keep the quotation consistent with the edition declared in the source reference.
+        Leave the field empty when the corpus indexes references only, without verse text.
+    END GUIDELINES
 END FIELD
 
 FIELD topic TYPE CODE
     SCOPE ITEM
     DESCRIPTION Thompson chain topic(s) associated with the verse
+    GUIDELINES
+        Assign every chain topic that the verse genuinely belongs to.
+        Use uppercase spelling with underscores for spaces (e.g. HEAVENS_THE_NATURAL).
+        List multiple topics on one line, separated by a comma and a space (e.g. CREATOR, EARTH).
+        Prefer topics already present in the ontology and reuse their exact spelling.
+        Create a new topic only when the theme is distinct and has no ontology equivalent.
+        Every topic applied must have a corresponding ONTOLOGY block.
+    END GUIDELINES
 END FIELD
 
 # ============================================
@@ -51,4 +79,11 @@ END ONTOLOGY FIELDS
 FIELD description TYPE TEXT
     SCOPE ONTOLOGY
     DESCRIPTION Entry description when available
+    GUIDELINES
+        Define the topic concisely, identifying the biblical person, place, object, or theme.
+        Lead with the essential category (e.g. son of Amram, the first high priest).
+        Keep the definition independent of any single verse or chain.
+        When homonyms exist, distinguish them to avoid topics with identical descriptions.
+        Leave the field empty only when no reliable definition is available for the topic.
+    END GUIDELINES
 END FIELD

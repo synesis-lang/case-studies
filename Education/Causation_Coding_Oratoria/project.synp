@@ -1,0 +1,6 @@
+PROJECT causation_coding_oratoria
+    TEMPLATE "template.synt"
+    INCLUDE BIBLIOGRAPHY "references.bib"
+    INCLUDE ANNOTATIONS "annotations.syn"
+    INCLUDE ONTOLOGY "ontology.syno"
+END PROJECT

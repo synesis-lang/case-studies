@@ -1,0 +1,76 @@
+# Fontes
+
+SOURCE @oficina_coqueiros2026
+    tipo_ref: pri
+END SOURCE
+
+# Força: atividade econômica e identidade cultural
+
+ITEM @oficina_coqueiros2026
+    citação: "A pesca artesanal aqui sustenta mais da metade das famílias. Meu avô já pescava nesse mesmo canto, meu pai também."
+    resumo: A pesca artesanal é a principal atividade econômica da comunidade, com continuidade intergeracional que reforça tanto a economia local quanto a identidade cultural.
+    fator: Pesca_Artesanal
+    swot: fo
+    importância: 1
+END ITEM
+
+# Fraqueza: descarte inadequado de resíduos
+
+ITEM @oficina_coqueiros2026
+    citação: "O pessoal joga o lixo no manguezal porque não tem coleta. A prefeitura não vem aqui."
+    resumo: Ausência de coleta de resíduos leva ao descarte inadequado no ecossistema de mangue, gerando impacto ambiental direto.
+    fator: Descarte_Residuos
+    swot: fr
+    importância: 0.5
+END ITEM
+
+# Oportunidade: diversificação econômica por política pública
+
+
+SOURCE @jornal_litoral2026
+    tipo_ref: sec
+END SOURCE
+
+ITEM @jornal_litoral2026
+    citação: "Programa federal de turismo de base comunitária selecionou cinco vilas do litoral para receber capacitação e infraestrutura."
+    resumo: Programa governamental pode diversificar a economia local e valorizar ativos culturais da comunidade.
+    fator: Turismo_Comunitario
+    swot: op
+    importância: 1
+END ITEM
+
+# Ameaça: assoreamento da foz do rio
+
+
+SOURCE @relatorio_ambiental2025
+    tipo_ref: ref
+END SOURCE
+
+
+ITEM @relatorio_ambiental2025
+    citação: "O monitoramento identificou taxa de assoreamento acelerado na foz do rio Coqueiros, com redução de 30% na profundidade do canal principal nos últimos cinco anos."
+    resumo: Assoreamento compromete a navegabilidade e os estoques pesqueiros, ameaçando a principal atividade econômica da comunidade.
+    fator: Assoreamento
+    swot: am
+    importância: 1
+END ITEM
+
+# Força: patrimônio cultural
+
+ITEM @oficina_coqueiros2026
+    citação: "As festas de São Pedro e a farinhada são tradição antiga. Todo mundo participa, até quem já saiu da vila volta pra isso."
+    resumo: Festividades tradicionais e práticas coletivas de produção reforçam coesão social e identidade cultural da comunidade.
+    fator: Patrimonio_Cultural
+    swot: fo
+    importância: 0.5
+END ITEM
+
+# Fraqueza: saneamento básico
+
+ITEM @oficina_coqueiros2026
+    citação: "Não tem rede de esgoto. Cada um resolve do seu jeito — fossa, vala, ou vai direto pro rio."
+    resumo: Ausência de esgotamento sanitário gera soluções improvisadas com risco de contaminação hídrica.
+    fator: Saneamento_Basico
+    swot: fr
+    importância: 1
+END ITEM

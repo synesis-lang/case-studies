@@ -1,0 +1,233 @@
+ONTOLOGY Timidez
+    descrição: Inibição pessoal que antecede dificuldades para se expor oralmente diante de outras pessoas.
+    papel: antecedente
+    grupo: Barreiras_Iniciais
+END ONTOLOGY
+
+ONTOLOGY Medo_De_Falar
+    descrição: Receio de errar ou ser avaliado negativamente durante situações de fala pública.
+    papel: mediador
+    grupo: Barreiras_Iniciais
+END ONTOLOGY
+
+ONTOLOGY Fala_Em_Publico
+    descrição: Capacidade de comunicar ideias oralmente diante de grupos ou plateias.
+    papel: resultado
+    grupo: Comunicacao
+END ONTOLOGY
+
+ONTOLOGY Treinamento_Oratoria
+    descrição: Exercícios escolares voltados à prática sistemática de comunicação oral.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY
+
+ONTOLOGY Pensamento_Rapido
+    descrição: Capacidade de formular respostas e organizar ideias em tempo reduzido.
+    papel: mediador
+    grupo: Competencias_Cognitivas
+END ONTOLOGY
+
+ONTOLOGY Habilidades_Entrevista
+    descrição: Recursos comunicacionais aplicados a entrevistas acadêmicas ou profissionais.
+    papel: resultado
+    grupo: Preparacao_Profissional
+END ONTOLOGY
+
+ONTOLOGY Torneios_Oratoria
+    descrição: Competições escolares formais de comunicação oral entre estudantes ou equipes.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY
+
+ONTOLOGY Aceitacao_Pelos_Pares
+    descrição: Reconhecimento social percebido entre colegas após participação em atividades coletivas.
+    papel: mediador
+    grupo: Pertencimento_Social
+END ONTOLOGY
+
+ONTOLOGY Amizades
+    descrição: Relações sociais duradouras formadas ou fortalecidas pela experiência escolar.
+    papel: resultado
+    grupo: Pertencimento_Social
+END ONTOLOGY
+
+ONTOLOGY Vitorias
+    descrição: Resultados positivos obtidos em competições escolares de oratória.
+    papel: antecedente
+    grupo: Ganhos_De_Competicao
+END ONTOLOGY
+
+ONTOLOGY Popularidade
+    descrição: Aumento de reconhecimento e visibilidade social entre colegas.
+    papel: mediador
+    grupo: Ganhos_De_Competicao
+END ONTOLOGY
+
+ONTOLOGY Confianca
+    descrição: Segurança percebida para agir, falar ou enfrentar situações desafiadoras.
+    papel: mediador
+    grupo: Desenvolvimento_Pessoal
+END ONTOLOGY
+
+ONTOLOGY Pratica_Repetida
+    descrição: Realização recorrente de ensaios, exercícios e apresentações.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY
+
+ONTOLOGY Preparacao_Academica
+    descrição: Capacidade de enfrentar tarefas e transições relacionadas ao ensino superior.
+    papel: resultado
+    grupo: Preparacao_Profissional
+END ONTOLOGY
+
+ONTOLOGY Estruturacao_Da_Fala
+    descrição: Organização deliberada de uma exposição oral em sequência compreensível.
+    papel: antecedente
+    grupo: Comunicacao
+END ONTOLOGY
+
+ONTOLOGY Clareza_De_Expressao
+    descrição: Capacidade de apresentar ideias com organização e inteligibilidade.
+    papel: mediador
+    grupo: Comunicacao
+END ONTOLOGY
+
+ONTOLOGY Habilidades_Profissionais
+    descrição: Competências transferidas para situações de estudo, trabalho e carreira.
+    papel: resultado
+    grupo: Preparacao_Profissional
+END ONTOLOGY
+
+ONTOLOGY Modelagem_Docente
+    descrição: Aprendizagem por observação da forma como docentes conduzem apresentações.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY
+
+ONTOLOGY Argumentacao
+    descrição: Capacidade de sustentar posições e responder a questionamentos.
+    papel: mediador
+    grupo: Comunicacao
+END ONTOLOGY
+
+ONTOLOGY Habilidades_Apresentacao
+    descrição: Competências para planejar e realizar apresentações diante de uma plateia.
+    papel: resultado
+    grupo: Comunicacao
+END ONTOLOGY
+
+ONTOLOGY Experiencias_De_Apresentacao
+    descrição: Vivências escolares de exposição oral em oratória, teatro ou atividades semelhantes.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY
+
+ONTOLOGY Compostura
+    descrição: Capacidade de manter calma e controle durante situações de exposição.
+    papel: mediador
+    grupo: Desenvolvimento_Pessoal
+END ONTOLOGY
+
+ONTOLOGY Resposta_A_Imprevistos
+    descrição: Capacidade de responder adequadamente a perguntas ou acontecimentos inesperados.
+    papel: resultado
+    grupo: Comunicacao
+END ONTOLOGY
+
+ONTOLOGY Carga_De_Ensaios
+    descrição: Volume de prática exigido pela preparação de discursos e competições.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY
+
+ONTOLOGY Concentracao
+    descrição: Capacidade de manter atenção focada durante tarefas exigentes.
+    papel: mediador
+    grupo: Desenvolvimento_Pessoal
+END ONTOLOGY
+
+ONTOLOGY Etica_De_Trabalho
+    descrição: Disposição disciplinada para cumprir tarefas e responsabilidades.
+    papel: resultado
+    grupo: Desenvolvimento_Pessoal
+END ONTOLOGY
+
+ONTOLOGY Competicoes
+    descrição: Participação em atividades competitivas relacionadas à comunicação oral.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY
+
+ONTOLOGY Multitarefa
+    descrição: Capacidade de administrar simultaneamente diferentes demandas.
+    papel: mediador
+    grupo: Preparacao_Profissional
+END ONTOLOGY
+
+ONTOLOGY Feedback_Positivo
+    descrição: Retorno favorável recebido após apresentações ou atividades coletivas.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY
+
+ONTOLOGY Autoestima
+    descrição: Avaliação positiva do próprio valor e das próprias capacidades.
+    papel: resultado
+    grupo: Desenvolvimento_Pessoal
+END ONTOLOGY
+
+ONTOLOGY Participacao_Em_Grupo
+    descrição: Envolvimento continuado em coletivos escolares de oratória ou debate.
+    papel: antecedente
+    grupo: Pertencimento_Social
+END ONTOLOGY
+
+ONTOLOGY Pertencimento
+    descrição: Sensação de integração e vínculo com um grupo social.
+    papel: mediador
+    grupo: Pertencimento_Social
+END ONTOLOGY
+
+ONTOLOGY Relacionamentos_Interpessoais
+    descrição: Capacidade de estabelecer e manter relações sociais em diferentes contextos.
+    papel: resultado
+    grupo: Pertencimento_Social
+END ONTOLOGY
+
+ONTOLOGY Debates_Escolares
+    descrição: Atividades estruturadas de discussão e defesa oral de posições.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY
+
+ONTOLOGY Negociacao
+    descrição: Capacidade de ouvir, argumentar e construir acordos com outras pessoas.
+    papel: mediador
+    grupo: Lideranca
+END ONTOLOGY
+
+ONTOLOGY Habilidades_Lideranca
+    descrição: Competências para coordenar pessoas, reuniões e responsabilidades coletivas.
+    papel: resultado
+    grupo: Lideranca
+END ONTOLOGY
+
+ONTOLOGY Conducao_De_Reunioes
+    descrição: Capacidade de organizar discussões e orientar grupos em encontros de trabalho.
+    papel: mediador
+    grupo: Lideranca
+END ONTOLOGY
+
+ONTOLOGY Memorias_Afetivas
+    descrição: Recordações positivas duradouras associadas às experiências escolares.
+    papel: resultado
+    grupo: Ganhos_De_Competicao
+END ONTOLOGY
+
+ONTOLOGY Exposicao_Repetida
+    descrição: Experiência acumulada de falar diante de plateias em diferentes ocasiões.
+    papel: antecedente
+    grupo: Experiencias_Escolares
+END ONTOLOGY

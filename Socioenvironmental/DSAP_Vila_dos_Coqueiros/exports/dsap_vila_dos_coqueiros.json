@@ -1,0 +1,569 @@
+{
+  "version": "3.0",
+  "export_metadata": {
+    "timestamp": "2026-06-02T03:13:13.572269+00:00",
+    "compiler_version": "1.1",
+    "export_mode": "universal",
+    "chain_count": 0,
+    "item_count": 6,
+    "source_count": 3,
+    "concept_count": 6
+  },
+  "project": {
+    "name": "dsap_vila_dos_coqueiros",
+    "template_path": "template.synt",
+    "includes": [
+      {
+        "include_type": "BIBLIOGRAPHY",
+        "path": "references.bib",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\project.synp",
+          "line": 3,
+          "column": 5
+        }
+      },
+      {
+        "include_type": "ANNOTATIONS",
+        "path": "annotations.syn",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\project.synp",
+          "line": 4,
+          "column": 5
+        }
+      },
+      {
+        "include_type": "ONTOLOGY",
+        "path": "ontology.syno",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\project.synp",
+          "line": 5,
+          "column": 5
+        }
+      }
+    ],
+    "metadata": {},
+    "description": null,
+    "location": {
+      "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\project.synp",
+      "line": 1,
+      "column": 1
+    }
+  },
+  "template": {
+    "name": "",
+    "metadata": {},
+    "field_specs": {
+      "tipo_ref": {
+        "name": "tipo_ref",
+        "type": "ENUMERATED",
+        "scope": "SOURCE",
+        "format": null,
+        "description": "Define o tipo de referência utilizada",
+        "values": [
+          {
+            "index": -1,
+            "label": "pri",
+            "description": "Referência primária, entrevistas",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 12,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "sec",
+            "description": "Referência secundária, blogs, jornais, revistas, podcasts",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 13,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "ref",
+            "description": "Artigos científicos, documentos oficiais",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 14,
+              "column": 9
+            }
+          }
+        ],
+        "relations": null,
+        "arity": null,
+        "guidelines": "Classifique a fonte conforme sua origem e proximidade com o dado observado.\nUse pri para entrevistas, oficinas, relatos e registros produzidos diretamente com a comunidade.\nUse sec para materiais jornalísticos, blogs, revistas, podcasts e divulgação.\nUse ref para artigos científicos, relatórios técnicos, legislação e documentos oficiais.\nNão classifique pela qualidade percebida da fonte; considere somente sua natureza documental.",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+          "line": 8,
+          "column": 1
+        }
+      },
+      "citação": {
+        "name": "citação",
+        "type": "QUOTATION",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Excerto textual extraído da fonte bibliográfica",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": "Extraia um excerto literal, completo e autossuficiente de 1-3 frases.\nPreserve as palavras, a pontuação e o sentido original da fonte.\nInclua contexto suficiente para que o trecho seja compreendido isoladamente.\nPrefira um trecho que sustente um único fator analítico principal.\nNão resuma, não parafraseie e não acrescente interpretação.",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+          "line": 29,
+          "column": 1
+        }
+      },
+      "resumo": {
+        "name": "resumo",
+        "type": "MEMO",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Memo analítico explicando a interpretação",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": "Explique em 1-3 frases por que o excerto sustenta o fator selecionado.\nRegistre o mecanismo, impacto ou problema socioambiental identificado.\nDiferencie claramente a evidência textual da interpretação do pesquisador.\nQuando pertinente, explicite por que o fator é interno ou externo à comunidade.\nNão repita a citação e não introduza informações ausentes na fonte.",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+          "line": 41,
+          "column": 1
+        }
+      },
+      "fator": {
+        "name": "fator",
+        "type": "CODE",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Palavra-chave temática",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": "Aplique um fator temático diretamente sustentado pelo excerto e pelo resumo.\nPrefira um fator existente na ontologia e reutilize a mesma grafia.\nUse nomes substantivos singulares ou expressões estáveis com underscore.\nCrie um novo fator somente quando o conceito for distinto e relevante para o diagnóstico.\nTodo fator aplicado deve possuir um bloco ONTOLOGY correspondente.",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+          "line": 53,
+          "column": 1
+        }
+      },
+      "swot": {
+        "name": "swot",
+        "type": "ENUMERATED",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Elementos da matriz SWOT",
+        "values": [
+          {
+            "index": -1,
+            "label": "fo",
+            "description": "Força (perspectiva interna)",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 69,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "fr",
+            "description": "Fraqueza (perspectiva interna)",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 70,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "op",
+            "description": "Oportunidade (perspectiva externa)",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 71,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "am",
+            "description": "Ameaça (perspectiva externa)",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 72,
+              "column": 9
+            }
+          }
+        ],
+        "relations": null,
+        "arity": null,
+        "guidelines": "Classifique o fator considerando sua origem e seu efeito predominante sobre a comunidade.\nUse fo para capacidade ou recurso interno com efeito favorável.\nUse fr para limitação ou problema interno com efeito desfavorável.\nUse op para condição externa que pode favorecer a comunidade.\nUse am para condição externa que pode prejudicar a comunidade.\nRegistre no resumo a justificativa quando a fronteira entre interno e externo não for evidente.",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+          "line": 65,
+          "column": 1
+        }
+      },
+      "importância": {
+        "name": "importância",
+        "type": "SCALE",
+        "scope": "ITEM",
+        "format": "[0..1.01]",
+        "description": "Importância do fator (0=nula ou baixa, 0.5=moderada, 1=alta)",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": "Avalie a relevância do fator para a sustentabilidade local usando somente 0, 0.5 ou 1.\nUse 0 para impacto nulo ou baixo no diagnóstico.\nUse 0.5 para impacto moderado, localizado ou parcialmente sustentado pela evidência.\nUse 1 para impacto alto, abrangente ou diretamente relacionado à sustentabilidade da comunidade.\nConsidere magnitude, abrangência e persistência do efeito; não use casas decimais adicionais.",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+          "line": 84,
+          "column": 1
+        }
+      },
+      "description": {
+        "name": "description",
+        "type": "TEXT",
+        "scope": "ONTOLOGY",
+        "format": null,
+        "description": "Descrição do fator",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": "Defina o fator em 1-3 frases com linguagem clara e aplicável ao diagnóstico.\nExplique o significado central e os critérios para reconhecer o fator nas fontes.\nQuando útil, diferencie-o de fatores próximos para evitar sobreposição.\nNão restrinja a definição a uma única citação ou participante.\nNão inclua a classificação SWOT: ela depende do contexto de cada item.",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+          "line": 102,
+          "column": 1
+        }
+      },
+      "dimensão_sustentabilidade": {
+        "name": "dimensão_sustentabilidade",
+        "type": "ENUMERATED",
+        "scope": "ONTOLOGY",
+        "format": null,
+        "description": "Dimensões da sustentabilidade",
+        "values": [
+          {
+            "index": -1,
+            "label": "ambiental",
+            "description": "Ecossistemas, recursos naturais, fauna, flora",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 118,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "sociocultural",
+            "description": "Qualidade de vida, valores culturais, intergeracionalidade",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 119,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "econômica",
+            "description": "Investimentos, comércio, empregabilidade",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 120,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "governamental",
+            "description": "Infraestrutura, sustentabilidade jurídica, justiça social",
+            "location": {
+              "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+              "line": 121,
+              "column": 9
+            }
+          }
+        ],
+        "relations": null,
+        "arity": null,
+        "guidelines": "Atribua uma única dimensão principal conforme o efeito predominante do fator.\nUse ambiental para ecossistemas, recursos naturais, fauna, flora e impactos biofísicos.\nUse sociocultural para qualidade de vida, identidade, práticas culturais e relações comunitárias.\nUse econômica para renda, trabalho, produção, comércio, investimento e atividades produtivas.\nUse governamental para serviços públicos, infraestrutura, direitos, regulação e justiça social.\nEm fatores multidimensionais, escolha a dimensão mais relevante no diagnóstico e explique essa escolha na descrição.",
+        "location": {
+          "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+          "line": 114,
+          "column": 1
+        }
+      }
+    },
+    "required_fields": {
+      "SOURCE": [
+        "tipo_ref"
+      ],
+      "ITEM": [
+        "citação",
+        "resumo",
+        "fator",
+        "swot",
+        "importância"
+      ],
+      "ONTOLOGY": [
+        "description",
+        "dimensão_sustentabilidade"
+      ]
+    },
+    "optional_fields": {
+      "SOURCE": [],
+      "ITEM": [],
+      "ONTOLOGY": []
+    },
+    "forbidden_fields": {
+      "SOURCE": [],
+      "ITEM": [],
+      "ONTOLOGY": []
+    },
+    "bundled_fields": {
+      "SOURCE": [],
+      "ITEM": [],
+      "ONTOLOGY": []
+    },
+    "location": {
+      "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\template.synt",
+      "line": 1,
+      "column": 1
+    }
+  },
+  "bibliography": {
+    "oficina_coqueiros2026": {
+      "note": "Fonte primária fictícia criada para fins didáticos",
+      "year": "2026",
+      "title": "Oficina participativa da Vila dos Coqueiros",
+      "author": "{Moradores e pescadores da Vila dos Coqueiros}",
+      "ENTRYTYPE": "misc",
+      "ID": "oficina_coqueiros2026",
+      "tipo_ref": "pri"
+    },
+    "jornal_litoral2026": {
+      "note": "Fonte secundária fictícia criada para fins didáticos",
+      "year": "2026",
+      "journal": "Jornal do Litoral",
+      "title": "Programa federal seleciona vilas para turismo de base comunitária",
+      "author": "{Jornal do Litoral}",
+      "ENTRYTYPE": "article",
+      "ID": "jornal_litoral2026",
+      "tipo_ref": "sec"
+    },
+    "relatorio_ambiental2025": {
+      "note": "Fonte técnica fictícia criada para fins didáticos",
+      "year": "2025",
+      "institution": "Instituto Costeiro de Monitoramento Ambiental",
+      "title": "Relatório de monitoramento ambiental da foz do rio Coqueiros",
+      "author": "{Instituto Costeiro de Monitoramento Ambiental}",
+      "ENTRYTYPE": "techreport",
+      "ID": "relatorio_ambiental2025",
+      "tipo_ref": "ref"
+    }
+  },
+  "indices": {
+    "hierarchy": {},
+    "triples": [],
+    "topics": {},
+    "code_frequency": {
+      "pesca_artesanal": 1,
+      "descarte_residuos": 1,
+      "turismo_comunitario": 1,
+      "assoreamento": 1,
+      "patrimonio_cultural": 1,
+      "saneamento_basico": 1
+    }
+  },
+  "ontology": {
+    "Assoreamento": {
+      "concept": "Assoreamento",
+      "description": "Acúmulo de sedimentos em corpos d'água que reduz profundidade e compromete a navegação e a biodiversidade aquática.",
+      "dimensão_sustentabilidade": "ambiental",
+      "location": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\ontology.syno",
+        "line": 16,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Descarte_Residuos": {
+      "concept": "Descarte_Residuos",
+      "description": "Descarte inadequado de resíduos sólidos em áreas naturais, decorrente da ausência de coleta pública e de práticas locais de manejo.",
+      "dimensão_sustentabilidade": "ambiental",
+      "location": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\ontology.syno",
+        "line": 6,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Patrimonio_Cultural": {
+      "concept": "Patrimonio_Cultural",
+      "description": "Práticas, saberes e expressões culturais transmitidas entre gerações na comunidade.",
+      "dimensão_sustentabilidade": "sociocultural",
+      "location": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\ontology.syno",
+        "line": 26,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Pesca_Artesanal": {
+      "concept": "Pesca_Artesanal",
+      "description": "Atividade pesqueira tradicional de pequena escala, praticada com técnicas transmitidas entre gerações.",
+      "dimensão_sustentabilidade": "econômica",
+      "location": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\ontology.syno",
+        "line": 1,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Saneamento_Basico": {
+      "concept": "Saneamento_Basico",
+      "description": "Conjunto de serviços de abastecimento de água, esgotamento sanitário e drenagem urbana prestados pelo poder público.",
+      "dimensão_sustentabilidade": "governamental",
+      "location": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\ontology.syno",
+        "line": 21,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "Turismo_Comunitario": {
+      "concept": "Turismo_Comunitario",
+      "description": "Modelo de turismo gerido pela própria comunidade, que valoriza ativos culturais e naturais locais.",
+      "dimensão_sustentabilidade": "econômica",
+      "location": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\ontology.syno",
+        "line": 11,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    }
+  },
+  "corpus": [
+    {
+      "id": "oficina_coqueiros2026_item0001",
+      "source_ref": "@oficina_coqueiros2026",
+      "data": {
+        "citação": "\"A pesca artesanal aqui sustenta mais da metade das famílias. Meu avô já pescava nesse mesmo canto, meu pai também.\"",
+        "resumo": "A pesca artesanal é a principal atividade econômica da comunidade, com continuidade intergeracional que reforça tanto a economia local quanto a identidade cultural.",
+        "fator": [
+          "Pesca_Artesanal"
+        ],
+        "swot": "fo",
+        "importância": 1,
+        "description": "Atividade pesqueira tradicional de pequena escala, praticada com técnicas transmitidas entre gerações.",
+        "dimensão_sustentabilidade": "econômica"
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\annotations.syn",
+        "line": 9
+      }
+    },
+    {
+      "id": "oficina_coqueiros2026_item0002",
+      "source_ref": "@oficina_coqueiros2026",
+      "data": {
+        "citação": "\"O pessoal joga o lixo no manguezal porque não tem coleta. A prefeitura não vem aqui.\"",
+        "resumo": "Ausência de coleta de resíduos leva ao descarte inadequado no ecossistema de mangue, gerando impacto ambiental direto.",
+        "fator": [
+          "Descarte_Residuos"
+        ],
+        "swot": "fr",
+        "importância": 0.5,
+        "description": "Descarte inadequado de resíduos sólidos em áreas naturais, decorrente da ausência de coleta pública e de práticas locais de manejo.",
+        "dimensão_sustentabilidade": "ambiental"
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\annotations.syn",
+        "line": 19
+      }
+    },
+    {
+      "id": "oficina_coqueiros2026_item0003",
+      "source_ref": "@oficina_coqueiros2026",
+      "data": {
+        "citação": "\"As festas de São Pedro e a farinhada são tradição antiga. Todo mundo participa, até quem já saiu da vila volta pra isso.\"",
+        "resumo": "Festividades tradicionais e práticas coletivas de produção reforçam coesão social e identidade cultural da comunidade.",
+        "fator": [
+          "Patrimonio_Cultural"
+        ],
+        "swot": "fo",
+        "importância": 0.5,
+        "description": "Práticas, saberes e expressões culturais transmitidas entre gerações na comunidade.",
+        "dimensão_sustentabilidade": "sociocultural"
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\annotations.syn",
+        "line": 60
+      }
+    },
+    {
+      "id": "oficina_coqueiros2026_item0004",
+      "source_ref": "@oficina_coqueiros2026",
+      "data": {
+        "citação": "\"Não tem rede de esgoto. Cada um resolve do seu jeito — fossa, vala, ou vai direto pro rio.\"",
+        "resumo": "Ausência de esgotamento sanitário gera soluções improvisadas com risco de contaminação hídrica.",
+        "fator": [
+          "Saneamento_Basico"
+        ],
+        "swot": "fr",
+        "importância": 1,
+        "description": "Conjunto de serviços de abastecimento de água, esgotamento sanitário e drenagem urbana prestados pelo poder público.",
+        "dimensão_sustentabilidade": "governamental"
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\annotations.syn",
+        "line": 70
+      }
+    },
+    {
+      "id": "jornal_litoral2026_item0001",
+      "source_ref": "@jornal_litoral2026",
+      "data": {
+        "citação": "\"Programa federal de turismo de base comunitária selecionou cinco vilas do litoral para receber capacitação e infraestrutura.\"",
+        "resumo": "Programa governamental pode diversificar a economia local e valorizar ativos culturais da comunidade.",
+        "fator": [
+          "Turismo_Comunitario"
+        ],
+        "swot": "op",
+        "importância": 1,
+        "description": "Modelo de turismo gerido pela própria comunidade, que valoriza ativos culturais e naturais locais.",
+        "dimensão_sustentabilidade": "econômica"
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\annotations.syn",
+        "line": 34
+      }
+    },
+    {
+      "id": "relatorio_ambiental2025_item0001",
+      "source_ref": "@relatorio_ambiental2025",
+      "data": {
+        "citação": "\"O monitoramento identificou taxa de assoreamento acelerado na foz do rio Coqueiros, com redução de 30% na profundidade do canal principal nos últimos cinco anos.\"",
+        "resumo": "Assoreamento compromete a navegabilidade e os estoques pesqueiros, ameaçando a principal atividade econômica da comunidade.",
+        "fator": [
+          "Assoreamento"
+        ],
+        "swot": "am",
+        "importância": 1,
+        "description": "Acúmulo de sedimentos em corpos d'água que reduz profundidade e compromete a navegação e a biodiversidade aquática.",
+        "dimensão_sustentabilidade": "ambiental"
+      },
+      "traceability": {
+        "file": "..\\case-studies\\Socioenvironmental\\DSAP_Vila_dos_Coqueiros\\annotations.syn",
+        "line": 50
+      }
+    }
+  ]
+}

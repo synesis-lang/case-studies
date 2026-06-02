@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiro — DSAP: Vila dos Coqueiros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+
+/* ── Tokens ─────────────────────────────── */
+:root {
+  --navy:       #1A3A5C;
+  --slate:      #3D5A7A;
+  --sage:       #4A6741;
+  --terracotta: #8B4A3C;
+  --gold:       #A8905A;
+  --plum:       #6A3D6A;
+  --ink:        #1C1C1E;
+  --ink-mid:    #3A3A3C;
+  --ref-mid:    #6B6B70;
+  --doc-light:  #AEAEB2;
+  --paper:      #F7F4EF;
+  --paper-tint: #E5E1DA;
+  --amber:      #C8963A;
+
+  --ff-serif: 'Newsreader', Georgia, serif;
+  --ff-sans:  'IBM Plex Sans', system-ui, sans-serif;
+  --ff-mono:  'IBM Plex Mono', 'Courier New', monospace;
+
+  --c-synp: #1A3A5C;
+  --c-synt: #4A6741;
+  --c-bib:  #8B4A3C;
+  --c-syn:  #3D5A7A;
+  --c-syno: #A8905A;
+  --c-coder:#6A3D6A;
+  --c-neo4j:#1F6D3A;
+
+  /* SWOT */
+  --sw-fo: #2E7D32;
+  --sw-op: #7CB342;
+  --sw-fr: #EF6C00;
+  --sw-am: #C62828;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--ff-sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.4rem 1.6rem 1.2rem;
+}
+
+/* ── Header ─────────────────────────────── */
+.doc-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: 0.55rem;
+  margin-bottom: 0.9rem;
+}
+.wordmark {
+  font-family: var(--ff-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+.wordmark span { font-family: var(--ff-mono); color: var(--navy); font-weight: 600; }
+.doc-meta { display: flex; align-items: center; gap: 1.2rem; }
+.doc-meta .lbl {
+  font-family: var(--ff-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ref-mid);
+}
+.print-btn {
+  font-family: var(--ff-mono);
+  font-size: 0.7rem;
+  background: var(--navy);
+  color: var(--paper);
+  border: none;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background .2s;
+}
+.print-btn:hover { background: var(--slate); }
+
+/* ── Pipeline strip ─────────────────────── */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--navy);
+  border-radius: 7px;
+  padding: 0.55rem 1rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+.pipeline-label {
+  font-family: var(--ff-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(247,244,239,0.4);
+  margin-right: 0.9rem;
+  white-space: nowrap;
+}
+.pip-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.28rem 0.6rem;
+  border-radius: 5px;
+  border: 1.5px solid rgba(247,244,239,0.15);
+}
+.pip-node.step1  { background: rgba(26,58,92,0.5);   border-color: rgba(26,58,92,0.8); }
+.pip-node.step2  { background: rgba(74,103,65,0.3);  border-color: rgba(74,103,65,0.7); }
+.pip-node.step3  { background: rgba(61,90,122,0.3);  border-color: rgba(61,90,122,0.7); }
+.pip-node.step4  { background: rgba(139,74,60,0.25); border-color: rgba(139,74,60,0.6); }
+.pip-node.step5  { background: rgba(168,144,90,0.25);border-color: rgba(168,144,90,0.6);}
+.pip-node.step6  { background: rgba(106,61,106,0.3); border-color: rgba(106,61,106,0.7);}
+.pip-num { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--amber); opacity:.8; }
+.pip-txt { font-family: var(--ff-sans); font-size: 0.62rem; color: rgba(247,244,239,0.85); white-space: nowrap; }
+.pip-arr { font-family: var(--ff-mono); color: rgba(200,150,58,0.5); padding: 0 0.35rem; font-size: 0.85rem; }
+.pip-arr.final { color: rgba(126,200,160,0.7); }
+
+/* ── Step rows ──────────────────────────── */
+.step-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 1fr;
+  gap: 0;
+  border: 1.5px solid var(--paper-tint);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.55rem;
+}
+.step-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.75rem 0.8rem;
+  border-right: 1.5px solid rgba(0,0,0,0.07);
+}
+.step-label.s1  { background: rgba(26,58,92,0.09);   border-right-color: rgba(26,58,92,0.18); }
+.step-label.s2  { background: rgba(74,103,65,0.09);  border-right-color: rgba(74,103,65,0.18); }
+.step-label.s3  { background: rgba(61,90,122,0.09);  border-right-color: rgba(61,90,122,0.18); }
+.step-label.s4  { background: rgba(139,74,60,0.07);  border-right-color: rgba(139,74,60,0.18); }
+.step-label.s5  { background: rgba(168,144,90,0.09); border-right-color: rgba(168,144,90,0.18);}
+.step-label.s6  { background: rgba(106,61,106,0.08); border-right-color: rgba(106,61,106,0.18);}
+
+.step-num {
+  font-family: var(--ff-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  opacity: 0.18;
+}
+.s1 .step-num  { color: var(--c-synp); }
+.s2 .step-num  { color: var(--c-synt); }
+.s3 .step-num  { color: var(--c-syn);  }
+.s4 .step-num  { color: var(--c-bib);  }
+.s5 .step-num  { color: var(--c-syno); }
+.s6 .step-num  { color: var(--c-coder);}
+
+.step-title {
+  font-family: var(--ff-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.15rem;
+}
+.step-sub {
+  font-family: var(--ff-sans);
+  font-size: 0.6rem;
+  color: var(--ref-mid);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* ── Content columns ────────────────────── */
+.step-col {
+  padding: 0.65rem 0.75rem;
+  border-right: 1px solid var(--paper-tint);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+.step-col:last-child { border-right: none; }
+
+/* col header */
+.col-hd {
+  font-family: var(--ff-sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--doc-light);
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--paper-tint);
+  margin-bottom: 0.1rem;
+}
+
+/* ── Code blocks ─────────────────────────── */
+.cb {
+  font-family: var(--ff-mono);
+  font-size: 0.68rem;
+  line-height: 1.55;
+  background: #1e2530;
+  color: #c8d6e5;
+  border-radius: 5px;
+  padding: 0.5rem 0.6rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.kw  { color: #C8963A; font-weight: 500; }
+.ref { color: #7BB8E8; }
+.str { color: #7EC8A0; }
+.val { color: #E5C07B; }
+.cmt { color: #5c7088; font-style: italic; }
+.op  { color: rgba(229,225,218,0.45); }
+.ok  { color: #7EC8A0; }
+.hl  { color: #E06C75; }
+.pur { color: #C792EA; }
+.grn { color: #a8d8a8; }
+
+/* ── Mini table ─────────────────────────── */
+.mt { width: 100%; border-collapse: collapse; font-size: 0.66rem; }
+.mt th {
+  font-family: var(--ff-sans);
+  font-weight: 600;
+  font-size: 0.58rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ref-mid);
+  text-align: left;
+  padding: 0.12rem 0.3rem 0.2rem;
+  border-bottom: 1px solid var(--paper-tint);
+}
+.mt td {
+  font-family: var(--ff-mono);
+  font-size: 0.64rem;
+  padding: 0.18rem 0.3rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(229,225,218,0.5);
+  color: var(--ink-mid);
+  line-height: 1.4;
+}
+.mt td:first-child { white-space: nowrap; font-weight: 500; }
+.mt tr:last-child td { border-bottom: none; }
+.mt td.prose { font-family: var(--ff-sans); font-size: 0.63rem; }
+
+/* ── Note ───────────────────────────────── */
+.note {
+  font-family: var(--ff-sans);
+  font-size: 0.63rem;
+  line-height: 1.5;
+  color: var(--ref-mid);
+  background: rgba(26,58,92,0.04);
+  border-left: 2px solid var(--amber);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0 4px 4px 0;
+}
+.note strong { color: var(--ink); font-weight: 600; }
+.note code {
+  font-family: var(--ff-mono);
+  font-size: 0.85em;
+  color: var(--navy);
+  background: rgba(26,58,92,0.08);
+  padding: 0.05em 0.28em;
+  border-radius: 3px;
+}
+.note.warn  { border-left-color: #E06C75; background: rgba(224,108,117,0.04); }
+.note.green { border-left-color: #7EC8A0; background: rgba(126,200,160,0.04); }
+
+/* ── Pill ───────────────────────────────── */
+.pill {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  padding: 0.08rem 0.38rem;
+  border-radius: 100px;
+  border: 1px solid rgba(26,58,92,0.2);
+  background: rgba(26,58,92,0.06);
+  color: var(--navy);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.pill.sage  { border-color: rgba(74,103,65,0.3); background: rgba(74,103,65,0.08); color: var(--c-synt); }
+.pill.gold  { border-color: rgba(168,144,90,0.3); background: rgba(168,144,90,0.08); color: var(--c-syno); }
+.pill.plum  { border-color: rgba(106,61,106,0.3); background: rgba(106,61,106,0.08); color: var(--c-coder); }
+.pill.slate { border-color: rgba(61,90,122,0.3);  background: rgba(61,90,122,0.08);  color: var(--c-syn); }
+
+/* SWOT pills */
+.pill.fo { border-color: rgba(46,125,50,0.35);  background: rgba(46,125,50,0.1);  color: var(--sw-fo); }
+.pill.op { border-color: rgba(124,179,66,0.4);  background: rgba(124,179,66,0.12); color: #5a8124; }
+.pill.fr { border-color: rgba(239,108,0,0.35);  background: rgba(239,108,0,0.1);  color: var(--sw-fr); }
+.pill.am { border-color: rgba(198,40,40,0.35);  background: rgba(198,40,40,0.1);  color: var(--sw-am); }
+
+/* ── Divider ────────────────────────────── */
+.divider { border: none; border-top: 1px solid var(--paper-tint); margin: 0.1rem 0; }
+
+/* ── Mapa conceitual / orientação ───────── */
+.orient {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 0.8rem;
+  border: 1.5px solid var(--paper-tint);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+  margin-bottom: 0.7rem;
+  background: rgba(26,58,92,0.025);
+}
+.orient h2 {
+  font-family: var(--ff-serif);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+.orient p { font-size: 0.7rem; line-height: 1.55; color: var(--ink-mid); margin-bottom: 0.4rem; }
+.orient p:last-child { margin-bottom: 0; }
+.orient .q {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--terracotta);
+  border-left: 2px solid var(--terracotta);
+  padding-left: 0.5rem;
+  margin: 0.3rem 0 0.45rem;
+}
+.flow-arrows {
+  font-family: var(--ff-mono);
+  font-size: 0.66rem;
+  line-height: 1.7;
+  color: var(--ink-mid);
+}
+.flow-arrows b { color: var(--navy); font-weight: 600; }
+.flow-arrows .ar { color: var(--gold); padding: 0 0.2rem; }
+
+/* ── SWOT quadrante mini ────────────────── */
+.swot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem;
+  margin-top: 0.35rem;
+}
+.swot-cell {
+  border-radius: 5px;
+  padding: 0.28rem 0.4rem;
+  font-size: 0.6rem;
+  line-height: 1.35;
+}
+.swot-cell b { font-family: var(--ff-mono); font-size: 0.62rem; display: block; }
+.swot-cell.fo { background: rgba(46,125,50,0.1);  border: 1px solid rgba(46,125,50,0.3); color: #1b4d1e; }
+.swot-cell.fr { background: rgba(239,108,0,0.1);  border: 1px solid rgba(239,108,0,0.3); color: #6d3b00; }
+.swot-cell.op { background: rgba(124,179,66,0.12);border: 1px solid rgba(124,179,66,0.35);color: #3f5e16; }
+.swot-cell.am { background: rgba(198,40,40,0.1);  border: 1px solid rgba(198,40,40,0.3); color: #7f0000; }
+.swot-cell .ax { font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.7; }
+
+/* ── Pré-requisitos + glossário ─────────── */
+.prereq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.card {
+  border: 1.5px solid var(--paper-tint);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+.card-hd {
+  font-family: var(--ff-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.card-hd .ic { font-size: 0.85rem; }
+.glossary dt {
+  font-family: var(--ff-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 0.28rem;
+}
+.glossary dd { font-size: 0.66rem; line-height: 1.45; color: var(--ink-mid); margin-left: 0; }
+.checklist { list-style: none; }
+.checklist li {
+  font-size: 0.67rem;
+  line-height: 1.55;
+  color: var(--ink-mid);
+  padding-left: 1.1rem;
+  position: relative;
+  margin-bottom: 0.12rem;
+}
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.78rem;
+}
+.checklist code {
+  font-family: var(--ff-mono);
+  font-size: 0.9em;
+  color: var(--navy);
+  background: rgba(26,58,92,0.07);
+  padding: 0.02em 0.26em;
+  border-radius: 3px;
+}
+
+/* ── Trilha ─────────────────────────────── */
+.trail-band {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.8rem;
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  margin: 0.5rem 0 0.15rem;
+}
+.trail-band.essencial { background: rgba(74,103,65,0.1);  color: var(--sage);  }
+.trail-band.analise   { background: rgba(168,144,90,0.12);color: var(--gold);  }
+.trail-band.avancado  { background: rgba(106,61,106,0.1); color: var(--plum);  }
+.trail-band .desc { font-family: var(--ff-sans); text-transform: none; letter-spacing: 0; color: var(--ref-mid); font-size: 0.62rem; }
+
+.trail-badge {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.06rem 0.32rem;
+  border-radius: 100px;
+  margin-top: 0.3rem;
+}
+.trail-badge.essencial { background: rgba(74,103,65,0.15);  color: var(--sage); }
+.trail-badge.analise   { background: rgba(168,144,90,0.18); color: #7d6630; }
+.trail-badge.avancado  { background: rgba(106,61,106,0.15); color: var(--plum); }
+
+/* ── Objetivo / checkpoint / tempo ──────── */
+.goal {
+  font-family: var(--ff-sans);
+  font-size: 0.64rem;
+  line-height: 1.5;
+  color: var(--ink-mid);
+  background: rgba(74,103,65,0.06);
+  border-left: 2px solid var(--sage);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0 4px 4px 0;
+}
+.goal strong { color: var(--sage); font-weight: 600; }
+.checkpoint {
+  font-family: var(--ff-sans);
+  font-size: 0.63rem;
+  line-height: 1.5;
+  color: var(--ink-mid);
+  background: rgba(26,58,92,0.045);
+  border: 1px dashed rgba(26,58,92,0.25);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+.checkpoint strong { color: var(--navy); font-weight: 600; }
+.checkpoint::before { content: "✓ "; color: var(--sage); font-weight: 700; }
+.time-tag {
+  font-family: var(--ff-mono);
+  font-size: 0.56rem;
+  color: var(--ref-mid);
+  margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* ── Alpaca block ───────────────────────── */
+.alpaca-block {
+  border: 1.5px solid rgba(74,103,65,0.28);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  margin-top: 0.5rem;
+  background: rgba(74,103,65,0.04);
+}
+
+/* ── Escala gauge mini ──────────────────── */
+.gauge {
+  display: flex;
+  height: 1.1rem;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.2rem 0;
+  font-family: var(--ff-mono);
+  font-size: 0.52rem;
+}
+.gauge div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,0.6);
+}
+.g1 { background: #E57373; }
+.g2 { background: #FFB74D; }
+.g3 { background: #FFF176; }
+.g4 { background: #81C784; }
+.g5 { background: #388E3C; color: #fff; }
+
+/* ── Troubleshooting ────────────────────── */
+.trouble {
+  border: 1.5px solid rgba(224,108,117,0.3);
+  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
+  margin-top: 0.6rem;
+  background: rgba(224,108,117,0.03);
+}
+.trouble .card-hd { color: var(--terracotta); }
+.trouble table { width: 100%; border-collapse: collapse; font-size: 0.65rem; }
+.trouble td {
+  padding: 0.22rem 0.4rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(229,225,218,0.6);
+  line-height: 1.45;
+}
+.trouble tr:last-child td { border-bottom: none; }
+.trouble td:first-child {
+  font-family: var(--ff-mono);
+  font-size: 0.62rem;
+  color: #b54a52;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.trouble td:nth-child(2) { font-family: var(--ff-sans); color: var(--ink-mid); }
+.trouble code {
+  font-family: var(--ff-mono);
+  font-size: 0.88em;
+  color: var(--navy);
+  background: rgba(26,58,92,0.07);
+  padding: 0.02em 0.26em;
+  border-radius: 3px;
+}
+
+/* ── Footer ─────────────────────────────── */
+.doc-footer {
+  border-top: 1px solid var(--paper-tint);
+  padding-top: 0.45rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.55rem;
+}
+.doc-footer span { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--doc-light); }
+
+/* ── Print ──────────────────────────────── */
+@media print {
+  @page { size: A4 landscape; margin: 8mm 9mm 7mm 9mm; }
+  body { font-size: 11px; background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-btn { display: none; }
+  .page { padding: 0; max-width: 100%; }
+  .step-row { break-inside: avoid; }
+  .cb { white-space: pre-wrap; overflow-wrap: anywhere; overflow-x: visible; }
+  .note, .alpaca-block { break-inside: avoid; }
+  .orient, .prereq, .card, .trouble { break-inside: avoid; }
+  .goal, .checkpoint { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pipeline { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cb, .step-label, .gauge, .swot-cell { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ── Header ──────────────────────────── -->
+<div class="doc-header">
+  <div class="wordmark"><span>s</span>ynesis &nbsp;<span style="font-family:var(--ff-sans);font-size:0.75rem;font-weight:300;color:var(--ref-mid);letter-spacing:0">Roteiro do Projeto</span></div>
+  <div class="doc-meta">
+    <span class="lbl">DSAP · Vila dos Coqueiros · pt-BR</span>
+    <button class="print-btn" onclick="window.print()">⎙ Imprimir / PDF</button>
+  </div>
+</div>
+
+<!-- ── Pipeline ─────────────────────────── -->
+<div class="pipeline">
+  <span class="pipeline-label">Pipeline completo</span>
+  <div class="pip-node step1"><span class="pip-num">01</span><span class="pip-txt">Verificar</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step2"><span class="pip-num">02</span><span class="pip-txt">Compilar</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step3"><span class="pip-num">03</span><span class="pip-txt">Exportar formatos</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step4"><span class="pip-num">04</span><span class="pip-txt">Alpaca JSONL</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step5"><span class="pip-num">05</span><span class="pip-txt">Escala (Notebook)</span></div>
+  <span class="pip-arr final">→</span>
+  <div class="pip-node step6"><span class="pip-num">06</span><span class="pip-txt">Synesis-Coder</span></div>
+</div>
+
+<!-- ── Orientação / advance organizer ───── -->
+<div class="orient">
+  <div>
+    <h2>O que você vai construir</h2>
+    <p>Este projeto é um <strong>Diagnóstico Socioambiental Participativo (DSAP)</strong> da Vila dos Coqueiros — uma comunidade pesqueira fictícia. Cada fala de morador, notícia ou relatório técnico vira um <strong>fator</strong> classificado na <strong>matriz SWOT</strong> e ponderado por importância. O resultado é uma <strong>escala de sustentabilidade de 0 a 10</strong> que sintetiza o estado da comunidade.</p>
+    <div class="q">"Os fatores favoráveis (forças + oportunidades) superam os desfavoráveis (fraquezas + ameaças) — e em que grau?"</div>
+    <p>Você partirá de 4 arquivos de texto e chegará a tabelas, uma escala-velocímetro de sustentabilidade e, opcionalmente, um dataset para treinar uma IA codificadora.</p>
+  </div>
+  <div>
+    <div class="col-hd" style="border:none;color:var(--navy);font-size:0.6rem">A matriz SWOT deste diagnóstico</div>
+    <div class="swot-grid">
+      <div class="swot-cell fo"><span class="ax">Interno ·</span><b>Forças (fo)</b>Pesca artesanal · Patrimônio cultural</div>
+      <div class="swot-cell op"><span class="ax">Externo ·</span><b>Oportunidades (op)</b>Turismo comunitário</div>
+      <div class="swot-cell fr"><span class="ax">Interno ·</span><b>Fraquezas (fr)</b>Saneamento · Descarte de resíduos</div>
+      <div class="swot-cell am"><span class="ax">Externo ·</span><b>Ameaças (am)</b>Assoreamento da foz</div>
+    </div>
+    <div class="note" style="margin-top:0.45rem">
+      <strong>Comece pelo essencial:</strong> passos <strong>1 → 2 → 3</strong> já entregam as tabelas do diagnóstico. O passo <strong>5</strong> calcula a escala — o coração analítico do método.
+    </div>
+  </div>
+</div>
+
+<!-- ── Pré-requisitos + Glossário ───────── -->
+<div class="prereq">
+  <div class="card">
+    <div class="card-hd"><span class="ic">⚙</span> Antes de começar — instale e confira</div>
+    <ul class="checklist">
+      <li><strong>Python 3.10+</strong> instalado (<code>python --version</code>)</li>
+      <li>Synesis: <code>pip install synesis</code> · teste com <code>synesis --version</code></li>
+      <li>Para o notebook (passo 5): <code>pip install pandas matplotlib numpy</code></li>
+      <li>Para o Coder (passo 6, opcional): chave <code>ANTHROPIC_API_KEY</code></li>
+      <li>Terminal aberto <strong>na pasta do projeto</strong> (onde está <code>project.synp</code>)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-hd"><span class="ic">📖</span> Vocabulário mínimo — leia uma vez</div>
+    <dl class="glossary">
+      <dt>ITEM</dt><dd>Uma unidade de análise: um trecho codificado (citação + resumo + fator + SWOT + importância).</dd>
+      <dt>fator</dt><dd>A palavra-chave temática do trecho (ex.: <code>Pesca_Artesanal</code>). Todo fator tem um bloco ONTOLOGY.</dd>
+      <dt>SWOT</dt><dd>Classifica o fator: <strong>fo</strong> força, <strong>fr</strong> fraqueza (internos) · <strong>op</strong> oportunidade, <strong>am</strong> ameaça (externos).</dd>
+      <dt>importância</dt><dd>Peso do fator na escala: <code>0</code> baixo · <code>0.5</code> moderado · <code>1</code> alto.</dd>
+      <dt>dimensão</dt><dd>A esfera da sustentabilidade do fator: ambiental · sociocultural · econômica · governamental.</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ── Trilha 1: Essencial ──────────────── -->
+<div class="trail-band essencial">
+  <span>● Trilha essencial · passos 1–3</span>
+  <span class="desc">Faça estes três e você já tem as tabelas do diagnóstico. ~12 min no total.</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 1 — Verificar
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s1">
+    <span class="step-num">01</span>
+    <span class="step-title">Verificar o projeto</span>
+    <span class="step-sub">Confirme que os arquivos compilam sem erros antes de exportar.</span>
+    <span class="trail-badge essencial">Essencial</span>
+    <span class="time-tag">⏱ ~2 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> garantir que os 4 arquivos estão íntegros. Tudo depois disto assume um projeto sem erros — começar aqui evita horas de depuração adiante.</div>
+    <div class="col-hd">Comando</div>
+    <div class="cb"><span class="cmt"># A partir da pasta do projeto:</span>
+cd case-studies/Socioenvironmental/DSAP_Vila_dos_Coqueiros
+
+<span class="ok">synesis check</span> project.synp</div>
+    <div class="note">
+      <strong>Saída esperada:</strong> <code>✓ No errors found.</code> — zero ERROs. Avisos não bloqueiam a compilação mas devem ser investigados.
+    </div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o terminal mostra <code>No errors found</code>. Se aparecer um código <code>E0xx</code>, veja a faixa de Solução de problemas no rodapé antes de seguir.</div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Estrutura do projeto</div>
+    <table class="mt">
+      <tr><td style="color:var(--c-synp)">project.synp</td><td class="prose">Ponto de entrada: declara template, bibliography, annotations, ontology</td></tr>
+      <tr><td style="color:var(--c-synt)">template.synt</td><td class="prose">Define campos, tipos e GUIDELINES de SOURCE, ITEM e ONTOLOGY</td></tr>
+      <tr><td style="color:var(--c-bib)">references.bib</td><td class="prose">3 fontes: oficina comunitária, jornal e relatório técnico</td></tr>
+      <tr><td style="color:var(--c-syn)">annotations.syn</td><td class="prose">3 SOURCEs e 6 ITEMs com citação, resumo, fator, SWOT e importância</td></tr>
+      <tr><td style="color:var(--c-syno)">ontology.syno</td><td class="prose">6 fatores, cada um com descrição e dimensão de sustentabilidade</td></tr>
+    </table>
+    <div class="note">
+      <strong>Erros comuns:</strong> fator usado sem bloco ONTOLOGY (E004), campo REQUIRED ausente como <code>importância</code> (E020), valor SWOT fora do enumerado (E031). <code>synesis check</code> lista todos com número e local exato.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 2 — Compilar JSON canônico
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s2">
+    <span class="step-num">02</span>
+    <span class="step-title">Compilar → JSON</span>
+    <span class="step-sub">Gera o artefato canônico v3.0 com todo o diagnóstico serializado.</span>
+    <span class="trail-badge essencial">Essencial</span>
+    <span class="time-tag">⏱ ~3 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> produzir o <em>único</em> arquivo do qual todos os outros formatos derivam. Pense nele como o "negativo" da foto — gere uma vez, revele em vários formatos depois.</div>
+    <div class="col-hd">Comando</div>
+    <div class="cb"><span class="ok">synesis compile</span> project.synp --json exports/dsap_vila_dos_coqueiros.json</div>
+    <div class="col-hd" style="margin-top:0.4rem">Estrutura do JSON gerado</div>
+    <div class="cb"><span class="op">{</span>
+  <span class="val">"version"</span><span class="op">:</span> <span class="str">"3.0"</span>,
+  <span class="val">"export_metadata"</span><span class="op">:</span> <span class="op">{</span>
+    <span class="val">"item_count"</span><span class="op">:</span>    <span class="ref">6</span>,
+    <span class="val">"source_count"</span><span class="op">:</span>  <span class="ref">3</span>,
+    <span class="val">"concept_count"</span><span class="op">:</span> <span class="ref">6</span>,
+    <span class="val">"chain_count"</span><span class="op">:</span>   <span class="ref">0</span>
+  <span class="op">}</span>,
+  <span class="val">"corpus"</span><span class="op">: [</span> <span class="cmt">... ITEMs com fator, swot, importância ...</span> <span class="op">]</span>,
+  <span class="val">"ontology"</span><span class="op">: [</span> <span class="cmt">... 6 fatores com dimensão ...</span> <span class="op">]</span>
+<span class="op">}</span></div>
+    <div class="note">
+      <strong>Sem cadeias:</strong> este método não usa CHAIN (<code>chain_count: 0</code>). A análise é por fator e SWOT, não por relação causal.
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Verificação rápida</div>
+    <div class="cb"><span class="cmt"># Conferir contagens no JSON gerado:</span>
+python -c "import json; d=json.load(open('exports/dsap_vila_dos_coqueiros.json', encoding='utf-8')); print(d['export_metadata'])"</div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o arquivo <code>exports/dsap_vila_dos_coqueiros.json</code> existe e imprime <code>item_count: 6</code>, <code>source_count: 3</code>, <code>concept_count: 6</code>.</div>
+    <hr class="divider">
+    <div class="col-hd">Também disponível via API Python</div>
+    <div class="cb"><span class="kw">import</span> synesis
+<span class="kw">from</span> pathlib <span class="kw">import</span> Path
+
+resultado = synesis.load(
+    project_content=Path(<span class="str">"project.synp"</span>).read_text(<span class="str">"utf-8"</span>),
+    template_content=Path(<span class="str">"template.synt"</span>).read_text(<span class="str">"utf-8"</span>),
+    annotation_contents={<span class="str">"annotations.syn"</span>:
+        Path(<span class="str">"annotations.syn"</span>).read_text(<span class="str">"utf-8"</span>)},
+    ontology_contents={<span class="str">"ontology.syno"</span>:
+        Path(<span class="str">"ontology.syno"</span>).read_text(<span class="str">"utf-8"</span>)},
+    bibliography_content=Path(<span class="str">"references.bib"</span>).read_text(<span class="str">"utf-8"</span>),
+    project_filename=<span class="str">"project.synp"</span>,
+    template_filename=<span class="str">"template.synt"</span>,
+)
+<span class="kw">assert</span> resultado.success, resultado.get_diagnostics()
+dados = resultado.to_json_dict()
+print(dados[<span class="str">"export_metadata"</span>])</div>
+    <div class="note" style="margin-top:0.3rem">
+      É exatamente o que o notebook do passo 5 faz: compila em memória, sem precisar do JSON intermediário.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 3 — Exportar CSV e Excel
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s3">
+    <span class="step-num">03</span>
+    <span class="step-title">Exportar CSV e Excel</span>
+    <span class="step-sub">Gera tabelas prontas para análise em Pandas, R ou planilhas.</span>
+    <span class="trail-badge essencial">Essencial</span>
+    <span class="time-tag">⏱ ~5 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> obter tabelas que você consegue abrir no Excel ou no Pandas para conferir, filtrar e somar os fatores por SWOT e por dimensão. É aqui que o diagnóstico vira algo que você "vê".</div>
+    <div class="col-hd">Comandos</div>
+    <div class="cb"><span class="cmt"># CSV: uma pasta com várias tabelas</span>
+<span class="ok">synesis compile</span> project.synp --csv exports/csv/
+
+<span class="cmt"># Excel: uma planilha com abas separadas</span>
+<span class="ok">synesis compile</span> project.synp --xls exports/dsap_vila.xlsx
+
+<span class="cmt"># Tudo numa única execução:</span>
+<span class="ok">synesis compile</span> project.synp --json exports/dsap_vila_dos_coqueiros.json --csv exports/csv/ --xls exports/dsap_vila.xlsx</div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Tabelas geradas e suas colunas</div>
+    <table class="mt">
+      <thead><tr><th>Tabela</th><th>Colunas principais</th></tr></thead>
+      <tr><td>sources</td><td class="prose">bibref, tipo_ref</td></tr>
+      <tr><td>items</td><td class="prose">bibref, citação, resumo, fator, swot, importância</td></tr>
+      <tr><td>ontologies</td><td class="prose">fator (= conceito), description, dimensão_sustentabilidade</td></tr>
+    </table>
+    <div class="note">
+      <strong>Atenção:</strong> não há tabela <code>chains</code> (o método não usa cadeias). Na tabela <code>ontologies</code>, a coluna que identifica o conceito é <code>fator</code> (o campo CODE do template), não <code>code</code>. Use <code>ontologia.set_index("fator")</code> em Pandas.
+    </div>
+    <hr class="divider">
+    <div class="col-hd">Leitura via API Python</div>
+    <div class="cb">tabelas = resultado.to_dataframes()
+fontes   = tabelas[<span class="str">"sources"</span>]
+itens    = tabelas[<span class="str">"items"</span>]
+ontologia= tabelas[<span class="str">"ontologies"</span>]
+
+<span class="cmt"># Dimensão de cada fator:</span>
+dim = ontologia.set_index(<span class="str">"fator"</span>)[<span class="str">"dimensão_sustentabilidade"</span>].to_dict()
+
+<span class="cmt"># Importância acumulada por SWOT:</span>
+itens.groupby(<span class="str">"swot"</span>)[<span class="str">"importância"</span>].sum()</div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> a planilha abre com 3 abas (sources, items, ontologies) e a aba <code>items</code> tem 6 linhas. <strong>Parabéns — você concluiu a trilha essencial.</strong></div>
+  </div>
+</div>
+
+<!-- ── Trilha 2: Análise ────────────────── -->
+<div class="trail-band analise">
+  <span>● Trilha de análise · passos 4–5</span>
+  <span class="desc">Aprofunde: gere um dataset para IA e calcule a escala de sustentabilidade. Faça quando o essencial estiver sólido.</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 4 — Alpaca JSONL
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s4">
+    <span class="step-num">04</span>
+    <span class="step-title">Exportar Alpaca JSONL</span>
+    <span class="step-sub">Dataset de fine-tuning derivado dos dados validados pelo compilador.</span>
+    <span class="trail-badge analise">Análise</span>
+    <span class="time-tag">⏱ ~5 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> empacotar seu trabalho de codificação como exemplos de treino, para que uma IA aprenda a interpretar novos trechos do seu jeito. Opcional — pule se não vai treinar modelos.</div>
+    <div class="col-hd">Comando</div>
+    <div class="cb"><span class="ok">synesis compile</span> project.synp --alpaca exports/dsap_vila_alpaca.jsonl</div>
+    <div class="col-hd" style="margin-top:0.4rem">Estrutura de cada linha JSONL</div>
+    <div class="alpaca-block">
+<div class="cb"><span class="op">{</span>
+  <span class="val">"instruction"</span><span class="op">:</span> <span class="str">"Provide an analytical interpretation of the passage below. (Memo analítico explicando a interpretação)"</span>,
+
+  <span class="val">"input"</span><span class="op">:</span> <span class="str">"\"A pesca artesanal aqui sustenta mais da metade das famílias. Meu avô já pescava nesse mesmo canto, meu pai também.\""</span>,
+
+  <span class="val">"output"</span><span class="op">:</span> <span class="str">"A pesca artesanal é a principal atividade econômica da comunidade, com continuidade intergeracional que reforça tanto a economia local quanto a identidade cultural."</span>
+<span class="op">}</span></div>
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Como interpretar o formato Alpaca</div>
+    <table class="mt">
+      <thead><tr><th>Campo</th><th>Conteúdo</th></tr></thead>
+      <tr><td>instruction</td><td class="prose">Tarefa derivada do DESCRIPTION do campo-alvo (aqui o MEMO <code>resumo</code>) — explica o que produzir</td></tr>
+      <tr><td>input</td><td class="prose">Valor do campo QUOTATION (a <code>citação</code> da fonte)</td></tr>
+      <tr><td>output</td><td class="prose">Valor do campo MEMO (o <code>resumo</code> analítico) — a resposta esperada do modelo</td></tr>
+    </table>
+    <div class="note" style="margin-top:0.35rem">
+      Neste template, o par instruction/input/output liga <strong>citação → resumo</strong>. Os campos <code>fator</code>, <code>swot</code> e <code>importância</code> são classificações estruturais, não entram no <code>output</code> textual.
+    </div>
+    <div class="note green" style="margin-top:0.3rem">
+      <strong>Para que serve:</strong> cada linha treina um LLM a escrever o memo analítico no estilo do pesquisador — dada uma fala nova, o modelo aprende a explicar o mecanismo socioambiental por trás dela.
+    </div>
+    <hr class="divider">
+    <div class="col-hd">Inspecionar o arquivo gerado</div>
+    <div class="cb"><span class="cmt"># Contar pares e ver o primeiro:</span>
+python -c "import json; L=[json.loads(l) for l in open('exports/dsap_vila_alpaca.jsonl', encoding='utf-8')]; print(len(L),'pares Alpaca'); print(json.dumps(L[0], indent=2, ensure_ascii=False))"</div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o script imprime <code>6 pares Alpaca</code> e mostra um par com instruction, input e output preenchidos.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 5 — Notebook: escala de sustentabilidade
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s5">
+    <span class="step-num">05</span>
+    <span class="step-title">Escala de sustentabilidade</span>
+    <span class="step-sub">Calcula e visualiza a escala 0–10 do diagnóstico no notebook.</span>
+    <span class="trail-badge analise">Análise</span>
+    <span class="time-tag">⏱ ~15 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> <em>ver</em> o diagnóstico virar um número e um velocímetro — a síntese que responde à pergunta lá do topo: a comunidade pende para o favorável ou o desfavorável?</div>
+    <div class="col-hd">Abrir o notebook</div>
+    <div class="cb"><span class="cmt"># No VS Code: abra escala_sustentabilidade.ipynb</span>
+<span class="cmt"># Ou via Jupyter:</span>
+jupyter notebook escala_sustentabilidade.ipynb</div>
+    <div class="col-hd" style="margin-top:0.4rem">A fórmula da escala</div>
+    <div class="cb"><span class="cmt"># F=Força O=Oportunidade Fr=Fraqueza A=Ameaça</span>
+<span class="cmt"># (soma das importâncias de cada grupo)</span>
+escala = ((F+O) - (Fr+A)) / ((F+O) + (Fr+A)) * 5 + 5</div>
+    <div class="note" style="margin-top:0.35rem">
+      O notebook usa <code>synesis.load()</code> — compila em memória, sem export intermediário. A pasta do projeto é detectada automaticamente.
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Seções do notebook</div>
+    <table class="mt">
+      <thead><tr><th>Seção</th><th>Conteúdo</th></tr></thead>
+      <tr><td>1. Carregar</td><td class="prose">Compila o projeto com <code>synesis.load</code> (busca relativa da pasta)</td></tr>
+      <tr><td>2. Organizar</td><td class="prose">DataFrame de fatores: SWOT, dimensão, importância, fonte</td></tr>
+      <tr><td>3. Calcular</td><td class="prose">Aplica a fórmula e classifica o resultado em uma faixa</td></tr>
+      <tr><td>4. Visualizar</td><td class="prose">Velocímetro semicircular da escala 0–10</td></tr>
+      <tr><td>5. Resumos</td><td class="prose">Barras de importância por SWOT e por dimensão</td></tr>
+    </table>
+    <div class="col-hd" style="margin-top:0.4rem">As 5 faixas de classificação</div>
+    <div class="gauge">
+      <div class="g1">M. desfav.</div>
+      <div class="g2">Desfav.</div>
+      <div class="g3">Estagnação</div>
+      <div class="g4">Favor.</div>
+      <div class="g5">M. favor.</div>
+    </div>
+    <div class="note green" style="margin-top:0.3rem">
+      <strong>Resultado esperado com os dados do exemplo: <code>5.0</code> — Estagnação.</strong> Forças e oportunidades equilibram fraquezas e ameaças. Mude uma <code>importância</code> em <code>annotations.syn</code>, recompile e veja o ponteiro se mover.
+    </div>
+    <div class="checkpoint" style="margin-top:0.3rem"><strong>Pronto quando:</strong> todas as células rodam (<em>Run All</em>) e o velocímetro aparece apontando para <code>5.0</code> na faixa amarela.</div>
+  </div>
+</div>
+
+<!-- ── Trilha 3: Avançado / opcional ────── -->
+<div class="trail-band avancado">
+  <span>● Trilha avançada · passo 6 · opcional</span>
+  <span class="desc">Estenda o diagnóstico: codifique novas fontes com auxílio de IA. Só quando precisar.</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 6 — Synesis-Coder
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s6">
+    <span class="step-num">06</span>
+    <span class="step-title">Synesis-Coder</span>
+    <span class="step-sub">Codificação assistida por LLM: anota novas fontes seguindo o template do projeto.</span>
+    <span class="trail-badge avancado">Avançado</span>
+    <span class="time-tag">⏱ ~10 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> acelerar a codificação de <em>novas</em> fontes — a IA lê o template (com as GUIDELINES de SWOT, dimensão e importância) e propõe blocos ITEM que você revisa, em vez de escrever do zero.</div>
+    <div class="col-hd">Pré-requisito: chave da API</div>
+    <div class="cb"><span class="cmt"># Opção A — variável de sessão (PowerShell):</span>
+$env:ANTHROPIC_API_KEY = <span class="str">"sk-ant-..."</span>
+
+<span class="cmt"># Opção B — arquivo .env (recomendado, persiste):</span>
+ANTHROPIC_API_KEY=sk-ant-...
+SYNESIS_CODER_MODEL=claude-sonnet-4-6
+SYNESIS_CODER_LANGUAGE=pt-BR</div>
+    <div class="note" style="margin-top:0.3rem">
+      <strong>Onde colocar o <code>.env</code>:</strong> na <strong>pasta do projeto</strong> (<code>case-studies/Socioenvironmental/DSAP_Vila_dos_Coqueiros/</code>) ou em qualquer pasta-pai de onde você roda o comando — o Coder procura no diretório atual e sobe a árvore. Use o <code>.env.example</code> de <code>synesis-coder/</code> como modelo. Nunca versione o <code>.env</code>.
+    </div>
+
+    <div class="col-hd" style="margin-top:0.4rem">Codificar um trecho único</div>
+    <div class="cb"><span class="cmt"># item: anota um trecho de fonte diretamente</span>
+synesis-coder item --project project.synp --bibref oficina_coqueiros2026 --text <span class="str">"Os jovens estão indo embora porque não há emprego além da pesca."</span> --language pt-BR</div>
+    <div class="note" style="margin-top:0.3rem">
+      O Coder lê o <code>template.synt</code> (incluindo GUIDELINES) e gera um bloco ITEM completo — com <code>fator</code>, <code>swot</code> e <code>importância</code> sugeridos — para você revisar e colar em <code>annotations.syn</code>.
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Outros subcomandos relevantes</div>
+    <table class="mt">
+      <thead><tr><th>Subcomando</th><th>Uso neste projeto</th></tr></thead>
+      <tr>
+        <td><span class="pill plum">document</span></td>
+        <td class="prose">Codifica uma transcrição inteira de oficina ou entrevista e gera um .syn completo</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">ontology</span></td>
+        <td class="prose">Lê as anotações e sugere blocos ONTOLOGY (com dimensão) para fatores ainda não definidos</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">critique</span></td>
+        <td class="prose">Revisa annotations.syn e aponta itens com SWOT inconsistente, dimensão incorreta ou resumos genéricos</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">suggest</span></td>
+        <td class="prose">Sugere novos ITEMs a partir de um texto sem codificação anterior</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">normalize</span></td>
+        <td class="prose">Harmoniza a grafia dos fatores em arquivos .synr antes de incorporar</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">incorporate</span></td>
+        <td class="prose">Incorpora um .synr revisado ao arquivo .syn definitivo</td>
+      </tr>
+    </table>
+
+    <hr class="divider">
+    <div class="col-hd">Codificar transcrição completa (document)</div>
+    <div class="cb">synesis-coder document --project project.synp --bibref oficina2_coqueiros --input oficinas/oficina2.txt --output oficinas/oficina2.syn --language pt-BR</div>
+
+    <div class="col-hd" style="margin-top:0.4rem">Expandir ontologia (ontology)</div>
+    <div class="cb">synesis-coder ontology --project project.synp --output ontology_sugestoes.syno --language pt-BR</div>
+
+    <div class="note" style="margin-top:0.35rem">
+      <strong>Fluxo recomendado:</strong> <code>document</code> → <code>critique</code> → <code>normalize</code> → <code>incorporate</code> → <code>synesis check</code>. Nunca incorpore sem verificar. Depois, recalcule a escala no passo 5.
+    </div>
+  </div>
+</div>
+
+<!-- ── Solução de problemas ─────────────── -->
+<div class="trouble">
+  <div class="card-hd"><span class="ic">🛟</span> Solução de problemas — os tropeços mais comuns</div>
+  <table>
+    <tr>
+      <td>command not found: synesis</td>
+      <td>O pacote não está instalado ou o ambiente virtual não está ativo. Rode <code>pip install synesis</code> e confirme com <code>synesis --version</code>.</td>
+    </tr>
+    <tr>
+      <td>E004 — código não definido</td>
+      <td>Um ITEM usa um <code>fator</code> que não existe em <code>ontology.syno</code>. Adicione o bloco ONTOLOGY (ou use o Coder <code>ontology</code> no passo 6).</td>
+    </tr>
+    <tr>
+      <td>E020 — campo REQUIRED ausente</td>
+      <td>Um ITEM está sem um campo obrigatório (<code>citação, resumo, fator, swot, importância</code>). O erro aponta arquivo e linha.</td>
+    </tr>
+    <tr>
+      <td>E031 — valor fora do enumerado</td>
+      <td>O <code>swot</code> deve ser <code>fo/fr/op/am</code> e a <code>dimensão</code> uma das quatro definidas. Confira a grafia exata.</td>
+    </tr>
+    <tr>
+      <td>importância rejeitada</td>
+      <td>O campo é SCALE em <code>[0..1.01]</code> — use apenas <code>0</code>, <code>0.5</code> ou <code>1</code>, conforme as GUIDELINES.</td>
+    </tr>
+    <tr>
+      <td>KeyError: 'code' (no notebook)</td>
+      <td>A coluna de conceito da tabela <code>ontologies</code> chama-se <code>fator</code>, não <code>code</code>. Use <code>set_index("fator")</code>.</td>
+    </tr>
+    <tr>
+      <td>ValueError: a escala exige importância > 0</td>
+      <td>Todos os fatores ficaram com importância 0 (denominador zero). Atribua <code>0.5</code> ou <code>1</code> a pelo menos um fator.</td>
+    </tr>
+  </table>
+  <div class="note green" style="margin-top:0.45rem">
+    <strong>Regra de ouro:</strong> a qualquer momento em dúvida, volte ao <strong>passo 1</strong> — <code>synesis check</code> é seu paraquedas. Quase todo erro adiante começa como um aviso ignorado aqui.
+  </div>
+</div>
+
+<!-- ── Footer ─────────────────────────── -->
+<div class="doc-footer">
+  <span>DSAP · Vila dos Coqueiros · Synesis v1.1 · synesis-coder</span>
+  <span>Dados fictícios para replicação didática · Diagnóstico Socioambiental Participativo</span>
+</div>
+
+</div>
+</body>
+</html>

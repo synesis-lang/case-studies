@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiro — Thompson Chain Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+
+/* ── Tokens ─────────────────────────────── */
+:root {
+  --navy:       #1A3A5C;
+  --slate:      #3D5A7A;
+  --sage:       #4A6741;
+  --terracotta: #8B4A3C;
+  --gold:       #A8905A;
+  --plum:       #6A3D6A;
+  --ink:        #1C1C1E;
+  --ink-mid:    #3A3A3C;
+  --ref-mid:    #6B6B70;
+  --doc-light:  #AEAEB2;
+  --paper:      #F7F4EF;
+  --paper-tint: #E5E1DA;
+  --amber:      #C8963A;
+
+  --ff-serif: 'Newsreader', Georgia, serif;
+  --ff-sans:  'IBM Plex Sans', system-ui, sans-serif;
+  --ff-mono:  'IBM Plex Mono', 'Courier New', monospace;
+
+  --c-synp: #1A3A5C;
+  --c-synt: #4A6741;
+  --c-bib:  #8B4A3C;
+  --c-syn:  #3D5A7A;
+  --c-syno: #A8905A;
+  --c-coder:#6A3D6A;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--ff-sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.4rem 1.6rem 1.2rem;
+}
+
+/* ── Header ─────────────────────────────── */
+.doc-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: 0.55rem;
+  margin-bottom: 0.9rem;
+}
+.wordmark {
+  font-family: var(--ff-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+.wordmark span { font-family: var(--ff-mono); color: var(--navy); font-weight: 600; }
+.doc-meta { display: flex; align-items: center; gap: 1.2rem; }
+.doc-meta .lbl {
+  font-family: var(--ff-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ref-mid);
+}
+.print-btn {
+  font-family: var(--ff-mono);
+  font-size: 0.7rem;
+  background: var(--navy);
+  color: var(--paper);
+  border: none;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background .2s;
+}
+.print-btn:hover { background: var(--slate); }
+
+/* ── Pipeline strip ─────────────────────── */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--navy);
+  border-radius: 7px;
+  padding: 0.55rem 1rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+.pipeline-label {
+  font-family: var(--ff-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(247,244,239,0.4);
+  margin-right: 0.9rem;
+  white-space: nowrap;
+}
+.pip-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.28rem 0.6rem;
+  border-radius: 5px;
+  border: 1.5px solid rgba(247,244,239,0.15);
+}
+.pip-node.step1  { background: rgba(26,58,92,0.5);   border-color: rgba(26,58,92,0.8); }
+.pip-node.step2  { background: rgba(74,103,65,0.3);  border-color: rgba(74,103,65,0.7); }
+.pip-node.step3  { background: rgba(61,90,122,0.3);  border-color: rgba(61,90,122,0.7); }
+.pip-node.step4  { background: rgba(139,74,60,0.25); border-color: rgba(139,74,60,0.6); }
+.pip-node.step5  { background: rgba(106,61,106,0.3); border-color: rgba(106,61,106,0.7);}
+.pip-num { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--amber); opacity:.8; }
+.pip-txt { font-family: var(--ff-sans); font-size: 0.62rem; color: rgba(247,244,239,0.85); white-space: nowrap; }
+.pip-arr { font-family: var(--ff-mono); color: rgba(200,150,58,0.5); padding: 0 0.35rem; font-size: 0.85rem; }
+.pip-arr.final { color: rgba(126,200,160,0.7); }
+
+/* ── Step rows ──────────────────────────── */
+.step-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 1fr;
+  gap: 0;
+  border: 1.5px solid var(--paper-tint);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.55rem;
+}
+.step-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.75rem 0.8rem;
+  border-right: 1.5px solid rgba(0,0,0,0.07);
+}
+.step-label.s1  { background: rgba(26,58,92,0.09);   border-right-color: rgba(26,58,92,0.18); }
+.step-label.s2  { background: rgba(74,103,65,0.09);  border-right-color: rgba(74,103,65,0.18); }
+.step-label.s3  { background: rgba(61,90,122,0.09);  border-right-color: rgba(61,90,122,0.18); }
+.step-label.s4  { background: rgba(139,74,60,0.07);  border-right-color: rgba(139,74,60,0.18); }
+.step-label.s5  { background: rgba(106,61,106,0.08); border-right-color: rgba(106,61,106,0.18);}
+
+.step-num {
+  font-family: var(--ff-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  opacity: 0.18;
+}
+.s1 .step-num  { color: var(--c-synp); }
+.s2 .step-num  { color: var(--c-synt); }
+.s3 .step-num  { color: var(--c-syn);  }
+.s4 .step-num  { color: var(--c-bib);  }
+.s5 .step-num  { color: var(--c-coder);}
+
+.step-title {
+  font-family: var(--ff-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.15rem;
+}
+.step-sub {
+  font-family: var(--ff-sans);
+  font-size: 0.6rem;
+  color: var(--ref-mid);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* ── Content columns ────────────────────── */
+.step-col {
+  padding: 0.65rem 0.75rem;
+  border-right: 1px solid var(--paper-tint);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+.step-col:last-child { border-right: none; }
+
+.col-hd {
+  font-family: var(--ff-sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--doc-light);
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--paper-tint);
+  margin-bottom: 0.1rem;
+}
+
+/* ── Code blocks ─────────────────────────── */
+.cb {
+  font-family: var(--ff-mono);
+  font-size: 0.68rem;
+  line-height: 1.55;
+  background: #1e2530;
+  color: #c8d6e5;
+  border-radius: 5px;
+  padding: 0.5rem 0.6rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.kw  { color: #C8963A; font-weight: 500; }
+.ref { color: #7BB8E8; }
+.str { color: #7EC8A0; }
+.val { color: #E5C07B; }
+.cmt { color: #5c7088; font-style: italic; }
+.op  { color: rgba(229,225,218,0.45); }
+.ok  { color: #7EC8A0; }
+.hl  { color: #E06C75; }
+
+/* ── Mini table ─────────────────────────── */
+.mt { width: 100%; border-collapse: collapse; font-size: 0.66rem; }
+.mt th {
+  font-family: var(--ff-sans);
+  font-weight: 600;
+  font-size: 0.58rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ref-mid);
+  text-align: left;
+  padding: 0.12rem 0.3rem 0.2rem;
+  border-bottom: 1px solid var(--paper-tint);
+}
+.mt td {
+  font-family: var(--ff-mono);
+  font-size: 0.64rem;
+  padding: 0.18rem 0.3rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(229,225,218,0.5);
+  color: var(--ink-mid);
+  line-height: 1.4;
+}
+.mt td:first-child { white-space: nowrap; font-weight: 500; }
+.mt tr:last-child td { border-bottom: none; }
+.mt td.prose { font-family: var(--ff-sans); font-size: 0.63rem; }
+
+/* ── Note ───────────────────────────────── */
+.note {
+  font-family: var(--ff-sans);
+  font-size: 0.63rem;
+  line-height: 1.5;
+  color: var(--ref-mid);
+  background: rgba(26,58,92,0.04);
+  border-left: 2px solid var(--amber);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0 4px 4px 0;
+}
+.note strong { color: var(--ink); font-weight: 600; }
+.note code {
+  font-family: var(--ff-mono);
+  font-size: 0.85em;
+  color: var(--navy);
+  background: rgba(26,58,92,0.08);
+  padding: 0.05em 0.28em;
+  border-radius: 3px;
+}
+.note.warn  { border-left-color: #E06C75; background: rgba(224,108,117,0.04); }
+.note.green { border-left-color: #7EC8A0; background: rgba(126,200,160,0.04); }
+
+/* ── Pill ───────────────────────────────── */
+.pill {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  padding: 0.08rem 0.38rem;
+  border-radius: 100px;
+  border: 1px solid rgba(26,58,92,0.2);
+  background: rgba(26,58,92,0.06);
+  color: var(--navy);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.pill.plum  { border-color: rgba(106,61,106,0.3); background: rgba(106,61,106,0.08); color: var(--c-coder); }
+
+/* ── Divider ────────────────────────────── */
+.divider { border: none; border-top: 1px solid var(--paper-tint); margin: 0.1rem 0; }
+
+/* ── Mapa conceitual / orientação ───────── */
+.orient {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 0.8rem;
+  border: 1.5px solid var(--paper-tint);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+  margin-bottom: 0.7rem;
+  background: rgba(26,58,92,0.025);
+}
+.orient h2 {
+  font-family: var(--ff-serif);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+.orient p { font-size: 0.7rem; line-height: 1.55; color: var(--ink-mid); margin-bottom: 0.4rem; }
+.orient p:last-child { margin-bottom: 0; }
+.orient .q {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--terracotta);
+  border-left: 2px solid var(--terracotta);
+  padding-left: 0.5rem;
+  margin: 0.3rem 0 0.45rem;
+}
+
+/* numbers strip */
+.bignums {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+.bignum {
+  border: 1px solid var(--paper-tint);
+  border-radius: 6px;
+  padding: 0.3rem 0.4rem;
+  text-align: center;
+  background: var(--paper);
+}
+.bignum b { font-family: var(--ff-mono); font-size: 1rem; color: var(--navy); display: block; line-height: 1.1; }
+.bignum span { font-size: 0.54rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ref-mid); }
+
+/* ── Pré-requisitos + glossário ─────────── */
+.prereq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.card {
+  border: 1.5px solid var(--paper-tint);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+.card-hd {
+  font-family: var(--ff-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.card-hd .ic { font-size: 0.85rem; }
+.glossary dt {
+  font-family: var(--ff-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 0.28rem;
+}
+.glossary dd { font-size: 0.66rem; line-height: 1.45; color: var(--ink-mid); margin-left: 0; }
+.checklist { list-style: none; }
+.checklist li {
+  font-size: 0.67rem;
+  line-height: 1.55;
+  color: var(--ink-mid);
+  padding-left: 1.1rem;
+  position: relative;
+  margin-bottom: 0.12rem;
+}
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.78rem;
+}
+.checklist code {
+  font-family: var(--ff-mono);
+  font-size: 0.9em;
+  color: var(--navy);
+  background: rgba(26,58,92,0.07);
+  padding: 0.02em 0.26em;
+  border-radius: 3px;
+}
+
+/* ── Trilha ─────────────────────────────── */
+.trail-band {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.8rem;
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  margin: 0.5rem 0 0.15rem;
+}
+.trail-band.essencial { background: rgba(74,103,65,0.1);  color: var(--sage);  }
+.trail-band.analise   { background: rgba(168,144,90,0.12);color: var(--gold);  }
+.trail-band.avancado  { background: rgba(106,61,106,0.1); color: var(--plum);  }
+.trail-band .desc { font-family: var(--ff-sans); text-transform: none; letter-spacing: 0; color: var(--ref-mid); font-size: 0.62rem; }
+
+.trail-badge {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.06rem 0.32rem;
+  border-radius: 100px;
+  margin-top: 0.3rem;
+}
+.trail-badge.essencial { background: rgba(74,103,65,0.15);  color: var(--sage); }
+.trail-badge.analise   { background: rgba(168,144,90,0.18); color: #7d6630; }
+.trail-badge.avancado  { background: rgba(106,61,106,0.15); color: var(--plum); }
+
+/* ── Objetivo / checkpoint / tempo ──────── */
+.goal {
+  font-family: var(--ff-sans);
+  font-size: 0.64rem;
+  line-height: 1.5;
+  color: var(--ink-mid);
+  background: rgba(74,103,65,0.06);
+  border-left: 2px solid var(--sage);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0 4px 4px 0;
+}
+.goal strong { color: var(--sage); font-weight: 600; }
+.checkpoint {
+  font-family: var(--ff-sans);
+  font-size: 0.63rem;
+  line-height: 1.5;
+  color: var(--ink-mid);
+  background: rgba(26,58,92,0.045);
+  border: 1px dashed rgba(26,58,92,0.25);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+.checkpoint strong { color: var(--navy); font-weight: 600; }
+.checkpoint::before { content: "✓ "; color: var(--sage); font-weight: 700; }
+.time-tag {
+  font-family: var(--ff-mono);
+  font-size: 0.56rem;
+  color: var(--ref-mid);
+  margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* ── Alpaca block ───────────────────────── */
+.alpaca-block {
+  border: 1.5px solid rgba(74,103,65,0.28);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  margin-top: 0.5rem;
+  background: rgba(74,103,65,0.04);
+}
+
+/* ── Troubleshooting ────────────────────── */
+.trouble {
+  border: 1.5px solid rgba(224,108,117,0.3);
+  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
+  margin-top: 0.6rem;
+  background: rgba(224,108,117,0.03);
+}
+.trouble .card-hd { color: var(--terracotta); }
+.trouble table { width: 100%; border-collapse: collapse; font-size: 0.65rem; }
+.trouble td {
+  padding: 0.22rem 0.4rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(229,225,218,0.6);
+  line-height: 1.45;
+}
+.trouble tr:last-child td { border-bottom: none; }
+.trouble td:first-child {
+  font-family: var(--ff-mono);
+  font-size: 0.62rem;
+  color: #b54a52;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.trouble td:nth-child(2) { font-family: var(--ff-sans); color: var(--ink-mid); }
+.trouble code {
+  font-family: var(--ff-mono);
+  font-size: 0.88em;
+  color: var(--navy);
+  background: rgba(26,58,92,0.07);
+  padding: 0.02em 0.26em;
+  border-radius: 3px;
+}
+
+/* ── Footer ─────────────────────────────── */
+.doc-footer {
+  border-top: 1px solid var(--paper-tint);
+  padding-top: 0.45rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.55rem;
+}
+.doc-footer span { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--doc-light); }
+
+/* ── Print ──────────────────────────────── */
+@media print {
+  @page { size: A4 landscape; margin: 8mm 9mm 7mm 9mm; }
+  body { font-size: 11px; background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-btn { display: none; }
+  .page { padding: 0; max-width: 100%; }
+  .step-row { break-inside: avoid; }
+  .note, .alpaca-block { break-inside: avoid; }
+  .orient, .prereq, .card, .trouble { break-inside: avoid; }
+  .goal, .checkpoint { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pipeline { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cb, .step-label, .bignum { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ── Header ──────────────────────────── -->
+<div class="doc-header">
+  <div class="wordmark"><span>s</span>ynesis &nbsp;<span style="font-family:var(--ff-sans);font-size:0.75rem;font-weight:300;color:var(--ref-mid);letter-spacing:0">Roteiro do Projeto</span></div>
+  <div class="doc-meta">
+    <span class="lbl">Thompson Chain Reference · pt-BR</span>
+    <button class="print-btn" onclick="window.print()">⎙ Imprimir / PDF</button>
+  </div>
+</div>
+
+<!-- ── Pipeline ─────────────────────────── -->
+<div class="pipeline">
+  <span class="pipeline-label">Pipeline completo</span>
+  <div class="pip-node step1"><span class="pip-num">01</span><span class="pip-txt">Verificar</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step2"><span class="pip-num">02</span><span class="pip-txt">Compilar</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step3"><span class="pip-num">03</span><span class="pip-txt">Exportar formatos</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step4"><span class="pip-num">04</span><span class="pip-txt">Alpaca JSONL</span></div>
+  <span class="pip-arr final">→</span>
+  <div class="pip-node step5"><span class="pip-num">05</span><span class="pip-txt">Synesis-Coder</span></div>
+</div>
+
+<!-- ── Orientação / advance organizer ───── -->
+<div class="orient">
+  <div>
+    <h2>O que você vai construir</h2>
+    <p>A <strong>Thompson Chain-Reference Bible</strong> (Frank Thompson, 1934) liga cada <strong>versículo</strong> a um ou mais <strong>tópicos temáticos</strong>, formando "correntes" (chains) que atravessam a Escritura. Este projeto Synesis transforma essa obra de domínio público em dados <strong>compiláveis e consultáveis</strong>.</p>
+    <div class="q">"Por quais temas passa este versículo — e quais outros versículos compõem a mesma corrente temática?"</div>
+    <p>Você partirá de 66 arquivos (um por livro bíblico) e chegará a um JSON canônico, tabelas para análise e um dataset para treinar uma IA classificadora de versículos.</p>
+    <div class="bignums">
+      <div class="bignum"><b>1.728</b><span>tópicos</span></div>
+      <div class="bignum"><b>15.757</b><span>versículos</span></div>
+      <div class="bignum"><b>66</b><span>livros bíblicos</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="col-hd" style="border:none;color:var(--navy);font-size:0.6rem">Anatomia de um ITEM</div>
+    <div class="cb"><span class="kw">ITEM</span> @thompson1934
+    <span class="val">passage:</span> Gen 1:1
+    <span class="val">topic:</span> CREATOR, EARTH,
+           HEAVENS_THE_NATURAL
+<span class="kw">END ITEM</span></div>
+    <div class="note" style="margin-top:0.4rem">
+      Cada item é um <strong>versículo</strong> (<code>passage</code>) ligado a <strong>um ou mais tópicos</strong> (<code>topic</code>, separados por vírgula). Um mesmo tópico reaparece em muitos versículos — essa é a "corrente".
+    </div>
+    <div class="note" style="margin-top:0.35rem">
+      <strong>Comece pelo essencial:</strong> passos <strong>1 → 2 → 3</strong> entregam o projeto compilado e as tabelas. Os passos 4–5 são extensões.
+    </div>
+  </div>
+</div>
+
+<!-- ── Pré-requisitos + Glossário ───────── -->
+<div class="prereq">
+  <div class="card">
+    <div class="card-hd"><span class="ic">⚙</span> Antes de começar — instale e confira</div>
+    <ul class="checklist">
+      <li><strong>Python 3.10+</strong> instalado (<code>python --version</code>)</li>
+      <li>Synesis: <code>pip install synesis</code> · teste com <code>synesis --version</code></li>
+      <li>Para análise em Python (passo 3): <code>pip install pandas</code></li>
+      <li>Para o Coder (passo 5, opcional): chave <code>ANTHROPIC_API_KEY</code></li>
+      <li>Terminal aberto <strong>na pasta do projeto</strong> (onde está <code>thompson_bible.synp</code>)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-hd"><span class="ic">📖</span> Vocabulário mínimo — leia uma vez</div>
+    <dl class="glossary">
+      <dt>topic (tópico)</dt><dd>O tema temático do versículo (ex.: <code>CREATOR</code>). É o campo CODE — todo tópico tem um bloco ONTOLOGY.</dd>
+      <dt>chain (corrente)</dt><dd>O conjunto de todos os versículos que compartilham um mesmo tópico. Não é um campo: emerge ao agrupar por <code>topic</code>.</dd>
+      <dt>passage</dt><dd>A referência do versículo em formato USX (ex.: <code>Gen 1:1</code>).</dd>
+      <dt>text</dt><dd>Campo opcional para o texto do versículo (QUOTATION). Neste corpus está vazio — só referências.</dd>
+      <dt>ITEM</dt><dd>Uma ocorrência: um versículo com seus tópicos atribuídos.</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ── Trilha 1: Essencial ──────────────── -->
+<div class="trail-band essencial">
+  <span>● Trilha essencial · passos 1–3</span>
+  <span class="desc">Faça estes três e você tem o projeto compilado e as tabelas prontas. ~10 min no total.</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 1 — Verificar
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s1">
+    <span class="step-num">01</span>
+    <span class="step-title">Verificar o projeto</span>
+    <span class="step-sub">Confirme que os 66 arquivos de livros compilam sem erros antes de exportar.</span>
+    <span class="trail-badge essencial">Essencial</span>
+    <span class="time-tag">⏱ ~2 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> garantir que todos os arquivos de livro e a ontologia estão íntegros. Em 15 mil versículos, começar por aqui evita caçar um tópico não definido perdido em um livro qualquer.</div>
+    <div class="col-hd">Comando</div>
+    <div class="cb"><span class="cmt"># A partir da pasta do projeto:</span>
+cd case-studies/Theology/Thompson_Chain_Reference
+
+<span class="ok">synesis check</span> thompson_bible.synp</div>
+    <div class="note">
+      <strong>Saída esperada:</strong> <code>✓ No errors found.</code> — zero ERROs. Este projeto emite alguns <strong>WARNINGs</strong> (tópicos com descrições idênticas) que não bloqueiam a compilação.
+    </div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o terminal mostra <code>No errors found</code> (avisos são aceitáveis). Se aparecer um <code>E0xx</code>, veja a Solução de problemas no rodapé.</div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Estrutura do projeto</div>
+    <table class="mt">
+      <tr><td style="color:var(--c-synp)">thompson_bible.synp</td><td class="prose">Ponto de entrada: declara template, bibliografia, 66 arquivos de livro e ontologia</td></tr>
+      <tr><td style="color:var(--c-synt)">thompson_bible.synt</td><td class="prose">Define os campos: passage (REQUIRED), text, topic (CODE), description</td></tr>
+      <tr><td style="color:var(--c-bib)">thompson.bib</td><td class="prose">Fonte única: a obra de Thompson (domínio público)</td></tr>
+      <tr><td style="color:var(--c-syn)">annotations/01_Genesis…66_Revelation</td><td class="prose">15.757 ITEMs, um arquivo por livro bíblico, na ordem canônica</td></tr>
+      <tr><td style="color:var(--c-syno)">thompson.syno</td><td class="prose">1.728 tópicos, cada um com sua descrição</td></tr>
+    </table>
+    <div class="note">
+      <strong>Por que 66 arquivos?</strong> Um por livro (Gênesis a Apocalipse, numerados em ordem canônica) mantém cada arquivo gerenciável e facilita revisar ou versionar um livro sem tocar nos demais.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 2 — Compilar JSON canônico
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s2">
+    <span class="step-num">02</span>
+    <span class="step-title">Compilar → JSON</span>
+    <span class="step-sub">Gera o artefato canônico v3.0 com toda a obra serializada.</span>
+    <span class="trail-badge essencial">Essencial</span>
+    <span class="time-tag">⏱ ~3 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> produzir o <em>único</em> arquivo do qual todos os outros formatos derivam. Pense nele como o "negativo" da foto — gere uma vez, revele em vários formatos depois.</div>
+    <div class="col-hd">Comando</div>
+    <div class="cb"><span class="ok">synesis compile</span> thompson_bible.synp --json exports/thompson.json</div>
+    <div class="col-hd" style="margin-top:0.4rem">Estrutura do JSON gerado</div>
+    <div class="cb"><span class="op">{</span>
+  <span class="val">"version"</span><span class="op">:</span> <span class="str">"3.0"</span>,
+  <span class="val">"export_metadata"</span><span class="op">:</span> <span class="op">{</span>
+    <span class="val">"item_count"</span><span class="op">:</span>    <span class="ref">15757</span>,
+    <span class="val">"concept_count"</span><span class="op">:</span> <span class="ref">1728</span>,
+    <span class="val">"source_count"</span><span class="op">:</span>  <span class="ref">1</span>,
+    <span class="val">"chain_count"</span><span class="op">:</span>   <span class="ref">0</span>
+  <span class="op">}</span>,
+  <span class="val">"corpus"</span><span class="op">: [</span> <span class="cmt">... ITEMs com passage e topic ...</span> <span class="op">]</span>,
+  <span class="val">"ontology"</span><span class="op">: [</span> <span class="cmt">... 1728 tópicos com description ...</span> <span class="op">]</span>
+<span class="op">}</span></div>
+    <div class="note">
+      <strong>Nota sobre "chain":</strong> as "correntes" de Thompson não usam o campo CHAIN do Synesis (<code>chain_count: 0</code>). Elas emergem ao <em>agrupar versículos por tópico</em> — você as monta na análise (passo 3).
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Verificação rápida</div>
+    <div class="cb"><span class="cmt"># Conferir contagens no JSON gerado:</span>
+python -c "import json; d=json.load(open('exports/thompson.json', encoding='utf-8')); print(d['export_metadata'])"</div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o arquivo <code>exports/thompson.json</code> existe e imprime <code>item_count: 15757</code> e <code>concept_count: 1728</code>.</div>
+    <hr class="divider">
+    <div class="col-hd">Também disponível via API Python</div>
+    <div class="cb"><span class="kw">import</span> synesis, glob
+<span class="kw">from</span> pathlib <span class="kw">import</span> Path
+
+anotacoes = {f: Path(f).read_text(<span class="str">"utf-8"</span>)
+             <span class="kw">for</span> f <span class="kw">in</span> glob.glob(<span class="str">"annotations/*.syn"</span>)}
+anotacoes[<span class="str">"thompson_bible.syn"</span>] = \
+    Path(<span class="str">"thompson_bible.syn"</span>).read_text(<span class="str">"utf-8"</span>)
+
+resultado = synesis.load(
+    project_content=Path(<span class="str">"thompson_bible.synp"</span>).read_text(<span class="str">"utf-8"</span>),
+    template_content=Path(<span class="str">"thompson_bible.synt"</span>).read_text(<span class="str">"utf-8"</span>),
+    annotation_contents=anotacoes,
+    ontology_contents={<span class="str">"thompson.syno"</span>:
+        Path(<span class="str">"thompson.syno"</span>).read_text(<span class="str">"utf-8"</span>)},
+    bibliography_content=Path(<span class="str">"thompson.bib"</span>).read_text(<span class="str">"utf-8"</span>),
+    project_filename=<span class="str">"thompson_bible.synp"</span>,
+    template_filename=<span class="str">"thompson_bible.synt"</span>,
+)
+<span class="kw">assert</span> resultado.success, resultado.get_diagnostics()
+print(resultado.to_json_dict()[<span class="str">"export_metadata"</span>])</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 3 — Exportar CSV e Excel
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s3">
+    <span class="step-num">03</span>
+    <span class="step-title">Exportar CSV e Excel</span>
+    <span class="step-sub">Gera tabelas prontas para análise em Pandas, R ou planilhas.</span>
+    <span class="trail-badge essencial">Essencial</span>
+    <span class="time-tag">⏱ ~5 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> obter tabelas que você abre no Pandas para reconstruir as correntes — quais tópicos cobrem mais versículos, quais versículos carregam mais tópicos, como uma corrente atravessa os livros.</div>
+    <div class="col-hd">Comandos</div>
+    <div class="cb"><span class="cmt"># CSV: uma pasta com várias tabelas</span>
+<span class="ok">synesis compile</span> thompson_bible.synp --csv exports/csv/
+
+<span class="cmt"># Excel: uma planilha com abas separadas</span>
+<span class="ok">synesis compile</span> thompson_bible.synp --xls exports/thompson.xlsx
+
+<span class="cmt"># Tudo numa única execução:</span>
+<span class="ok">synesis compile</span> thompson_bible.synp --json exports/thompson.json --csv exports/csv/ --xls exports/thompson.xlsx</div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Tabelas geradas e suas colunas</div>
+    <table class="mt">
+      <thead><tr><th>Tabela</th><th>Colunas principais</th></tr></thead>
+      <tr><td>sources</td><td class="prose">bibref, reference</td></tr>
+      <tr><td>items</td><td class="prose">bibref, passage, text, topic</td></tr>
+      <tr><td>ontologies</td><td class="prose">topic (= tópico), description</td></tr>
+    </table>
+    <div class="note">
+      <strong>Atenção:</strong> na tabela <code>ontologies</code>, a coluna que identifica o tópico é <code>topic</code> (o campo CODE), não <code>code</code>. E na tabela <code>items</code>, a coluna <code>topic</code> pode conter <strong>vários tópicos separados por vírgula</strong> — separe-os antes de agrupar.
+    </div>
+    <hr class="divider">
+    <div class="col-hd">Reconstruir as correntes em Pandas</div>
+    <div class="cb">tabelas = resultado.to_dataframes()
+itens = tabelas[<span class="str">"items"</span>]
+
+<span class="cmt"># Expandir tópicos múltiplos (1 linha por tópico):</span>
+expandido = itens.assign(
+    topic=itens[<span class="str">"topic"</span>].str.split(<span class="str">r",\s*"</span>)
+).explode(<span class="str">"topic"</span>)
+
+<span class="cmt"># Correntes mais longas (tópicos com mais versículos):</span>
+expandido[<span class="str">"topic"</span>].value_counts().head(<span class="ref">10</span>)
+
+<span class="cmt"># A corrente completa de um tópico:</span>
+expandido[expandido[<span class="str">"topic"</span>] == <span class="str">"CREATOR"</span>][<span class="str">"passage"</span>]</div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> a pasta <code>exports/csv/</code> tem 3 arquivos e <code>items.csv</code> tem 15.757 linhas. <strong>Trilha essencial concluída.</strong></div>
+  </div>
+</div>
+
+<!-- ── Trilha 2: Dataset ────────────────── -->
+<div class="trail-band analise">
+  <span>● Trilha de dataset · passo 4</span>
+  <span class="desc">Gere um dataset Alpaca para treinar uma IA a atribuir tópicos a versículos. Opcional.</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 4 — Alpaca JSONL
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s4">
+    <span class="step-num">04</span>
+    <span class="step-title">Exportar Alpaca JSONL</span>
+    <span class="step-sub">Dataset de fine-tuning: versículo → tópico(s) da corrente.</span>
+    <span class="trail-badge analise">Dataset</span>
+    <span class="time-tag">⏱ ~5 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> empacotar a obra como exemplos de treino, para uma IA aprender a atribuir tópicos temáticos a um versículo. Opcional — pule se não vai treinar modelos.</div>
+    <div class="col-hd">Comando</div>
+    <div class="cb"><span class="ok">synesis compile</span> thompson_bible.synp --alpaca exports/thompson_alpaca.jsonl</div>
+    <div class="col-hd" style="margin-top:0.4rem">Estrutura de cada linha JSONL</div>
+    <div class="alpaca-block">
+<div class="cb"><span class="op">{</span>
+  <span class="val">"instruction"</span><span class="op">:</span> <span class="str">"Which concepts are attributed to the following passage? (Thompson chain topic(s) associated with the verse)"</span>,
+
+  <span class="val">"input"</span><span class="op">:</span> <span class="str">""</span>,
+
+  <span class="val">"output"</span><span class="op">:</span> <span class="str">"CREATOR, EARTH, HEAVENS_THE_NATURAL"</span>
+<span class="op">}</span></div>
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Como interpretar o formato Alpaca</div>
+    <table class="mt">
+      <thead><tr><th>Campo</th><th>Conteúdo</th></tr></thead>
+      <tr><td>instruction</td><td class="prose">Tarefa derivada do DESCRIPTION do campo CODE (<code>topic</code>) — pede os tópicos do versículo</td></tr>
+      <tr><td>input</td><td class="prose">Vem do campo QUOTATION (<code>text</code>). Como o corpus não traz o texto do versículo, fica vazio</td></tr>
+      <tr><td>output</td><td class="prose">O(s) tópico(s) da corrente — a resposta esperada do modelo</td></tr>
+    </table>
+    <div class="note" style="margin-top:0.35rem">
+      <strong>Por que <code>input</code> vazio?</strong> Este corpus indexa <em>referências</em> de versículo, sem o texto. Para um dataset mais rico, popule o campo <code>text</code> com o versículo de uma tradução de domínio público antes de exportar.
+    </div>
+    <hr class="divider">
+    <div class="col-hd">Inspecionar o arquivo gerado</div>
+    <div class="cb"><span class="cmt"># Contar pares e ver o primeiro:</span>
+python -c "import json; L=[json.loads(l) for l in open('exports/thompson_alpaca.jsonl', encoding='utf-8')]; print(len(L),'pares Alpaca'); print(json.dumps(L[0], indent=2, ensure_ascii=False))"</div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o script imprime <code>8003 pares Alpaca</code> (versículos agrupados) e mostra um par com instruction e output preenchidos.</div>
+  </div>
+</div>
+
+<!-- ── Trilha 3: Avançado / opcional ────── -->
+<div class="trail-band avancado">
+  <span>● Trilha avançada · passo 5 · opcional</span>
+  <span class="desc">Estenda a obra: atribua tópicos a novos versículos com auxílio de IA.</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 5 — Synesis-Coder
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s5">
+    <span class="step-num">05</span>
+    <span class="step-title">Synesis-Coder</span>
+    <span class="step-sub">Codificação assistida por LLM: atribui tópicos a novos versículos seguindo o template.</span>
+    <span class="trail-badge avancado">Avançado</span>
+    <span class="time-tag">⏱ ~10 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> acelerar a atribuição de tópicos a <em>novos</em> versículos — a IA lê o template e propõe blocos ITEM (com os tópicos da corrente) que você revisa, em vez de escrever do zero.</div>
+    <div class="col-hd">Pré-requisito: chave da API</div>
+    <div class="cb"><span class="cmt"># Opção A — variável de sessão (PowerShell):</span>
+$env:ANTHROPIC_API_KEY = <span class="str">"sk-ant-..."</span>
+
+<span class="cmt"># Opção B — arquivo .env (recomendado, persiste):</span>
+ANTHROPIC_API_KEY=sk-ant-...
+SYNESIS_CODER_MODEL=claude-sonnet-4-6
+SYNESIS_CODER_LANGUAGE=en</div>
+    <div class="note" style="margin-top:0.3rem">
+      <strong>Onde colocar o <code>.env</code>:</strong> na <strong>pasta do projeto</strong> ou em qualquer pasta-pai de onde você roda o comando — o Coder procura no diretório atual e sobe a árvore. Use o <code>.env.example</code> de <code>synesis-coder/</code> como modelo. Nunca versione o <code>.env</code>.
+    </div>
+
+    <div class="col-hd" style="margin-top:0.4rem">Atribuir tópicos a um versículo (item)</div>
+    <div class="cb"><span class="cmt"># item: gera um bloco ITEM para o versículo</span>
+synesis-coder item --project thompson_bible.synp --bibref thompson1934 --text <span class="str">"Joh 3:16 — For God so loved the world..."</span> --language en</div>
+    <div class="note" style="margin-top:0.3rem">
+      O Coder lê o <code>thompson_bible.synt</code> e gera um ITEM com <code>passage</code> e <code>topic</code> sugeridos para você revisar e colar no arquivo do livro correspondente.
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Outros subcomandos relevantes</div>
+    <table class="mt">
+      <thead><tr><th>Subcomando</th><th>Uso neste projeto</th></tr></thead>
+      <tr>
+        <td><span class="pill plum">document</span></td>
+        <td class="prose">Indexa um capítulo inteiro de uma vez e gera um .syn completo do livro</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">ontology</span></td>
+        <td class="prose">Lê as anotações e sugere blocos ONTOLOGY (com description) para tópicos ainda não definidos</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">critique</span></td>
+        <td class="prose">Revisa um arquivo de livro e aponta tópicos mal atribuídos ou inconsistentes na corrente</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">normalize</span></td>
+        <td class="prose">Harmoniza a grafia dos tópicos em arquivos .synr antes de incorporar</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">incorporate</span></td>
+        <td class="prose">Incorpora um .synr revisado ao arquivo .syn definitivo</td>
+      </tr>
+    </table>
+
+    <hr class="divider">
+    <div class="col-hd">Indexar um capítulo (document)</div>
+    <div class="cb">synesis-coder document --project thompson_bible.synp --bibref thompson1934 --input versiculos/john_3.txt --output annotations/43_John_novos.syn --language en</div>
+
+    <div class="note" style="margin-top:0.35rem">
+      <strong>Fluxo recomendado:</strong> <code>document</code> → <code>critique</code> → <code>normalize</code> → <code>incorporate</code> → <code>synesis check</code>. Nunca incorpore sem verificar.
+    </div>
+  </div>
+</div>
+
+<!-- ── Solução de problemas ─────────────── -->
+<div class="trouble">
+  <div class="card-hd"><span class="ic">🛟</span> Solução de problemas — os tropeços mais comuns</div>
+  <table>
+    <tr>
+      <td>command not found: synesis</td>
+      <td>O pacote não está instalado ou o ambiente virtual não está ativo. Rode <code>pip install synesis</code> e confirme com <code>synesis --version</code>.</td>
+    </tr>
+    <tr>
+      <td>WARNING — descrições idênticas</td>
+      <td>Avisos como "Conceitos <code>AZEKAH</code> e <code>ZIKLAG</code> têm descrições idênticas" são esperados (topônimos breves). <strong>Não bloqueiam</strong> a compilação.</td>
+    </tr>
+    <tr>
+      <td>E004 — código não definido</td>
+      <td>Um ITEM usa um <code>topic</code> sem bloco ONTOLOGY em <code>thompson.syno</code>. Adicione o tópico (ou use o Coder <code>ontology</code>).</td>
+    </tr>
+    <tr>
+      <td>E020 — campo REQUIRED ausente</td>
+      <td>Todo ITEM precisa de <code>passage</code>. O erro aponta o arquivo (ex.: <code>19_Psalms.syn</code>) e a linha.</td>
+    </tr>
+    <tr>
+      <td>groupby junta tópicos errados</td>
+      <td>A coluna <code>topic</code> pode ter vários valores por linha. <strong>Faça <code>str.split</code> + <code>explode</code></strong> antes de agrupar (veja o passo 3).</td>
+    </tr>
+    <tr>
+      <td>KeyError: 'code' (em Pandas)</td>
+      <td>A coluna de tópico da tabela <code>ontologies</code> chama-se <code>topic</code>, não <code>code</code>. Use <code>set_index("topic")</code>.</td>
+    </tr>
+  </table>
+  <div class="note green" style="margin-top:0.45rem">
+    <strong>Regra de ouro:</strong> a qualquer momento em dúvida, volte ao <strong>passo 1</strong> — <code>synesis check</code> é seu paraquedas. Quase todo erro adiante começa como um aviso ignorado aqui.
+  </div>
+</div>
+
+<!-- ── Footer ─────────────────────────── -->
+<div class="doc-footer">
+  <span>Thompson Chain Reference · Synesis v1.1 · synesis-coder</span>
+  <span>Frank Thompson (1934) · Domínio público · crosswire.org</span>
+</div>
+
+</div>
+</body>
+</html>

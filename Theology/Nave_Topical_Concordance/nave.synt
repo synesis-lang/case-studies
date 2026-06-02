@@ -13,6 +13,12 @@ END SOURCE FIELDS
 FIELD reference TYPE TEXT
     SCOPE SOURCE
     DESCRIPTION Descrição da fonte
+    GUIDELINES
+        Identifique a obra ou edição da qual as passagens foram extraídas.
+        Use um rótulo curto e estável que descreva a concordância (ex: Nave's Topical Concordance).
+        Mantenha a mesma grafia em todas as referências à mesma fonte.
+        Não inclua números de página, volume ou detalhes de localização aqui.
+    END GUIDELINES
 END FIELD
 
 # ============================================
@@ -29,21 +35,50 @@ END ITEM FIELDS
 FIELD entry TYPE CODE
     SCOPE ITEM
     DESCRIPTION Verbete principal do Nave's Topical Bible
+    GUIDELINES
+        Atribua o verbete temático que melhor representa o assunto tratado na passagem.
+        Use a grafia em maiúsculas, com underscore no lugar de espaços (ex: HOLY_SPIRIT).
+        Prefira um verbete já existente na ontologia e reutilize exatamente a mesma grafia.
+        Aplique apenas um verbete por item; se a passagem cobre vários temas, crie um item para cada.
+        Crie um novo verbete somente quando o tema for distinto e não houver equivalente na ontologia.
+        Todo verbete aplicado deve possuir um bloco ONTOLOGY correspondente.
+    END GUIDELINES
 END FIELD
 
 FIELD passage TYPE TEXT
     SCOPE ITEM
     DESCRIPTION Referência bíblica em formato USX (ex: Exo 6:16-20)
+    GUIDELINES
+        Registre a referência da passagem no formato USX: sigla do livro, capítulo e versículo.
+        Use a abreviação USX de três letras para o livro (ex: Exo, Jos, 1Ch, Mat, Rev).
+        Indique intervalos de versículos com hífen (ex: Exo 6:16-20) e versículos isolados sem hífen.
+        Mantenha um espaço entre a sigla do livro e o número do capítulo.
+        Não inclua o nome da tradução nem o texto do versículo neste campo.
+    END GUIDELINES
 END FIELD
 
 FIELD note TYPE MEMO
     SCOPE ITEM
     DESCRIPTION Subtópico descritivo do verbete
+    GUIDELINES
+        Registre o subtópico que especifica qual aspecto do verbete a passagem ilustra.
+        Use uma expressão curta e nominal (ex: Lineage of, Children of, Death and burial of).
+        Reutilize o mesmo subtópico para passagens que tratam do mesmo aspecto, mantendo a grafia.
+        Mantenha o subtópico subordinado ao verbete: ele detalha o tema, não o substitui.
+        Não repita a referência da passagem nem transcreva o texto do versículo aqui.
+    END GUIDELINES
 END FIELD
 
 FIELD xref TYPE TEXT
     SCOPE ITEM
     DESCRIPTION Referência cruzada para outro verbete (See / Also called)
+    GUIDELINES
+        Aponte para outro verbete relacionado quando o leitor deva ser remetido a ele (See / Also called).
+        Use exatamente a grafia do verbete de destino tal como aparece no campo entry e na ontologia.
+        Empregue a referência cruzada para sinônimos, formas alternativas ou temas estreitamente ligados.
+        Confirme que o verbete de destino existe na ontologia antes de referenciá-lo.
+        Deixe o campo vazio quando não houver verbete relacionado a indicar.
+    END GUIDELINES
 END FIELD
 
 # ============================================
@@ -57,4 +92,11 @@ END ONTOLOGY FIELDS
 FIELD description TYPE TEXT
     SCOPE ONTOLOGY
     DESCRIPTION Definição primária do verbete
+    GUIDELINES
+        Defina o verbete de forma concisa, identificando a pessoa, lugar, objeto ou tema bíblico.
+        Comece pela categoria essencial (ex: son of Amram; river of Damascus; the angel of the bottomless pit).
+        Mantenha a definição independente de qualquer passagem específica.
+        Quando houver homônimos, diferencie-os para evitar verbetes com descrições idênticas.
+        Não inclua a lista de passagens nem os subtópicos: estes pertencem aos itens.
+    END GUIDELINES
 END FIELD

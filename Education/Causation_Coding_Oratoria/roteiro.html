@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiro — Causation Coding: Oratória</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+
+/* ── Tokens ─────────────────────────────── */
+:root {
+  --navy:       #1A3A5C;
+  --slate:      #3D5A7A;
+  --sage:       #4A6741;
+  --terracotta: #8B4A3C;
+  --gold:       #A8905A;
+  --plum:       #6A3D6A;
+  --ink:        #1C1C1E;
+  --ink-mid:    #3A3A3C;
+  --ref-mid:    #6B6B70;
+  --doc-light:  #AEAEB2;
+  --paper:      #F7F4EF;
+  --paper-tint: #E5E1DA;
+  --amber:      #C8963A;
+
+  --ff-serif: 'Newsreader', Georgia, serif;
+  --ff-sans:  'IBM Plex Sans', system-ui, sans-serif;
+  --ff-mono:  'IBM Plex Mono', 'Courier New', monospace;
+
+  --c-synp: #1A3A5C;
+  --c-synt: #4A6741;
+  --c-bib:  #8B4A3C;
+  --c-syn:  #3D5A7A;
+  --c-syno: #A8905A;
+  --c-coder:#6A3D6A;
+  --c-neo4j:#1F6D3A;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--ff-sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.4rem 1.6rem 1.2rem;
+}
+
+/* ── Header ─────────────────────────────── */
+.doc-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: 0.55rem;
+  margin-bottom: 0.9rem;
+}
+.wordmark {
+  font-family: var(--ff-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+.wordmark span { font-family: var(--ff-mono); color: var(--navy); font-weight: 600; }
+.doc-meta { display: flex; align-items: center; gap: 1.2rem; }
+.doc-meta .lbl {
+  font-family: var(--ff-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ref-mid);
+}
+.print-btn {
+  font-family: var(--ff-mono);
+  font-size: 0.7rem;
+  background: var(--navy);
+  color: var(--paper);
+  border: none;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background .2s;
+}
+.print-btn:hover { background: var(--slate); }
+
+/* ── Pipeline strip ─────────────────────── */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--navy);
+  border-radius: 7px;
+  padding: 0.55rem 1rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+.pipeline-label {
+  font-family: var(--ff-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(247,244,239,0.4);
+  margin-right: 0.9rem;
+  white-space: nowrap;
+}
+.pip-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.28rem 0.6rem;
+  border-radius: 5px;
+  border: 1.5px solid rgba(247,244,239,0.15);
+}
+.pip-node.step1  { background: rgba(26,58,92,0.5);   border-color: rgba(26,58,92,0.8); }
+.pip-node.step2  { background: rgba(74,103,65,0.3);  border-color: rgba(74,103,65,0.7); }
+.pip-node.step3  { background: rgba(61,90,122,0.3);  border-color: rgba(61,90,122,0.7); }
+.pip-node.step4  { background: rgba(139,74,60,0.25); border-color: rgba(139,74,60,0.6); }
+.pip-node.step5  { background: rgba(168,144,90,0.25);border-color: rgba(168,144,90,0.6);}
+.pip-node.step6  { background: rgba(106,61,106,0.3); border-color: rgba(106,61,106,0.7);}
+.pip-node.step7  { background: rgba(31,109,58,0.3);  border-color: rgba(31,109,58,0.7); }
+.pip-num { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--amber); opacity:.8; }
+.pip-txt { font-family: var(--ff-sans); font-size: 0.62rem; color: rgba(247,244,239,0.85); white-space: nowrap; }
+.pip-arr { font-family: var(--ff-mono); color: rgba(200,150,58,0.5); padding: 0 0.35rem; font-size: 0.85rem; }
+.pip-arr.final { color: rgba(126,200,160,0.7); }
+
+/* ── Step rows ──────────────────────────── */
+.step-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 1fr;
+  gap: 0;
+  border: 1.5px solid var(--paper-tint);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.55rem;
+}
+.step-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.75rem 0.8rem;
+  border-right: 1.5px solid rgba(0,0,0,0.07);
+}
+.step-label.s1  { background: rgba(26,58,92,0.09);   border-right-color: rgba(26,58,92,0.18); }
+.step-label.s2  { background: rgba(74,103,65,0.09);  border-right-color: rgba(74,103,65,0.18); }
+.step-label.s3  { background: rgba(61,90,122,0.09);  border-right-color: rgba(61,90,122,0.18); }
+.step-label.s4  { background: rgba(139,74,60,0.07);  border-right-color: rgba(139,74,60,0.18); }
+.step-label.s5  { background: rgba(168,144,90,0.09); border-right-color: rgba(168,144,90,0.18);}
+.step-label.s6  { background: rgba(106,61,106,0.08); border-right-color: rgba(106,61,106,0.18);}
+.step-label.s7  { background: rgba(31,109,58,0.08);  border-right-color: rgba(31,109,58,0.18); }
+
+.step-num {
+  font-family: var(--ff-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  opacity: 0.18;
+}
+.s1 .step-num  { color: var(--c-synp); }
+.s2 .step-num  { color: var(--c-synt); }
+.s3 .step-num  { color: var(--c-syn);  }
+.s4 .step-num  { color: var(--c-bib);  }
+.s5 .step-num  { color: var(--c-syno); }
+.s6 .step-num  { color: var(--c-coder);}
+.s7 .step-num  { color: var(--c-neo4j);}
+
+.step-title {
+  font-family: var(--ff-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.15rem;
+}
+.step-sub {
+  font-family: var(--ff-sans);
+  font-size: 0.6rem;
+  color: var(--ref-mid);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* ── Content columns ────────────────────── */
+.step-col {
+  padding: 0.65rem 0.75rem;
+  border-right: 1px solid var(--paper-tint);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+.step-col:last-child { border-right: none; }
+
+/* col header */
+.col-hd {
+  font-family: var(--ff-sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--doc-light);
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--paper-tint);
+  margin-bottom: 0.1rem;
+}
+
+/* ── Code blocks ─────────────────────────── */
+.cb {
+  font-family: var(--ff-mono);
+  font-size: 0.68rem;
+  line-height: 1.55;
+  background: #1e2530;
+  color: #c8d6e5;
+  border-radius: 5px;
+  padding: 0.5rem 0.6rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.kw  { color: #C8963A; font-weight: 500; }
+.ref { color: #7BB8E8; }
+.str { color: #7EC8A0; }
+.val { color: #E5C07B; }
+.cmt { color: #5c7088; font-style: italic; }
+.op  { color: rgba(229,225,218,0.45); }
+.ok  { color: #7EC8A0; }
+.hl  { color: #E06C75; }
+.pur { color: #C792EA; }
+.grn { color: #a8d8a8; }
+
+/* ── Mini table ─────────────────────────── */
+.mt { width: 100%; border-collapse: collapse; font-size: 0.66rem; }
+.mt th {
+  font-family: var(--ff-sans);
+  font-weight: 600;
+  font-size: 0.58rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ref-mid);
+  text-align: left;
+  padding: 0.12rem 0.3rem 0.2rem;
+  border-bottom: 1px solid var(--paper-tint);
+}
+.mt td {
+  font-family: var(--ff-mono);
+  font-size: 0.64rem;
+  padding: 0.18rem 0.3rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(229,225,218,0.5);
+  color: var(--ink-mid);
+  line-height: 1.4;
+}
+.mt td:first-child { white-space: nowrap; font-weight: 500; }
+.mt tr:last-child td { border-bottom: none; }
+.mt td.prose { font-family: var(--ff-sans); font-size: 0.63rem; }
+
+/* ── Note ───────────────────────────────── */
+.note {
+  font-family: var(--ff-sans);
+  font-size: 0.63rem;
+  line-height: 1.5;
+  color: var(--ref-mid);
+  background: rgba(26,58,92,0.04);
+  border-left: 2px solid var(--amber);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0 4px 4px 0;
+}
+.note strong { color: var(--ink); font-weight: 600; }
+.note code {
+  font-family: var(--ff-mono);
+  font-size: 0.85em;
+  color: var(--navy);
+  background: rgba(26,58,92,0.08);
+  padding: 0.05em 0.28em;
+  border-radius: 3px;
+}
+.note.warn  { border-left-color: #E06C75; background: rgba(224,108,117,0.04); }
+.note.green { border-left-color: #7EC8A0; background: rgba(126,200,160,0.04); }
+
+/* ── Pill ───────────────────────────────── */
+.pill {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  padding: 0.08rem 0.38rem;
+  border-radius: 100px;
+  border: 1px solid rgba(26,58,92,0.2);
+  background: rgba(26,58,92,0.06);
+  color: var(--navy);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.pill.sage  { border-color: rgba(74,103,65,0.3); background: rgba(74,103,65,0.08); color: var(--c-synt); }
+.pill.gold  { border-color: rgba(168,144,90,0.3); background: rgba(168,144,90,0.08); color: var(--c-syno); }
+.pill.plum  { border-color: rgba(106,61,106,0.3); background: rgba(106,61,106,0.08); color: var(--c-coder); }
+.pill.neo   { border-color: rgba(31,109,58,0.3);  background: rgba(31,109,58,0.08);  color: var(--c-neo4j); }
+.pill.slate { border-color: rgba(61,90,122,0.3);  background: rgba(61,90,122,0.08);  color: var(--c-syn); }
+
+/* ── Divider ────────────────────────────── */
+.divider { border: none; border-top: 1px solid var(--paper-tint); margin: 0.1rem 0; }
+
+/* ── Mapa conceitual / orientação ───────── */
+.orient {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 0.8rem;
+  border: 1.5px solid var(--paper-tint);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+  margin-bottom: 0.7rem;
+  background: rgba(26,58,92,0.025);
+}
+.orient h2 {
+  font-family: var(--ff-serif);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+.orient p { font-size: 0.7rem; line-height: 1.55; color: var(--ink-mid); margin-bottom: 0.4rem; }
+.orient p:last-child { margin-bottom: 0; }
+.orient .q {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--terracotta);
+  border-left: 2px solid var(--terracotta);
+  padding-left: 0.5rem;
+  margin: 0.3rem 0 0.45rem;
+}
+.flow-arrows {
+  font-family: var(--ff-mono);
+  font-size: 0.66rem;
+  line-height: 1.7;
+  color: var(--ink-mid);
+}
+.flow-arrows b { color: var(--navy); font-weight: 600; }
+.flow-arrows .ar { color: var(--gold); padding: 0 0.2rem; }
+
+/* ── Trilha / pré-requisitos / glossário ── */
+.prereq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.card {
+  border: 1.5px solid var(--paper-tint);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+.card-hd {
+  font-family: var(--ff-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.card-hd .ic { font-size: 0.85rem; }
+.glossary dt {
+  font-family: var(--ff-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 0.28rem;
+}
+.glossary dd { font-size: 0.66rem; line-height: 1.45; color: var(--ink-mid); margin-left: 0; }
+.checklist { list-style: none; }
+.checklist li {
+  font-size: 0.67rem;
+  line-height: 1.55;
+  color: var(--ink-mid);
+  padding-left: 1.1rem;
+  position: relative;
+  margin-bottom: 0.12rem;
+}
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.78rem;
+}
+.checklist code {
+  font-family: var(--ff-mono);
+  font-size: 0.9em;
+  color: var(--navy);
+  background: rgba(26,58,92,0.07);
+  padding: 0.02em 0.26em;
+  border-radius: 3px;
+}
+
+/* ── Trilha badge nos passos ────────────── */
+.trail-band {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.8rem;
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  margin: 0.5rem 0 0.15rem;
+}
+.trail-band.essencial { background: rgba(74,103,65,0.1);  color: var(--sage);  }
+.trail-band.analise   { background: rgba(168,144,90,0.12);color: var(--gold);  }
+.trail-band.avancado  { background: rgba(106,61,106,0.1); color: var(--plum);  }
+.trail-band .desc { font-family: var(--ff-sans); text-transform: none; letter-spacing: 0; color: var(--ref-mid); font-size: 0.62rem; }
+
+.trail-badge {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.06rem 0.32rem;
+  border-radius: 100px;
+  margin-top: 0.3rem;
+}
+.trail-badge.essencial { background: rgba(74,103,65,0.15);  color: var(--sage); }
+.trail-badge.analise   { background: rgba(168,144,90,0.18); color: #7d6630; }
+.trail-badge.avancado  { background: rgba(106,61,106,0.15); color: var(--plum); }
+
+/* ── Objetivo / checkpoint / tempo ──────── */
+.goal {
+  font-family: var(--ff-sans);
+  font-size: 0.64rem;
+  line-height: 1.5;
+  color: var(--ink-mid);
+  background: rgba(74,103,65,0.06);
+  border-left: 2px solid var(--sage);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0 4px 4px 0;
+}
+.goal strong { color: var(--sage); font-weight: 600; }
+.checkpoint {
+  font-family: var(--ff-sans);
+  font-size: 0.63rem;
+  line-height: 1.5;
+  color: var(--ink-mid);
+  background: rgba(26,58,92,0.045);
+  border: 1px dashed rgba(26,58,92,0.25);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+.checkpoint strong { color: var(--navy); font-weight: 600; }
+.checkpoint::before { content: "✓ "; color: var(--sage); font-weight: 700; }
+.time-tag {
+  font-family: var(--ff-mono);
+  font-size: 0.56rem;
+  color: var(--ref-mid);
+  margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* ── Troubleshooting ────────────────────── */
+.trouble {
+  border: 1.5px solid rgba(224,108,117,0.3);
+  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
+  margin-top: 0.6rem;
+  background: rgba(224,108,117,0.03);
+}
+.trouble .card-hd { color: var(--terracotta); }
+.trouble table { width: 100%; border-collapse: collapse; font-size: 0.65rem; }
+.trouble td {
+  padding: 0.22rem 0.4rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(229,225,218,0.6);
+  line-height: 1.45;
+}
+.trouble tr:last-child td { border-bottom: none; }
+.trouble td:first-child {
+  font-family: var(--ff-mono);
+  font-size: 0.62rem;
+  color: var(--hl, #b54a52);
+  white-space: nowrap;
+  font-weight: 500;
+}
+.trouble td:nth-child(2) { font-family: var(--ff-sans); color: var(--ink-mid); }
+.trouble code {
+  font-family: var(--ff-mono);
+  font-size: 0.88em;
+  color: var(--navy);
+  background: rgba(26,58,92,0.07);
+  padding: 0.02em 0.26em;
+  border-radius: 3px;
+}
+
+/* ── Alpaca block ───────────────────────── */
+.alpaca-block {
+  border: 1.5px solid rgba(74,103,65,0.28);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  margin-top: 0.5rem;
+  background: rgba(74,103,65,0.04);
+}
+
+/* ── Footer ─────────────────────────────── */
+.doc-footer {
+  border-top: 1px solid var(--paper-tint);
+  padding-top: 0.45rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.55rem;
+}
+.doc-footer span { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--doc-light); }
+
+/* ── Print ──────────────────────────────── */
+@media print {
+  @page { size: A4 landscape; margin: 8mm 9mm 7mm 9mm; }
+  body { font-size: 11px; background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-btn { display: none; }
+  .page { padding: 0; max-width: 100%; }
+  .step-row { break-inside: avoid; }
+  .cb { white-space: pre-wrap; overflow-wrap: anywhere; overflow-x: visible; }
+  .note, .alpaca-block { break-inside: avoid; }
+  .orient, .prereq, .card, .trouble { break-inside: avoid; }
+  .goal, .checkpoint { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pipeline { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cb, .step-label { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ── Header ──────────────────────────── -->
+<div class="doc-header">
+  <div class="wordmark"><span>s</span>ynesis &nbsp;<span style="font-family:var(--ff-sans);font-size:0.75rem;font-weight:300;color:var(--ref-mid);letter-spacing:0">Roteiro do Projeto</span></div>
+  <div class="doc-meta">
+    <span class="lbl">Causation Coding · Oratória · pt-BR</span>
+    <button class="print-btn" onclick="window.print()">⎙ Imprimir / PDF</button>
+  </div>
+</div>
+
+<!-- ── Pipeline ─────────────────────────── -->
+<div class="pipeline">
+  <span class="pipeline-label">Pipeline completo</span>
+  <div class="pip-node step1"><span class="pip-num">01</span><span class="pip-txt">Verificar</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step2"><span class="pip-num">02</span><span class="pip-txt">Compilar</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step3"><span class="pip-num">03</span><span class="pip-txt">Exportar formatos</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step4"><span class="pip-num">04</span><span class="pip-txt">Alpaca JSONL</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step5"><span class="pip-num">05</span><span class="pip-txt">Notebook</span></div>
+  <span class="pip-arr">→</span>
+  <div class="pip-node step6"><span class="pip-num">06</span><span class="pip-txt">Synesis-Coder</span></div>
+  <span class="pip-arr final">→</span>
+  <div class="pip-node step7"><span class="pip-num">07</span><span class="pip-txt">Neo4j</span></div>
+</div>
+
+<!-- ── Orientação / advance organizer ───── -->
+<div class="orient">
+  <div>
+    <h2>O que você vai construir</h2>
+    <p>Este projeto aplica <strong>Causation Coding</strong> (Saldaña, 2013) a relatos de estudantes sobre como o treino de oratória os transformou. O objetivo é transformar <strong>falas soltas</strong> em uma <strong>rede causal navegável</strong> — quem causa o quê, o que apenas habilita, o que reforça ou bloqueia.</p>
+    <div class="q">"O que, na experiência com oratória, leva a quais resultados — e por meio de que mecanismo?"</div>
+    <p>Você partirá de 5 arquivos de texto e chegará a tabelas, um grafo causal colorido e, opcionalmente, um banco de grafos consultável e um dataset para treinar uma IA.</p>
+  </div>
+  <div>
+    <div class="col-hd" style="border:none;color:var(--navy);font-size:0.6rem">Como os 7 passos se encadeiam</div>
+    <div class="flow-arrows">
+      5 arquivos <span class="ar">→</span> <b>① checa</b> erros<br>
+      <span class="ar">→</span> <b>② JSON</b> (fonte de verdade)<br>
+      <span class="ar">↓</span> deriva <b>③ tabelas</b> · <b>④ dataset IA</b><br>
+      <span class="ar">→</span> <b>⑤ notebook</b> = análise visual<br>
+      <span class="ar">→</span> <b>⑥ Coder</b> codifica novos textos<br>
+      <span class="ar">→</span> <b>⑦ Neo4j</b> = grafo consultável
+    </div>
+    <div class="note" style="margin-top:0.45rem">
+      <strong>Comece pelo essencial:</strong> passos <strong>1 → 2 → 3</strong> já entregam o resultado central. Os demais são extensões — faça-os quando precisar.
+    </div>
+  </div>
+</div>
+
+<!-- ── Pré-requisitos + Glossário ───────── -->
+<div class="prereq">
+  <div class="card">
+    <div class="card-hd"><span class="ic">⚙</span> Antes de começar — instale e confira</div>
+    <ul class="checklist">
+      <li><strong>Python 3.10+</strong> instalado (<code>python --version</code>)</li>
+      <li>Synesis: <code>pip install synesis</code> · teste com <code>synesis --version</code></li>
+      <li>Para o notebook (passo 5): <code>pip install pandas matplotlib networkx</code></li>
+      <li>Para o Coder (passo 6): chave <code>ANTHROPIC_API_KEY</code></li>
+      <li>Para o Neo4j (passo 7): Neo4j Desktop (<code>neo4j.com/download</code>) rodando + <code>pip install neo4j</code></li>
+      <li>Terminal aberto <strong>na pasta do projeto</strong> (onde está <code>project.synp</code>)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-hd"><span class="ic">📖</span> Vocabulário mínimo — leia uma vez</div>
+    <dl class="glossary">
+      <dt>ITEM</dt><dd>Uma unidade de análise: um trecho de fala já codificado (citação + resumo + cadeia causal + categoria).</dd>
+      <dt>CHAIN (cadeia)</dt><dd>A sequência causal: <code>A → RELAÇÃO → B → RELAÇÃO → C</code>. O coração do método.</dd>
+      <dt>papel</dt><dd>Função de um conceito na cadeia: <strong>antecedente</strong> (causa inicial), <strong>mediador</strong> (elo intermediário) ou <strong>resultado</strong> (efeito final).</dd>
+      <dt>ontologia</dt><dd>O dicionário de conceitos do projeto — cada conceito definido uma vez, com seu papel e grupo.</dd>
+      <dt>bibref</dt><dd>O identificador de cada participante (a "chave" que liga falas a pessoas).</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ── Trilha 1: Essencial ──────────────── -->
+<div class="trail-band essencial">
+  <span>● Trilha essencial · passos 1–3</span>
+  <span class="desc">Faça estes três e você já tem o resultado central do projeto. ~15 min no total.</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 1 — Verificar
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s1">
+    <span class="step-num">01</span>
+    <span class="step-title">Verificar o projeto</span>
+    <span class="step-sub">Confirme que os arquivos compilam sem erros antes de exportar.</span>
+    <span class="trail-badge essencial">Essencial</span>
+    <span class="time-tag">⏱ ~2 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> garantir que os 5 arquivos estão íntegros. Tudo depois disto assume um projeto sem erros — começar aqui evita horas de depuração adiante.</div>
+    <div class="col-hd">Comando</div>
+    <div class="cb"><span class="cmt"># A partir da pasta do projeto:</span>
+cd case-studies/Education/Causation_Coding_Oratoria
+
+<span class="ok">synesis check</span> project.synp</div>
+    <div class="note">
+      <strong>Saída esperada:</strong> <code>✓ No errors found.</code> — zero ERROs. Avisos não bloqueiam a compilação mas devem ser investigados.
+    </div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o terminal mostra <code>No errors found</code>. Se aparecer um código <code>E0xx</code>, veja a faixa de Solução de problemas no rodapé antes de seguir.</div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Estrutura do projeto</div>
+    <table class="mt">
+      <tr><td style="color:var(--c-synp)">project.synp</td><td class="prose">Ponto de entrada: declara template, bibliography, annotations, ontology</td></tr>
+      <tr><td style="color:var(--c-synt)">template.synt</td><td class="prose">Define campos, tipos e GUIDELINES para todos os blocos</td></tr>
+      <tr><td style="color:var(--c-bib)">references.bib</td><td class="prose">8 participantes fictícios em formato BibTeX</td></tr>
+      <tr><td style="color:var(--c-syn)">annotations.syn</td><td class="prose">16 ITEMs com citações, resumos, cadeias CHAIN e categorias</td></tr>
+      <tr><td style="color:var(--c-syno)">ontology.syno</td><td class="prose">39 conceitos com papel (antecedente / mediador / resultado) e grupo</td></tr>
+    </table>
+    <div class="note">
+      <strong>Erros comuns:</strong> código não definido na ontologia (E004), campo REQUIRED ausente (E020), CHAIN sem ARITY (E047). Execute <code>synesis check</code> para listar todos com número e local exato.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 2 — Compilar JSON canônico
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s2">
+    <span class="step-num">02</span>
+    <span class="step-title">Compilar → JSON</span>
+    <span class="step-sub">Gera o artefato canônico v3.0 com todo o projeto serializado.</span>
+    <span class="trail-badge essencial">Essencial</span>
+    <span class="time-tag">⏱ ~3 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> produzir o <em>único</em> arquivo do qual todos os outros formatos derivam. Pense nele como o "negativo" da foto — gere uma vez, revele em vários formatos depois.</div>
+    <div class="col-hd">Comando</div>
+    <div class="cb"><span class="ok">synesis compile</span> project.synp --json exports/causation_coding_oratoria.json</div>
+    <div class="col-hd" style="margin-top:0.4rem">Estrutura do JSON gerado</div>
+    <div class="cb"><span class="op">{</span>
+  <span class="val">"version"</span><span class="op">:</span> <span class="str">"3.0"</span>,
+  <span class="val">"export_metadata"</span><span class="op">:</span> <span class="op">{</span>
+    <span class="val">"chain_count"</span><span class="op">:</span> <span class="ref">32</span>,
+    <span class="val">"item_count"</span><span class="op">:</span>  <span class="ref">16</span>,
+    <span class="val">"source_count"</span><span class="op">:</span> <span class="ref">8</span>,
+    <span class="val">"concept_count"</span><span class="op">:</span><span class="ref">39</span>
+  <span class="op">}</span>,
+  <span class="val">"corpus"</span><span class="op">: [</span> <span class="cmt">... ITEMs com campos do template ...</span> <span class="op">]</span>,
+  <span class="val">"ontology"</span><span class="op">: [</span> <span class="cmt">... 39 conceitos com papel e grupo ...</span> <span class="op">]</span>
+<span class="op">}</span></div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Verificação rápida</div>
+    <div class="cb"><span class="cmt"># Contar conceitos e triplas no JSON gerado:</span>
+python -c "
+import json
+d = json.load(open('exports/causation_coding_oratoria.json'))
+print(d['export_metadata'])
+"</div>
+    <div class="note">
+      O JSON canônico é a fonte de verdade para todos os outros formatos. Guarde-o como artefato versionável — todos os outros exports são derivados dele.
+    </div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o arquivo <code>exports/causation_coding_oratoria.json</code> existe e o comando de verificação imprime <code>chain_count: 32</code> e <code>item_count: 16</code>.</div>
+    <hr class="divider">
+    <div class="col-hd">Também disponível via API Python</div>
+    <div class="cb"><span class="kw">import</span> synesis, json
+<span class="kw">from</span> pathlib <span class="kw">import</span> Path
+
+resultado = synesis.load(
+    project_content=Path(<span class="str">"project.synp"</span>).read_text(<span class="str">"utf-8"</span>),
+    template_content=Path(<span class="str">"template.synt"</span>).read_text(<span class="str">"utf-8"</span>),
+    annotation_contents={<span class="str">"annotations.syn"</span>:
+        Path(<span class="str">"annotations.syn"</span>).read_text(<span class="str">"utf-8"</span>)},
+    ontology_contents={<span class="str">"ontology.syno"</span>:
+        Path(<span class="str">"ontology.syno"</span>).read_text(<span class="str">"utf-8"</span>)},
+    bibliography_content=Path(<span class="str">"references.bib"</span>).read_text(<span class="str">"utf-8"</span>),
+    project_filename=<span class="str">"project.synp"</span>,
+    template_filename=<span class="str">"template.synt"</span>,
+)
+<span class="kw">assert</span> resultado.success, resultado.get_diagnostics()
+dados = resultado.to_json_dict()
+print(dados[<span class="str">"export_metadata"</span>])</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 3 — Exportar CSV e Excel
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s3">
+    <span class="step-num">03</span>
+    <span class="step-title">Exportar CSV e Excel</span>
+    <span class="step-sub">Gera tabelas prontas para análise em Pandas, R ou planilhas.</span>
+    <span class="trail-badge essencial">Essencial</span>
+    <span class="time-tag">⏱ ~5 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> obter tabelas que você consegue abrir no Excel ou no Pandas para conferir, filtrar e contar os dados codificados. É aqui que o projeto vira algo que você "vê".</div>
+    <div class="col-hd">Comandos</div>
+    <div class="cb"><span class="cmt"># CSV: uma pasta com várias tabelas</span>
+<span class="ok">synesis compile</span> project.synp --csv exports/csv/
+
+<span class="cmt"># Excel: uma planilha com abas separadas</span>
+<span class="ok">synesis compile</span> project.synp --xls exports/causation_oratoria.xlsx
+
+<span class="cmt"># Tudo numa única execução:</span>
+<span class="ok">synesis compile</span> project.synp --json exports/causation_coding_oratoria.json --csv exports/csv/ --xls exports/causation_oratoria.xlsx</div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Tabelas geradas e suas colunas</div>
+    <table class="mt">
+      <thead><tr><th>Tabela</th><th>Colunas principais</th></tr></thead>
+      <tr><td>sources</td><td class="prose">bibref, perfil, contexto</td></tr>
+      <tr><td>items</td><td class="prose">bibref, citação, resumo, chain, categoria_resultado</td></tr>
+      <tr>
+        <td>ontologies</td>
+        <td class="prose">chain (= conceito), descrição, papel, grupo</td>
+      </tr>
+      <tr><td>chains</td><td class="prose">bibref, from_code, relation, to_code</td></tr>
+    </table>
+    <div class="note">
+      <strong>Atenção:</strong> na tabela <code>ontologies</code>, a coluna que identifica o conceito é nomeada <code>chain</code> (o campo CHAIN do template), não <code>code</code>. Use <code>ontologia.set_index("chain")</code> em Pandas.
+    </div>
+    <hr class="divider">
+    <div class="col-hd">Leitura via API Python</div>
+    <div class="cb">tabelas = resultado.to_dataframes()
+fontes   = tabelas[<span class="str">"sources"</span>]
+itens    = tabelas[<span class="str">"items"</span>]
+ontologia= tabelas[<span class="str">"ontologies"</span>]
+relacoes = tabelas[<span class="str">"chains"</span>]
+
+<span class="cmt"># Papel de cada conceito:</span>
+papel = ontologia.set_index(<span class="str">"chain"</span>)[<span class="str">"papel"</span>].to_dict()</div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> a planilha abre com 4 abas (sources, items, ontologies, chains) e a aba <code>chains</code> tem 32 linhas. <strong>Parabéns — você concluiu a trilha essencial.</strong></div>
+  </div>
+</div>
+
+<!-- ── Trilha 2: Análise ────────────────── -->
+<div class="trail-band analise">
+  <span>● Trilha de análise · passos 4–5</span>
+  <span class="desc">Aprofunde: gere um dataset para IA e visualize a rede causal. Faça quando o essencial estiver sólido.</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 4 — Alpaca JSONL
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s4">
+    <span class="step-num">04</span>
+    <span class="step-title">Exportar Alpaca JSONL</span>
+    <span class="step-sub">Dataset de fine-tuning derivado dos dados validados pelo compilador.</span>
+    <span class="trail-badge analise">Análise</span>
+    <span class="time-tag">⏱ ~5 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> empacotar seu trabalho de codificação como exemplos de treino, para que uma IA aprenda a codificar novos trechos do seu jeito. Opcional — pule se não vai treinar modelos.</div>
+    <div class="col-hd">Comando</div>
+    <div class="cb"><span class="ok">synesis compile</span> project.synp --alpaca exports/causation_oratoria_alpaca.jsonl</div>
+    <div class="col-hd" style="margin-top:0.4rem">Estrutura de cada linha JSONL</div>
+    <div class="alpaca-block">
+<div class="cb"><span class="op">{</span>
+  <span class="val">"instruction"</span><span class="op">:</span> <span class="str">"Analise o seguinte trecho e codifique as atribuições causais identificadas, seguindo o método Causation Coding (Saldaña, 2013). Forneça: (1) um resumo analítico do mecanismo causal, (2) a cadeia causal no formato Antecedente -> RELAÇÃO -> Mediador -> RELAÇÃO -> Resultado, e (3) a categoria do resultado principal."</span>,
+
+  <span class="val">"input"</span><span class="op">:</span> <span class="str">"Os exercícios de improviso me ensinaram a pensar rápido, e isso depois ajudou muito nas entrevistas de emprego."</span>,
+
+  <span class="val">"output"</span><span class="op">:</span> <span class="str">"resumo: O treinamento de oratória desenvolveu rapidez de raciocínio com aplicação profissional posterior.\nchain: Treinamento_Oratoria -> HABILITA -> Pensamento_Rapido -> HABILITA -> Habilidades_Entrevista\ncategoria_resultado: preparação_profissional"</span>
+<span class="op">}</span></div>
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Como interpretar o formato Alpaca</div>
+    <table class="mt">
+      <thead><tr><th>Campo</th><th>Conteúdo</th></tr></thead>
+      <tr><td>instruction</td><td class="prose">Tarefa derivada do DESCRIPTION e GUIDELINES do template — explica o método ao modelo</td></tr>
+      <tr><td>input</td><td class="prose">Valor do campo QUOTATION (citação do participante)</td></tr>
+      <tr><td>output</td><td class="prose">Valores dos campos MEMO + CHAIN + ENUMERATED — a resposta esperada do modelo</td></tr>
+    </table>
+    <div class="note green" style="margin-top:0.35rem">
+      <strong>Para que serve:</strong> cada linha treina um LLM a replicar o raciocínio do pesquisador — dado um trecho novo, o modelo aprende a produzir resumo analítico, cadeia causal e categoria de resultado no estilo validado pelo compilador.
+    </div>
+    <hr class="divider">
+    <div class="col-hd">Inspecionar o arquivo gerado</div>
+    <div class="cb"><span class="cmt"># Contar pares e ver o primeiro:</span>
+python -c "
+import json
+linhas = [json.loads(l)
+          for l in open('exports/causation_oratoria_alpaca.jsonl')]
+print(f'{len(linhas)} pares Alpaca')
+print(json.dumps(linhas[0], indent=2, ensure_ascii=False))
+"</div>
+    <div class="note" style="margin-top:0.3rem">
+      <strong>Requisito:</strong> o compilador só gera o Alpaca se <strong>zero ERROs</strong> existirem. Use <code>synesis check</code> primeiro.
+    </div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o script de inspeção imprime <code>16 pares Alpaca</code> e mostra um par com os três campos preenchidos.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 5 — Notebook de análise
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s5">
+    <span class="step-num">05</span>
+    <span class="step-title">Análise no Notebook</span>
+    <span class="step-sub">Reproduz a etapa analítica de Saldaña (2013, pp. 169–172) com o grafo causal agregado.</span>
+    <span class="trail-badge analise">Análise</span>
+    <span class="time-tag">⏱ ~15 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> <em>ver</em> a teoria virar imagem — o grafo causal colorido e as matrizes antecedente→mediador→resultado que respondem à pergunta de pesquisa lá do topo.</div>
+    <div class="col-hd">Abrir o notebook</div>
+    <div class="cb"><span class="cmt"># No VS Code: abra analise_causal.ipynb</span>
+<span class="cmt"># Ou via Jupyter:</span>
+jupyter notebook analise_causal.ipynb</div>
+    <div class="col-hd" style="margin-top:0.4rem">Dependências</div>
+    <div class="cb">pip install synesis pandas matplotlib networkx</div>
+    <div class="note" style="margin-top:0.35rem">
+      O notebook usa <code>synesis.load()</code> — compila em memória sem precisar de export intermediário. A pasta do projeto é detectada automaticamente a partir do diretório de trabalho.
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Seções do notebook</div>
+    <table class="mt">
+      <thead><tr><th>Seção</th><th>Conteúdo</th></tr></thead>
+      <tr><td>Fundamentação</td><td class="prose">Saldaña (2013): estrutura tripartite, LACS, categorias de resultado, vocabulário de relações</td></tr>
+      <tr><td>Estatísticas</td><td class="prose">Contagem de fontes, itens, conceitos e triplas causais</td></tr>
+      <tr><td>Categorias</td><td class="prose">Distribuição de itens por categoria de resultado (barh)</td></tr>
+      <tr><td>Matriz de relações</td><td class="prose">Todas as triplas from_code → relation → to_code</td></tr>
+      <tr><td>Rede causal</td><td class="prose">Grafo DiGraph com 5 tipos de relação coloridos; tamanho dos nós pelo grau de entrada</td></tr>
+      <tr><td>Matriz A→M→R</td><td class="prose">Antecedente / Mediador / Resultado por categoria, usando papéis da ontologia</td></tr>
+      <tr><td>Macrocategorias</td><td class="prose">Workforce vs Lifeforce Preparation (Saldaña, 2013, p. 171)</td></tr>
+    </table>
+    <div class="note" style="margin-top:0.35rem">
+      <strong>Relações no grafo:</strong>
+      <span style="color:#C62828">■</span> CAUSA &nbsp;
+      <span style="color:#2E7D32">■</span> HABILITA &nbsp;
+      <span style="color:#1565C0">■</span> AMPLIFICA &nbsp;
+      <span style="color:#6A1B9A">■</span> ATENUA &nbsp;
+      <span style="color:#EF6C00">■</span> RESTRINGE
+    </div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> todas as células rodam sem erro (<em>Run All</em>) e o grafo causal aparece com nós coloridos. Se travar em <code>KeyError</code>, veja a faixa de Solução de problemas.</div>
+  </div>
+</div>
+
+<!-- ── Trilha 3: Avançado / opcional ────── -->
+<div class="trail-band avancado">
+  <span>● Trilha avançada · passos 6–7 · opcional</span>
+  <span class="desc">Estenda o projeto: codifique novos textos com IA e exporte para um banco de grafos. Só quando precisar.</span>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 6 — Synesis-Coder
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s6">
+    <span class="step-num">06</span>
+    <span class="step-title">Synesis-Coder</span>
+    <span class="step-sub">Codificação assistida por LLM: anota novos textos seguindo o template do projeto.</span>
+    <span class="trail-badge avancado">Avançado</span>
+    <span class="time-tag">⏱ ~10 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> acelerar a codificação de <em>novos</em> participantes — a IA lê o template (com as GUIDELINES) e propõe blocos ITEM que você revisa, em vez de escrever do zero.</div>
+    <div class="col-hd">Pré-requisito: chave da API</div>
+    <div class="cb"><span class="cmt"># Opção A — variável de sessão (PowerShell):</span>
+$env:ANTHROPIC_API_KEY = <span class="str">"sk-ant-..."</span>
+
+<span class="cmt"># Opção B — arquivo .env (recomendado, persiste):</span>
+<span class="cmt"># conteúdo do arquivo:</span>
+ANTHROPIC_API_KEY=sk-ant-...
+SYNESIS_CODER_MODEL=claude-sonnet-4-6
+SYNESIS_CODER_LANGUAGE=pt-BR</div>
+    <div class="note" style="margin-top:0.3rem">
+      <strong>Onde colocar o <code>.env</code>:</strong> na <strong>pasta do projeto</strong> (<code>case-studies/Education/Causation_Coding_Oratoria/</code>) ou em qualquer pasta-pai a partir da qual você roda o comando — o Coder procura no diretório atual e sobe a árvore. Use o <code>.env.example</code> de <code>synesis-coder/</code> como modelo. Nunca versione o <code>.env</code> (já está no <code>.gitignore</code>).
+    </div>
+
+    <div class="col-hd" style="margin-top:0.4rem">Codificar um trecho único</div>
+    <div class="cb"><span class="cmt"># item: anota um trecho de texto diretamente</span>
+synesis-coder item --project project.synp --bibref participante09 --text <span class="str">"Aprender a debater me ensinou a ouvir antes de responder, e isso mudou minha forma de liderar equipes."</span> --language pt-BR</div>
+
+    <div class="note" style="margin-top:0.3rem">
+      O Coder lê o <code>template.synt</code> (incluindo GUIDELINES) e gera um bloco ITEM completo para colar em <code>annotations.syn</code>.
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">Outros subcomandos relevantes</div>
+    <table class="mt">
+      <thead><tr><th>Subcomando</th><th>Uso neste projeto</th></tr></thead>
+      <tr>
+        <td><span class="pill plum">document</span></td>
+        <td class="prose">Codifica um arquivo de texto longo (transcrição de entrevista inteira) e gera um .syn completo</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">ontology</span></td>
+        <td class="prose">Lê as anotações existentes e sugere novos blocos ONTOLOGY para conceitos ainda não definidos em ontology.syno</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">critique</span></td>
+        <td class="prose">Revisa annotations.syn e aponta itens com cadeias inconsistentes, categorias incorretas ou resumos genéricos</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">suggest</span></td>
+        <td class="prose">Sugere novos ITEMs a partir de um texto sem codificação anterior</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">normalize</span></td>
+        <td class="prose">Harmoniza grafia de conceitos em arquivos .synr antes de incorporar ao projeto</td>
+      </tr>
+      <tr>
+        <td><span class="pill plum">incorporate</span></td>
+        <td class="prose">Incorpora um .synr revisado ao arquivo .syn definitivo</td>
+      </tr>
+    </table>
+
+    <hr class="divider">
+    <div class="col-hd">Codificar transcrição completa (document)</div>
+    <div class="cb">synesis-coder document --project project.synp --bibref participante09 --input entrevistas/p09_transcricao.txt --output entrevistas/p09_anotacoes.syn --language pt-BR</div>
+
+    <div class="col-hd" style="margin-top:0.4rem">Expandir ontologia (ontology)</div>
+    <div class="cb">synesis-coder ontology --project project.synp --output ontology_sugestoes.syno --language pt-BR</div>
+
+    <div class="note" style="margin-top:0.35rem">
+      <strong>Fluxo recomendado:</strong> <code>document</code> → <code>critique</code> → <code>normalize</code> → <code>incorporate</code> → <code>synesis check</code>. Nunca incorpore sem verificar.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PASSO 7 — synesis2neo4j
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label s7">
+    <span class="step-num">07</span>
+    <span class="step-title">Exportar para Neo4j</span>
+    <span class="step-sub">Sincroniza o projeto compilado em memória diretamente no grafo — zero I/O intermediário.</span>
+    <span class="trail-badge avancado">Avançado</span>
+    <span class="time-tag">⏱ ~10 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> levar a rede causal para um banco de grafos, onde você faz perguntas complexas em Cypher ("quais caminhos levam a Confiança?") que seriam difíceis em tabelas.</div>
+    <div class="col-hd">Pré-requisito 1: instalar o Neo4j</div>
+    <div class="note" style="margin-bottom:0.4rem">
+      Instale o <strong>Neo4j Desktop</strong> (gratuito) e crie um banco local. Guias oficiais: <code>neo4j.com/download</code> · tutorial de primeiros passos em <code>neo4j.com/docs/operations-manual/current/installation</code> · introdução ao Cypher em <code>neo4j.com/docs/cypher-manual</code>. Deixe o banco <strong>rodando</strong> antes de executar o comando abaixo.
+    </div>
+    <div class="col-hd">Pré-requisito 2: config.toml</div>
+    <div class="cb"><span class="cmt"># Crie/edite o arquivo synesis2neo4j/config.toml</span>
+<span class="cmt"># (use o config.toml existente como modelo)</span>
+<span class="op">[</span><span class="val">database</span><span class="op">]</span>
+host          = <span class="str">"bolt://localhost:7687"</span>
+user          = <span class="str">"neo4j"</span>
+password      = <span class="str">"sua_senha"</span>
+database_name = <span class="str">"causation_oratoria"</span></div>
+    <div class="note" style="margin-top:0.3rem">
+      <strong>Onde fica:</strong> o <code>config.toml</code> mora na pasta <code>synesis2neo4j/</code>. Diferente do <code>.env</code>, ele <strong>não</strong> é descoberto automaticamente — você informa o caminho explicitamente na flag <code>--config</code> (veja o comando). Pode estar em qualquer lugar, desde que o caminho passado esteja correto.
+    </div>
+
+    <div class="col-hd" style="margin-top:0.4rem">Comando</div>
+    <div class="cb"><span class="cmt"># A partir da raiz do repositório:</span>
+python synesis2neo4j/synesis2neo4j.py --project case-studies/Education/Causation_Coding_Oratoria/project.synp --config synesis2neo4j/config.toml</div>
+
+    <div class="note" style="margin-top:0.3rem">
+      <strong>Atomicidade:</strong> toda a sincronização ocorre em uma única transação Neo4j. Se qualquer etapa falhar, o grafo permanece no estado anterior.
+    </div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">O que é criado no grafo</div>
+    <table class="mt">
+      <thead><tr><th>Nó / Relação</th><th>Origem</th></tr></thead>
+      <tr><td>:Concept</td><td class="prose">Cada bloco ONTOLOGY → nó com propriedades descrição, papel, grupo</td></tr>
+      <tr><td>:Item</td><td class="prose">Cada bloco ITEM → nó com citação, resumo, categoria_resultado</td></tr>
+      <tr><td>:Source</td><td class="prose">Cada bloco SOURCE → nó com bibref, perfil, contexto</td></tr>
+      <tr><td>CAUSA / HABILITA / AMPLIFICA / ATENUA / RESTRINGE</td><td class="prose">Relações entre :Concept derivadas das cadeias CHAIN</td></tr>
+    </table>
+
+    <hr class="divider">
+    <div class="col-hd">Queries Cypher iniciais</div>
+    <div class="cb"><span class="cmt">// Conceitos com mais conexões de entrada:</span>
+<span class="kw">MATCH</span> (a)<span class="op">-[</span>r<span class="op">]-></span>(b<span class="op">:</span><span class="val">Concept</span>)
+<span class="kw">RETURN</span> b.concept, count(r) <span class="kw">AS</span> grau
+<span class="kw">ORDER BY</span> grau <span class="kw">DESC LIMIT</span> <span class="ref">10</span>
+
+<span class="cmt">// Todos os caminhos causais até Confianca:</span>
+<span class="kw">MATCH</span> p = (a)<span class="op">-[*1..3]-></span>(b<span class="op">:</span><span class="val">Concept</span>
+    <span class="op">{</span>concept<span class="op">:</span> <span class="str">"Confianca"</span><span class="op">}</span>)
+<span class="kw">RETURN</span> p
+
+<span class="cmt">// Triplas por tipo de relação:</span>
+<span class="kw">MATCH</span> (a)<span class="op">-[</span>r<span class="op">]-></span>(b)
+<span class="kw">RETURN</span> type(r), count(r)
+<span class="kw">ORDER BY</span> count(r) <span class="kw">DESC</span></div>
+
+    <div class="note" style="margin-top:0.35rem">
+      <strong>GDS (opcional):</strong> se o plugin Neo4j Graph Data Science estiver instalado, o script calcula automaticamente PageRank, Betweenness e comunidades Louvain após a sincronização.
+    </div>
+  </div>
+</div>
+
+<!-- ── Solução de problemas ─────────────── -->
+<div class="trouble">
+  <div class="card-hd"><span class="ic">🛟</span> Solução de problemas — os tropeços mais comuns</div>
+  <table>
+    <tr>
+      <td>command not found: synesis</td>
+      <td>O pacote não está instalado ou o ambiente virtual não está ativo. Rode <code>pip install synesis</code> e confirme com <code>synesis --version</code>.</td>
+    </tr>
+    <tr>
+      <td>E004 — código não definido</td>
+      <td>Uma cadeia CHAIN usa um conceito que não existe em <code>ontology.syno</code>. Adicione o bloco ONTOLOGY (ou use o Coder <code>ontology</code> no passo 6).</td>
+    </tr>
+    <tr>
+      <td>E020 — campo REQUIRED ausente</td>
+      <td>Um ITEM está sem um campo obrigatório do template. O erro aponta o arquivo e a linha exatos.</td>
+    </tr>
+    <tr>
+      <td>KeyError: 'code' (no notebook)</td>
+      <td>A coluna de conceito da tabela <code>ontologies</code> chama-se <code>chain</code>, não <code>code</code>. Use <code>set_index("chain")</code>. Veja o aviso no passo 3.</td>
+    </tr>
+    <tr>
+      <td>KeyError: 'item_id' (no notebook)</td>
+      <td>As tabelas não têm <code>item_id</code>. A chave que liga itens a cadeias é <code>bibref</code> — junte por ela.</td>
+    </tr>
+    <tr>
+      <td>Alpaca não foi gerado</td>
+      <td>O export só ocorre com <strong>zero ERROs</strong>. Volte ao passo 1 e rode <code>synesis check</code> até zerar.</td>
+    </tr>
+    <tr>
+      <td>Neo4j: Connection refused</td>
+      <td>O banco não está rodando ou a porta/senha no <code>config.toml</code> estão erradas. Inicie o Neo4j Desktop e confira <code>host</code> e <code>password</code>.</td>
+    </tr>
+  </table>
+  <div class="note green" style="margin-top:0.45rem">
+    <strong>Regra de ouro:</strong> a qualquer momento em dúvida, volte ao <strong>passo 1</strong> — <code>synesis check</code> é seu paraquedas. Quase todo erro adiante começa como um aviso ignorado aqui.
+  </div>
+</div>
+
+<!-- ── Footer ─────────────────────────── -->
+<div class="doc-footer">
+  <span>Causation Coding · Oratória · Synesis v1.1 · synesis-coder · synesis2neo4j v0.1.2</span>
+  <span>Dados fictícios para replicação didática · Saldaña (2013, pp. 163–175)</span>
+</div>
+
+</div>
+</body>
+</html>

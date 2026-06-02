@@ -1,0 +1,131 @@
+# Diagnóstico Socioambiental Participativo (DSAP)
+# Vila dos Coqueiros - dados fictícios para fins didáticos
+
+SOURCE FIELDS
+    REQUIRED tipo_ref
+END SOURCE FIELDS
+
+FIELD tipo_ref TYPE ENUMERATED
+    SCOPE SOURCE
+    DESCRIPTION Define o tipo de referência utilizada
+    VALUES
+        pri: Referência primária, entrevistas
+        sec: Referência secundária, blogs, jornais, revistas, podcasts
+        ref: Artigos científicos, documentos oficiais
+    END VALUES
+    GUIDELINES
+        Classifique a fonte conforme sua origem e proximidade com o dado observado.
+        Use pri para entrevistas, oficinas, relatos e registros produzidos diretamente com a comunidade.
+        Use sec para materiais jornalísticos, blogs, revistas, podcasts e divulgação.
+        Use ref para artigos científicos, relatórios técnicos, legislação e documentos oficiais.
+        Não classifique pela qualidade percebida da fonte; considere somente sua natureza documental.
+    END GUIDELINES
+END FIELD
+
+ITEM FIELDS
+    REQUIRED citação, resumo, fator, swot, importância
+END ITEM FIELDS
+
+FIELD citação TYPE QUOTATION
+    SCOPE ITEM
+    DESCRIPTION Excerto textual extraído da fonte bibliográfica
+    GUIDELINES
+        Extraia um excerto literal, completo e autossuficiente de 1-3 frases.
+        Preserve as palavras, a pontuação e o sentido original da fonte.
+        Inclua contexto suficiente para que o trecho seja compreendido isoladamente.
+        Prefira um trecho que sustente um único fator analítico principal.
+        Não resuma, não parafraseie e não acrescente interpretação.
+    END GUIDELINES
+END FIELD
+
+FIELD resumo TYPE MEMO
+    SCOPE ITEM
+    DESCRIPTION Memo analítico explicando a interpretação
+    GUIDELINES
+        Explique em 1-3 frases por que o excerto sustenta o fator selecionado.
+        Registre o mecanismo, impacto ou problema socioambiental identificado.
+        Diferencie claramente a evidência textual da interpretação do pesquisador.
+        Quando pertinente, explicite por que o fator é interno ou externo à comunidade.
+        Não repita a citação e não introduza informações ausentes na fonte.
+    END GUIDELINES
+END FIELD
+
+FIELD fator TYPE CODE
+    SCOPE ITEM
+    DESCRIPTION Palavra-chave temática
+    GUIDELINES
+        Aplique um fator temático diretamente sustentado pelo excerto e pelo resumo.
+        Prefira um fator existente na ontologia e reutilize a mesma grafia.
+        Use nomes substantivos singulares ou expressões estáveis com underscore.
+        Crie um novo fator somente quando o conceito for distinto e relevante para o diagnóstico.
+        Todo fator aplicado deve possuir um bloco ONTOLOGY correspondente.
+    END GUIDELINES
+END FIELD
+
+FIELD swot TYPE ENUMERATED
+    SCOPE ITEM
+    DESCRIPTION Elementos da matriz SWOT
+    VALUES
+        fo: Força (perspectiva interna)
+        fr: Fraqueza (perspectiva interna)
+        op: Oportunidade (perspectiva externa)
+        am: Ameaça (perspectiva externa)
+    END VALUES
+    GUIDELINES
+        Classifique o fator considerando sua origem e seu efeito predominante sobre a comunidade.
+        Use fo para capacidade ou recurso interno com efeito favorável.
+        Use fr para limitação ou problema interno com efeito desfavorável.
+        Use op para condição externa que pode favorecer a comunidade.
+        Use am para condição externa que pode prejudicar a comunidade.
+        Registre no resumo a justificativa quando a fronteira entre interno e externo não for evidente.
+    END GUIDELINES
+END FIELD
+
+FIELD importância TYPE SCALE
+    SCOPE ITEM
+    # O limite decimal mantém compatibilidade com valores intermediários como 0.5.
+    FORMAT [0..1.01]
+    DESCRIPTION Importância do fator (0=nula ou baixa, 0.5=moderada, 1=alta)
+    GUIDELINES
+        Avalie a relevância do fator para a sustentabilidade local usando somente 0, 0.5 ou 1.
+        Use 0 para impacto nulo ou baixo no diagnóstico.
+        Use 0.5 para impacto moderado, localizado ou parcialmente sustentado pela evidência.
+        Use 1 para impacto alto, abrangente ou diretamente relacionado à sustentabilidade da comunidade.
+        Considere magnitude, abrangência e persistência do efeito; não use casas decimais adicionais.
+    END GUIDELINES
+END FIELD
+
+ONTOLOGY FIELDS
+    REQUIRED description, dimensão_sustentabilidade
+END ONTOLOGY FIELDS
+
+FIELD description TYPE TEXT
+    SCOPE ONTOLOGY
+    DESCRIPTION Descrição do fator
+    GUIDELINES
+        Defina o fator em 1-3 frases com linguagem clara e aplicável ao diagnóstico.
+        Explique o significado central e os critérios para reconhecer o fator nas fontes.
+        Quando útil, diferencie-o de fatores próximos para evitar sobreposição.
+        Não restrinja a definição a uma única citação ou participante.
+        Não inclua a classificação SWOT: ela depende do contexto de cada item.
+    END GUIDELINES
+END FIELD
+
+FIELD dimensão_sustentabilidade TYPE ENUMERATED
+    SCOPE ONTOLOGY
+    DESCRIPTION Dimensões da sustentabilidade
+    VALUES
+        ambiental: Ecossistemas, recursos naturais, fauna, flora
+        sociocultural: Qualidade de vida, valores culturais, intergeracionalidade
+        econômica: Investimentos, comércio, empregabilidade
+        governamental: Infraestrutura, sustentabilidade jurídica, justiça social
+    END VALUES
+    GUIDELINES
+        Atribua uma única dimensão principal conforme o efeito predominante do fator.
+        Use ambiental para ecossistemas, recursos naturais, fauna, flora e impactos biofísicos.
+        Use sociocultural para qualidade de vida, identidade, práticas culturais e relações comunitárias.
+        Use econômica para renda, trabalho, produção, comércio, investimento e atividades produtivas.
+        Use governamental para serviços públicos, infraestrutura, direitos, regulação e justiça social.
+        Em fatores multidimensionais, escolha a dimensão mais relevante no diagnóstico e explique essa escolha na descrição.
+    END GUIDELINES
+END FIELD

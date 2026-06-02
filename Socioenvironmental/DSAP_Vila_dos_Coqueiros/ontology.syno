@@ -1,0 +1,29 @@
+ONTOLOGY Pesca_Artesanal
+    description: Atividade pesqueira tradicional de pequena escala, praticada com técnicas transmitidas entre gerações.
+    dimensão_sustentabilidade: econômica
+END ONTOLOGY
+
+ONTOLOGY Descarte_Residuos
+    description: Descarte inadequado de resíduos sólidos em áreas naturais, decorrente da ausência de coleta pública e de práticas locais de manejo.
+    dimensão_sustentabilidade: ambiental
+END ONTOLOGY
+
+ONTOLOGY Turismo_Comunitario
+    description: Modelo de turismo gerido pela própria comunidade, que valoriza ativos culturais e naturais locais.
+    dimensão_sustentabilidade: econômica
+END ONTOLOGY
+
+ONTOLOGY Assoreamento
+    description: Acúmulo de sedimentos em corpos d'água que reduz profundidade e compromete a navegação e a biodiversidade aquática.
+    dimensão_sustentabilidade: ambiental
+END ONTOLOGY
+
+ONTOLOGY Saneamento_Basico
+    description: Conjunto de serviços de abastecimento de água, esgotamento sanitário e drenagem urbana prestados pelo poder público.
+    dimensão_sustentabilidade: governamental
+END ONTOLOGY
+
+ONTOLOGY Patrimonio_Cultural
+    description: Práticas, saberes e expressões culturais transmitidas entre gerações na comunidade.
+    dimensão_sustentabilidade: sociocultural
+END ONTOLOGY

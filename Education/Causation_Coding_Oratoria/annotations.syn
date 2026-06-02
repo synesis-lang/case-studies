@@ -1,0 +1,153 @@
+# Respostas fictícias adaptadas ao desenho de pesquisa de Causation Coding.
+
+SOURCE @participante01
+    perfil: Profissional de comunicação, participante de aulas de oratória no ensino médio.
+    contexto: Relata timidez inicial e efeitos posteriores na formação profissional.
+END SOURCE
+
+SOURCE @participante02
+    perfil: Gestora comercial, participante de clube e torneios de oratória.
+    contexto: Destaca competição, amizades e reconhecimento entre colegas.
+END SOURCE
+
+SOURCE @participante03
+    perfil: Professor universitário, participante de aulas regulares de oratória.
+    contexto: Relaciona treinamento escolar, confiança e preparação acadêmica.
+END SOURCE
+
+SOURCE @participante04
+    perfil: Advogada, participante de oratória e teatro escolar.
+    contexto: Destaca observação de docentes e capacidade de apresentar argumentos.
+END SOURCE
+
+SOURCE @participante05
+    perfil: Analista de projetos, participante de torneios de oratória.
+    contexto: Relaciona ensaios frequentes com concentração e disciplina profissional.
+END SOURCE
+
+SOURCE @participante06
+    perfil: Empreendedora, participante de clube de oratória.
+    contexto: Destaca feedback, pertencimento e desenvolvimento da autoestima.
+END SOURCE
+
+SOURCE @participante07
+    perfil: Coordenador de equipe, participante de aulas e debates escolares.
+    contexto: Relaciona comunicação oral com negociação e liderança.
+END SOURCE
+
+SOURCE @participante08
+    perfil: Designer, participante de competições de oratória.
+    contexto: Destaca memórias afetivas, vitórias e confiança para falar em público.
+END SOURCE
+
+ITEM @participante01
+    citação: "Eu era muito tímido e evitava falar diante da turma porque tinha medo de errar na frente dos outros."
+    resumo: A timidez alimentava medo de exposição e restringia a fala em público — estado inicial que a participação em oratória visava superar.
+    chain: Timidez -> CAUSA -> Medo_De_Falar -> RESTRINGE -> Fala_Em_Publico
+    categoria_resultado: efeitos_pessoais
+END ITEM
+
+ITEM @participante01
+    citação: "Os exercícios de improviso me ensinaram a pensar rápido, e isso depois ajudou muito nas entrevistas de emprego."
+    resumo: O treinamento de oratória desenvolveu rapidez de raciocínio com aplicação profissional posterior.
+    chain: Treinamento_Oratoria -> HABILITA -> Pensamento_Rapido -> HABILITA -> Habilidades_Entrevista
+    categoria_resultado: preparação_profissional
+END ITEM
+
+ITEM @participante02
+    citação: "Nos torneios eu conheci pessoas de outras escolas, fui aceito pelo grupo e fiz amizades que duraram muitos anos."
+    resumo: A participação em torneios criou oportunidades de integração social e amizades duradouras.
+    chain: Torneios_Oratoria -> HABILITA -> Aceitacao_Pelos_Pares -> HABILITA -> Amizades
+    categoria_resultado: pertencimento_social
+END ITEM
+
+ITEM @participante02
+    citação: "Quando nossa equipe começou a vencer, passei a ser mais conhecido na escola e isso aumentou minha confiança."
+    resumo: As vitórias produziram reconhecimento social e reforçaram a confiança pessoal.
+    chain: Vitorias -> AMPLIFICA -> Popularidade -> AMPLIFICA -> Confianca
+    categoria_resultado: confiança
+END ITEM
+
+ITEM @participante03
+    citação: "A prática semanal me deu confiança para apresentar trabalhos e me deixou mais preparado para entrar na faculdade."
+    resumo: A prática regular fortaleceu a confiança e facilitou a transição para atividades acadêmicas.
+    chain: Pratica_Repetida -> HABILITA -> Confianca -> HABILITA -> Preparacao_Academica
+    categoria_resultado: preparação_profissional
+END ITEM
+
+ITEM @participante03
+    citação: "Aprender a organizar uma fala também melhorou minha capacidade de explicar ideias com clareza no trabalho."
+    resumo: A estruturação da fala escolar foi transferida para habilidades de comunicação profissional.
+    chain: Estruturacao_Da_Fala -> HABILITA -> Clareza_De_Expressao -> HABILITA -> Habilidades_Profissionais
+    categoria_resultado: habilidades_apresentação
+END ITEM
+
+ITEM @participante04
+    citação: "Eu observava como a professora conduzia as apresentações e aprendi a sustentar meus argumentos diante de uma plateia."
+    resumo: A modelagem docente apoiou o desenvolvimento de argumentação em apresentações públicas.
+    chain: Modelagem_Docente -> HABILITA -> Argumentacao -> HABILITA -> Habilidades_Apresentacao
+    categoria_resultado: habilidades_apresentação
+END ITEM
+
+ITEM @participante04
+    citação: "O teatro e a oratória me ensinaram a manter a calma mesmo quando preciso responder perguntas inesperadas."
+    resumo: Experiências de apresentação favoreceram compostura diante de situações imprevistas.
+    chain: Experiencias_De_Apresentacao -> HABILITA -> Compostura -> HABILITA -> Resposta_A_Imprevistos
+    categoria_resultado: habilidades_apresentação
+END ITEM
+
+ITEM @participante05
+    citação: "Ensaiar repetidamente enquanto cuidava das outras matérias me obrigou a desenvolver concentração e disciplina."
+    resumo: A carga de ensaios exigiu concentração e gerou hábitos disciplinados de trabalho.
+    chain: Carga_De_Ensaios -> HABILITA -> Concentracao -> HABILITA -> Etica_De_Trabalho
+    categoria_resultado: efeitos_pessoais
+END ITEM
+
+ITEM @participante05
+    citação: "Preparar discursos, estudar e competir ao mesmo tempo fez com que eu aprendesse a administrar várias tarefas."
+    resumo: A combinação de exigências escolares e competitivas desenvolveu capacidade de multitarefa.
+    chain: Competicoes -> HABILITA -> Multitarefa -> HABILITA -> Habilidades_Profissionais
+    categoria_resultado: preparação_profissional
+END ITEM
+
+ITEM @participante06
+    citação: "Os retornos positivos depois das apresentações fizeram com que eu percebesse meu valor e melhorasse minha autoestima."
+    resumo: Feedback positivo reforçou confiança percebida e contribuiu para autoestima.
+    chain: Feedback_Positivo -> AMPLIFICA -> Confianca -> HABILITA -> Autoestima
+    categoria_resultado: efeitos_pessoais
+END ITEM
+
+ITEM @participante06
+    citação: "Fazer parte daquele grupo me deu sensação de pertencimento e facilitou meus relacionamentos depois da escola."
+    resumo: A participação em grupo promoveu pertencimento com efeitos posteriores nas relações interpessoais.
+    chain: Participacao_Em_Grupo -> HABILITA -> Pertencimento -> HABILITA -> Relacionamentos_Interpessoais
+    categoria_resultado: pertencimento_social
+END ITEM
+
+ITEM @participante07
+    citação: "Nos debates eu precisava ouvir, responder rápido e negociar posições, habilidades que hoje uso para coordenar minha equipe."
+    resumo: Debates escolares desenvolveram negociação e apoiaram práticas adultas de liderança.
+    chain: Debates_Escolares -> HABILITA -> Negociacao -> HABILITA -> Habilidades_Lideranca
+    categoria_resultado: habilidades_liderança
+END ITEM
+
+ITEM @participante07
+    citação: "Conduzir apresentações diante da turma me ajudou a organizar reuniões e assumir responsabilidades no trabalho."
+    resumo: A experiência de conduzir apresentações escolares foi transferida para organização de reuniões e liderança profissional.
+    chain: Experiencias_De_Apresentacao -> HABILITA -> Conducao_De_Reunioes -> HABILITA -> Habilidades_Lideranca
+    categoria_resultado: habilidades_liderança
+END ITEM
+
+ITEM @participante08
+    citação: "As viagens e vitórias nos torneios viraram memórias muito boas e fizeram parte de quem eu me tornei."
+    resumo: Competições e vitórias contribuíram para memórias afetivas duradouras.
+    chain: Competicoes -> CAUSA -> Vitorias -> HABILITA -> Memorias_Afetivas
+    categoria_resultado: ganhos_competição
+END ITEM
+
+ITEM @participante08
+    citação: "Depois de tantas apresentações, perdi o medo e hoje consigo falar com segurança para grupos grandes."
+    resumo: A exposição repetida reduziu o medo de falar e favoreceu segurança em apresentações públicas.
+    chain: Exposicao_Repetida -> ATENUA -> Medo_De_Falar -> HABILITA -> Fala_Em_Publico
+    categoria_resultado: confiança
+END ITEM

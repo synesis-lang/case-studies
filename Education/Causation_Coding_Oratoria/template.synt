@@ -1,0 +1,219 @@
+# Replicação didática de Causation Coding aplicada à formação em oratória.
+# As respostas são fictícias e redigidas em português.
+
+SOURCE FIELDS
+    REQUIRED perfil
+    OPTIONAL contexto
+END SOURCE FIELDS
+
+FIELD perfil TYPE TEXT
+    SCOPE SOURCE
+    DESCRIPTION Perfil resumido da pessoa participante
+    GUIDELINES
+        Descreva em uma frase a ocupação ou área de atuação atual da pessoa.
+        Mencione o tipo de participação em oratória (aulas regulares, clube, torneios).
+        Não inclua nome próprio — use apenas atributos funcionais.
+        Exemplo: "Profissional de comunicação, participante de aulas de oratória no ensino médio."
+    END GUIDELINES
+END FIELD
+
+FIELD contexto TYPE TEXT
+    SCOPE SOURCE
+    DESCRIPTION Contexto da participação em aulas, clubes ou torneios de oratória
+    GUIDELINES
+        Indique o aspecto central da experiência relatada pela pessoa: barreira inicial,
+        tipo de atividade predominante ou dimensão do impacto percebido.
+        Use linguagem que conecte o passado escolar ao presente adulto quando possível.
+        Máximo de duas frases.
+        Exemplo: "Relata timidez inicial e efeitos posteriores na formação profissional."
+    END GUIDELINES
+END FIELD
+
+ITEM FIELDS
+    REQUIRED citação, categoria_resultado
+    REQUIRED BUNDLE resumo, chain
+END ITEM FIELDS
+
+FIELD citação TYPE QUOTATION
+    SCOPE ITEM
+    DESCRIPTION Trecho da resposta que sustenta a atribuição causal
+    GUIDELINES
+        Extraia um trecho contínuo da resposta da pessoa participante (1–3 frases).
+        O trecho deve ser autossuficiente: deve ser inteligível sem o texto ao redor.
+        Deve conter pelo menos um elemento causal explícito ou fortemente inferível:
+        marcadores como "porque", "então", "por isso", "ajudou a", "me fez", "sem isso".
+
+        Avalie o valor analítico antes de extrair (escala 1–3):
+        3 — Contém mecanismo causal claro entre dois ou mais fatores. EXTRAIR.
+        2 — Associação sugerida, mas sem mecanismo visível. EXTRAIR com cautela.
+        1 — Declaração genérica ou redundante. NÃO EXTRAIR.
+
+        Cada pessoa participante deve ter entre 1 e 3 itens extraídos.
+        Prefira qualidade a quantidade: 2 cadeias fortes > 5 cadeias fracas.
+    END GUIDELINES
+END FIELD
+
+FIELD resumo TYPE MEMO
+    SCOPE ITEM
+    DESCRIPTION Memo analítico que explica a atribuição causal identificada
+    GUIDELINES
+        Descreva o mecanismo causal identificado na cadeia — não apenas repita a citação.
+        Estruture em uma frase que nomeie o antecedente, o processo mediador e o resultado.
+        Máximo de 30 palavras.
+
+        BOM: "A carga de ensaios exigiu concentração e gerou hábitos disciplinados de trabalho."
+        RUIM: "A pessoa disse que ensaiar muito foi importante para ela."
+
+        Quando a cadeia representar um estado negativo (bloqueio, restrição), indique
+        explicitamente que se trata de uma barreira inicial, não de um resultado desejado.
+    END GUIDELINES
+END FIELD
+
+FIELD chain TYPE CHAIN
+    SCOPE ITEM
+    ARITY >= 2
+    DESCRIPTION Sequência causal percebida pela pessoa participante
+    RELATIONS
+        CAUSA: Um fator produz diretamente outro fator
+        HABILITA: Um fator cria condições para que outro fator se desenvolva
+        AMPLIFICA: Um fator reforça ou intensifica outro fator já presente
+        ATENUA: Um fator enfraquece ou reduz a intensidade de outro fator
+        RESTRINGE: Um fator bloqueia ou impede o desenvolvimento de outro fator
+    END RELATIONS
+    GUIDELINES
+        ESTRUTURA OBRIGATÓRIA: toda cadeia segue o triplet de Franzosi (2010):
+        Antecedente -> relação -> Mediador -> relação -> Resultado
+        Cadeias com apenas dois nós são permitidas quando o mediador não está
+        explícito na fala e não pode ser inferido com segurança.
+
+        PRIORIDADE DE RELAÇÃO: CAUSA > HABILITA > AMPLIFICA > ATENUA > RESTRINGE
+
+        Testes de seleção para cada relação:
+        CAUSA:     "O fator A gera B diretamente, sem condição intermediária?" Se SIM, use CAUSA.
+        HABILITA:  "B só pode existir ou emergir porque A existe ou ocorreu?" Se SIM, use HABILITA.
+        AMPLIFICA: "A reforça B que já existe ou está emergindo?" Se SIM, use AMPLIFICA.
+        ATENUA:    "A reduz a intensidade de B, mas não o elimina?" Se SIM, use ATENUA.
+        RESTRINGE: "A bloqueia ou impede que B se desenvolva?" Se SIM, use RESTRINGE.
+
+        DIREÇÃO: o nó de origem é sempre a causa ou condição; o nó de destino é o efeito.
+        Verifique o marcador linguístico da citação para confirmar a direção:
+        "me deu", "me ensinou", "ajudou a", "fez com que" -> origem primeiro
+        "por causa de", "graças a", "sem X não teria Y" -> inverter se necessário
+
+        PAPEL DOS NÓS: respeite os papéis definidos na ontologia.
+        O nó inicial da cadeia deve ter papel "antecedente" ou "mediador".
+        O nó final deve ter papel "resultado" ou "mediador".
+        Um nó com papel "resultado" só pode iniciar uma cadeia se representar
+        um outcome de atribuição anterior (Munton et al., 1999, p. 9).
+
+        CADEIAS PARALELAS: quando dois antecedentes independentes levam ao mesmo
+        resultado, crie ITEMs separados — não os junte em uma única cadeia.
+        Correto:   Treinamento -> HABILITA -> Confianca
+                   Feedback    -> AMPLIFICA -> Confianca
+        Incorreto: Treinamento + Feedback -> HABILITA -> Confianca
+
+        NOMEAÇÃO DOS NÓS: use os identificadores exatos da ontologia.
+        Conceitos multi-palavra usam underscore (ex: Medo_De_Falar).
+        Não crie nós ad hoc — se o fator não existe na ontologia, adicione-o primeiro.
+
+        categoria_resultado DEVE corresponder ao grupo ontológico do nó final da cadeia.
+        Se a cadeia representa um estado negativo (bloqueio inicial), use "efeitos_pessoais"
+        e indique no resumo que se trata de uma barreira, não de um outcome positivo.
+    END GUIDELINES
+END FIELD
+
+FIELD categoria_resultado TYPE ENUMERATED
+    SCOPE ITEM
+    DESCRIPTION Categoria analítica do resultado principal da cadeia
+    VALUES
+        preparação_profissional: Habilidades úteis para estudo, trabalho e carreira
+        habilidades_apresentação: Comunicação oral, argumentação e apresentação
+        habilidades_liderança: Coordenação, negociação e condução de grupos
+        confiança: Confiança, compostura e superação de inibições
+        ganhos_competição: Vitórias, reconhecimento e memórias de competição
+        pertencimento_social: Amizades, aceitação e relações interpessoais
+        efeitos_pessoais: Autoestima, disciplina e ética de trabalho
+    END VALUES
+    GUIDELINES
+        Escolha a categoria com base no nó FINAL da cadeia, não no tema geral do item.
+        Identifique o grupo ontológico do nó final e mapeie conforme a tabela:
+
+        Preparacao_Profissional, Habilidades_Profissionais, Multitarefa -> preparação_profissional
+        Habilidades_Apresentacao, Argumentacao, Resposta_A_Imprevistos   -> habilidades_apresentação
+        Habilidades_Lideranca, Conducao_De_Reunioes, Negociacao          -> habilidades_liderança
+        Confianca, Compostura, Preparacao_Academica                      -> confiança
+        Vitorias, Popularidade, Memorias_Afetivas                        -> ganhos_competição
+        Amizades, Aceitacao_Pelos_Pares, Relacionamentos_Interpessoais   -> pertencimento_social
+        Autoestima, Etica_De_Trabalho, Concentracao, Fala_Em_Publico     -> efeitos_pessoais
+
+        Quando a cadeia representa um estado negativo (bloqueio, restrição inicial),
+        use "efeitos_pessoais" e indique no resumo que é uma barreira pré-intervenção.
+
+        Em caso de dúvida entre duas categorias, prefira a que corresponde ao grupo
+        ontológico do nó final. Nunca escolha pela temática do antecedente.
+    END GUIDELINES
+END FIELD
+
+ONTOLOGY FIELDS
+    REQUIRED descrição, papel
+    OPTIONAL grupo
+END ONTOLOGY FIELDS
+
+FIELD descrição TYPE TEXT
+    SCOPE ONTOLOGY
+    DESCRIPTION Definição do fator no contexto do estudo
+    GUIDELINES
+        Defina o fator em uma frase (15–30 palavras).
+        Descreva o que o fator É no contexto da formação em oratória — não como ele se relaciona.
+        Use linguagem acessível, compatível com dados qualitativos de survey.
+        Exemplo: "Receio de errar ou ser avaliado negativamente durante situações de fala pública."
+        Evite circularidade: não use o nome do próprio fator na definição.
+    END GUIDELINES
+END FIELD
+
+FIELD papel TYPE ENUMERATED
+    SCOPE ONTOLOGY
+    DESCRIPTION Papel predominante do fator nas cadeias causais
+    VALUES
+        antecedente: Condição ou experiência inicial
+        mediador: Processo intermediário que transmite ou transforma efeitos
+        resultado: Efeito percebido pela pessoa participante
+    END VALUES
+    GUIDELINES
+        Atribua o papel com base na posição PREDOMINANTE do fator nas cadeias,
+        não apenas em uma ocorrência isolada.
+
+        antecedente: fator aparece tipicamente como nó inicial; é uma condição,
+                     experiência ou estímulo que desencadeia outros fatores.
+        mediador:    fator aparece tipicamente como nó intermediário; transmite,
+                     transforma ou amplifica o efeito do antecedente.
+        resultado:   fator aparece tipicamente como nó final; é o efeito percebido
+                     pela pessoa participante no presente adulto.
+
+        Um mesmo fator pode aparecer em posições diferentes em cadeias distintas.
+        Nesse caso, classifique pelo papel mais frequente ou mais teoricamente
+        significativo (Munton et al., 1999, p. 9: outcomes podem tornar-se causas).
+
+        Regra prática: se o fator é o ponto de chegada da maioria das narrativas,
+        é resultado; se é o ponto de partida, é antecedente; se transmite efeitos, é mediador.
+    END GUIDELINES
+END FIELD
+
+FIELD grupo TYPE TOPIC
+    SCOPE ONTOLOGY
+    DESCRIPTION Agrupamento temático aberto para análise agregada
+    GUIDELINES
+        Atribua um agrupamento temático de nível intermediário (nem tão específico
+        quanto o fator, nem tão geral quanto o estudo inteiro).
+        Objetivo: permitir análise agregada por categoria na matriz antecedente-mediador-resultado.
+
+        Grupos ativos no projeto (use preferencialmente estes antes de criar novos):
+        Barreiras_Iniciais, Experiencias_Escolares, Competencias_Cognitivas,
+        Comunicacao, Preparacao_Profissional, Lideranca, Desenvolvimento_Pessoal,
+        Pertencimento_Social, Ganhos_De_Competicao
+
+        Crie um novo grupo somente se o fator não se enquadrar em nenhum dos existentes.
+        Verifique: "pelo menos 3 outros fatores pertenceriam a este grupo?"
+        Se não, use o grupo mais próximo e documente a decisão no resumo do item.
+    END GUIDELINES
+END FIELD
