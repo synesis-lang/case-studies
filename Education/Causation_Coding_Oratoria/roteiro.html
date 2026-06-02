@@ -1053,6 +1053,54 @@ python synesis2neo4j/synesis2neo4j.py --project case-studies/Education/Causation
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════
+     GRAFO HTML — Exploração interativa
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label" style="background:rgba(78,121,167,0.07);border-right-color:rgba(78,121,167,0.2)">
+    <span class="step-num" style="color:#4E79A7">◉</span>
+    <span class="step-title">Explorar o grafo HTML</span>
+    <span class="step-sub">Visualização interativa gerada pelo synesis2neo4j — arquivo único, sem servidor.</span>
+    <span class="trail-badge avancado">Avançado</span>
+    <span class="time-tag">⏱ ~5 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> navegar pela rede causal diretamente no navegador — sem instalar Neo4j, sem banco de dados. O HTML gerado é autossuficiente e pode ser partilhado como um único arquivo.</div>
+    <div class="col-hd">Gerar o grafo</div>
+    <div class="cb"><span class="cmt"># A partir da raiz do repositório:</span>
+python synesis2neo4j/synesis2graph.py \
+  --json case-studies/Education/Causation_Coding_Oratoria/exports/causation_coding_oratoria.json \
+  --backend html \
+  --html-output synesis2neo4j/graphs/causation_coding_oratoria.html \
+  --html-all
+
+<span class="cmt"># Abrir no navegador padrão:</span>
+start synesis2neo4j/graphs/causation_coding_oratoria.html</div>
+    <div class="note">
+      <strong>--html-all</strong> exibe todos os 39 conceitos e 31 arestas, sem filtros de frequência. Para projetos maiores, omita a flag e ajuste <code>--html-min-frequency</code> e <code>--html-min-source-count</code> para focar no núcleo mais citado.
+    </div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o navegador abre mostrando os nós coloridos por papel (azul = antecedente, laranja = mediador, vermelho = resultado) e as arestas entre eles.</div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">O que você pode fazer no grafo</div>
+    <table class="mt">
+      <thead><tr><th>Ação</th><th>Como</th></tr></thead>
+      <tr><td>Inspecionar nó</td><td class="prose">Clique no nó — o painel lateral mostra papel, grupo e grau de conexão</td></tr>
+      <tr><td>Inspecionar aresta</td><td class="prose">Clique na aresta — mostra o tipo de relação (CAUSA, HABILITA…) e quantas vezes ocorre</td></tr>
+      <tr><td>Ver evidência textual</td><td class="prose">Alterne para o modo <strong>Evidência</strong> (botão no topo do painel) — cada aresta exibe a citação do participante que a originou</td></tr>
+      <tr><td>Filtrar por grupo</td><td class="prose">Clique nas entradas da legenda para mostrar/ocultar categorias temáticas (Experiencias_Escolares, Comunicacao…)</td></tr>
+      <tr><td>Focar no núcleo</td><td class="prose">Arraste o slider "Min connections" — oculta nós periféricos, revela os conceitos mais centrais da rede</td></tr>
+      <tr><td>Buscar conceito</td><td class="prose">Digite na caixa de pesquisa — centraliza e seleciona o nó correspondente</td></tr>
+      <tr><td>Exportar imagem</td><td class="prose">Botão <strong>PNG</strong> no HUD — salva a visualização atual como imagem</td></tr>
+    </table>
+    <div class="note" style="margin-top:0.35rem">
+      <strong>Dois modos complementares:</strong> <em>Ontologia</em> agrupa as relações causais em arestas únicas por par de conceitos — ideal para ver a estrutura geral. <em>Evidência</em> expande cada aresta em ocorrências individuais com citação — ideal para auditar a codificação.
+    </div>
+  </div>
+</div>
+
 <!-- ── Solução de problemas ─────────────── -->
 <div class="trouble">
   <div class="card-hd"><span class="ic">🛟</span> Solução de problemas — os tropeços mais comuns</div>

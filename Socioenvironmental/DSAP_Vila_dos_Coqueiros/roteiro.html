@@ -1018,6 +1018,56 @@ synesis-coder item --project project.synp --bibref oficina_coqueiros2026 --text 
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════
+     GRAFO HTML — Exploração interativa
+════════════════════════════════════════ -->
+<div class="step-row">
+  <div class="step-label" style="background:rgba(78,121,167,0.07);border-right-color:rgba(78,121,167,0.2)">
+    <span class="step-num" style="color:#4E79A7">◉</span>
+    <span class="step-title">Explorar o grafo HTML</span>
+    <span class="step-sub">Visualização interativa dos fatores e dimensões — arquivo único, sem servidor.</span>
+    <span class="trail-badge avancado">Avançado</span>
+    <span class="time-tag">⏱ ~5 min</span>
+  </div>
+
+  <div class="step-col">
+    <div class="goal"><strong>Objetivo:</strong> ver os fatores do diagnóstico como nós coloridos por dimensão de sustentabilidade, navegáveis no navegador. O HTML gerado é autossuficiente e pode ser partilhado como arquivo único sem dependências.</div>
+    <div class="col-hd">Gerar o grafo</div>
+    <div class="cb"><span class="cmt"># A partir da raiz do repositório:</span>
+python synesis2neo4j/synesis2graph.py \
+  --json case-studies/Socioenvironmental/DSAP_Vila_dos_Coqueiros/exports/dsap_vila_dos_coqueiros.json \
+  --backend html \
+  --html-output synesis2neo4j/graphs/dsap_vila_dos_coqueiros.html \
+  --html-all
+
+<span class="cmt"># Abrir no navegador padrão:</span>
+start synesis2neo4j/graphs/dsap_vila_dos_coqueiros.html</div>
+    <div class="note">
+      <strong>--html-all</strong> exibe todos os 6 fatores sem filtros de frequência. Como este projeto não usa CHAIN, o grafo mostra os nós isolados — a estrutura visual reflete o diagnóstico SWOT, não relações causais. Para ver relações entre fatores, adicione campos CHAIN ao template.
+    </div>
+    <div class="checkpoint"><strong>Pronto quando:</strong> o navegador abre mostrando os 6 fatores coloridos por dimensão de sustentabilidade (ambiental, econômica, governamental, sociocultural).</div>
+  </div>
+
+  <div class="step-col">
+    <div class="col-hd">O que você pode fazer no grafo</div>
+    <table class="mt">
+      <thead><tr><th>Ação</th><th>Como</th></tr></thead>
+      <tr><td>Inspecionar fator</td><td class="prose">Clique no nó — o painel lateral mostra descrição e dimensão de sustentabilidade</td></tr>
+      <tr><td>Filtrar por dimensão</td><td class="prose">Clique nas entradas da legenda para mostrar/ocultar dimensões (ambiental, econômica…)</td></tr>
+      <tr><td>Buscar fator</td><td class="prose">Digite na caixa de pesquisa — centraliza e seleciona o nó correspondente</td></tr>
+      <tr><td>Alterar tema</td><td class="prose">Botão ☀/🌙 no HUD alterna entre tema escuro e claro — útil para captura de tela em apresentações</td></tr>
+      <tr><td>Exportar imagem</td><td class="prose">Botão <strong>PNG</strong> no HUD — salva a visualização atual como imagem</td></tr>
+      <tr><td>Redimensionar painel</td><td class="prose">Arraste a borda entre o grafo e o painel lateral para ajustar proporções</td></tr>
+    </table>
+    <div class="note" style="margin-top:0.35rem">
+      <strong>Expandindo para relações:</strong> se o projeto evoluir para incluir campos CHAIN (ex.: <code>Descarte_Residuos CAUSA Assoreamento</code>), o grafo HTML passa a exibir arestas com os tipos de relação e, no modo <em>Evidência</em>, as citações textuais que sustentam cada conexão.
+    </div>
+    <hr class="divider">
+    <div class="col-hd">Comparar com o notebook</div>
+    <div style="font-size:0.66rem;color:var(--ink-mid);line-height:1.5">O notebook (passo 5) calcula a <strong>escala numérica</strong> e o velocímetro. O grafo HTML mostra a <strong>estrutura espacial</strong> dos fatores. Use os dois em conjunto: o número responde "quanto?", o grafo responde "quais e como estão relacionados?".</div>
+  </div>
+</div>
+
 <!-- ── Solução de problemas ─────────────── -->
 <div class="trouble">
   <div class="card-hd"><span class="ic">🛟</span> Solução de problemas — os tropeços mais comuns</div>
