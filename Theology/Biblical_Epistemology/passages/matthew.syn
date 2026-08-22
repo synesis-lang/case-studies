@@ -1,0 +1,100 @@
+# SOURCE único para todo o corpus bíblico.
+# Declarado aqui; todos os demais arquivos .syn referenciam @biblia.
+
+SOURCE @biblia
+    titulo: "Bíblia Sagrada"
+END SOURCE
+
+# ============================================
+# MATEUS 13.13-15
+# ============================================
+
+ITEM @biblia
+    referencia: "Mateus 13.13-15"
+    citacao_pt: "Por isso lhes falo por parábolas; porque vendo não veem, e ouvindo não ouvem, nem entendem. E neles se cumpre a profecia de Isaías: De ouvido ouvireis e não entendereis; e vendo vereis e não percebereis. Porque o coração deste povo está endurecido, e com os ouvidos ouviram com dificuldade, e fecharam os seus olhos; para que não vejam com os olhos, e ouçam com os ouvidos, e entendam com o coração, e se convertam, e eu os cure."
+    citacao_gr: "διὰ τοῦτο ἐν παραβολαῖς αὐτοῖς λαλῶ, ὅτι βλέποντες οὐ βλέπουσιν καὶ ἀκούοντες οὐκ ἀκούουσιν οὐδὲ συνίουσιν. καὶ ἀναπληροῦται αὐτοῖς ἡ προφητεία Ἠσαΐου ἡ λέγουσα· ἀκοῇ ἀκούσετε καὶ οὐ μὴ συνῆτε, καὶ βλέποντες βλέψετε καὶ οὐ μὴ ἴδητε. ἐπαχύνθη γὰρ ἡ καρδία τοῦ λαοῦ τούτου, καὶ τοῖς ὠσὶν βαρέως ἤκουσαν, καὶ τοὺς ὀφθαλμοὺς αὐτῶν ἐκάμμυσαν· μήποτε ἴδωσιν τοῖς ὀφθαλμοῖς καὶ τοῖς ὠσὶν ἀκούσωσιν καὶ τῇ καρδίᾳ συνῶσιν καὶ ἐπιστρέψωσιν καὶ ἰάσομαι αὐτούς."
+    termo_gr: "συνίουσιν / συνῆτε / συνῶσιν"
+    termo_transliterado: suniousin
+    polo_teologico: bloqueio
+    situacao: "Jesus explica por que fala em parábolas: o endurecimento do povo cumpre a profecia de Isaías 6.9-10. O verbo συνίημι aparece três vezes — como diagnóstico presente (não entendem), como juízo profético futuro (não entendereis) e como aquilo que o endurecimento impede (entendam com o coração). A synesis é simultaneamente descrita, negada e bloqueada."
+    resultado: "Endurecimento judicial confirmado. As parábolas funcionam como véu para quem já rejeitou a revelação. A passagem estabelece o padrão teológico que será repetido em Marcos 4 e Atos 28."
+    chain: citacao_de_isaias_6 -> CONFIRMA -> ocultamento_por_parabolas
+    chain: ocultamento_por_parabolas -> PRODUZ -> juizo_sobre_os_de_fora
+    chain: endurecimento_do_coracao -> BLOQUEIA -> suniemi
+    chain: endurecimento_judicial -> CONFIRMA -> endurecimento_do_coracao
+    chain: kardia -> PRECEDE -> suniemi
+END ITEM
+
+# ============================================
+# MATEUS 13.19
+# ============================================
+
+ITEM @biblia
+    referencia: "Mateus 13.19"
+    citacao_pt: "Quando alguém ouve a palavra do reino e não a entende, vem o maligno e arrebata o que foi semeado no seu coração. Este é o que foi semeado junto ao caminho."
+    citacao_gr: "παντὸς ἀκούοντος τὸν λόγον τῆς βασιλείας καὶ μὴ συνιέντος, ἔρχεται ὁ πονηρὸς καὶ ἁρπάζει τὸ ἐσπαρμένον ἐν τῇ καρδίᾳ αὐτοῦ· οὗτός ἐστιν ὁ παρὰ τὴν ὁδὸν σπαρείς."
+    termo_gr: "συνιέντος"
+    termo_transliterado: synientos
+    polo_teologico: bloqueio
+    situacao: "Na explicação da parábola do semeador, Jesus identifica a ausência de synesis como a vulnerabilidade que permite a ação do maligno. O ouvinte ouve a Palavra do Reino mas não a integra — e essa brecha é o ponto de entrada do adversário."
+    resultado: "A semente é arrebatada antes de produzir raiz. A ausência de synesis não é neutra: abre o ouvinte à perda imediata do que foi recebido."
+    chain: influencia_do_maligno -> PRODUZ -> semente_arrebatada
+    chain: semente_arrebatada -> BLOQUEIA -> suniemi
+    chain: incredulidade -> PRECEDE -> semente_arrebatada
+    chain: suniemi -> CONTRASTA_COM -> semente_arrebatada
+END ITEM
+
+# ============================================
+# MATEUS 13.23
+# ============================================
+
+ITEM @biblia
+    referencia: "Mateus 13.23"
+    citacao_pt: "O que foi semeado em boa terra é o que ouve a palavra e a entende; esse produz fruto e dá um a cem, outro a sessenta e outro a trinta."
+    citacao_gr: "ὁ δὲ ἐπὶ τὴν καλὴν γῆν σπαρείς, οὗτός ἐστιν ὁ τὸν λόγον ἀκούων καὶ συνιείς, ὃς δὴ καρποφορεῖ καὶ ποιεῖ ὃ μὲν ἑκατόν, ὃ δὲ ἑξήκοντα, ὃ δὲ τριάκοντα."
+    termo_gr: "συνιείς"
+    termo_transliterado: synieis
+    polo_teologico: iluminacao
+    situacao: "O polo positivo da parábola do semeador: ouvir e entender (ἀκούων καὶ συνιείς) são apresentados como par inseparável. A synesis não é adição ao ouvir — é a condição que transforma o ouvir em frutificação. Jesus contrapõe este caso aos três anteriores onde a semente não produz fruto."
+    resultado: "Frutificação em proporções variadas (cem, sessenta, trinta). A synesis é o pivô causal entre receber a Palavra e produzi-la em vida transformada."
+    chain: fe_e_receptividade -> HABILITA -> suniemi
+    chain: suniemi -> PRODUZ -> frutificacao
+    chain: suniemi -> CONTRASTA_COM -> semente_arrebatada
+    chain: kardia -> PRECEDE -> fe_e_receptividade
+END ITEM
+
+# ============================================
+# MATEUS 15.10
+# ============================================
+
+ITEM @biblia
+    referencia: "Mateus 15.10"
+    citacao_pt: "E, chamando a si a multidão, disse-lhes: Ouvi e entendei."
+    citacao_gr: "Καὶ προσκαλεσάμενος τὸν ὄχλον εἶπεν αὐτοῖς· ἀκούετε καὶ συνίετε·"
+    termo_gr: "συνίετε"
+    termo_transliterado: syniete
+    polo_teologico: convite
+    situacao: "Jesus interrompe o debate com os fariseus sobre pureza ritual e se volta à multidão com um imperativo duplo: ouvi e entendei (ἀκούετε καὶ συνίετε). O convite à synesis é dirigido a quem ainda não decidiu — diferente do endurecimento dos líderes religiosos que já rejeitaram."
+    resultado: "O resultado fica em aberto na passagem — dependente da resposta de cada ouvinte. O imperativo indica que a synesis pode ser buscada, mas não é automática."
+    chain: suniemi -> PRECEDE -> fe_e_receptividade
+    chain: discipulado -> FAVORECE -> suniemi
+    chain: suniemi -> CONTRASTA_COM -> endurecimento_do_coracao
+END ITEM
+
+# ============================================
+# MATEUS 16.12
+# ============================================
+
+ITEM @biblia
+    referencia: "Mateus 16.12"
+    citacao_pt: "Então entenderam que não lhes dissera que se guardassem do fermento do pão, mas da doutrina dos fariseus e dos saduceus."
+    citacao_gr: "τότε συνῆκαν ὅτι οὐκ εἶπεν προσέχειν ἀπὸ τῆς ζύμης τῶν ἄρτων ἀλλὰ ἀπὸ τῆς διδαχῆς τῶν Φαρισαίων καὶ Σαδδουκαίων."
+    termo_gr: "συνῆκαν"
+    termo_transliterado: synekan
+    polo_teologico: iluminacao
+    situacao: "Os discípulos finalmente compreendem a advertência de Jesus sobre o fermento — após Jesus os repreender pela falta de compreensão (v. 9-11). A synesis chega progressivamente no contexto do discipulado, mediada pela explicação de Jesus."
+    resultado: "Compreensão da advertência: o fermento era doutrina, não pão. Ilustra que a synesis dos discípulos é processual — dependente da mediação de Jesus e do tempo de formação."
+    chain: discipulado -> PRECEDE -> suniemi
+    chain: suniemi -> PRODUZ -> compreensao_das_escrituras
+    chain: abertura_do_entendimento -> HABILITA -> suniemi
+END ITEM

@@ -1,4 +1,11 @@
-/Sociology/Social_Acceptance/prompts
+/Sociology/Social_Acceptance_OTIC_Official
+/output
 /Projeto_Davi/
 /ufmg/
 /Raquel_Face85/
+/Quinto_Andar/
+/UFG/
+
+# Embedding sidecars — derived, regenerable, large (32.5 MB measured on
+# Social_Acceptance's 1388 concepts at 768 dimensions).
+*.embeddings.json

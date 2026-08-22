@@ -1,0 +1,56 @@
+# ============================================
+# MARCOS 4.12
+# ============================================
+
+ITEM @biblia
+    referencia: "Marcos 4.12"
+    citacao_pt: "Para que vendo vejam e não percebam, e ouvindo ouçam e não entendam; para que não se convertam e os pecados lhes sejam perdoados."
+    citacao_gr: "ἵνα βλέποντες βλέπωσιν καὶ μὴ ἴδωσιν, καὶ ἀκούοντες ἀκούωσιν καὶ μὴ συνιῶσιν, μήποτε ἐπιστρέψωσιν καὶ ἀφεθῇ αὐτοῖς."
+    termo_gr: "συνιῶσιν"
+    termo_transliterado: syniōsin
+    polo_teologico: bloqueio
+    situacao: "Jesus explica a função das parábolas aos discípulos em contraste com os de fora: a eles é dado conhecer o mistério do Reino, aos de fora tudo é parábola para que não entendam. A formulação ἵνα (para que) indica propósito — o obscurecimento é intencional, não mero efeito colateral."
+    resultado: "Juízo sobre os de fora: não há conversão nem perdão enquanto o endurecimento persiste. Passagem mais explícita sobre o caráter judicial do não-entender."
+    chain: endurecimento_judicial -> CONFIRMA -> ocultamento_por_parabolas
+    chain: ocultamento_por_parabolas -> PRODUZ -> juizo_sobre_os_de_fora
+    chain: juizo_sobre_os_de_fora -> BLOQUEIA -> suniemi
+    chain: citacao_de_isaias_6 -> FUNDAMENTA -> ocultamento_por_parabolas
+    chain: discipulado -> CONTRASTA_COM -> juizo_sobre_os_de_fora
+END ITEM
+
+# ============================================
+# MARCOS 6.52
+# ============================================
+
+ITEM @biblia
+    referencia: "Marcos 6.52"
+    citacao_pt: "Porque não tinham entendido o milagre dos pães, pois o seu coração estava endurecido."
+    citacao_gr: "οὐ γὰρ συνῆκαν ἐπὶ τοῖς ἄρτοις, ἀλλ᾽ ἦν αὐτῶν ἡ καρδία πεπωρωμένη."
+    termo_gr: "συνῆκαν"
+    termo_transliterado: synekan
+    polo_teologico: bloqueio
+    situacao: "Após Jesus caminhar sobre as águas, o narrador explica a perplexidade dos discípulos: eles não tinham entendido o milagre dos pães porque o coração estava endurecido. Notável que o endurecimento aqui afeta os próprios discípulos — não os adversários. A synesis é bloqueada mesmo em quem segue Jesus."
+    resultado: "Perplexidade e terror diante do milagre, em vez de fé e compreensão. Ilustra que o endurecimento não é privilégio dos adversários — é uma condição que pode afetar temporariamente até os discípulos."
+    chain: coracao_endurecido -> BLOQUEIA -> suniemi
+    chain: incredulidade -> PRODUZ -> coracao_endurecido
+    chain: kardia -> SEDE_DE -> endurecimento_do_coracao
+    chain: suniemi -> CONTRASTA_COM -> coracao_endurecido
+END ITEM
+
+# ============================================
+# MARCOS 7.14
+# ============================================
+
+ITEM @biblia
+    referencia: "Marcos 7.14"
+    citacao_pt: "E, chamando outra vez a multidão, disse-lhes: Ouvi-me todos vós e entendei."
+    citacao_gr: "Καὶ προσκαλεσάμενος πάλιν τὸν ὄχλον ἔλεγεν αὐτοῖς· ἀκούσατέ μου πάντες καὶ σύνετε."
+    termo_gr: "σύνετε"
+    termo_transliterado: synete
+    polo_teologico: convite
+    situacao: "Paralelo a Mateus 15.10 — Jesus convoca a multidão com o imperativo duplo: ouvi e entendei. O πάντες (todos vós) amplia o convite: a synesis é oferecida a toda a multidão, sem distinção. Segue ao debate sobre pureza com os fariseus, que recusam compreender."
+    resultado: "Resultado em aberto, dependente da resposta de cada ouvinte. O contraste com os fariseus (que não querem entender) torna o convite mais nítido."
+    chain: suniemi -> PRECEDE -> fe_e_receptividade
+    chain: discipulado -> FAVORECE -> suniemi
+    chain: suniemi -> CONTRASTA_COM -> endurecimento_do_coracao
+END ITEM

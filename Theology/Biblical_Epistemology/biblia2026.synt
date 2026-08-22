@@ -1,0 +1,129 @@
+TEMPLATE biblia2026
+
+# ============================================
+# CAMPOS DE SOURCE
+# ============================================
+
+SOURCE FIELDS
+    REQUIRED titulo
+END SOURCE FIELDS
+
+FIELD titulo TYPE TEXT
+    SCOPE SOURCE
+    DESCRIPTION Nome do corpus bíblico utilizado como fonte
+END FIELD
+
+# ============================================
+# CAMPOS DE ITEM
+# ============================================
+
+ITEM FIELDS
+    REQUIRED referencia
+    REQUIRED citacao_pt
+    REQUIRED citacao_gr
+    REQUIRED termo_gr
+    REQUIRED termo_transliterado
+    REQUIRED polo_teologico
+    REQUIRED BUNDLE situacao, resultado
+    OPTIONAL chain
+END ITEM FIELDS
+
+FIELD referencia TYPE TEXT
+    SCOPE ITEM
+    DESCRIPTION Referência bíblica no formato Livro Capítulo.Versículo (ex: Mateus 13.13-15)
+END FIELD
+
+FIELD citacao_pt TYPE QUOTATION
+    SCOPE ITEM
+    DESCRIPTION Texto bíblico em português
+END FIELD
+
+FIELD citacao_gr TYPE QUOTATION
+    SCOPE ITEM
+    DESCRIPTION Texto bíblico em grego koiné (Unicode)
+END FIELD
+
+FIELD termo_gr TYPE TEXT
+    SCOPE ITEM
+    DESCRIPTION Forma exata do termo na passagem (ex: συνιέναι, σύνεσις, συνετός)
+END FIELD
+
+FIELD termo_transliterado TYPE TEXT
+    SCOPE ITEM
+    DESCRIPTION Transliteração do termo na forma conjugada exata da passagem (ex: synesei, syniénai)
+END FIELD
+
+FIELD polo_teologico TYPE ENUMERATED
+    SCOPE ITEM
+    VALUES
+        iluminacao:           Deus abre o entendimento — ação positiva do Espírito
+        bloqueio:             Deus confirma ou permite o bloqueio do entendimento
+        convite:              Jesus convida ao discernimento — resultado em aberto
+        incapacidade_natural: Incapacidade ontológica da natureza caída
+    END VALUES
+END FIELD
+
+FIELD situacao TYPE MEMO
+    SCOPE ITEM
+    DESCRIPTION Situação narrativa ou teológica que envolve o termo na passagem
+END FIELD
+
+FIELD resultado TYPE MEMO
+    SCOPE ITEM
+    DESCRIPTION Consequência ou efeito da presença ou ausência de synesis
+END FIELD
+
+FIELD chain TYPE CHAIN
+    SCOPE ITEM
+    ARITY >= 2
+    RELATIONS
+        HABILITA:      Um conceito torna possível ou ativa outro
+        BLOQUEIA:      Um conceito impede ou suprime outro
+        PRODUZ:        Um conceito gera outro como consequência direta
+        PRECEDE:       Um conceito é condição antecedente de outro
+        COOPERA_COM:   Dois conceitos atuam conjuntamente para o mesmo efeito
+        CONFIRMA:      Um conceito ratifica ou intensifica outro
+        INSTANCIA_DE:  Um conceito é caso particular de outro mais geral
+        CONTRASTA_COM: Dois conceitos se opõem no eixo teológico
+        FUNDAMENTA:    Um conceito provê base textual ou teológica para outro
+        SEDE_DE:       Um conceito é o locus ou sede de outro
+        FAVORECE:      Um conceito cria condição favorável mas não determinante para outro
+    END RELATIONS
+END FIELD
+
+# ============================================
+# CAMPOS DE ONTOLOGY
+# ============================================
+
+ONTOLOGY FIELDS
+    REQUIRED descricao
+    REQUIRED categoria
+    REQUIRED polo
+END ONTOLOGY FIELDS
+
+FIELD descricao TYPE TEXT
+    SCOPE ONTOLOGY
+    DESCRIPTION Definição teológica do conceito
+END FIELD
+
+FIELD categoria TYPE ENUMERATED
+    SCOPE ONTOLOGY
+    VALUES
+        termo_central:      Termos da família synesis (substantivo, verbo, adjetivo)
+        agente_divino:      Ação de Deus ou do Espírito Santo
+        condicao_humana:    Estado interior que recebe ou bloqueia a synesis
+        resultado_positivo: Fruto da synesis iluminada
+        resultado_negativo: Consequência da ausência de synesis
+        mecanismo_bloqueio: Causa específica do endurecimento
+        conceito_correlato: Termo grego ou hebraico semanticamente relacionado
+    END VALUES
+END FIELD
+
+FIELD polo TYPE ENUMERATED
+    SCOPE ONTOLOGY
+    VALUES
+        iluminacao:    Polo da abertura do entendimento
+        bloqueio:      Polo do bloqueio ou endurecimento judicial
+        neutro:        Presente em ambos os polos
+    END VALUES
+END FIELD

@@ -1,0 +1,19 @@
+# ============================================
+# COLOSSENSES
+# ============================================
+
+ITEM @biblia
+    referencia: "Colossenses 1.9"
+    citacao_pt: "Por isso também nós, desde o dia em que o ouvimos, não cessamos de orar por vós e de pedir que sejais cheios do conhecimento da sua vontade em toda a sabedoria e inteligência espiritual."
+    citacao_gr: "διὰ τοῦτο καὶ ἡμεῖς, ἀφ᾽ ἧς ἡμέρας ἠκούσαμεν, οὐ παυόμεθα ὑπὲρ ὑμῶν προσευχόμενοι καὶ αἰτούμενοι ἵνα πληρωθῆτε τὴν ἐπίγνωσιν τοῦ θελήματος αὐτοῦ ἐν πάσῃ σοφίᾳ καὶ συνέσει πνευματικῇ."
+    termo_gr: "συνέσει πνευματικῇ"
+    termo_transliterado: synesei_pneumatike
+    polo_teologico: iluminacao
+    situacao: "A expressão συνέσει πνευματικῇ (synesis espiritual) é singular no Novo Testamento. Paulo ora para que os crentes sejam cheios de epignosis da vontade de Deus em toda sophia e synesis pneumatikē. Os três termos formam uma constelação: epignosis (conhecimento preciso), sophia (sabedoria ordenadora) e synesis pneumatikē (compreensão integradora concedida pelo Espírito)."
+    resultado: "Conhecimento pleno da vontade de Deus — não como informação, mas como percepção integrada que orienta o andar digno do Senhor (v. 10)."
+    chain: iluminacao_do_espirito -> PRODUZ -> synesis_pneumatike
+    chain: synesis_pneumatike -> INSTANCIA_DE -> synesis
+    chain: sophia -> COOPERA_COM -> synesis
+    chain: epignosis -> COOPERA_COM -> synesis
+    chain: synesis -> PRODUZ -> conhecimento_da_vontade_de_deus
+END ITEM

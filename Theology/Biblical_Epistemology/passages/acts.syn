@@ -1,0 +1,38 @@
+# ============================================
+# ATOS 7.25
+# ============================================
+
+ITEM @biblia
+    referencia: "Atos 7.25"
+    citacao_pt: "E ele cuidava que seus irmãos entenderiam que Deus lhes daria livramento por sua mão; mas eles não o entenderam."
+    citacao_gr: "ἐνόμιζεν δὲ συνιέναι τοὺς ἀδελφοὺς ὅτι ὁ θεὸς διὰ χειρὸς αὐτοῦ δίδωσιν σωτηρίαν αὐτοῖς· οἱ δὲ οὐ συνῆκαν."
+    termo_gr: "συνιέναι / συνῆκαν"
+    termo_transliterado: syniénai
+    polo_teologico: bloqueio
+    situacao: "No discurso de Estêvão, o verbo aparece duas vezes em contraste: Moisés presumia que seus irmãos entenderiam (συνιέναι) a missão divina; mas eles não entenderam (συνῆκαν). A incredulidade de Israel diante de Moisés é apresentada como padrão histórico da rejeição do libertador enviado por Deus — antecipando a rejeição de Jesus."
+    resultado: "Rejeição de Moisés como libertador. A ausência de synesis resulta na recusa daquele que trazia a salvação — padrão que Estêvão usa para acusar o Sinédrio de repetir o mesmo erro com Jesus."
+    chain: incredulidade -> BLOQUEIA -> suniemi
+    chain: suniemi -> CONTRASTA_COM -> rejeicao_do_libertador
+    chain: endurecimento_do_coracao -> PRODUZ -> rejeicao_do_libertador
+    chain: endurecimento_judicial -> CONFIRMA -> endurecimento_do_coracao
+END ITEM
+
+# ============================================
+# ATOS 28.26-27
+# ============================================
+
+ITEM @biblia
+    referencia: "Atos 28.26-27"
+    citacao_pt: "Dizendo: Vai a este povo e dize: Ouvindo ouvireis e não entendereis; e vendo vereis e não percebereis. Porque o coração deste povo está endurecido, e com os ouvidos ouviram com dificuldade, e fecharam os seus olhos; para que não vejam com os olhos, e ouçam com os ouvidos, e entendam com o coração, e se convertam, e eu os cure."
+    citacao_gr: "λέγων· πορεύθητι πρὸς τὸν λαὸν τοῦτον καὶ εἰπόν· ἀκοῇ ἀκούσετε καὶ οὐ μὴ συνῆτε, καὶ βλέποντες βλέψετε καὶ οὐ μὴ ἴδητε. ἐπαχύνθη γὰρ ἡ καρδία τοῦ λαοῦ τούτου καὶ τοῖς ὠσὶν βαρέως ἤκουσαν καὶ τοὺς ὀφθαλμοὺς αὐτῶν ἐκάμμυσαν· μήποτε ἴδωσιν τοῖς ὀφθαλμοῖς καὶ τοῖς ὠσὶν ἀκούσωσιν καὶ τῇ καρδίᾳ συνῶσιν καὶ ἐπιστρέψωσιν, καὶ ἰάσομαι αὐτούς."
+    termo_gr: "συνῆτε / συνῶσιν"
+    termo_transliterado: synete
+    polo_teologico: bloqueio
+    situacao: "Paulo cita Isaías 6.9-10 pela última vez no cânon neotestamentário, ao encerrar seu ministério em Roma. A citação é idêntica à de Mateus 13.13-15 — o mesmo texto profético que Jesus usou para explicar as parábolas. O endurecimento judicial de Israel sobre o Evangelho é o ponto final narrativo dos Atos."
+    resultado: "Paulo declara que a salvação é enviada aos gentios, que ouvirão. O endurecimento de Israel não é definitivo para indivíduos, mas é o veredicto histórico-judicial sobre a nação como respondente coletivo ao Evangelho."
+    chain: citacao_de_isaias_6 -> CONFIRMA -> endurecimento_judicial
+    chain: endurecimento_judicial -> PRODUZ -> perda_do_discernimento
+    chain: coracao_endurecido -> BLOQUEIA -> suniemi
+    chain: incredulidade -> PRECEDE -> coracao_endurecido
+    chain: suniemi -> CONTRASTA_COM -> perda_do_discernimento
+END ITEM

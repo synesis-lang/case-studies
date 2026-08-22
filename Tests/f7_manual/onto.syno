@@ -1,0 +1,12 @@
+ONTOLOGY Aceitacao_Social
+    definition: Grau de aprovacao publica de uma tecnologia
+END ONTOLOGY
+
+ONTOLOGY Percepcao_Risco
+    definition: Avaliacao subjetiva de ameaca
+END ONTOLOGY
+
+# Usado APENAS em chain (cenario G2): o hover deve contar 1 uso.
+ONTOLOGY Confianca_Institucional
+    definition: Confianca depositada em instituicoes formais
+END ONTOLOGY

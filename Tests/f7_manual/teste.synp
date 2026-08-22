@@ -1,0 +1,6 @@
+PROJECT teste
+    TEMPLATE "teste.synt"
+    INCLUDE BIBLIOGRAPHY "teste.bib"
+    INCLUDE ANNOTATIONS "teste.syn"
+    INCLUDE ONTOLOGY "onto.syno"
+END PROJECT

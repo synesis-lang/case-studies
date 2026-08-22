@@ -1,0 +1,249 @@
+# ============================================
+# TERMOS CENTRAIS — família synesis
+# ============================================
+
+ONTOLOGY synesis
+    descricao: "Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus."
+    categoria: termo_central
+    polo: neutro
+END ONTOLOGY
+
+ONTOLOGY suniemi
+    descricao: "Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente."
+    categoria: termo_central
+    polo: neutro
+END ONTOLOGY
+
+ONTOLOGY synetos
+    descricao: "Adjetivo: dotado de compreensão, perspicaz, inteligente. Qualifica o sujeito que possui ou manifesta synesis."
+    categoria: termo_central
+    polo: neutro
+END ONTOLOGY
+
+# ============================================
+# AGENTES DIVINOS
+# ============================================
+
+ONTOLOGY abertura_do_entendimento
+    descricao: "Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor."
+    categoria: agente_divino
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY iluminacao_do_espirito
+    descricao: "Ação específica do Espírito Santo que produz a σύνεσις πνευματική (Colossenses 1.9) — compreensão espiritual que conecta corretamente as realidades da revelação divina."
+    categoria: agente_divino
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY endurecimento_judicial
+    descricao: "Ação judicial de Deus que confirma ou intensifica o bloqueio do entendimento como resposta à rejeição persistente. Fundamentado em Isaías 6 e repetido em Mateus 13, Marcos 4 e Atos 28."
+    categoria: agente_divino
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY ocultamento_por_parabolas
+    descricao: "Uso das parábolas como véu que revela o mistério do Reino aos discípulos e simultaneamente o oculta dos de fora, segundo a declaração de Jesus em Marcos 4.11-12."
+    categoria: agente_divino
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY destruicao_da_sabedoria_humana
+    descricao: "Ação judicial de Deus que invalida e destrói a compreensão dos sábios segundo os critérios do mundo (1 Coríntios 1.19 — citação de Isaías 29.14). Juízo sobre o orgulho intelectual."
+    categoria: agente_divino
+    polo: bloqueio
+END ONTOLOGY
+
+# ============================================
+# CONDIÇÕES HUMANAS
+# ============================================
+
+ONTOLOGY fe_e_receptividade
+    descricao: "Disposição do coração que acolhe a Palavra e permanece aberto à ação do Espírito. Condição humana associada à iluminação da synesis."
+    categoria: condicao_humana
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY discipulado
+    descricao: "Relação de seguimento e aprendizado com Jesus que abre progressivamente o entendimento. Os discípulos recebem explicação das parábolas e abertura do nous de modo que os de fora não recebem."
+    categoria: condicao_humana
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY maturidade_espiritual
+    descricao: "Estado de crescimento na fé associado à synesis aprofundada. Paulo ora para que os crentes de Colossos alcancem a plena riqueza da compreensão (Colossenses 2.2)."
+    categoria: condicao_humana
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY incredulidade
+    descricao: "Rejeição ou ausência de confiança na revelação de Deus. Impede a synesis e, quando persistente, conduz ao endurecimento judicial."
+    categoria: condicao_humana
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY endurecimento_do_coracao
+    descricao: "Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27)."
+    categoria: condicao_humana
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY orgulho_da_sabedoria
+    descricao: "Confiança na própria inteligência humana como critério último de compreensão. Bloqueia a synesis ao substituir a dependência de Deus pela autossuficiência intelectual."
+    categoria: condicao_humana
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY influencia_do_maligno
+    descricao: "Ação do adversário que arrebata a semente da Palavra antes que seja integrada em compreensão. Descrita por Jesus na explicação da parábola do semeador (Mateus 13.19)."
+    categoria: condicao_humana
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY pecado_persistente
+    descricao: "Padrão de vida contrário à revelação de Deus que obscurece progressivamente o nous. Paulo descreve esse processo em Romanos 1.21 — o coração se entenebreceu."
+    categoria: condicao_humana
+    polo: bloqueio
+END ONTOLOGY
+
+# ============================================
+# RESULTADOS POSITIVOS
+# ============================================
+
+ONTOLOGY compreensao_das_escrituras
+    descricao: "Resultado imediato da abertura divina do entendimento: a revelação objetiva das Escrituras passa a ser integrada em compreensão coerente pelo receptor (Lucas 24.45; Mateus 16.12)."
+    categoria: resultado_positivo
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY conhecimento_da_vontade_de_deus
+    descricao: "Fruto da synesis pneumatikē — o crente passa a discernir o que Deus quer em situações concretas (Colossenses 1.9: πληρωθῆτε τὴν ἐπίγνωσιν τοῦ θελήματος αὐτοῦ)."
+    categoria: resultado_positivo
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY conhecimento_de_cristo
+    descricao: "Cume da synesis em Colossenses 2.2 — a plena riqueza da compreensão converge para o conhecimento do mistério de Deus, que é Cristo."
+    categoria: resultado_positivo
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY frutificacao
+    descricao: "Consequência da synesis no ouvinte que compreende a Palavra: produz fruto em proporções variadas (Mateus 13.23). Opõe-se à esterilidade do ouvinte que não entende."
+    categoria: resultado_positivo
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY revelacao_do_misterio
+    descricao: "Compreensão do mistério de Cristo que Paulo desdobra em Efésios 3.4 — synesis aplicada ao conteúdo central da revelação apostólica."
+    categoria: resultado_positivo
+    polo: iluminacao
+END ONTOLOGY
+
+# ============================================
+# RESULTADOS NEGATIVOS
+# ============================================
+
+ONTOLOGY esterilidade_espiritual
+    descricao: "Ausência de fruto como consequência da falta de synesis. O ouvinte recebe a semente mas não a integra, resultando em nulidade espiritual."
+    categoria: resultado_negativo
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY rejeicao_do_libertador
+    descricao: "Israel não compreende que Moisés era o libertador enviado por Deus (Atos 7.25 — οὐ συνῆκαν). A ausência de synesis resulta na rejeição daquele que trazia a salvação."
+    categoria: resultado_negativo
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY perda_do_discernimento
+    descricao: "Estado resultante do endurecimento progressivo: a capacidade de integrar a revelação é progressivamente perdida. Descrito em Romanos 1.21 e confirmado em Atos 28.26-27."
+    categoria: resultado_negativo
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY incapacidade_humana_caida
+    descricao: "Condição ontológica do ser humano sem a ação de Deus: não há quem entenda (Romanos 3.11 — οὐκ ἔστιν ὁ συνίων). Não é juízo pontual, mas diagnóstico da condição humana caída."
+    categoria: resultado_negativo
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY semente_arrebatada
+    descricao: "A Palavra ouvida mas não compreendida é arrebatada pelo maligno antes de produzir raiz (Mateus 13.19). Resultado direto da ausência de synesis no ouvinte."
+    categoria: resultado_negativo
+    polo: bloqueio
+END ONTOLOGY
+
+# ============================================
+# MECANISMOS DE BLOQUEIO
+# ============================================
+
+ONTOLOGY juizo_sobre_os_de_fora
+    descricao: "Estatuto judicial dos que estão fora do Reino: as parábolas funcionam como véu para que vejam sem perceber e ouçam sem entender (Marcos 4.12). Distinção entre insider e outsider do Reino."
+    categoria: mecanismo_bloqueio
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY citacao_de_isaias_6
+    descricao: "Texto fundante do endurecimento judicial (Isaías 6.9-10), citado ou aludido em Mateus 13.13-15, Marcos 4.12, João 12.40 e Atos 28.26-27. Estabelece o padrão profético do obscurecimento como resposta à rejeição."
+    categoria: mecanismo_bloqueio
+    polo: bloqueio
+END ONTOLOGY
+
+ONTOLOGY coracao_endurecido
+    descricao: "Estado do coração impermeável à revelação, resultado de incredulidade acumulada. Os discípulos o experimentam após a multiplicação dos pães (Marcos 6.52 — ἦν γὰρ αὐτῶν ἡ καρδία πεπωρωμένη)."
+    categoria: mecanismo_bloqueio
+    polo: bloqueio
+END ONTOLOGY
+
+# ============================================
+# CONCEITOS CORRELATOS
+# ============================================
+
+ONTOLOGY sophia
+    descricao: "Sabedoria — frequentemente par de synesis nos textos paulinos (Colossenses 1.9; Efésios 1.17). Sophia tende ao aspecto abrangente e ordenador; synesis ao aspecto integrador e discernidor."
+    categoria: conceito_correlato
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY gnosis
+    descricao: "Conhecimento — dimensão mais proposicional e informacional da compreensão. Relaciona-se com synesis mas não a substitui: é possível ter gnosis sem synesis integradora."
+    categoria: conceito_correlato
+    polo: neutro
+END ONTOLOGY
+
+ONTOLOGY epignosis
+    descricao: "Conhecimento pleno ou preciso — par de synesis em Colossenses 1.9. Paulo ora para que os crentes sejam cheios de epignosis da vontade de Deus em toda synesis espiritual."
+    categoria: conceito_correlato
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY nous
+    descricao: "Mente — o órgão que Deus abre em Lucas 24.45 (διήνοιξεν αὐτῶν τὸν νοῦν). Sede da synesis; pode ser obscurecido pelo pecado (Romanos 1.21) ou renovado pelo Espírito."
+    categoria: conceito_correlato
+    polo: neutro
+END ONTOLOGY
+
+ONTOLOGY synesis_pneumatike
+    descricao: "Expressão singular de Colossenses 1.9 (συνέσει πνευματικῇ) — compreensão espiritual concedida pelo Espírito Santo. Não é synesis natural ampliada, mas capacidade qualitativamente distinta."
+    categoria: conceito_correlato
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY phronesis
+    descricao: "Prudência prática — capacidade de deliberar e agir corretamente em situações concretas. Derivada da synesis: quem integra corretamente a revelação passa a agir com phronesis."
+    categoria: conceito_correlato
+    polo: iluminacao
+END ONTOLOGY
+
+ONTOLOGY kardia
+    descricao: "Coração — sede tanto do endurecimento (Marcos 6.52; Atos 28.27) quanto da receptividade (Lucas 24.45 implícito). O estado da kardia determina a permeabilidade à synesis."
+    categoria: conceito_correlato
+    polo: neutro
+END ONTOLOGY
+
+ONTOLOGY bin_hebraico
+    descricao: "Equivalente hebraico de synesis (בין, bin) — frequente no Antigo Testamento para descrever a capacidade de discernir e perceber o significado profundo das coisas (Provérbios 2; Daniel 9). A synesis grega herda semanticamente esse conceito."
+    categoria: conceito_correlato
+    polo: neutro
+END ONTOLOGY

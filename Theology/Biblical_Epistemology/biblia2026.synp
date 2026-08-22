@@ -1,0 +1,19 @@
+PROJECT biblia2026
+
+TEMPLATE "biblia2026.synt"
+INCLUDE ANNOTATIONS "./passages/*.syn"
+INCLUDE ONTOLOGY "biblia2026.syno"
+
+METADATA
+    version: 1.0
+    author: Christian De Britto
+    dataset: Epistemologia Bíblica — Família Synesis no NT
+END METADATA
+
+DESCRIPTION
+Mapeamento das ocorrências dos termos σύνεσις (synesis), συνίημι (suniēmi)
+e συνετός (synetos) no Novo Testamento, analisando os dois polos teológicos:
+iluminação divina do entendimento e bloqueio/endurecimento judicial.
+END DESCRIPTION
+
+END PROJECT

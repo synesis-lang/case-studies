@@ -1,0 +1,38 @@
+# ============================================
+# LUCAS 2.47
+# ============================================
+
+ITEM @biblia
+    referencia: "Lucas 2.47"
+    citacao_pt: "E todos os que o ouviam admiravam-se da sua inteligência e das suas respostas."
+    citacao_gr: "ἐξίσταντο δὲ πάντες οἱ ἀκούοντες αὐτοῦ ἐπὶ τῇ συνέσει καὶ ταῖς ἀποκρίσεσιν αὐτοῦ."
+    termo_gr: "συνέσει"
+    termo_transliterado: synesei
+    polo_teologico: iluminacao
+    situacao: "O substantivo σύνεσις qualifica a compreensão do jovem Jesus no Templo diante dos doutores da Lei. É a única ocorrência do substantivo nos Evangelhos. A synesis aqui não é adquirida por estudo, mas manifestada como capacidade integradora extraordinária numa criança de doze anos."
+    resultado: "Admiração (ἐξίσταντο) de todos os ouvintes — doutores incluídos. A synesis se manifesta publicamente como capacidade integradora visível, não como erudição acumulada."
+    chain: synesis -> INSTANCIA_DE -> sophia
+    chain: synesis -> PRODUZ -> revelacao_do_misterio
+    chain: iluminacao_do_espirito -> COOPERA_COM -> synesis
+END ITEM
+
+# ============================================
+# LUCAS 24.45
+# ============================================
+
+ITEM @biblia
+    referencia: "Lucas 24.45"
+    citacao_pt: "Então lhes abriu o entendimento para compreenderem as Escrituras."
+    citacao_gr: "τότε διήνοιξεν αὐτῶν τὸν νοῦν τοῦ συνιέναι τὰς γραφάς."
+    termo_gr: "συνιέναι"
+    termo_transliterado: syniénai
+    polo_teologico: iluminacao
+    situacao: "Cristo ressurreto abre ativamente o nous dos discípulos para que possam integrar as Escrituras em compreensão coerente. A ação é inteiramente divina e unilateral — o verbo διήνοιξεν tem Cristo como sujeito, os discípulos como receptores passivos. Paradigma máximo do polo da iluminação: a revelação objetiva estava presente nas Escrituras, mas era necessária ação divina para que fosse integrada."
+    resultado: "Os discípulos passam a compreender as Escrituras — a promessa, a paixão e a ressurreição de Cristo tornam-se inteligíveis como cumprimento de um plano coerente."
+    chain: abertura_do_entendimento -> HABILITA -> suniemi
+    chain: suniemi -> PRODUZ -> compreensao_das_escrituras
+    chain: nous -> PRECEDE -> abertura_do_entendimento
+    chain: iluminacao_do_espirito -> COOPERA_COM -> abertura_do_entendimento
+    chain: fe_e_receptividade -> PRECEDE -> abertura_do_entendimento
+    chain: discipulado -> PRECEDE -> abertura_do_entendimento
+END ITEM

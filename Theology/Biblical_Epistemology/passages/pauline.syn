@@ -1,0 +1,114 @@
+# ============================================
+# ROMANOS 1.21
+# ============================================
+
+ITEM @biblia
+    referencia: "Romanos 1.21"
+    citacao_pt: "Porquanto, tendo conhecido a Deus, não o glorificaram como Deus, nem lhe deram graças, antes em seus discursos se tornaram vãos, e o seu coração insensato se obscureceu."
+    citacao_gr: "διότι γνόντες τὸν θεὸν οὐχ ὡς θεὸν ἐδόξασαν ἢ ηὐχαρίστησαν, ἀλλ᾽ ἐματαιώθησαν ἐν τοῖς διαλογισμοῖς αὐτῶν καὶ ἐσκοτίσθη ἡ ἀσύνετος αὐτῶν καρδία."
+    termo_gr: "ἀσύνετος"
+    termo_transliterado: asynetos
+    polo_teologico: bloqueio
+    situacao: "Paulo usa o adjetivo negativo ἀσύνετος (sem synesis, insensato) para descrever o coração obscurecido da humanidade que conheceu a Deus pela criação mas recusou glorificá-Lo. O processo é progressivo: conhecimento → recusa de glorificar → vaidade dos raciocínios → obscurecimento do coração ἀσύνετος."
+    resultado: "Perda do discernimento como consequência da recusa de reconhecer Deus. A mente obscurecida não é apenas ignorante — é ativa em produzir ídolos e distorções morais (vv. 22-32)."
+    chain: pecado_persistente -> BLOQUEIA -> nous
+    chain: nous -> PRECEDE -> synesis
+    chain: incredulidade -> PRODUZ -> perda_do_discernimento
+    chain: endurecimento_do_coracao -> INSTANCIA_DE -> perda_do_discernimento
+    chain: synesis -> CONTRASTA_COM -> perda_do_discernimento
+END ITEM
+
+# ============================================
+# ROMANOS 3.11
+# ============================================
+
+ITEM @biblia
+    referencia: "Romanos 3.11"
+    citacao_pt: "Não há quem entenda; não há quem busque a Deus."
+    citacao_gr: "οὐκ ἔστιν ὁ συνίων, οὐκ ἔστιν ὁ ἐκζητῶν τὸν θεόν."
+    termo_gr: "συνίων"
+    termo_transliterado: syniōn
+    polo_teologico: incapacidade_natural
+    situacao: "Paulo cita o Salmo 14.2 para fundamentar o diagnóstico universal da condição humana caída. O particípio συνίων (o que entende) é negado universalmente: não há nenhum ser humano que genuinamente entenda, que busque a Deus. Não é juízo pontual sobre um grupo histórico, mas diagnóstico ontológico da humanidade sem graça."
+    resultado: "Incapacidade radical: a synesis não é facultativa — está ausente por condição. Esse diagnóstico fundamenta a necessidade da ação soberana de Deus descrita em Romanos 5 e 8."
+    chain: incapacidade_humana_caida -> CONTRASTA_COM -> synesis
+    chain: incapacidade_humana_caida -> INSTANCIA_DE -> perda_do_discernimento
+    chain: abertura_do_entendimento -> CONTRASTA_COM -> incapacidade_humana_caida
+END ITEM
+
+# ============================================
+# 1 CORÍNTIOS 1.19
+# ============================================
+
+ITEM @biblia
+    referencia: "1 Coríntios 1.19"
+    citacao_pt: "Porque está escrito: Destruirei a sabedoria dos sábios e aniquilarei a inteligência dos inteligentes."
+    citacao_gr: "γέγραπται γάρ· ἀπολῶ τὴν σοφίαν τῶν σοφῶν καὶ τὴν σύνεσιν τῶν συνετῶν ἀθετήσω."
+    termo_gr: "σύνεσιν / συνετῶν"
+    termo_transliterado: synesin
+    polo_teologico: bloqueio
+    situacao: "Paulo cita Isaías 29.14 para declarar que Deus destrói ativamente a sabedoria e a synesis dos que se consideram sábios segundo os critérios do mundo. O substantivo σύνεσιν e o adjetivo substantivado συνετῶν aparecem juntos — a synesis dos synetos (inteligentes) é precisamente o que Deus aniquila. O orgulho intelectual torna a synesis humana alvo do juízo divino."
+    resultado: "Juízo sobre a sabedoria do mundo: a synesis que prescinde de Deus é destruída por Deus. A loucura da cruz torna impossível a sabedoria humana autocentrada."
+    chain: orgulho_da_sabedoria -> BLOQUEIA -> synesis
+    chain: destruicao_da_sabedoria_humana -> INSTANCIA_DE -> endurecimento_judicial
+    chain: destruicao_da_sabedoria_humana -> PRODUZ -> perda_do_discernimento
+    chain: synesis -> CONTRASTA_COM -> orgulho_da_sabedoria
+END ITEM
+
+# ============================================
+# EFÉSIOS 3.4
+# ============================================
+
+ITEM @biblia
+    referencia: "Efésios 3.4"
+    citacao_pt: "Pelo que, quando lerdes isto, podeis perceber o meu conhecimento no mistério de Cristo."
+    citacao_gr: "πρὸς ὃ δύνασθε ἀναγινώσκοντες νοῆσαι τὴν σύνεσίν μου ἐν τῷ μυστηρίῳ τοῦ Χριστοῦ."
+    termo_gr: "σύνεσίν"
+    termo_transliterado: synesin
+    polo_teologico: iluminacao
+    situacao: "Paulo afirma que, ao lerem sua carta, os destinatários poderão perceber (νοῆσαι) sua synesis no mistério de Cristo — ou seja, a compreensão integradora que ele recebeu por revelação apostólica. A synesis aqui é comunicável: a revelação escrita transmite a compreensão de Paulo aos leitores."
+    resultado: "Revelação do mistério de Cristo mediada pela Escritura apostólica. A synesis de Paulo, recebida por revelação, torna-se acessível aos crentes pela leitura."
+    chain: sophia -> COOPERA_COM -> synesis
+    chain: synesis -> PRODUZ -> revelacao_do_misterio
+    chain: iluminacao_do_espirito -> PRECEDE -> synesis
+    chain: revelacao_do_misterio -> INSTANCIA_DE -> conhecimento_de_cristo
+END ITEM
+
+
+# ============================================
+# COLOSSENSES 2.2
+# ============================================
+
+ITEM @biblia
+    referencia: "Colossenses 2.2"
+    citacao_pt: "Para que os seus corações sejam consolados, sendo unidos em amor e enriquecidos com a plena certeza do entendimento, para o conhecimento do mistério de Deus, que é Cristo."
+    citacao_gr: "ἵνα παρακληθῶσιν αἱ καρδίαι αὐτῶν, συμβιβασθέντες ἐν ἀγάπῃ καὶ εἰς πᾶν πλοῦτος τῆς πληροφορίας τῆς συνέσεως, εἰς ἐπίγνωσιν τοῦ μυστηρίου τοῦ θεοῦ, Χριστοῦ."
+    termo_gr: "συνέσεως"
+    termo_transliterado: syneseōs
+    polo_teologico: iluminacao
+    situacao: "Paulo descreve o cume da synesis: a plena riqueza da πληροφορία (plena certeza) da synesis converge para o conhecimento do mistério de Deus, que é Cristo. A synesis não é fim em si mesma — é caminho para o conhecimento de Cristo. O contexto é a advertência contra filosofias e tradições humanas que desviam desse centro."
+    resultado: "Conhecimento de Cristo como ponto de chegada da synesis plena. A maturidade espiritual e a synesis aprofundada convergem para a pessoa de Jesus."
+    chain: maturidade_espiritual -> HABILITA -> synesis
+    chain: synesis -> PRODUZ -> conhecimento_de_cristo
+    chain: epignosis -> COOPERA_COM -> synesis
+    chain: kardia -> PRECEDE -> synesis
+END ITEM
+
+# ============================================
+# 2 TIMÓTEO 2.7
+# ============================================
+
+ITEM @biblia
+    referencia: "2 Timóteo 2.7"
+    citacao_pt: "Considera o que digo, porque o Senhor te dará entendimento em todas as coisas."
+    citacao_gr: "νόει ὃ λέγω· δώσει γάρ σοι ὁ κύριος σύνεσιν ἐν πᾶσιν."
+    termo_gr: "σύνεσιν"
+    termo_transliterado: synesin
+    polo_teologico: iluminacao
+    situacao: "Paulo instrui Timóteo com uma estrutura bipartida: considera (νόει — esforço humano de reflexão) + o Senhor te dará synesis (δώσει — dom divino). As duas partes são inseparáveis: a reflexão humana não produz synesis por si só, mas é a postura sobre a qual Deus age."
+    resultado: "Synesis dada pelo Senhor como resposta ao esforço reflexivo. Modelo de cooperação entre reflexão humana e iluminação divina — sem confundir os agentes."
+    chain: abertura_do_entendimento -> HABILITA -> synesis
+    chain: discipulado -> PRECEDE -> abertura_do_entendimento
+    chain: iluminacao_do_espirito -> PRODUZ -> synesis
+    chain: synesis -> PRODUZ -> conhecimento_da_vontade_de_deus
+END ITEM

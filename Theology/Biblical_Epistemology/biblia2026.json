@@ -1,0 +1,3204 @@
+{
+  "version": "3.0",
+  "export_metadata": {
+    "timestamp": "2026-06-19T14:47:07.178936+00:00",
+    "compiler_version": "1.1",
+    "export_mode": "universal",
+    "chain_count": 78,
+    "item_count": 19,
+    "source_count": 1,
+    "concept_count": 37
+  },
+  "project": {
+    "name": "biblia2026",
+    "template_path": "biblia2026.synt",
+    "includes": [
+      {
+        "include_type": "ANNOTATIONS",
+        "path": "./passages/*.syn",
+        "location": {
+          "file": "biblia2026.synp",
+          "line": 4,
+          "column": 1
+        }
+      },
+      {
+        "include_type": "ONTOLOGY",
+        "path": "biblia2026.syno",
+        "location": {
+          "file": "biblia2026.synp",
+          "line": 5,
+          "column": 1
+        }
+      },
+      {
+        "include_type": "BIBLIOGRAPHY",
+        "path": "biblia2026.bib",
+        "location": {
+          "file": "biblia2026.synp",
+          "line": 6,
+          "column": 1
+        }
+      }
+    ],
+    "metadata": {
+      "version": "1.0",
+      "author": "Christian De Britto",
+      "dataset": "Epistemologia Bíblica — Família Synesis no NT"
+    },
+    "description": "Mapeamento das ocorrências dos termos σύνεσις (synesis), συνίημι (suniēmi)\ne συνετός (synetos) no Novo Testamento, analisando os dois polos teológicos:\niluminação divina do entendimento e bloqueio/endurecimento judicial.",
+    "location": {
+      "file": "biblia2026.synp",
+      "line": 1,
+      "column": 1
+    }
+  },
+  "template": {
+    "name": "biblia2026",
+    "metadata": {},
+    "field_specs": {
+      "titulo": {
+        "name": "titulo",
+        "type": "TEXT",
+        "scope": "SOURCE",
+        "format": null,
+        "description": "Nome do corpus bíblico utilizado como fonte",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 11,
+          "column": 1
+        }
+      },
+      "referencia": {
+        "name": "referencia",
+        "type": "TEXT",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Referência bíblica no formato Livro Capítulo.Versículo (ex: Mateus 13.13-15)",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 31,
+          "column": 1
+        }
+      },
+      "citacao_pt": {
+        "name": "citacao_pt",
+        "type": "QUOTATION",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Texto bíblico em português",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 36,
+          "column": 1
+        }
+      },
+      "citacao_gr": {
+        "name": "citacao_gr",
+        "type": "QUOTATION",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Texto bíblico em grego koiné (Unicode)",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 41,
+          "column": 1
+        }
+      },
+      "termo_gr": {
+        "name": "termo_gr",
+        "type": "TEXT",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Forma exata do termo na passagem (ex: συνιέναι, σύνεσις, συνετός)",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 46,
+          "column": 1
+        }
+      },
+      "termo_transliterado": {
+        "name": "termo_transliterado",
+        "type": "TEXT",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Transliteração do termo na forma conjugada exata da passagem (ex: synesei, syniénai)",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 51,
+          "column": 1
+        }
+      },
+      "polo_teologico": {
+        "name": "polo_teologico",
+        "type": "ENUMERATED",
+        "scope": "ITEM",
+        "format": null,
+        "description": null,
+        "values": [
+          {
+            "index": -1,
+            "label": "iluminacao",
+            "description": "Deus abre o entendimento — ação positiva do Espírito",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 59,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "bloqueio",
+            "description": "Deus confirma ou permite o bloqueio do entendimento",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 60,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "convite",
+            "description": "Jesus convida ao discernimento — resultado em aberto",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 61,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "incapacidade_natural",
+            "description": "Incapacidade ontológica da natureza caída",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 62,
+              "column": 9
+            }
+          }
+        ],
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 56,
+          "column": 1
+        }
+      },
+      "situacao": {
+        "name": "situacao",
+        "type": "MEMO",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Situação narrativa ou teológica que envolve o termo na passagem",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 66,
+          "column": 1
+        }
+      },
+      "resultado": {
+        "name": "resultado",
+        "type": "MEMO",
+        "scope": "ITEM",
+        "format": null,
+        "description": "Consequência ou efeito da presença ou ausência de synesis",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 71,
+          "column": 1
+        }
+      },
+      "chain": {
+        "name": "chain",
+        "type": "CHAIN",
+        "scope": "ITEM",
+        "format": null,
+        "description": null,
+        "values": null,
+        "relations": {
+          "HABILITA": "Um conceito torna possível ou ativa outro",
+          "BLOQUEIA": "Um conceito impede ou suprime outro",
+          "PRODUZ": "Um conceito gera outro como consequência direta",
+          "PRECEDE": "Um conceito é condição antecedente de outro",
+          "COOPERA_COM": "Dois conceitos atuam conjuntamente para o mesmo efeito",
+          "CONFIRMA": "Um conceito ratifica ou intensifica outro",
+          "INSTANCIA_DE": "Um conceito é caso particular de outro mais geral",
+          "CONTRASTA_COM": "Dois conceitos se opõem no eixo teológico",
+          "FUNDAMENTA": "Um conceito provê base textual ou teológica para outro",
+          "SEDE_DE": "Um conceito é o locus ou sede de outro",
+          "FAVORECE": "Um conceito cria condição favorável mas não determinante para outro"
+        },
+        "arity": ">= 2",
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 76,
+          "column": 1
+        }
+      },
+      "descricao": {
+        "name": "descricao",
+        "type": "TEXT",
+        "scope": "ONTOLOGY",
+        "format": null,
+        "description": "Definição teológica do conceito",
+        "values": null,
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 104,
+          "column": 1
+        }
+      },
+      "categoria": {
+        "name": "categoria",
+        "type": "ENUMERATED",
+        "scope": "ONTOLOGY",
+        "format": null,
+        "description": null,
+        "values": [
+          {
+            "index": -1,
+            "label": "termo_central",
+            "description": "Termos da família synesis (substantivo, verbo, adjetivo)",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 112,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "agente_divino",
+            "description": "Ação de Deus ou do Espírito Santo",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 113,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "condicao_humana",
+            "description": "Estado interior que recebe ou bloqueia a synesis",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 114,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "resultado_positivo",
+            "description": "Fruto da synesis iluminada",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 115,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "resultado_negativo",
+            "description": "Consequência da ausência de synesis",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 116,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "mecanismo_bloqueio",
+            "description": "Causa específica do endurecimento",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 117,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "conceito_correlato",
+            "description": "Termo grego ou hebraico semanticamente relacionado",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 118,
+              "column": 9
+            }
+          }
+        ],
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 109,
+          "column": 1
+        }
+      },
+      "polo": {
+        "name": "polo",
+        "type": "ENUMERATED",
+        "scope": "ONTOLOGY",
+        "format": null,
+        "description": null,
+        "values": [
+          {
+            "index": -1,
+            "label": "iluminacao",
+            "description": "Polo da abertura do entendimento",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 125,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "bloqueio",
+            "description": "Polo do bloqueio ou endurecimento judicial",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 126,
+              "column": 9
+            }
+          },
+          {
+            "index": -1,
+            "label": "neutro",
+            "description": "Presente em ambos os polos",
+            "location": {
+              "file": "biblia2026.synt",
+              "line": 127,
+              "column": 9
+            }
+          }
+        ],
+        "relations": null,
+        "arity": null,
+        "guidelines": null,
+        "location": {
+          "file": "biblia2026.synt",
+          "line": 122,
+          "column": 1
+        }
+      }
+    },
+    "required_fields": {
+      "SOURCE": [
+        "titulo"
+      ],
+      "ITEM": [
+        "referencia",
+        "citacao_pt",
+        "citacao_gr",
+        "termo_gr",
+        "termo_transliterado",
+        "polo_teologico"
+      ],
+      "ONTOLOGY": [
+        "descricao",
+        "categoria",
+        "polo"
+      ]
+    },
+    "optional_fields": {
+      "SOURCE": [],
+      "ITEM": [
+        "chain"
+      ],
+      "ONTOLOGY": []
+    },
+    "forbidden_fields": {
+      "SOURCE": [],
+      "ITEM": [],
+      "ONTOLOGY": []
+    },
+    "bundled_fields": {
+      "SOURCE": [],
+      "ITEM": [
+        [
+          "situacao",
+          "resultado"
+        ]
+      ],
+      "ONTOLOGY": []
+    },
+    "location": {
+      "file": "biblia2026.synt",
+      "line": 1,
+      "column": 1
+    }
+  },
+  "bibliography": {
+    "biblia": {
+      "note": "Corpus bíblico utilizado como fonte primária do projeto",
+      "title": "Bíblia Sagrada",
+      "ENTRYTYPE": "book",
+      "ID": "biblia",
+      "titulo": "\"Bíblia Sagrada\""
+    }
+  },
+  "indices": {
+    "hierarchy": {},
+    "triples": [
+      {
+        "from": "incredulidade",
+        "relation": "BLOQUEIA",
+        "to": "suniemi",
+        "source_item": "biblia_item0001",
+        "location": {
+          "file": "passages\\acts.syn",
+          "line": 14,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "CONTRASTA_COM",
+        "to": "rejeicao_do_libertador",
+        "source_item": "biblia_item0001",
+        "location": {
+          "file": "passages\\acts.syn",
+          "line": 15,
+          "column": 5
+        }
+      },
+      {
+        "from": "endurecimento_do_coracao",
+        "relation": "PRODUZ",
+        "to": "rejeicao_do_libertador",
+        "source_item": "biblia_item0001",
+        "location": {
+          "file": "passages\\acts.syn",
+          "line": 16,
+          "column": 5
+        }
+      },
+      {
+        "from": "endurecimento_judicial",
+        "relation": "CONFIRMA",
+        "to": "endurecimento_do_coracao",
+        "source_item": "biblia_item0001",
+        "location": {
+          "file": "passages\\acts.syn",
+          "line": 17,
+          "column": 5
+        }
+      },
+      {
+        "from": "citacao_de_isaias_6",
+        "relation": "CONFIRMA",
+        "to": "endurecimento_judicial",
+        "source_item": "biblia_item0002",
+        "location": {
+          "file": "passages\\acts.syn",
+          "line": 33,
+          "column": 5
+        }
+      },
+      {
+        "from": "endurecimento_judicial",
+        "relation": "PRODUZ",
+        "to": "perda_do_discernimento",
+        "source_item": "biblia_item0002",
+        "location": {
+          "file": "passages\\acts.syn",
+          "line": 34,
+          "column": 5
+        }
+      },
+      {
+        "from": "coracao_endurecido",
+        "relation": "BLOQUEIA",
+        "to": "suniemi",
+        "source_item": "biblia_item0002",
+        "location": {
+          "file": "passages\\acts.syn",
+          "line": 35,
+          "column": 5
+        }
+      },
+      {
+        "from": "incredulidade",
+        "relation": "PRECEDE",
+        "to": "coracao_endurecido",
+        "source_item": "biblia_item0002",
+        "location": {
+          "file": "passages\\acts.syn",
+          "line": 36,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "CONTRASTA_COM",
+        "to": "perda_do_discernimento",
+        "source_item": "biblia_item0002",
+        "location": {
+          "file": "passages\\acts.syn",
+          "line": 37,
+          "column": 5
+        }
+      },
+      {
+        "from": "synesis",
+        "relation": "INSTANCIA_DE",
+        "to": "sophia",
+        "source_item": "biblia_item0003",
+        "location": {
+          "file": "passages\\luke.syn",
+          "line": 14,
+          "column": 5
+        }
+      },
+      {
+        "from": "synesis",
+        "relation": "PRODUZ",
+        "to": "revelacao_do_misterio",
+        "source_item": "biblia_item0003",
+        "location": {
+          "file": "passages\\luke.syn",
+          "line": 15,
+          "column": 5
+        }
+      },
+      {
+        "from": "iluminacao_do_espirito",
+        "relation": "COOPERA_COM",
+        "to": "synesis",
+        "source_item": "biblia_item0003",
+        "location": {
+          "file": "passages\\luke.syn",
+          "line": 16,
+          "column": 5
+        }
+      },
+      {
+        "from": "abertura_do_entendimento",
+        "relation": "HABILITA",
+        "to": "suniemi",
+        "source_item": "biblia_item0004",
+        "location": {
+          "file": "passages\\luke.syn",
+          "line": 32,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "PRODUZ",
+        "to": "compreensao_das_escrituras",
+        "source_item": "biblia_item0004",
+        "location": {
+          "file": "passages\\luke.syn",
+          "line": 33,
+          "column": 5
+        }
+      },
+      {
+        "from": "nous",
+        "relation": "PRECEDE",
+        "to": "abertura_do_entendimento",
+        "source_item": "biblia_item0004",
+        "location": {
+          "file": "passages\\luke.syn",
+          "line": 34,
+          "column": 5
+        }
+      },
+      {
+        "from": "iluminacao_do_espirito",
+        "relation": "COOPERA_COM",
+        "to": "abertura_do_entendimento",
+        "source_item": "biblia_item0004",
+        "location": {
+          "file": "passages\\luke.syn",
+          "line": 35,
+          "column": 5
+        }
+      },
+      {
+        "from": "fe_e_receptividade",
+        "relation": "PRECEDE",
+        "to": "abertura_do_entendimento",
+        "source_item": "biblia_item0004",
+        "location": {
+          "file": "passages\\luke.syn",
+          "line": 36,
+          "column": 5
+        }
+      },
+      {
+        "from": "discipulado",
+        "relation": "PRECEDE",
+        "to": "abertura_do_entendimento",
+        "source_item": "biblia_item0004",
+        "location": {
+          "file": "passages\\luke.syn",
+          "line": 37,
+          "column": 5
+        }
+      },
+      {
+        "from": "endurecimento_judicial",
+        "relation": "CONFIRMA",
+        "to": "ocultamento_por_parabolas",
+        "source_item": "biblia_item0005",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 14,
+          "column": 5
+        }
+      },
+      {
+        "from": "ocultamento_por_parabolas",
+        "relation": "PRODUZ",
+        "to": "juizo_sobre_os_de_fora",
+        "source_item": "biblia_item0005",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 15,
+          "column": 5
+        }
+      },
+      {
+        "from": "juizo_sobre_os_de_fora",
+        "relation": "BLOQUEIA",
+        "to": "suniemi",
+        "source_item": "biblia_item0005",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 16,
+          "column": 5
+        }
+      },
+      {
+        "from": "citacao_de_isaias_6",
+        "relation": "FUNDAMENTA",
+        "to": "ocultamento_por_parabolas",
+        "source_item": "biblia_item0005",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 17,
+          "column": 5
+        }
+      },
+      {
+        "from": "discipulado",
+        "relation": "CONTRASTA_COM",
+        "to": "juizo_sobre_os_de_fora",
+        "source_item": "biblia_item0005",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 18,
+          "column": 5
+        }
+      },
+      {
+        "from": "coracao_endurecido",
+        "relation": "BLOQUEIA",
+        "to": "suniemi",
+        "source_item": "biblia_item0006",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 34,
+          "column": 5
+        }
+      },
+      {
+        "from": "incredulidade",
+        "relation": "PRODUZ",
+        "to": "coracao_endurecido",
+        "source_item": "biblia_item0006",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 35,
+          "column": 5
+        }
+      },
+      {
+        "from": "kardia",
+        "relation": "SEDE_DE",
+        "to": "endurecimento_do_coracao",
+        "source_item": "biblia_item0006",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 36,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "CONTRASTA_COM",
+        "to": "coracao_endurecido",
+        "source_item": "biblia_item0006",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 37,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "PRECEDE",
+        "to": "fe_e_receptividade",
+        "source_item": "biblia_item0007",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 53,
+          "column": 5
+        }
+      },
+      {
+        "from": "discipulado",
+        "relation": "FAVORECE",
+        "to": "suniemi",
+        "source_item": "biblia_item0007",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 54,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "CONTRASTA_COM",
+        "to": "endurecimento_do_coracao",
+        "source_item": "biblia_item0007",
+        "location": {
+          "file": "passages\\mark.syn",
+          "line": 55,
+          "column": 5
+        }
+      },
+      {
+        "from": "citacao_de_isaias_6",
+        "relation": "CONFIRMA",
+        "to": "ocultamento_por_parabolas",
+        "source_item": "biblia_item0008",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 21,
+          "column": 5
+        }
+      },
+      {
+        "from": "ocultamento_por_parabolas",
+        "relation": "PRODUZ",
+        "to": "juizo_sobre_os_de_fora",
+        "source_item": "biblia_item0008",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 22,
+          "column": 5
+        }
+      },
+      {
+        "from": "endurecimento_do_coracao",
+        "relation": "BLOQUEIA",
+        "to": "suniemi",
+        "source_item": "biblia_item0008",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 23,
+          "column": 5
+        }
+      },
+      {
+        "from": "endurecimento_judicial",
+        "relation": "CONFIRMA",
+        "to": "endurecimento_do_coracao",
+        "source_item": "biblia_item0008",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 24,
+          "column": 5
+        }
+      },
+      {
+        "from": "kardia",
+        "relation": "PRECEDE",
+        "to": "suniemi",
+        "source_item": "biblia_item0008",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 25,
+          "column": 5
+        }
+      },
+      {
+        "from": "influencia_do_maligno",
+        "relation": "PRODUZ",
+        "to": "semente_arrebatada",
+        "source_item": "biblia_item0009",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 41,
+          "column": 5
+        }
+      },
+      {
+        "from": "semente_arrebatada",
+        "relation": "BLOQUEIA",
+        "to": "suniemi",
+        "source_item": "biblia_item0009",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 42,
+          "column": 5
+        }
+      },
+      {
+        "from": "incredulidade",
+        "relation": "PRECEDE",
+        "to": "semente_arrebatada",
+        "source_item": "biblia_item0009",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 43,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "CONTRASTA_COM",
+        "to": "semente_arrebatada",
+        "source_item": "biblia_item0009",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 44,
+          "column": 5
+        }
+      },
+      {
+        "from": "fe_e_receptividade",
+        "relation": "HABILITA",
+        "to": "suniemi",
+        "source_item": "biblia_item0010",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 60,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "PRODUZ",
+        "to": "frutificacao",
+        "source_item": "biblia_item0010",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 61,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "CONTRASTA_COM",
+        "to": "semente_arrebatada",
+        "source_item": "biblia_item0010",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 62,
+          "column": 5
+        }
+      },
+      {
+        "from": "kardia",
+        "relation": "PRECEDE",
+        "to": "fe_e_receptividade",
+        "source_item": "biblia_item0010",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 63,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "PRECEDE",
+        "to": "fe_e_receptividade",
+        "source_item": "biblia_item0011",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 79,
+          "column": 5
+        }
+      },
+      {
+        "from": "discipulado",
+        "relation": "FAVORECE",
+        "to": "suniemi",
+        "source_item": "biblia_item0011",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 80,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "CONTRASTA_COM",
+        "to": "endurecimento_do_coracao",
+        "source_item": "biblia_item0011",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 81,
+          "column": 5
+        }
+      },
+      {
+        "from": "discipulado",
+        "relation": "PRECEDE",
+        "to": "suniemi",
+        "source_item": "biblia_item0012",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 97,
+          "column": 5
+        }
+      },
+      {
+        "from": "suniemi",
+        "relation": "PRODUZ",
+        "to": "compreensao_das_escrituras",
+        "source_item": "biblia_item0012",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 98,
+          "column": 5
+        }
+      },
+      {
+        "from": "abertura_do_entendimento",
+        "relation": "HABILITA",
+        "to": "suniemi",
+        "source_item": "biblia_item0012",
+        "location": {
+          "file": "passages\\matthew.syn",
+          "line": 99,
+          "column": 5
+        }
+      },
+      {
+        "from": "pecado_persistente",
+        "relation": "BLOQUEIA",
+        "to": "nous",
+        "source_item": "biblia_item0013",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 14,
+          "column": 5
+        }
+      },
+      {
+        "from": "nous",
+        "relation": "PRECEDE",
+        "to": "synesis",
+        "source_item": "biblia_item0013",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 15,
+          "column": 5
+        }
+      },
+      {
+        "from": "incredulidade",
+        "relation": "PRODUZ",
+        "to": "perda_do_discernimento",
+        "source_item": "biblia_item0013",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 16,
+          "column": 5
+        }
+      },
+      {
+        "from": "endurecimento_do_coracao",
+        "relation": "INSTANCIA_DE",
+        "to": "perda_do_discernimento",
+        "source_item": "biblia_item0013",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 17,
+          "column": 5
+        }
+      },
+      {
+        "from": "synesis",
+        "relation": "CONTRASTA_COM",
+        "to": "perda_do_discernimento",
+        "source_item": "biblia_item0013",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 18,
+          "column": 5
+        }
+      },
+      {
+        "from": "incapacidade_humana_caida",
+        "relation": "CONTRASTA_COM",
+        "to": "synesis",
+        "source_item": "biblia_item0014",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 34,
+          "column": 5
+        }
+      },
+      {
+        "from": "incapacidade_humana_caida",
+        "relation": "INSTANCIA_DE",
+        "to": "perda_do_discernimento",
+        "source_item": "biblia_item0014",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 35,
+          "column": 5
+        }
+      },
+      {
+        "from": "abertura_do_entendimento",
+        "relation": "CONTRASTA_COM",
+        "to": "incapacidade_humana_caida",
+        "source_item": "biblia_item0014",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 36,
+          "column": 5
+        }
+      },
+      {
+        "from": "orgulho_da_sabedoria",
+        "relation": "BLOQUEIA",
+        "to": "synesis",
+        "source_item": "biblia_item0015",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 52,
+          "column": 5
+        }
+      },
+      {
+        "from": "destruicao_da_sabedoria_humana",
+        "relation": "INSTANCIA_DE",
+        "to": "endurecimento_judicial",
+        "source_item": "biblia_item0015",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 53,
+          "column": 5
+        }
+      },
+      {
+        "from": "destruicao_da_sabedoria_humana",
+        "relation": "PRODUZ",
+        "to": "perda_do_discernimento",
+        "source_item": "biblia_item0015",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 54,
+          "column": 5
+        }
+      },
+      {
+        "from": "synesis",
+        "relation": "CONTRASTA_COM",
+        "to": "orgulho_da_sabedoria",
+        "source_item": "biblia_item0015",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 55,
+          "column": 5
+        }
+      },
+      {
+        "from": "sophia",
+        "relation": "COOPERA_COM",
+        "to": "synesis",
+        "source_item": "biblia_item0016",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 71,
+          "column": 5
+        }
+      },
+      {
+        "from": "synesis",
+        "relation": "PRODUZ",
+        "to": "revelacao_do_misterio",
+        "source_item": "biblia_item0016",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 72,
+          "column": 5
+        }
+      },
+      {
+        "from": "iluminacao_do_espirito",
+        "relation": "PRECEDE",
+        "to": "synesis",
+        "source_item": "biblia_item0016",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 73,
+          "column": 5
+        }
+      },
+      {
+        "from": "revelacao_do_misterio",
+        "relation": "INSTANCIA_DE",
+        "to": "conhecimento_de_cristo",
+        "source_item": "biblia_item0016",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 74,
+          "column": 5
+        }
+      },
+      {
+        "from": "iluminacao_do_espirito",
+        "relation": "PRODUZ",
+        "to": "synesis_pneumatike",
+        "source_item": "biblia_item0017",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 90,
+          "column": 5
+        }
+      },
+      {
+        "from": "synesis_pneumatike",
+        "relation": "INSTANCIA_DE",
+        "to": "synesis",
+        "source_item": "biblia_item0017",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 91,
+          "column": 5
+        }
+      },
+      {
+        "from": "sophia",
+        "relation": "COOPERA_COM",
+        "to": "synesis",
+        "source_item": "biblia_item0017",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 92,
+          "column": 5
+        }
+      },
+      {
+        "from": "epignosis",
+        "relation": "COOPERA_COM",
+        "to": "synesis",
+        "source_item": "biblia_item0017",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 93,
+          "column": 5
+        }
+      },
+      {
+        "from": "synesis",
+        "relation": "PRODUZ",
+        "to": "conhecimento_da_vontade_de_deus",
+        "source_item": "biblia_item0017",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 94,
+          "column": 5
+        }
+      },
+      {
+        "from": "maturidade_espiritual",
+        "relation": "HABILITA",
+        "to": "synesis",
+        "source_item": "biblia_item0018",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 110,
+          "column": 5
+        }
+      },
+      {
+        "from": "synesis",
+        "relation": "PRODUZ",
+        "to": "conhecimento_de_cristo",
+        "source_item": "biblia_item0018",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 111,
+          "column": 5
+        }
+      },
+      {
+        "from": "epignosis",
+        "relation": "COOPERA_COM",
+        "to": "synesis",
+        "source_item": "biblia_item0018",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 112,
+          "column": 5
+        }
+      },
+      {
+        "from": "kardia",
+        "relation": "PRECEDE",
+        "to": "synesis",
+        "source_item": "biblia_item0018",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 113,
+          "column": 5
+        }
+      },
+      {
+        "from": "abertura_do_entendimento",
+        "relation": "HABILITA",
+        "to": "synesis",
+        "source_item": "biblia_item0019",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 129,
+          "column": 5
+        }
+      },
+      {
+        "from": "discipulado",
+        "relation": "PRECEDE",
+        "to": "abertura_do_entendimento",
+        "source_item": "biblia_item0019",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 130,
+          "column": 5
+        }
+      },
+      {
+        "from": "iluminacao_do_espirito",
+        "relation": "PRODUZ",
+        "to": "synesis",
+        "source_item": "biblia_item0019",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 131,
+          "column": 5
+        }
+      },
+      {
+        "from": "synesis",
+        "relation": "PRODUZ",
+        "to": "conhecimento_da_vontade_de_deus",
+        "source_item": "biblia_item0019",
+        "location": {
+          "file": "passages\\pauline.syn",
+          "line": 132,
+          "column": 5
+        }
+      }
+    ],
+    "topics": {},
+    "code_frequency": {
+      "incredulidade": 5,
+      "suniemi": 25,
+      "rejeicao_do_libertador": 2,
+      "endurecimento_do_coracao": 8,
+      "endurecimento_judicial": 6,
+      "citacao_de_isaias_6": 3,
+      "perda_do_discernimento": 7,
+      "coracao_endurecido": 5,
+      "synesis": 22,
+      "sophia": 3,
+      "revelacao_do_misterio": 3,
+      "iluminacao_do_espirito": 5,
+      "abertura_do_entendimento": 9,
+      "compreensao_das_escrituras": 2,
+      "nous": 3,
+      "fe_e_receptividade": 5,
+      "discipulado": 6,
+      "ocultamento_por_parabolas": 5,
+      "juizo_sobre_os_de_fora": 4,
+      "kardia": 4,
+      "influencia_do_maligno": 1,
+      "semente_arrebatada": 5,
+      "frutificacao": 1,
+      "pecado_persistente": 1,
+      "incapacidade_humana_caida": 3,
+      "orgulho_da_sabedoria": 2,
+      "destruicao_da_sabedoria_humana": 2,
+      "conhecimento_de_cristo": 2,
+      "synesis_pneumatike": 2,
+      "epignosis": 2,
+      "conhecimento_da_vontade_de_deus": 2,
+      "maturidade_espiritual": 1
+    }
+  },
+  "ontology": {
+    "abertura_do_entendimento": {
+      "concept": "abertura_do_entendimento",
+      "descricao": "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\"",
+      "categoria": "agente_divino",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 27,
+        "column": 1
+      },
+      "frequency": 9,
+      "source_count": 1
+    },
+    "bin_hebraico": {
+      "concept": "bin_hebraico",
+      "descricao": "\"Equivalente hebraico de synesis (בין, bin) — frequente no Antigo Testamento para descrever a capacidade de discernir e perceber o significado profundo das coisas (Provérbios 2; Daniel 9). A synesis grega herda semanticamente esse conceito.\"",
+      "categoria": "conceito_correlato",
+      "polo": "neutro",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 245,
+        "column": 1
+      }
+    },
+    "citacao_de_isaias_6": {
+      "concept": "citacao_de_isaias_6",
+      "descricao": "\"Texto fundante do endurecimento judicial (Isaías 6.9-10), citado ou aludido em Mateus 13.13-15, Marcos 4.12, João 12.40 e Atos 28.26-27. Estabelece o padrão profético do obscurecimento como resposta à rejeição.\"",
+      "categoria": "mecanismo_bloqueio",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 187,
+        "column": 1
+      },
+      "frequency": 3,
+      "source_count": 1
+    },
+    "compreensao_das_escrituras": {
+      "concept": "compreensao_das_escrituras",
+      "descricao": "\"Resultado imediato da abertura divina do entendimento: a revelação objetiva das Escrituras passa a ser integrada em compreensão coerente pelo receptor (Lucas 24.45; Mateus 16.12).\"",
+      "categoria": "resultado_positivo",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 113,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "conhecimento_da_vontade_de_deus": {
+      "concept": "conhecimento_da_vontade_de_deus",
+      "descricao": "\"Fruto da synesis pneumatikē — o crente passa a discernir o que Deus quer em situações concretas (Colossenses 1.9: πληρωθῆτε τὴν ἐπίγνωσιν τοῦ θελήματος αὐτοῦ).\"",
+      "categoria": "resultado_positivo",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 119,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "conhecimento_de_cristo": {
+      "concept": "conhecimento_de_cristo",
+      "descricao": "\"Cume da synesis em Colossenses 2.2 — a plena riqueza da compreensão converge para o conhecimento do mistério de Deus, que é Cristo.\"",
+      "categoria": "resultado_positivo",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 125,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "coracao_endurecido": {
+      "concept": "coracao_endurecido",
+      "descricao": "\"Estado do coração impermeável à revelação, resultado de incredulidade acumulada. Os discípulos o experimentam após a multiplicação dos pães (Marcos 6.52 — ἦν γὰρ αὐτῶν ἡ καρδία πεπωρωμένη).\"",
+      "categoria": "mecanismo_bloqueio",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 193,
+        "column": 1
+      },
+      "frequency": 5,
+      "source_count": 1
+    },
+    "destruicao_da_sabedoria_humana": {
+      "concept": "destruicao_da_sabedoria_humana",
+      "descricao": "\"Ação judicial de Deus que invalida e destrói a compreensão dos sábios segundo os critérios do mundo (1 Coríntios 1.19 — citação de Isaías 29.14). Juízo sobre o orgulho intelectual.\"",
+      "categoria": "agente_divino",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 51,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "discipulado": {
+      "concept": "discipulado",
+      "descricao": "\"Relação de seguimento e aprendizado com Jesus que abre progressivamente o entendimento. Os discípulos recebem explicação das parábolas e abertura do nous de modo que os de fora não recebem.\"",
+      "categoria": "condicao_humana",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 67,
+        "column": 1
+      },
+      "frequency": 6,
+      "source_count": 1
+    },
+    "endurecimento_do_coracao": {
+      "concept": "endurecimento_do_coracao",
+      "descricao": "\"Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27).\"",
+      "categoria": "condicao_humana",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 85,
+        "column": 1
+      },
+      "frequency": 8,
+      "source_count": 1
+    },
+    "endurecimento_judicial": {
+      "concept": "endurecimento_judicial",
+      "descricao": "\"Ação judicial de Deus que confirma ou intensifica o bloqueio do entendimento como resposta à rejeição persistente. Fundamentado em Isaías 6 e repetido em Mateus 13, Marcos 4 e Atos 28.\"",
+      "categoria": "agente_divino",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 39,
+        "column": 1
+      },
+      "frequency": 6,
+      "source_count": 1
+    },
+    "epignosis": {
+      "concept": "epignosis",
+      "descricao": "\"Conhecimento pleno ou preciso — par de synesis em Colossenses 1.9. Paulo ora para que os crentes sejam cheios de epignosis da vontade de Deus em toda synesis espiritual.\"",
+      "categoria": "conceito_correlato",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 215,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "esterilidade_espiritual": {
+      "concept": "esterilidade_espiritual",
+      "descricao": "\"Ausência de fruto como consequência da falta de synesis. O ouvinte recebe a semente mas não a integra, resultando em nulidade espiritual.\"",
+      "categoria": "resultado_negativo",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 147,
+        "column": 1
+      }
+    },
+    "fe_e_receptividade": {
+      "concept": "fe_e_receptividade",
+      "descricao": "\"Disposição do coração que acolhe a Palavra e permanece aberto à ação do Espírito. Condição humana associada à iluminação da synesis.\"",
+      "categoria": "condicao_humana",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 61,
+        "column": 1
+      },
+      "frequency": 5,
+      "source_count": 1
+    },
+    "frutificacao": {
+      "concept": "frutificacao",
+      "descricao": "\"Consequência da synesis no ouvinte que compreende a Palavra: produz fruto em proporções variadas (Mateus 13.23). Opõe-se à esterilidade do ouvinte que não entende.\"",
+      "categoria": "resultado_positivo",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 131,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "gnosis": {
+      "concept": "gnosis",
+      "descricao": "\"Conhecimento — dimensão mais proposicional e informacional da compreensão. Relaciona-se com synesis mas não a substitui: é possível ter gnosis sem synesis integradora.\"",
+      "categoria": "conceito_correlato",
+      "polo": "neutro",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 209,
+        "column": 1
+      }
+    },
+    "iluminacao_do_espirito": {
+      "concept": "iluminacao_do_espirito",
+      "descricao": "\"Ação específica do Espírito Santo que produz a σύνεσις πνευματική (Colossenses 1.9) — compreensão espiritual que conecta corretamente as realidades da revelação divina.\"",
+      "categoria": "agente_divino",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 33,
+        "column": 1
+      },
+      "frequency": 5,
+      "source_count": 1
+    },
+    "incapacidade_humana_caida": {
+      "concept": "incapacidade_humana_caida",
+      "descricao": "\"Condição ontológica do ser humano sem a ação de Deus: não há quem entenda (Romanos 3.11 — οὐκ ἔστιν ὁ συνίων). Não é juízo pontual, mas diagnóstico da condição humana caída.\"",
+      "categoria": "resultado_negativo",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 165,
+        "column": 1
+      },
+      "frequency": 3,
+      "source_count": 1
+    },
+    "incredulidade": {
+      "concept": "incredulidade",
+      "descricao": "\"Rejeição ou ausência de confiança na revelação de Deus. Impede a synesis e, quando persistente, conduz ao endurecimento judicial.\"",
+      "categoria": "condicao_humana",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 79,
+        "column": 1
+      },
+      "frequency": 5,
+      "source_count": 1
+    },
+    "influencia_do_maligno": {
+      "concept": "influencia_do_maligno",
+      "descricao": "\"Ação do adversário que arrebata a semente da Palavra antes que seja integrada em compreensão. Descrita por Jesus na explicação da parábola do semeador (Mateus 13.19).\"",
+      "categoria": "condicao_humana",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 97,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "juizo_sobre_os_de_fora": {
+      "concept": "juizo_sobre_os_de_fora",
+      "descricao": "\"Estatuto judicial dos que estão fora do Reino: as parábolas funcionam como véu para que vejam sem perceber e ouçam sem entender (Marcos 4.12). Distinção entre insider e outsider do Reino.\"",
+      "categoria": "mecanismo_bloqueio",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 181,
+        "column": 1
+      },
+      "frequency": 4,
+      "source_count": 1
+    },
+    "kardia": {
+      "concept": "kardia",
+      "descricao": "\"Coração — sede tanto do endurecimento (Marcos 6.52; Atos 28.27) quanto da receptividade (Lucas 24.45 implícito). O estado da kardia determina a permeabilidade à synesis.\"",
+      "categoria": "conceito_correlato",
+      "polo": "neutro",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 239,
+        "column": 1
+      },
+      "frequency": 4,
+      "source_count": 1
+    },
+    "maturidade_espiritual": {
+      "concept": "maturidade_espiritual",
+      "descricao": "\"Estado de crescimento na fé associado à synesis aprofundada. Paulo ora para que os crentes de Colossos alcancem a plena riqueza da compreensão (Colossenses 2.2).\"",
+      "categoria": "condicao_humana",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 73,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "nous": {
+      "concept": "nous",
+      "descricao": "\"Mente — o órgão que Deus abre em Lucas 24.45 (διήνοιξεν αὐτῶν τὸν νοῦν). Sede da synesis; pode ser obscurecido pelo pecado (Romanos 1.21) ou renovado pelo Espírito.\"",
+      "categoria": "conceito_correlato",
+      "polo": "neutro",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 221,
+        "column": 1
+      },
+      "frequency": 3,
+      "source_count": 1
+    },
+    "ocultamento_por_parabolas": {
+      "concept": "ocultamento_por_parabolas",
+      "descricao": "\"Uso das parábolas como véu que revela o mistério do Reino aos discípulos e simultaneamente o oculta dos de fora, segundo a declaração de Jesus em Marcos 4.11-12.\"",
+      "categoria": "agente_divino",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 45,
+        "column": 1
+      },
+      "frequency": 5,
+      "source_count": 1
+    },
+    "orgulho_da_sabedoria": {
+      "concept": "orgulho_da_sabedoria",
+      "descricao": "\"Confiança na própria inteligência humana como critério último de compreensão. Bloqueia a synesis ao substituir a dependência de Deus pela autossuficiência intelectual.\"",
+      "categoria": "condicao_humana",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 91,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "pecado_persistente": {
+      "concept": "pecado_persistente",
+      "descricao": "\"Padrão de vida contrário à revelação de Deus que obscurece progressivamente o nous. Paulo descreve esse processo em Romanos 1.21 — o coração se entenebreceu.\"",
+      "categoria": "condicao_humana",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 103,
+        "column": 1
+      },
+      "frequency": 1,
+      "source_count": 1
+    },
+    "perda_do_discernimento": {
+      "concept": "perda_do_discernimento",
+      "descricao": "\"Estado resultante do endurecimento progressivo: a capacidade de integrar a revelação é progressivamente perdida. Descrito em Romanos 1.21 e confirmado em Atos 28.26-27.\"",
+      "categoria": "resultado_negativo",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 159,
+        "column": 1
+      },
+      "frequency": 7,
+      "source_count": 1
+    },
+    "phronesis": {
+      "concept": "phronesis",
+      "descricao": "\"Prudência prática — capacidade de deliberar e agir corretamente em situações concretas. Derivada da synesis: quem integra corretamente a revelação passa a agir com phronesis.\"",
+      "categoria": "conceito_correlato",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 233,
+        "column": 1
+      }
+    },
+    "rejeicao_do_libertador": {
+      "concept": "rejeicao_do_libertador",
+      "descricao": "\"Israel não compreende que Moisés era o libertador enviado por Deus (Atos 7.25 — οὐ συνῆκαν). A ausência de synesis resulta na rejeição daquele que trazia a salvação.\"",
+      "categoria": "resultado_negativo",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 153,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "revelacao_do_misterio": {
+      "concept": "revelacao_do_misterio",
+      "descricao": "\"Compreensão do mistério de Cristo que Paulo desdobra em Efésios 3.4 — synesis aplicada ao conteúdo central da revelação apostólica.\"",
+      "categoria": "resultado_positivo",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 137,
+        "column": 1
+      },
+      "frequency": 3,
+      "source_count": 1
+    },
+    "semente_arrebatada": {
+      "concept": "semente_arrebatada",
+      "descricao": "\"A Palavra ouvida mas não compreendida é arrebatada pelo maligno antes de produzir raiz (Mateus 13.19). Resultado direto da ausência de synesis no ouvinte.\"",
+      "categoria": "resultado_negativo",
+      "polo": "bloqueio",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 171,
+        "column": 1
+      },
+      "frequency": 5,
+      "source_count": 1
+    },
+    "sophia": {
+      "concept": "sophia",
+      "descricao": "\"Sabedoria — frequentemente par de synesis nos textos paulinos (Colossenses 1.9; Efésios 1.17). Sophia tende ao aspecto abrangente e ordenador; synesis ao aspecto integrador e discernidor.\"",
+      "categoria": "conceito_correlato",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 203,
+        "column": 1
+      },
+      "frequency": 3,
+      "source_count": 1
+    },
+    "suniemi": {
+      "concept": "suniemi",
+      "descricao": "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+      "categoria": "termo_central",
+      "polo": "neutro",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 11,
+        "column": 1
+      },
+      "frequency": 25,
+      "source_count": 1
+    },
+    "synesis": {
+      "concept": "synesis",
+      "descricao": "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+      "categoria": "termo_central",
+      "polo": "neutro",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 5,
+        "column": 1
+      },
+      "frequency": 22,
+      "source_count": 1
+    },
+    "synesis_pneumatike": {
+      "concept": "synesis_pneumatike",
+      "descricao": "\"Expressão singular de Colossenses 1.9 (συνέσει πνευματικῇ) — compreensão espiritual concedida pelo Espírito Santo. Não é synesis natural ampliada, mas capacidade qualitativamente distinta.\"",
+      "categoria": "conceito_correlato",
+      "polo": "iluminacao",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 227,
+        "column": 1
+      },
+      "frequency": 2,
+      "source_count": 1
+    },
+    "synetos": {
+      "concept": "synetos",
+      "descricao": "\"Adjetivo: dotado de compreensão, perspicaz, inteligente. Qualifica o sujeito que possui ou manifesta synesis.\"",
+      "categoria": "termo_central",
+      "polo": "neutro",
+      "location": {
+        "file": "biblia2026.syno",
+        "line": 17,
+        "column": 1
+      }
+    }
+  },
+  "corpus": [
+    {
+      "id": "biblia_item0001",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Atos 7.25\"",
+        "citacao_pt": "\"E ele cuidava que seus irmãos entenderiam que Deus lhes daria livramento por sua mão; mas eles não o entenderam.\"",
+        "citacao_gr": "\"ἐνόμιζεν δὲ συνιέναι τοὺς ἀδελφοὺς ὅτι ὁ θεὸς διὰ χειρὸς αὐτοῦ δίδωσιν σωτηρίαν αὐτοῖς· οἱ δὲ οὐ συνῆκαν.\"",
+        "termo_gr": "\"συνιέναι / συνῆκαν\"",
+        "termo_transliterado": "syniénai",
+        "polo_teologico": "bloqueio",
+        "situacao": "\"No discurso de Estêvão, o verbo aparece duas vezes em contraste: Moisés presumia que seus irmãos entenderiam (συνιέναι) a missão divina; mas eles não entenderam (συνῆκαν). A incredulidade de Israel diante de Moisés é apresentada como padrão histórico da rejeição do libertador enviado por Deus — antecipando a rejeição de Jesus.\"",
+        "resultado": "\"Rejeição de Moisés como libertador. A ausência de synesis resulta na recusa daquele que trazia a salvação — padrão que Estêvão usa para acusar o Sinédrio de repetir o mesmo erro com Jesus.\"",
+        "chain": [
+          {
+            "from": "incredulidade",
+            "relation": "BLOQUEIA",
+            "to": "suniemi"
+          },
+          {
+            "from": "suniemi",
+            "relation": "CONTRASTA_COM",
+            "to": "rejeicao_do_libertador"
+          },
+          {
+            "from": "endurecimento_do_coracao",
+            "relation": "PRODUZ",
+            "to": "rejeicao_do_libertador"
+          },
+          {
+            "from": "endurecimento_judicial",
+            "relation": "CONFIRMA",
+            "to": "endurecimento_do_coracao"
+          }
+        ],
+        "descricao": [
+          "\"Rejeição ou ausência de confiança na revelação de Deus. Impede a synesis e, quando persistente, conduz ao endurecimento judicial.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Israel não compreende que Moisés era o libertador enviado por Deus (Atos 7.25 — οὐ συνῆκαν). A ausência de synesis resulta na rejeição daquele que trazia a salvação.\"",
+          "\"Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27).\"",
+          "\"Israel não compreende que Moisés era o libertador enviado por Deus (Atos 7.25 — οὐ συνῆκαν). A ausência de synesis resulta na rejeição daquele que trazia a salvação.\"",
+          "\"Ação judicial de Deus que confirma ou intensifica o bloqueio do entendimento como resposta à rejeição persistente. Fundamentado em Isaías 6 e repetido em Mateus 13, Marcos 4 e Atos 28.\"",
+          "\"Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27).\""
+        ],
+        "categoria": [
+          "condicao_humana",
+          "termo_central",
+          "termo_central",
+          "resultado_negativo",
+          "condicao_humana",
+          "resultado_negativo",
+          "agente_divino",
+          "condicao_humana"
+        ],
+        "polo": [
+          "bloqueio",
+          "neutro",
+          "neutro",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\acts.syn",
+        "line": 5
+      }
+    },
+    {
+      "id": "biblia_item0002",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Atos 28.26-27\"",
+        "citacao_pt": "\"Dizendo: Vai a este povo e dize: Ouvindo ouvireis e não entendereis; e vendo vereis e não percebereis. Porque o coração deste povo está endurecido, e com os ouvidos ouviram com dificuldade, e fecharam os seus olhos; para que não vejam com os olhos, e ouçam com os ouvidos, e entendam com o coração, e se convertam, e eu os cure.\"",
+        "citacao_gr": "\"λέγων· πορεύθητι πρὸς τὸν λαὸν τοῦτον καὶ εἰπόν· ἀκοῇ ἀκούσετε καὶ οὐ μὴ συνῆτε, καὶ βλέποντες βλέψετε καὶ οὐ μὴ ἴδητε. ἐπαχύνθη γὰρ ἡ καρδία τοῦ λαοῦ τούτου καὶ τοῖς ὠσὶν βαρέως ἤκουσαν καὶ τοὺς ὀφθαλμοὺς αὐτῶν ἐκάμμυσαν· μήποτε ἴδωσιν τοῖς ὀφθαλμοῖς καὶ τοῖς ὠσὶν ἀκούσωσιν καὶ τῇ καρδίᾳ συνῶσιν καὶ ἐπιστρέψωσιν, καὶ ἰάσομαι αὐτούς.\"",
+        "termo_gr": "\"συνῆτε / συνῶσιν\"",
+        "termo_transliterado": "synete",
+        "polo_teologico": "bloqueio",
+        "situacao": "\"Paulo cita Isaías 6.9-10 pela última vez no cânon neotestamentário, ao encerrar seu ministério em Roma. A citação é idêntica à de Mateus 13.13-15 — o mesmo texto profético que Jesus usou para explicar as parábolas. O endurecimento judicial de Israel sobre o Evangelho é o ponto final narrativo dos Atos.\"",
+        "resultado": "\"Paulo declara que a salvação é enviada aos gentios, que ouvirão. O endurecimento de Israel não é definitivo para indivíduos, mas é o veredicto histórico-judicial sobre a nação como respondente coletivo ao Evangelho.\"",
+        "chain": [
+          {
+            "from": "citacao_de_isaias_6",
+            "relation": "CONFIRMA",
+            "to": "endurecimento_judicial"
+          },
+          {
+            "from": "endurecimento_judicial",
+            "relation": "PRODUZ",
+            "to": "perda_do_discernimento"
+          },
+          {
+            "from": "coracao_endurecido",
+            "relation": "BLOQUEIA",
+            "to": "suniemi"
+          },
+          {
+            "from": "incredulidade",
+            "relation": "PRECEDE",
+            "to": "coracao_endurecido"
+          },
+          {
+            "from": "suniemi",
+            "relation": "CONTRASTA_COM",
+            "to": "perda_do_discernimento"
+          }
+        ],
+        "descricao": [
+          "\"Texto fundante do endurecimento judicial (Isaías 6.9-10), citado ou aludido em Mateus 13.13-15, Marcos 4.12, João 12.40 e Atos 28.26-27. Estabelece o padrão profético do obscurecimento como resposta à rejeição.\"",
+          "\"Ação judicial de Deus que confirma ou intensifica o bloqueio do entendimento como resposta à rejeição persistente. Fundamentado em Isaías 6 e repetido em Mateus 13, Marcos 4 e Atos 28.\"",
+          "\"Ação judicial de Deus que confirma ou intensifica o bloqueio do entendimento como resposta à rejeição persistente. Fundamentado em Isaías 6 e repetido em Mateus 13, Marcos 4 e Atos 28.\"",
+          "\"Estado resultante do endurecimento progressivo: a capacidade de integrar a revelação é progressivamente perdida. Descrito em Romanos 1.21 e confirmado em Atos 28.26-27.\"",
+          "\"Estado do coração impermeável à revelação, resultado de incredulidade acumulada. Os discípulos o experimentam após a multiplicação dos pães (Marcos 6.52 — ἦν γὰρ αὐτῶν ἡ καρδία πεπωρωμένη).\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Rejeição ou ausência de confiança na revelação de Deus. Impede a synesis e, quando persistente, conduz ao endurecimento judicial.\"",
+          "\"Estado do coração impermeável à revelação, resultado de incredulidade acumulada. Os discípulos o experimentam após a multiplicação dos pães (Marcos 6.52 — ἦν γὰρ αὐτῶν ἡ καρδία πεπωρωμένη).\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Estado resultante do endurecimento progressivo: a capacidade de integrar a revelação é progressivamente perdida. Descrito em Romanos 1.21 e confirmado em Atos 28.26-27.\""
+        ],
+        "categoria": [
+          "mecanismo_bloqueio",
+          "agente_divino",
+          "agente_divino",
+          "resultado_negativo",
+          "mecanismo_bloqueio",
+          "termo_central",
+          "condicao_humana",
+          "mecanismo_bloqueio",
+          "termo_central",
+          "resultado_negativo"
+        ],
+        "polo": [
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\acts.syn",
+        "line": 24
+      }
+    },
+    {
+      "id": "biblia_item0003",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Lucas 2.47\"",
+        "citacao_pt": "\"E todos os que o ouviam admiravam-se da sua inteligência e das suas respostas.\"",
+        "citacao_gr": "\"ἐξίσταντο δὲ πάντες οἱ ἀκούοντες αὐτοῦ ἐπὶ τῇ συνέσει καὶ ταῖς ἀποκρίσεσιν αὐτοῦ.\"",
+        "termo_gr": "\"συνέσει\"",
+        "termo_transliterado": "synesei",
+        "polo_teologico": "iluminacao",
+        "situacao": "\"O substantivo σύνεσις qualifica a compreensão do jovem Jesus no Templo diante dos doutores da Lei. É a única ocorrência do substantivo nos Evangelhos. A synesis aqui não é adquirida por estudo, mas manifestada como capacidade integradora extraordinária numa criança de doze anos.\"",
+        "resultado": "\"Admiração (ἐξίσταντο) de todos os ouvintes — doutores incluídos. A synesis se manifesta publicamente como capacidade integradora visível, não como erudição acumulada.\"",
+        "chain": [
+          {
+            "from": "synesis",
+            "relation": "INSTANCIA_DE",
+            "to": "sophia"
+          },
+          {
+            "from": "synesis",
+            "relation": "PRODUZ",
+            "to": "revelacao_do_misterio"
+          },
+          {
+            "from": "iluminacao_do_espirito",
+            "relation": "COOPERA_COM",
+            "to": "synesis"
+          }
+        ],
+        "descricao": [
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Sabedoria — frequentemente par de synesis nos textos paulinos (Colossenses 1.9; Efésios 1.17). Sophia tende ao aspecto abrangente e ordenador; synesis ao aspecto integrador e discernidor.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Compreensão do mistério de Cristo que Paulo desdobra em Efésios 3.4 — synesis aplicada ao conteúdo central da revelação apostólica.\"",
+          "\"Ação específica do Espírito Santo que produz a σύνεσις πνευματική (Colossenses 1.9) — compreensão espiritual que conecta corretamente as realidades da revelação divina.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\""
+        ],
+        "categoria": [
+          "termo_central",
+          "conceito_correlato",
+          "termo_central",
+          "resultado_positivo",
+          "agente_divino",
+          "termo_central"
+        ],
+        "polo": [
+          "neutro",
+          "iluminacao",
+          "neutro",
+          "iluminacao",
+          "iluminacao",
+          "neutro"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\luke.syn",
+        "line": 5
+      }
+    },
+    {
+      "id": "biblia_item0004",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Lucas 24.45\"",
+        "citacao_pt": "\"Então lhes abriu o entendimento para compreenderem as Escrituras.\"",
+        "citacao_gr": "\"τότε διήνοιξεν αὐτῶν τὸν νοῦν τοῦ συνιέναι τὰς γραφάς.\"",
+        "termo_gr": "\"συνιέναι\"",
+        "termo_transliterado": "syniénai",
+        "polo_teologico": "iluminacao",
+        "situacao": "\"Cristo ressurreto abre ativamente o nous dos discípulos para que possam integrar as Escrituras em compreensão coerente. A ação é inteiramente divina e unilateral — o verbo διήνοιξεν tem Cristo como sujeito, os discípulos como receptores passivos. Paradigma máximo do polo da iluminação: a revelação objetiva estava presente nas Escrituras, mas era necessária ação divina para que fosse integrada.\"",
+        "resultado": "\"Os discípulos passam a compreender as Escrituras — a promessa, a paixão e a ressurreição de Cristo tornam-se inteligíveis como cumprimento de um plano coerente.\"",
+        "chain": [
+          {
+            "from": "abertura_do_entendimento",
+            "relation": "HABILITA",
+            "to": "suniemi"
+          },
+          {
+            "from": "suniemi",
+            "relation": "PRODUZ",
+            "to": "compreensao_das_escrituras"
+          },
+          {
+            "from": "nous",
+            "relation": "PRECEDE",
+            "to": "abertura_do_entendimento"
+          },
+          {
+            "from": "iluminacao_do_espirito",
+            "relation": "COOPERA_COM",
+            "to": "abertura_do_entendimento"
+          },
+          {
+            "from": "fe_e_receptividade",
+            "relation": "PRECEDE",
+            "to": "abertura_do_entendimento"
+          },
+          {
+            "from": "discipulado",
+            "relation": "PRECEDE",
+            "to": "abertura_do_entendimento"
+          }
+        ],
+        "descricao": [
+          "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Resultado imediato da abertura divina do entendimento: a revelação objetiva das Escrituras passa a ser integrada em compreensão coerente pelo receptor (Lucas 24.45; Mateus 16.12).\"",
+          "\"Mente — o órgão que Deus abre em Lucas 24.45 (διήνοιξεν αὐτῶν τὸν νοῦν). Sede da synesis; pode ser obscurecido pelo pecado (Romanos 1.21) ou renovado pelo Espírito.\"",
+          "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\"",
+          "\"Ação específica do Espírito Santo que produz a σύνεσις πνευματική (Colossenses 1.9) — compreensão espiritual que conecta corretamente as realidades da revelação divina.\"",
+          "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\"",
+          "\"Disposição do coração que acolhe a Palavra e permanece aberto à ação do Espírito. Condição humana associada à iluminação da synesis.\"",
+          "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\"",
+          "\"Relação de seguimento e aprendizado com Jesus que abre progressivamente o entendimento. Os discípulos recebem explicação das parábolas e abertura do nous de modo que os de fora não recebem.\"",
+          "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\""
+        ],
+        "categoria": [
+          "agente_divino",
+          "termo_central",
+          "termo_central",
+          "resultado_positivo",
+          "conceito_correlato",
+          "agente_divino",
+          "agente_divino",
+          "agente_divino",
+          "condicao_humana",
+          "agente_divino",
+          "condicao_humana",
+          "agente_divino"
+        ],
+        "polo": [
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "iluminacao",
+          "neutro",
+          "iluminacao",
+          "iluminacao",
+          "iluminacao",
+          "iluminacao",
+          "iluminacao",
+          "iluminacao",
+          "iluminacao"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\luke.syn",
+        "line": 23
+      }
+    },
+    {
+      "id": "biblia_item0005",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Marcos 4.12\"",
+        "citacao_pt": "\"Para que vendo vejam e não percebam, e ouvindo ouçam e não entendam; para que não se convertam e os pecados lhes sejam perdoados.\"",
+        "citacao_gr": "\"ἵνα βλέποντες βλέπωσιν καὶ μὴ ἴδωσιν, καὶ ἀκούοντες ἀκούωσιν καὶ μὴ συνιῶσιν, μήποτε ἐπιστρέψωσιν καὶ ἀφεθῇ αὐτοῖς.\"",
+        "termo_gr": "\"συνιῶσιν\"",
+        "termo_transliterado": "syniōsin",
+        "polo_teologico": "bloqueio",
+        "situacao": "\"Jesus explica a função das parábolas aos discípulos em contraste com os de fora: a eles é dado conhecer o mistério do Reino, aos de fora tudo é parábola para que não entendam. A formulação ἵνα (para que) indica propósito — o obscurecimento é intencional, não mero efeito colateral.\"",
+        "resultado": "\"Juízo sobre os de fora: não há conversão nem perdão enquanto o endurecimento persiste. Passagem mais explícita sobre o caráter judicial do não-entender.\"",
+        "chain": [
+          {
+            "from": "endurecimento_judicial",
+            "relation": "CONFIRMA",
+            "to": "ocultamento_por_parabolas"
+          },
+          {
+            "from": "ocultamento_por_parabolas",
+            "relation": "PRODUZ",
+            "to": "juizo_sobre_os_de_fora"
+          },
+          {
+            "from": "juizo_sobre_os_de_fora",
+            "relation": "BLOQUEIA",
+            "to": "suniemi"
+          },
+          {
+            "from": "citacao_de_isaias_6",
+            "relation": "FUNDAMENTA",
+            "to": "ocultamento_por_parabolas"
+          },
+          {
+            "from": "discipulado",
+            "relation": "CONTRASTA_COM",
+            "to": "juizo_sobre_os_de_fora"
+          }
+        ],
+        "descricao": [
+          "\"Ação judicial de Deus que confirma ou intensifica o bloqueio do entendimento como resposta à rejeição persistente. Fundamentado em Isaías 6 e repetido em Mateus 13, Marcos 4 e Atos 28.\"",
+          "\"Uso das parábolas como véu que revela o mistério do Reino aos discípulos e simultaneamente o oculta dos de fora, segundo a declaração de Jesus em Marcos 4.11-12.\"",
+          "\"Uso das parábolas como véu que revela o mistério do Reino aos discípulos e simultaneamente o oculta dos de fora, segundo a declaração de Jesus em Marcos 4.11-12.\"",
+          "\"Estatuto judicial dos que estão fora do Reino: as parábolas funcionam como véu para que vejam sem perceber e ouçam sem entender (Marcos 4.12). Distinção entre insider e outsider do Reino.\"",
+          "\"Estatuto judicial dos que estão fora do Reino: as parábolas funcionam como véu para que vejam sem perceber e ouçam sem entender (Marcos 4.12). Distinção entre insider e outsider do Reino.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Texto fundante do endurecimento judicial (Isaías 6.9-10), citado ou aludido em Mateus 13.13-15, Marcos 4.12, João 12.40 e Atos 28.26-27. Estabelece o padrão profético do obscurecimento como resposta à rejeição.\"",
+          "\"Uso das parábolas como véu que revela o mistério do Reino aos discípulos e simultaneamente o oculta dos de fora, segundo a declaração de Jesus em Marcos 4.11-12.\"",
+          "\"Relação de seguimento e aprendizado com Jesus que abre progressivamente o entendimento. Os discípulos recebem explicação das parábolas e abertura do nous de modo que os de fora não recebem.\"",
+          "\"Estatuto judicial dos que estão fora do Reino: as parábolas funcionam como véu para que vejam sem perceber e ouçam sem entender (Marcos 4.12). Distinção entre insider e outsider do Reino.\""
+        ],
+        "categoria": [
+          "agente_divino",
+          "agente_divino",
+          "agente_divino",
+          "mecanismo_bloqueio",
+          "mecanismo_bloqueio",
+          "termo_central",
+          "mecanismo_bloqueio",
+          "agente_divino",
+          "condicao_humana",
+          "mecanismo_bloqueio"
+        ],
+        "polo": [
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "bloqueio",
+          "bloqueio",
+          "iluminacao",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\mark.syn",
+        "line": 5
+      }
+    },
+    {
+      "id": "biblia_item0006",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Marcos 6.52\"",
+        "citacao_pt": "\"Porque não tinham entendido o milagre dos pães, pois o seu coração estava endurecido.\"",
+        "citacao_gr": "\"οὐ γὰρ συνῆκαν ἐπὶ τοῖς ἄρτοις, ἀλλ᾽ ἦν αὐτῶν ἡ καρδία πεπωρωμένη.\"",
+        "termo_gr": "\"συνῆκαν\"",
+        "termo_transliterado": "synekan",
+        "polo_teologico": "bloqueio",
+        "situacao": "\"Após Jesus caminhar sobre as águas, o narrador explica a perplexidade dos discípulos: eles não tinham entendido o milagre dos pães porque o coração estava endurecido. Notável que o endurecimento aqui afeta os próprios discípulos — não os adversários. A synesis é bloqueada mesmo em quem segue Jesus.\"",
+        "resultado": "\"Perplexidade e terror diante do milagre, em vez de fé e compreensão. Ilustra que o endurecimento não é privilégio dos adversários — é uma condição que pode afetar temporariamente até os discípulos.\"",
+        "chain": [
+          {
+            "from": "coracao_endurecido",
+            "relation": "BLOQUEIA",
+            "to": "suniemi"
+          },
+          {
+            "from": "incredulidade",
+            "relation": "PRODUZ",
+            "to": "coracao_endurecido"
+          },
+          {
+            "from": "kardia",
+            "relation": "SEDE_DE",
+            "to": "endurecimento_do_coracao"
+          },
+          {
+            "from": "suniemi",
+            "relation": "CONTRASTA_COM",
+            "to": "coracao_endurecido"
+          }
+        ],
+        "descricao": [
+          "\"Estado do coração impermeável à revelação, resultado de incredulidade acumulada. Os discípulos o experimentam após a multiplicação dos pães (Marcos 6.52 — ἦν γὰρ αὐτῶν ἡ καρδία πεπωρωμένη).\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Rejeição ou ausência de confiança na revelação de Deus. Impede a synesis e, quando persistente, conduz ao endurecimento judicial.\"",
+          "\"Estado do coração impermeável à revelação, resultado de incredulidade acumulada. Os discípulos o experimentam após a multiplicação dos pães (Marcos 6.52 — ἦν γὰρ αὐτῶν ἡ καρδία πεπωρωμένη).\"",
+          "\"Coração — sede tanto do endurecimento (Marcos 6.52; Atos 28.27) quanto da receptividade (Lucas 24.45 implícito). O estado da kardia determina a permeabilidade à synesis.\"",
+          "\"Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27).\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Estado do coração impermeável à revelação, resultado de incredulidade acumulada. Os discípulos o experimentam após a multiplicação dos pães (Marcos 6.52 — ἦν γὰρ αὐτῶν ἡ καρδία πεπωρωμένη).\""
+        ],
+        "categoria": [
+          "mecanismo_bloqueio",
+          "termo_central",
+          "condicao_humana",
+          "mecanismo_bloqueio",
+          "conceito_correlato",
+          "condicao_humana",
+          "termo_central",
+          "mecanismo_bloqueio"
+        ],
+        "polo": [
+          "bloqueio",
+          "neutro",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "bloqueio",
+          "neutro",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\mark.syn",
+        "line": 25
+      }
+    },
+    {
+      "id": "biblia_item0007",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Marcos 7.14\"",
+        "citacao_pt": "\"E, chamando outra vez a multidão, disse-lhes: Ouvi-me todos vós e entendei.\"",
+        "citacao_gr": "\"Καὶ προσκαλεσάμενος πάλιν τὸν ὄχλον ἔλεγεν αὐτοῖς· ἀκούσατέ μου πάντες καὶ σύνετε.\"",
+        "termo_gr": "\"σύνετε\"",
+        "termo_transliterado": "synete",
+        "polo_teologico": "convite",
+        "situacao": "\"Paralelo a Mateus 15.10 — Jesus convoca a multidão com o imperativo duplo: ouvi e entendei. O πάντες (todos vós) amplia o convite: a synesis é oferecida a toda a multidão, sem distinção. Segue ao debate sobre pureza com os fariseus, que recusam compreender.\"",
+        "resultado": "\"Resultado em aberto, dependente da resposta de cada ouvinte. O contraste com os fariseus (que não querem entender) torna o convite mais nítido.\"",
+        "chain": [
+          {
+            "from": "suniemi",
+            "relation": "PRECEDE",
+            "to": "fe_e_receptividade"
+          },
+          {
+            "from": "discipulado",
+            "relation": "FAVORECE",
+            "to": "suniemi"
+          },
+          {
+            "from": "suniemi",
+            "relation": "CONTRASTA_COM",
+            "to": "endurecimento_do_coracao"
+          }
+        ],
+        "descricao": [
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Disposição do coração que acolhe a Palavra e permanece aberto à ação do Espírito. Condição humana associada à iluminação da synesis.\"",
+          "\"Relação de seguimento e aprendizado com Jesus que abre progressivamente o entendimento. Os discípulos recebem explicação das parábolas e abertura do nous de modo que os de fora não recebem.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27).\""
+        ],
+        "categoria": [
+          "termo_central",
+          "condicao_humana",
+          "condicao_humana",
+          "termo_central",
+          "termo_central",
+          "condicao_humana"
+        ],
+        "polo": [
+          "neutro",
+          "iluminacao",
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\mark.syn",
+        "line": 44
+      }
+    },
+    {
+      "id": "biblia_item0008",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Mateus 13.13-15\"",
+        "citacao_pt": "\"Por isso lhes falo por parábolas; porque vendo não veem, e ouvindo não ouvem, nem entendem. E neles se cumpre a profecia de Isaías: De ouvido ouvireis e não entendereis; e vendo vereis e não percebereis. Porque o coração deste povo está endurecido, e com os ouvidos ouviram com dificuldade, e fecharam os seus olhos; para que não vejam com os olhos, e ouçam com os ouvidos, e entendam com o coração, e se convertam, e eu os cure.\"",
+        "citacao_gr": "\"διὰ τοῦτο ἐν παραβολαῖς αὐτοῖς λαλῶ, ὅτι βλέποντες οὐ βλέπουσιν καὶ ἀκούοντες οὐκ ἀκούουσιν οὐδὲ συνίουσιν. καὶ ἀναπληροῦται αὐτοῖς ἡ προφητεία Ἠσαΐου ἡ λέγουσα· ἀκοῇ ἀκούσετε καὶ οὐ μὴ συνῆτε, καὶ βλέποντες βλέψετε καὶ οὐ μὴ ἴδητε. ἐπαχύνθη γὰρ ἡ καρδία τοῦ λαοῦ τούτου, καὶ τοῖς ὠσὶν βαρέως ἤκουσαν, καὶ τοὺς ὀφθαλμοὺς αὐτῶν ἐκάμμυσαν· μήποτε ἴδωσιν τοῖς ὀφθαλμοῖς καὶ τοῖς ὠσὶν ἀκούσωσιν καὶ τῇ καρδίᾳ συνῶσιν καὶ ἐπιστρέψωσιν καὶ ἰάσομαι αὐτούς.\"",
+        "termo_gr": "\"συνίουσιν / συνῆτε / συνῶσιν\"",
+        "termo_transliterado": "suniousin",
+        "polo_teologico": "bloqueio",
+        "situacao": "\"Jesus explica por que fala em parábolas: o endurecimento do povo cumpre a profecia de Isaías 6.9-10. O verbo συνίημι aparece três vezes — como diagnóstico presente (não entendem), como juízo profético futuro (não entendereis) e como aquilo que o endurecimento impede (entendam com o coração). A synesis é simultaneamente descrita, negada e bloqueada.\"",
+        "resultado": "\"Endurecimento judicial confirmado. As parábolas funcionam como véu para quem já rejeitou a revelação. A passagem estabelece o padrão teológico que será repetido em Marcos 4 e Atos 28.\"",
+        "chain": [
+          {
+            "from": "citacao_de_isaias_6",
+            "relation": "CONFIRMA",
+            "to": "ocultamento_por_parabolas"
+          },
+          {
+            "from": "ocultamento_por_parabolas",
+            "relation": "PRODUZ",
+            "to": "juizo_sobre_os_de_fora"
+          },
+          {
+            "from": "endurecimento_do_coracao",
+            "relation": "BLOQUEIA",
+            "to": "suniemi"
+          },
+          {
+            "from": "endurecimento_judicial",
+            "relation": "CONFIRMA",
+            "to": "endurecimento_do_coracao"
+          },
+          {
+            "from": "kardia",
+            "relation": "PRECEDE",
+            "to": "suniemi"
+          }
+        ],
+        "descricao": [
+          "\"Texto fundante do endurecimento judicial (Isaías 6.9-10), citado ou aludido em Mateus 13.13-15, Marcos 4.12, João 12.40 e Atos 28.26-27. Estabelece o padrão profético do obscurecimento como resposta à rejeição.\"",
+          "\"Uso das parábolas como véu que revela o mistério do Reino aos discípulos e simultaneamente o oculta dos de fora, segundo a declaração de Jesus em Marcos 4.11-12.\"",
+          "\"Uso das parábolas como véu que revela o mistério do Reino aos discípulos e simultaneamente o oculta dos de fora, segundo a declaração de Jesus em Marcos 4.11-12.\"",
+          "\"Estatuto judicial dos que estão fora do Reino: as parábolas funcionam como véu para que vejam sem perceber e ouçam sem entender (Marcos 4.12). Distinção entre insider e outsider do Reino.\"",
+          "\"Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27).\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Ação judicial de Deus que confirma ou intensifica o bloqueio do entendimento como resposta à rejeição persistente. Fundamentado em Isaías 6 e repetido em Mateus 13, Marcos 4 e Atos 28.\"",
+          "\"Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27).\"",
+          "\"Coração — sede tanto do endurecimento (Marcos 6.52; Atos 28.27) quanto da receptividade (Lucas 24.45 implícito). O estado da kardia determina a permeabilidade à synesis.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\""
+        ],
+        "categoria": [
+          "mecanismo_bloqueio",
+          "agente_divino",
+          "agente_divino",
+          "mecanismo_bloqueio",
+          "condicao_humana",
+          "termo_central",
+          "agente_divino",
+          "condicao_humana",
+          "conceito_correlato",
+          "termo_central"
+        ],
+        "polo": [
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "neutro"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\matthew.syn",
+        "line": 12
+      }
+    },
+    {
+      "id": "biblia_item0009",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Mateus 13.19\"",
+        "citacao_pt": "\"Quando alguém ouve a palavra do reino e não a entende, vem o maligno e arrebata o que foi semeado no seu coração. Este é o que foi semeado junto ao caminho.\"",
+        "citacao_gr": "\"παντὸς ἀκούοντος τὸν λόγον τῆς βασιλείας καὶ μὴ συνιέντος, ἔρχεται ὁ πονηρὸς καὶ ἁρπάζει τὸ ἐσπαρμένον ἐν τῇ καρδίᾳ αὐτοῦ· οὗτός ἐστιν ὁ παρὰ τὴν ὁδὸν σπαρείς.\"",
+        "termo_gr": "\"συνιέντος\"",
+        "termo_transliterado": "synientos",
+        "polo_teologico": "bloqueio",
+        "situacao": "\"Na explicação da parábola do semeador, Jesus identifica a ausência de synesis como a vulnerabilidade que permite a ação do maligno. O ouvinte ouve a Palavra do Reino mas não a integra — e essa brecha é o ponto de entrada do adversário.\"",
+        "resultado": "\"A semente é arrebatada antes de produzir raiz. A ausência de synesis não é neutra: abre o ouvinte à perda imediata do que foi recebido.\"",
+        "chain": [
+          {
+            "from": "influencia_do_maligno",
+            "relation": "PRODUZ",
+            "to": "semente_arrebatada"
+          },
+          {
+            "from": "semente_arrebatada",
+            "relation": "BLOQUEIA",
+            "to": "suniemi"
+          },
+          {
+            "from": "incredulidade",
+            "relation": "PRECEDE",
+            "to": "semente_arrebatada"
+          },
+          {
+            "from": "suniemi",
+            "relation": "CONTRASTA_COM",
+            "to": "semente_arrebatada"
+          }
+        ],
+        "descricao": [
+          "\"Ação do adversário que arrebata a semente da Palavra antes que seja integrada em compreensão. Descrita por Jesus na explicação da parábola do semeador (Mateus 13.19).\"",
+          "\"A Palavra ouvida mas não compreendida é arrebatada pelo maligno antes de produzir raiz (Mateus 13.19). Resultado direto da ausência de synesis no ouvinte.\"",
+          "\"A Palavra ouvida mas não compreendida é arrebatada pelo maligno antes de produzir raiz (Mateus 13.19). Resultado direto da ausência de synesis no ouvinte.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Rejeição ou ausência de confiança na revelação de Deus. Impede a synesis e, quando persistente, conduz ao endurecimento judicial.\"",
+          "\"A Palavra ouvida mas não compreendida é arrebatada pelo maligno antes de produzir raiz (Mateus 13.19). Resultado direto da ausência de synesis no ouvinte.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"A Palavra ouvida mas não compreendida é arrebatada pelo maligno antes de produzir raiz (Mateus 13.19). Resultado direto da ausência de synesis no ouvinte.\""
+        ],
+        "categoria": [
+          "condicao_humana",
+          "resultado_negativo",
+          "resultado_negativo",
+          "termo_central",
+          "condicao_humana",
+          "resultado_negativo",
+          "termo_central",
+          "resultado_negativo"
+        ],
+        "polo": [
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\matthew.syn",
+        "line": 32
+      }
+    },
+    {
+      "id": "biblia_item0010",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Mateus 13.23\"",
+        "citacao_pt": "\"O que foi semeado em boa terra é o que ouve a palavra e a entende; esse produz fruto e dá um a cem, outro a sessenta e outro a trinta.\"",
+        "citacao_gr": "\"ὁ δὲ ἐπὶ τὴν καλὴν γῆν σπαρείς, οὗτός ἐστιν ὁ τὸν λόγον ἀκούων καὶ συνιείς, ὃς δὴ καρποφορεῖ καὶ ποιεῖ ὃ μὲν ἑκατόν, ὃ δὲ ἑξήκοντα, ὃ δὲ τριάκοντα.\"",
+        "termo_gr": "\"συνιείς\"",
+        "termo_transliterado": "synieis",
+        "polo_teologico": "iluminacao",
+        "situacao": "\"O polo positivo da parábola do semeador: ouvir e entender (ἀκούων καὶ συνιείς) são apresentados como par inseparável. A synesis não é adição ao ouvir — é a condição que transforma o ouvir em frutificação. Jesus contrapõe este caso aos três anteriores onde a semente não produz fruto.\"",
+        "resultado": "\"Frutificação em proporções variadas (cem, sessenta, trinta). A synesis é o pivô causal entre receber a Palavra e produzi-la em vida transformada.\"",
+        "chain": [
+          {
+            "from": "fe_e_receptividade",
+            "relation": "HABILITA",
+            "to": "suniemi"
+          },
+          {
+            "from": "suniemi",
+            "relation": "PRODUZ",
+            "to": "frutificacao"
+          },
+          {
+            "from": "suniemi",
+            "relation": "CONTRASTA_COM",
+            "to": "semente_arrebatada"
+          },
+          {
+            "from": "kardia",
+            "relation": "PRECEDE",
+            "to": "fe_e_receptividade"
+          }
+        ],
+        "descricao": [
+          "\"Disposição do coração que acolhe a Palavra e permanece aberto à ação do Espírito. Condição humana associada à iluminação da synesis.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Consequência da synesis no ouvinte que compreende a Palavra: produz fruto em proporções variadas (Mateus 13.23). Opõe-se à esterilidade do ouvinte que não entende.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"A Palavra ouvida mas não compreendida é arrebatada pelo maligno antes de produzir raiz (Mateus 13.19). Resultado direto da ausência de synesis no ouvinte.\"",
+          "\"Coração — sede tanto do endurecimento (Marcos 6.52; Atos 28.27) quanto da receptividade (Lucas 24.45 implícito). O estado da kardia determina a permeabilidade à synesis.\"",
+          "\"Disposição do coração que acolhe a Palavra e permanece aberto à ação do Espírito. Condição humana associada à iluminação da synesis.\""
+        ],
+        "categoria": [
+          "condicao_humana",
+          "termo_central",
+          "termo_central",
+          "resultado_positivo",
+          "termo_central",
+          "resultado_negativo",
+          "conceito_correlato",
+          "condicao_humana"
+        ],
+        "polo": [
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "iluminacao",
+          "neutro",
+          "bloqueio",
+          "neutro",
+          "iluminacao"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\matthew.syn",
+        "line": 51
+      }
+    },
+    {
+      "id": "biblia_item0011",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Mateus 15.10\"",
+        "citacao_pt": "\"E, chamando a si a multidão, disse-lhes: Ouvi e entendei.\"",
+        "citacao_gr": "\"Καὶ προσκαλεσάμενος τὸν ὄχλον εἶπεν αὐτοῖς· ἀκούετε καὶ συνίετε·\"",
+        "termo_gr": "\"συνίετε\"",
+        "termo_transliterado": "syniete",
+        "polo_teologico": "convite",
+        "situacao": "\"Jesus interrompe o debate com os fariseus sobre pureza ritual e se volta à multidão com um imperativo duplo: ouvi e entendei (ἀκούετε καὶ συνίετε). O convite à synesis é dirigido a quem ainda não decidiu — diferente do endurecimento dos líderes religiosos que já rejeitaram.\"",
+        "resultado": "\"O resultado fica em aberto na passagem — dependente da resposta de cada ouvinte. O imperativo indica que a synesis pode ser buscada, mas não é automática.\"",
+        "chain": [
+          {
+            "from": "suniemi",
+            "relation": "PRECEDE",
+            "to": "fe_e_receptividade"
+          },
+          {
+            "from": "discipulado",
+            "relation": "FAVORECE",
+            "to": "suniemi"
+          },
+          {
+            "from": "suniemi",
+            "relation": "CONTRASTA_COM",
+            "to": "endurecimento_do_coracao"
+          }
+        ],
+        "descricao": [
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Disposição do coração que acolhe a Palavra e permanece aberto à ação do Espírito. Condição humana associada à iluminação da synesis.\"",
+          "\"Relação de seguimento e aprendizado com Jesus que abre progressivamente o entendimento. Os discípulos recebem explicação das parábolas e abertura do nous de modo que os de fora não recebem.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27).\""
+        ],
+        "categoria": [
+          "termo_central",
+          "condicao_humana",
+          "condicao_humana",
+          "termo_central",
+          "termo_central",
+          "condicao_humana"
+        ],
+        "polo": [
+          "neutro",
+          "iluminacao",
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\matthew.syn",
+        "line": 70
+      }
+    },
+    {
+      "id": "biblia_item0012",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Mateus 16.12\"",
+        "citacao_pt": "\"Então entenderam que não lhes dissera que se guardassem do fermento do pão, mas da doutrina dos fariseus e dos saduceus.\"",
+        "citacao_gr": "\"τότε συνῆκαν ὅτι οὐκ εἶπεν προσέχειν ἀπὸ τῆς ζύμης τῶν ἄρτων ἀλλὰ ἀπὸ τῆς διδαχῆς τῶν Φαρισαίων καὶ Σαδδουκαίων.\"",
+        "termo_gr": "\"συνῆκαν\"",
+        "termo_transliterado": "synekan",
+        "polo_teologico": "iluminacao",
+        "situacao": "\"Os discípulos finalmente compreendem a advertência de Jesus sobre o fermento — após Jesus os repreender pela falta de compreensão (v. 9-11). A synesis chega progressivamente no contexto do discipulado, mediada pela explicação de Jesus.\"",
+        "resultado": "\"Compreensão da advertência: o fermento era doutrina, não pão. Ilustra que a synesis dos discípulos é processual — dependente da mediação de Jesus e do tempo de formação.\"",
+        "chain": [
+          {
+            "from": "discipulado",
+            "relation": "PRECEDE",
+            "to": "suniemi"
+          },
+          {
+            "from": "suniemi",
+            "relation": "PRODUZ",
+            "to": "compreensao_das_escrituras"
+          },
+          {
+            "from": "abertura_do_entendimento",
+            "relation": "HABILITA",
+            "to": "suniemi"
+          }
+        ],
+        "descricao": [
+          "\"Relação de seguimento e aprendizado com Jesus que abre progressivamente o entendimento. Os discípulos recebem explicação das parábolas e abertura do nous de modo que os de fora não recebem.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\"",
+          "\"Resultado imediato da abertura divina do entendimento: a revelação objetiva das Escrituras passa a ser integrada em compreensão coerente pelo receptor (Lucas 24.45; Mateus 16.12).\"",
+          "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\"",
+          "\"Verbo: colocar as coisas juntas, compreender, captar o sentido — composto de syn (junto) + hiēmi (colocar). Descreve o ato de integrar elementos em compreensão coerente.\""
+        ],
+        "categoria": [
+          "condicao_humana",
+          "termo_central",
+          "termo_central",
+          "resultado_positivo",
+          "agente_divino",
+          "termo_central"
+        ],
+        "polo": [
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "iluminacao",
+          "iluminacao",
+          "neutro"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\matthew.syn",
+        "line": 88
+      }
+    },
+    {
+      "id": "biblia_item0013",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Romanos 1.21\"",
+        "citacao_pt": "\"Porquanto, tendo conhecido a Deus, não o glorificaram como Deus, nem lhe deram graças, antes em seus discursos se tornaram vãos, e o seu coração insensato se obscureceu.\"",
+        "citacao_gr": "\"διότι γνόντες τὸν θεὸν οὐχ ὡς θεὸν ἐδόξασαν ἢ ηὐχαρίστησαν, ἀλλ᾽ ἐματαιώθησαν ἐν τοῖς διαλογισμοῖς αὐτῶν καὶ ἐσκοτίσθη ἡ ἀσύνετος αὐτῶν καρδία.\"",
+        "termo_gr": "\"ἀσύνετος\"",
+        "termo_transliterado": "asynetos",
+        "polo_teologico": "bloqueio",
+        "situacao": "\"Paulo usa o adjetivo negativo ἀσύνετος (sem synesis, insensato) para descrever o coração obscurecido da humanidade que conheceu a Deus pela criação mas recusou glorificá-Lo. O processo é progressivo: conhecimento → recusa de glorificar → vaidade dos raciocínios → obscurecimento do coração ἀσύνετος.\"",
+        "resultado": "\"Perda do discernimento como consequência da recusa de reconhecer Deus. A mente obscurecida não é apenas ignorante — é ativa em produzir ídolos e distorções morais (vv. 22-32).\"",
+        "chain": [
+          {
+            "from": "pecado_persistente",
+            "relation": "BLOQUEIA",
+            "to": "nous"
+          },
+          {
+            "from": "nous",
+            "relation": "PRECEDE",
+            "to": "synesis"
+          },
+          {
+            "from": "incredulidade",
+            "relation": "PRODUZ",
+            "to": "perda_do_discernimento"
+          },
+          {
+            "from": "endurecimento_do_coracao",
+            "relation": "INSTANCIA_DE",
+            "to": "perda_do_discernimento"
+          },
+          {
+            "from": "synesis",
+            "relation": "CONTRASTA_COM",
+            "to": "perda_do_discernimento"
+          }
+        ],
+        "descricao": [
+          "\"Padrão de vida contrário à revelação de Deus que obscurece progressivamente o nous. Paulo descreve esse processo em Romanos 1.21 — o coração se entenebreceu.\"",
+          "\"Mente — o órgão que Deus abre em Lucas 24.45 (διήνοιξεν αὐτῶν τὸν νοῦν). Sede da synesis; pode ser obscurecido pelo pecado (Romanos 1.21) ou renovado pelo Espírito.\"",
+          "\"Mente — o órgão que Deus abre em Lucas 24.45 (διήνοιξεν αὐτῶν τὸν νοῦν). Sede da synesis; pode ser obscurecido pelo pecado (Romanos 1.21) ou renovado pelo Espírito.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Rejeição ou ausência de confiança na revelação de Deus. Impede a synesis e, quando persistente, conduz ao endurecimento judicial.\"",
+          "\"Estado resultante do endurecimento progressivo: a capacidade de integrar a revelação é progressivamente perdida. Descrito em Romanos 1.21 e confirmado em Atos 28.26-27.\"",
+          "\"Processo progressivo de impermeabilidade à revelação divina. Os discípulos o experimentam temporariamente (Marcos 6.52); Israel o experimenta judicialmente (Atos 28.26-27).\"",
+          "\"Estado resultante do endurecimento progressivo: a capacidade de integrar a revelação é progressivamente perdida. Descrito em Romanos 1.21 e confirmado em Atos 28.26-27.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Estado resultante do endurecimento progressivo: a capacidade de integrar a revelação é progressivamente perdida. Descrito em Romanos 1.21 e confirmado em Atos 28.26-27.\""
+        ],
+        "categoria": [
+          "condicao_humana",
+          "conceito_correlato",
+          "conceito_correlato",
+          "termo_central",
+          "condicao_humana",
+          "resultado_negativo",
+          "condicao_humana",
+          "resultado_negativo",
+          "termo_central",
+          "resultado_negativo"
+        ],
+        "polo": [
+          "bloqueio",
+          "neutro",
+          "neutro",
+          "neutro",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\pauline.syn",
+        "line": 5
+      }
+    },
+    {
+      "id": "biblia_item0014",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Romanos 3.11\"",
+        "citacao_pt": "\"Não há quem entenda; não há quem busque a Deus.\"",
+        "citacao_gr": "\"οὐκ ἔστιν ὁ συνίων, οὐκ ἔστιν ὁ ἐκζητῶν τὸν θεόν.\"",
+        "termo_gr": "\"συνίων\"",
+        "termo_transliterado": "syniōn",
+        "polo_teologico": "incapacidade_natural",
+        "situacao": "\"Paulo cita o Salmo 14.2 para fundamentar o diagnóstico universal da condição humana caída. O particípio συνίων (o que entende) é negado universalmente: não há nenhum ser humano que genuinamente entenda, que busque a Deus. Não é juízo pontual sobre um grupo histórico, mas diagnóstico ontológico da humanidade sem graça.\"",
+        "resultado": "\"Incapacidade radical: a synesis não é facultativa — está ausente por condição. Esse diagnóstico fundamenta a necessidade da ação soberana de Deus descrita em Romanos 5 e 8.\"",
+        "chain": [
+          {
+            "from": "incapacidade_humana_caida",
+            "relation": "CONTRASTA_COM",
+            "to": "synesis"
+          },
+          {
+            "from": "incapacidade_humana_caida",
+            "relation": "INSTANCIA_DE",
+            "to": "perda_do_discernimento"
+          },
+          {
+            "from": "abertura_do_entendimento",
+            "relation": "CONTRASTA_COM",
+            "to": "incapacidade_humana_caida"
+          }
+        ],
+        "descricao": [
+          "\"Condição ontológica do ser humano sem a ação de Deus: não há quem entenda (Romanos 3.11 — οὐκ ἔστιν ὁ συνίων). Não é juízo pontual, mas diagnóstico da condição humana caída.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Condição ontológica do ser humano sem a ação de Deus: não há quem entenda (Romanos 3.11 — οὐκ ἔστιν ὁ συνίων). Não é juízo pontual, mas diagnóstico da condição humana caída.\"",
+          "\"Estado resultante do endurecimento progressivo: a capacidade de integrar a revelação é progressivamente perdida. Descrito em Romanos 1.21 e confirmado em Atos 28.26-27.\"",
+          "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\"",
+          "\"Condição ontológica do ser humano sem a ação de Deus: não há quem entenda (Romanos 3.11 — οὐκ ἔστιν ὁ συνίων). Não é juízo pontual, mas diagnóstico da condição humana caída.\""
+        ],
+        "categoria": [
+          "resultado_negativo",
+          "termo_central",
+          "resultado_negativo",
+          "resultado_negativo",
+          "agente_divino",
+          "resultado_negativo"
+        ],
+        "polo": [
+          "bloqueio",
+          "neutro",
+          "bloqueio",
+          "bloqueio",
+          "iluminacao",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\pauline.syn",
+        "line": 25
+      }
+    },
+    {
+      "id": "biblia_item0015",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"1 Coríntios 1.19\"",
+        "citacao_pt": "\"Porque está escrito: Destruirei a sabedoria dos sábios e aniquilarei a inteligência dos inteligentes.\"",
+        "citacao_gr": "\"γέγραπται γάρ· ἀπολῶ τὴν σοφίαν τῶν σοφῶν καὶ τὴν σύνεσιν τῶν συνετῶν ἀθετήσω.\"",
+        "termo_gr": "\"σύνεσιν / συνετῶν\"",
+        "termo_transliterado": "synesin",
+        "polo_teologico": "bloqueio",
+        "situacao": "\"Paulo cita Isaías 29.14 para declarar que Deus destrói ativamente a sabedoria e a synesis dos que se consideram sábios segundo os critérios do mundo. O substantivo σύνεσιν e o adjetivo substantivado συνετῶν aparecem juntos — a synesis dos synetos (inteligentes) é precisamente o que Deus aniquila. O orgulho intelectual torna a synesis humana alvo do juízo divino.\"",
+        "resultado": "\"Juízo sobre a sabedoria do mundo: a synesis que prescinde de Deus é destruída por Deus. A loucura da cruz torna impossível a sabedoria humana autocentrada.\"",
+        "chain": [
+          {
+            "from": "orgulho_da_sabedoria",
+            "relation": "BLOQUEIA",
+            "to": "synesis"
+          },
+          {
+            "from": "destruicao_da_sabedoria_humana",
+            "relation": "INSTANCIA_DE",
+            "to": "endurecimento_judicial"
+          },
+          {
+            "from": "destruicao_da_sabedoria_humana",
+            "relation": "PRODUZ",
+            "to": "perda_do_discernimento"
+          },
+          {
+            "from": "synesis",
+            "relation": "CONTRASTA_COM",
+            "to": "orgulho_da_sabedoria"
+          }
+        ],
+        "descricao": [
+          "\"Confiança na própria inteligência humana como critério último de compreensão. Bloqueia a synesis ao substituir a dependência de Deus pela autossuficiência intelectual.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Ação judicial de Deus que invalida e destrói a compreensão dos sábios segundo os critérios do mundo (1 Coríntios 1.19 — citação de Isaías 29.14). Juízo sobre o orgulho intelectual.\"",
+          "\"Ação judicial de Deus que confirma ou intensifica o bloqueio do entendimento como resposta à rejeição persistente. Fundamentado em Isaías 6 e repetido em Mateus 13, Marcos 4 e Atos 28.\"",
+          "\"Ação judicial de Deus que invalida e destrói a compreensão dos sábios segundo os critérios do mundo (1 Coríntios 1.19 — citação de Isaías 29.14). Juízo sobre o orgulho intelectual.\"",
+          "\"Estado resultante do endurecimento progressivo: a capacidade de integrar a revelação é progressivamente perdida. Descrito em Romanos 1.21 e confirmado em Atos 28.26-27.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Confiança na própria inteligência humana como critério último de compreensão. Bloqueia a synesis ao substituir a dependência de Deus pela autossuficiência intelectual.\""
+        ],
+        "categoria": [
+          "condicao_humana",
+          "termo_central",
+          "agente_divino",
+          "agente_divino",
+          "agente_divino",
+          "resultado_negativo",
+          "termo_central",
+          "condicao_humana"
+        ],
+        "polo": [
+          "bloqueio",
+          "neutro",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "bloqueio",
+          "neutro",
+          "bloqueio"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\pauline.syn",
+        "line": 43
+      }
+    },
+    {
+      "id": "biblia_item0016",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Efésios 3.4\"",
+        "citacao_pt": "\"Pelo que, quando lerdes isto, podeis perceber o meu conhecimento no mistério de Cristo.\"",
+        "citacao_gr": "\"πρὸς ὃ δύνασθε ἀναγινώσκοντες νοῆσαι τὴν σύνεσίν μου ἐν τῷ μυστηρίῳ τοῦ Χριστοῦ.\"",
+        "termo_gr": "\"σύνεσίν\"",
+        "termo_transliterado": "synesin",
+        "polo_teologico": "iluminacao",
+        "situacao": "\"Paulo afirma que, ao lerem sua carta, os destinatários poderão perceber (νοῆσαι) sua synesis no mistério de Cristo — ou seja, a compreensão integradora que ele recebeu por revelação apostólica. A synesis aqui é comunicável: a revelação escrita transmite a compreensão de Paulo aos leitores.\"",
+        "resultado": "\"Revelação do mistério de Cristo mediada pela Escritura apostólica. A synesis de Paulo, recebida por revelação, torna-se acessível aos crentes pela leitura.\"",
+        "chain": [
+          {
+            "from": "sophia",
+            "relation": "COOPERA_COM",
+            "to": "synesis"
+          },
+          {
+            "from": "synesis",
+            "relation": "PRODUZ",
+            "to": "revelacao_do_misterio"
+          },
+          {
+            "from": "iluminacao_do_espirito",
+            "relation": "PRECEDE",
+            "to": "synesis"
+          },
+          {
+            "from": "revelacao_do_misterio",
+            "relation": "INSTANCIA_DE",
+            "to": "conhecimento_de_cristo"
+          }
+        ],
+        "descricao": [
+          "\"Sabedoria — frequentemente par de synesis nos textos paulinos (Colossenses 1.9; Efésios 1.17). Sophia tende ao aspecto abrangente e ordenador; synesis ao aspecto integrador e discernidor.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Compreensão do mistério de Cristo que Paulo desdobra em Efésios 3.4 — synesis aplicada ao conteúdo central da revelação apostólica.\"",
+          "\"Ação específica do Espírito Santo que produz a σύνεσις πνευματική (Colossenses 1.9) — compreensão espiritual que conecta corretamente as realidades da revelação divina.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Compreensão do mistério de Cristo que Paulo desdobra em Efésios 3.4 — synesis aplicada ao conteúdo central da revelação apostólica.\"",
+          "\"Cume da synesis em Colossenses 2.2 — a plena riqueza da compreensão converge para o conhecimento do mistério de Deus, que é Cristo.\""
+        ],
+        "categoria": [
+          "conceito_correlato",
+          "termo_central",
+          "termo_central",
+          "resultado_positivo",
+          "agente_divino",
+          "termo_central",
+          "resultado_positivo",
+          "resultado_positivo"
+        ],
+        "polo": [
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "iluminacao",
+          "iluminacao",
+          "neutro",
+          "iluminacao",
+          "iluminacao"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\pauline.syn",
+        "line": 62
+      }
+    },
+    {
+      "id": "biblia_item0017",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Colossenses 1.9\"",
+        "citacao_pt": "\"Por isso também nós, desde o dia em que o ouvimos, não cessamos de orar por vós e de pedir que sejais cheios do conhecimento da sua vontade em toda a sabedoria e inteligência espiritual.\"",
+        "citacao_gr": "\"διὰ τοῦτο καὶ ἡμεῖς, ἀφ᾽ ἧς ἡμέρας ἠκούσαμεν, οὐ παυόμεθα ὑπὲρ ὑμῶν προσευχόμενοι καὶ αἰτούμενοι ἵνα πληρωθῆτε τὴν ἐπίγνωσιν τοῦ θελήματος αὐτοῦ ἐν πάσῃ σοφίᾳ καὶ συνέσει πνευματικῇ.\"",
+        "termo_gr": "\"συνέσει πνευματικῇ\"",
+        "termo_transliterado": "synesei_pneumatike",
+        "polo_teologico": "iluminacao",
+        "situacao": "\"A expressão συνέσει πνευματικῇ (synesis espiritual) é singular no Novo Testamento. Paulo ora para que os crentes sejam cheios de epignosis da vontade de Deus em toda sophia e synesis pneumatikē. Os três termos formam uma constelação: epignosis (conhecimento preciso), sophia (sabedoria ordenadora) e synesis pneumatikē (compreensão integradora concedida pelo Espírito).\"",
+        "resultado": "\"Conhecimento pleno da vontade de Deus — não como informação, mas como percepção integrada que orienta o andar digno do Senhor (v. 10).\"",
+        "chain": [
+          {
+            "from": "iluminacao_do_espirito",
+            "relation": "PRODUZ",
+            "to": "synesis_pneumatike"
+          },
+          {
+            "from": "synesis_pneumatike",
+            "relation": "INSTANCIA_DE",
+            "to": "synesis"
+          },
+          {
+            "from": "sophia",
+            "relation": "COOPERA_COM",
+            "to": "synesis"
+          },
+          {
+            "from": "epignosis",
+            "relation": "COOPERA_COM",
+            "to": "synesis"
+          },
+          {
+            "from": "synesis",
+            "relation": "PRODUZ",
+            "to": "conhecimento_da_vontade_de_deus"
+          }
+        ],
+        "descricao": [
+          "\"Ação específica do Espírito Santo que produz a σύνεσις πνευματική (Colossenses 1.9) — compreensão espiritual que conecta corretamente as realidades da revelação divina.\"",
+          "\"Expressão singular de Colossenses 1.9 (συνέσει πνευματικῇ) — compreensão espiritual concedida pelo Espírito Santo. Não é synesis natural ampliada, mas capacidade qualitativamente distinta.\"",
+          "\"Expressão singular de Colossenses 1.9 (συνέσει πνευματικῇ) — compreensão espiritual concedida pelo Espírito Santo. Não é synesis natural ampliada, mas capacidade qualitativamente distinta.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Sabedoria — frequentemente par de synesis nos textos paulinos (Colossenses 1.9; Efésios 1.17). Sophia tende ao aspecto abrangente e ordenador; synesis ao aspecto integrador e discernidor.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Conhecimento pleno ou preciso — par de synesis em Colossenses 1.9. Paulo ora para que os crentes sejam cheios de epignosis da vontade de Deus em toda synesis espiritual.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Fruto da synesis pneumatikē — o crente passa a discernir o que Deus quer em situações concretas (Colossenses 1.9: πληρωθῆτε τὴν ἐπίγνωσιν τοῦ θελήματος αὐτοῦ).\""
+        ],
+        "categoria": [
+          "agente_divino",
+          "conceito_correlato",
+          "conceito_correlato",
+          "termo_central",
+          "conceito_correlato",
+          "termo_central",
+          "conceito_correlato",
+          "termo_central",
+          "termo_central",
+          "resultado_positivo"
+        ],
+        "polo": [
+          "iluminacao",
+          "iluminacao",
+          "iluminacao",
+          "neutro",
+          "iluminacao",
+          "neutro",
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "iluminacao"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\pauline.syn",
+        "line": 81
+      }
+    },
+    {
+      "id": "biblia_item0018",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"Colossenses 2.2\"",
+        "citacao_pt": "\"Para que os seus corações sejam consolados, sendo unidos em amor e enriquecidos com a plena certeza do entendimento, para o conhecimento do mistério de Deus, que é Cristo.\"",
+        "citacao_gr": "\"ἵνα παρακληθῶσιν αἱ καρδίαι αὐτῶν, συμβιβασθέντες ἐν ἀγάπῃ καὶ εἰς πᾶν πλοῦτος τῆς πληροφορίας τῆς συνέσεως, εἰς ἐπίγνωσιν τοῦ μυστηρίου τοῦ θεοῦ, Χριστοῦ.\"",
+        "termo_gr": "\"συνέσεως\"",
+        "termo_transliterado": "syneseōs",
+        "polo_teologico": "iluminacao",
+        "situacao": "\"Paulo descreve o cume da synesis: a plena riqueza da πληροφορία (plena certeza) da synesis converge para o conhecimento do mistério de Deus, que é Cristo. A synesis não é fim em si mesma — é caminho para o conhecimento de Cristo. O contexto é a advertência contra filosofias e tradições humanas que desviam desse centro.\"",
+        "resultado": "\"Conhecimento de Cristo como ponto de chegada da synesis plena. A maturidade espiritual e a synesis aprofundada convergem para a pessoa de Jesus.\"",
+        "chain": [
+          {
+            "from": "maturidade_espiritual",
+            "relation": "HABILITA",
+            "to": "synesis"
+          },
+          {
+            "from": "synesis",
+            "relation": "PRODUZ",
+            "to": "conhecimento_de_cristo"
+          },
+          {
+            "from": "epignosis",
+            "relation": "COOPERA_COM",
+            "to": "synesis"
+          },
+          {
+            "from": "kardia",
+            "relation": "PRECEDE",
+            "to": "synesis"
+          }
+        ],
+        "descricao": [
+          "\"Estado de crescimento na fé associado à synesis aprofundada. Paulo ora para que os crentes de Colossos alcancem a plena riqueza da compreensão (Colossenses 2.2).\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Cume da synesis em Colossenses 2.2 — a plena riqueza da compreensão converge para o conhecimento do mistério de Deus, que é Cristo.\"",
+          "\"Conhecimento pleno ou preciso — par de synesis em Colossenses 1.9. Paulo ora para que os crentes sejam cheios de epignosis da vontade de Deus em toda synesis espiritual.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Coração — sede tanto do endurecimento (Marcos 6.52; Atos 28.27) quanto da receptividade (Lucas 24.45 implícito). O estado da kardia determina a permeabilidade à synesis.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\""
+        ],
+        "categoria": [
+          "condicao_humana",
+          "termo_central",
+          "termo_central",
+          "resultado_positivo",
+          "conceito_correlato",
+          "termo_central",
+          "conceito_correlato",
+          "termo_central"
+        ],
+        "polo": [
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "iluminacao",
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "neutro"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\pauline.syn",
+        "line": 101
+      }
+    },
+    {
+      "id": "biblia_item0019",
+      "source_ref": "@biblia",
+      "data": {
+        "referencia": "\"2 Timóteo 2.7\"",
+        "citacao_pt": "\"Considera o que digo, porque o Senhor te dará entendimento em todas as coisas.\"",
+        "citacao_gr": "\"νόει ὃ λέγω· δώσει γάρ σοι ὁ κύριος σύνεσιν ἐν πᾶσιν.\"",
+        "termo_gr": "\"σύνεσιν\"",
+        "termo_transliterado": "synesin",
+        "polo_teologico": "iluminacao",
+        "situacao": "\"Paulo instrui Timóteo com uma estrutura bipartida: considera (νόει — esforço humano de reflexão) + o Senhor te dará synesis (δώσει — dom divino). As duas partes são inseparáveis: a reflexão humana não produz synesis por si só, mas é a postura sobre a qual Deus age.\"",
+        "resultado": "\"Synesis dada pelo Senhor como resposta ao esforço reflexivo. Modelo de cooperação entre reflexão humana e iluminação divina — sem confundir os agentes.\"",
+        "chain": [
+          {
+            "from": "abertura_do_entendimento",
+            "relation": "HABILITA",
+            "to": "synesis"
+          },
+          {
+            "from": "discipulado",
+            "relation": "PRECEDE",
+            "to": "abertura_do_entendimento"
+          },
+          {
+            "from": "iluminacao_do_espirito",
+            "relation": "PRODUZ",
+            "to": "synesis"
+          },
+          {
+            "from": "synesis",
+            "relation": "PRODUZ",
+            "to": "conhecimento_da_vontade_de_deus"
+          }
+        ],
+        "descricao": [
+          "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Relação de seguimento e aprendizado com Jesus que abre progressivamente o entendimento. Os discípulos recebem explicação das parábolas e abertura do nous de modo que os de fora não recebem.\"",
+          "\"Ação direta de Deus que capacita o nous do ser humano a integrar a revelação. Paradigma: διήνοιξεν αὐτῶν τὸν νοῦν (Lucas 24.45) — Deus é o sujeito ativo, o discípulo é receptor.\"",
+          "\"Ação específica do Espírito Santo que produz a σύνεσις πνευματική (Colossenses 1.9) — compreensão espiritual que conecta corretamente as realidades da revelação divina.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Substantivo: capacidade de integrar corretamente elementos dispersos da revelação divina em uma compreensão coerente da realidade. Não é mera inteligência natural, mas discernimento que depende da ação de Deus.\"",
+          "\"Fruto da synesis pneumatikē — o crente passa a discernir o que Deus quer em situações concretas (Colossenses 1.9: πληρωθῆτε τὴν ἐπίγνωσιν τοῦ θελήματος αὐτοῦ).\""
+        ],
+        "categoria": [
+          "agente_divino",
+          "termo_central",
+          "condicao_humana",
+          "agente_divino",
+          "agente_divino",
+          "termo_central",
+          "termo_central",
+          "resultado_positivo"
+        ],
+        "polo": [
+          "iluminacao",
+          "neutro",
+          "iluminacao",
+          "iluminacao",
+          "iluminacao",
+          "neutro",
+          "neutro",
+          "iluminacao"
+        ]
+      },
+      "traceability": {
+        "file": "passages\\pauline.syn",
+        "line": 120
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+TEMPLATE teste
+
+SOURCE FIELDS
+    OPTIONAL description
+    OPTIONAL method
+END SOURCE FIELDS
+
+ITEM FIELDS
+    REQUIRED citation
+    OPTIONAL note
+    OPTIONAL code
+    OPTIONAL chain
+END ITEM FIELDS
+
+ONTOLOGY FIELDS
+    OPTIONAL definition
+END ONTOLOGY FIELDS
+
+FIELD description TYPE TEXT
+    SCOPE SOURCE
+    DESCRIPTION Resumo da fonte escrito pelo pesquisador
+END FIELD
+
+FIELD method TYPE TEXT
+    SCOPE SOURCE
+    DESCRIPTION Metodo do estudo
+END FIELD
+
+FIELD citation TYPE QUOTATION
+    SCOPE ITEM
+END FIELD
+
+FIELD note TYPE MEMO
+    SCOPE ITEM
+END FIELD
+
+FIELD code TYPE CODE
+    SCOPE ITEM
+END FIELD
+
+FIELD chain TYPE CHAIN
+    SCOPE ITEM
+    ARITY >= 2
+    RELATIONS
+        CAUSES: relacao causal direta
+        ENABLES: torna possivel
+    END RELATIONS
+END FIELD
+
+FIELD definition TYPE TEXT
+    SCOPE ONTOLOGY
+END FIELD

@@ -1,0 +1,52 @@
+# ==========================================
+# CENARIO A (F3): cursor aqui deve abrir o
+# abstract de @souza2019, o PROXIMO bloco.
+# Antes: "No reference found".
+# ==========================================
+SOURCE @souza2019
+    description: Estudo sobre percepcao de risco
+    method: Entrevistas em profundidade
+END SOURCE
+
+ITEM @souza2019
+    citation: "Comunidades avaliam risco por meio de experiência direta"
+    note: Mediacao institucional aparece como fator secundario.
+    code: Percepcao_Risco
+END ITEM
+
+# CENARIO B (F2/F3): cursor NESTE comentario deve abrir
+# @silva2020. Antes: abria @souza2019, a fonte anterior.
+SOURCE @silva2020
+    description: Estudo sobre aceitacao social da transicao
+    method: Survey com 400 respondentes
+END SOURCE
+
+ITEM @silva2020
+    citation: "A aceitação social depende da participação local"
+    note: Excerpt em NFC; o abstract tem hifenizacao de PDF.
+    code: Aceitacao_Social
+END ITEM
+
+ITEM @silva2020
+    citation: "participação local e da confiança mútua"
+    note: Sobrepoe o ITEM anterior - deve exibir badge.
+END ITEM
+
+ITEM @silva2020
+    citation: "Fatores socioeconomicos moldam a percepção"
+    note: Abstract tem "socio-economicos" com hifen.
+END ITEM
+
+# CENARIO G2: Confianca_Institucional aparece SO em chain.
+# Hover sobre ele deve dizer "Usado em 1 itens" (antes: 0).
+ITEM @silva2020
+    citation: "a confiança nas instituições molda a aceitação"
+    chain: Confianca_Institucional -> CAUSES -> Aceitacao_Social
+END ITEM
+
+# CENARIO G3: ITEM cuja referencia NAO existe no .bib.
+# Deve acusar erro no editor (antes: nenhum diagnostico).
+# >>> Descomente as 3 linhas abaixo para testar <<<
+# ITEM @barbieri20101
+#     citation: "chave inexistente - deve acusar erro"
+# END ITEM
